@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfkj2brtsm61l"]
+
+[ext_resource type="PackedScene" uid="uid://dwlby5wp01cdl" path="res://Enemies/Base Enemy/base_enemy.tscn" id="1_7nvue"]
+[ext_resource type="Script" uid="uid://dmtxx3xj8825g" path="res://Enemies/Wall Raising Enemy/wall_raising_enemy.gd" id="2_b6afd"]
+[ext_resource type="Shader" uid="uid://1bubu18emj3n" path="res://Enemies/Base Enemy/spawn_shader.gdshader" id="3_kipqk"]
+[ext_resource type="Texture2D" uid="uid://bb6k4rxcn0k2t" path="res://Enemies/Wall Raising Enemy/wall-rasising-enemy.png" id="4_b6afd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7nvue"]
+shader = ExtResource("3_kipqk")
+shader_parameter/progress = 5.22
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4e6a8"]
+size = Vector2(120, 72)
+
+[node name="wall_raising_enemy" node_paths=PackedStringArray("Icon") instance=ExtResource("1_7nvue")]
+script = ExtResource("2_b6afd")
+movement_target = 0
+target_distance = 500
+attack_cooldown = 2.0
+points_for_wave = 15
+Icon = NodePath("Icon")
+
+[node name="Icon" type="Sprite2D" parent="." index="0"]
+material = SubResource("ShaderMaterial_7nvue")
+scale = Vector2(4, 4)
+texture = ExtResource("4_b6afd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(-4, -4)
+shape = SubResource("RectangleShape2D_4e6a8")
+debug_color = Color(1, 0, 0, 0.42)
+
+[node name="healthCoponent" parent="." index="3"]
+max_health = 10
+
+[node name="healthBar" parent="." index="4"]
+offset_left = -64.0
+offset_top = 72.0
+offset_right = 64.0
+offset_bottom = 99.0

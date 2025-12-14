@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://di5r1mp2ac5o"]
+
+[ext_resource type="Script" uid="uid://imufuer0ny7e" path="res://Dropped Item/dropped_item.gd" id="1_boiql"]
+[ext_resource type="Theme" uid="uid://ltg03tu30kkp" path="res://UI.tres" id="2_1m6ob"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0ibml"]
+size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boiql"]
+size = Vector2(96, 96)
+
+[node name="droppedItem" type="Area2D" node_paths=PackedStringArray("DISPLAY_TOOLTIP")]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_boiql")
+TOOLTIP = "Pick Up"
+DISPLAY_TOOLTIP = NodePath("tooltip")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_0ibml")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_boiql")
+
+[node name="tooltip" type="RichTextLabel" parent="."]
+z_index = 500
+offset_left = -384.0
+offset_top = -104.0
+offset_right = 384.0
+offset_bottom = -48.0
+theme = ExtResource("2_1m6ob")
+theme_override_font_sizes/normal_font_size = 32
+horizontal_alignment = 1
+
+[connection signal="interacted" from="." to="." method="_on_interacted"]

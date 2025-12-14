@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://c42l8nqcutbdc"]
+
+[ext_resource type="Resource" uid="uid://v67xbqauwyom" path="res://Accessories/Ram Horns/ram_horns.tres" id="1_y05s4"]
+[ext_resource type="Script" uid="uid://ceiusvsj6txjt" path="res://Glyphs/Base Glyph/base_glyph.gd" id="2_eabr6"]
+[ext_resource type="Texture2D" uid="uid://du1perj33o0rw" path="res://Accessories/Ram Horns/ram_horns.png" id="3_y05s4"]
+[ext_resource type="Script" uid="uid://b0awyqeutl36c" path="res://Items/Base Item/base_item.gd" id="4_vc8gs"]
+
+[resource]
+script = ExtResource("4_vc8gs")
+NAME = "Ram Horns"
+DESCRIPTION = "Dashing through enemies deals damage to them"
+QUOTE = "Where did you even get these from?"
+TEXTURE = ExtResource("3_y05s4")
+IS_ACCESSORY = true
+ACCESSORY = ExtResource("1_y05s4")
+metadata/_custom_type_script = "uid://b0awyqeutl36c"

@@ -1,0 +1,116 @@
+[gd_scene load_steps=16 format=3 uid="uid://cyikoyuqmakwp"]
+
+[ext_resource type="PackedScene" uid="uid://b77a7fbaiyf7n" path="res://Components/Interaction Component/interaction.tscn" id="1_qe6jm"]
+[ext_resource type="Script" uid="uid://dqq6eiwecahtd" path="res://Campfire/campfire.gd" id="2_fwf6s"]
+[ext_resource type="Texture2D" uid="uid://bsbv6ybdwbqyr" path="res://Campfire/campfire-sway.png" id="3_08px2"]
+[ext_resource type="Texture2D" uid="uid://jxj34xqmcc7n" path="res://Campfire/campfire_burnt.png" id="3_fwf6s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0vxd"]
+atlas = ExtResource("3_fwf6s")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwf6s"]
+atlas = ExtResource("3_08px2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu2xf"]
+atlas = ExtResource("3_08px2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppyag"]
+atlas = ExtResource("3_08px2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kluw"]
+atlas = ExtResource("3_08px2")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10tv4"]
+atlas = ExtResource("3_08px2")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jir0s"]
+atlas = ExtResource("3_08px2")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sutr5"]
+atlas = ExtResource("3_08px2")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ge523"]
+atlas = ExtResource("3_08px2")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uu2xf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0vxd")
+}],
+"loop": true,
+"name": &"burnt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwf6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu2xf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppyag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kluw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10tv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jir0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sutr5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ge523")
+}],
+"loop": true,
+"name": &"fire_sway",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08px2"]
+size = Vector2(208, 120)
+
+[node name="campfire" node_paths=PackedStringArray("DISPLAY_TOOLTIP") instance=ExtResource("1_qe6jm")]
+script = ExtResource("2_fwf6s")
+TOOLTIP = "Sit Down"
+DISPLAY_TOOLTIP = NodePath("RichTextLabel")
+
+[node name="spr" type="AnimatedSprite2D" parent="." index="0"]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_uu2xf")
+animation = &"burnt"
+autoplay = "fire_sway"
+frame_progress = 0.6219941
+
+[node name="update_timer" type="Timer" parent="." index="1"]
+wait_time = 0.5
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+position = Vector2(0, 32)
+shape = SubResource("RectangleShape2D_08px2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." index="3"]
+offset_left = -102.85715
+offset_top = -104.0
+offset_right = 102.85715
+offset_bottom = -32.0
+theme_override_font_sizes/normal_font_size = 32
+horizontal_alignment = 1
+
+[connection signal="interacted" from="." to="." method="_on_interacted"]
+[connection signal="timeout" from="update_timer" to="." method="_on_update_timer_timeout"]

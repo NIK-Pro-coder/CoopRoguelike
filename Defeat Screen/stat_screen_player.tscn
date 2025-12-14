@@ -1,0 +1,120 @@
+[gd_scene load_steps=8 format=3 uid="uid://dkd8yd2wdvi5m"]
+
+[ext_resource type="Theme" uid="uid://ltg03tu30kkp" path="res://UI.tres" id="1_hotub"]
+[ext_resource type="Script" uid="uid://emplvxew0yrh" path="res://Defeat Screen/stat_screen_player.gd" id="2_h0ep4"]
+[ext_resource type="Shader" uid="uid://2wa4lpmnwvn0" path="res://Player/player.gdshader" id="3_h0ep4"]
+[ext_resource type="Texture2D" uid="uid://cq5smrion4uoc" path="res://Player/player-idle.png" id="4_h0ep4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u6qp1"]
+bg_color = Color(0, 0, 0, 0.5)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qk72x"]
+shader = ExtResource("3_h0ep4")
+shader_parameter/hue_shift = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk72x"]
+atlas = ExtResource("4_h0ep4")
+region = Rect2(0, 0, 32, 32)
+
+[node name="statScreenPlayer" type="Panel"]
+process_mode = 4
+size_flags_horizontal = 3
+theme = ExtResource("1_hotub")
+theme_override_styles/panel = SubResource("StyleBoxFlat_u6qp1")
+script = ExtResource("2_h0ep4")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_hotub")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_hotub")
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="spacer1" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Control"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_qk72x")
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_right = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_hotub")
+texture = SubResource("AtlasTexture_qk72x")
+stretch_mode = 4
+
+[node name="spacer2" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="playerName" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Player -1"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="playerStats" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_hotub")
+fit_content = true
+horizontal_alignment = 1
+
+[node name="totPoints" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_hotub")
+theme_override_font_sizes/normal_font_size = 24
+text = "Total points: 0"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="spacer3" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="bestPlayer" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme = ExtResource("1_hotub")
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "BEST PLAYER!"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="category_delay" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="add_delay" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.05
+one_shot = true

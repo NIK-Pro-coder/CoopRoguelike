@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=3 uid="uid://cs03pmkfca6va"]
+
+[ext_resource type="PackedScene" uid="uid://b77a7fbaiyf7n" path="res://Components/Interaction Component/interaction.tscn" id="1_51vvj"]
+[ext_resource type="Script" uid="uid://ji1j67peanjx" path="res://Shopkeepers/shop_pedestal.gd" id="2_lhggx"]
+[ext_resource type="Texture2D" uid="uid://uy70jwapolcc" path="res://Potions/Sprites/Item Icons/endurance_potion.png" id="3_8lo7g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2es0"]
+bg_color = Color(0, 0, 0, 0.5)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mihmv"]
+size = Vector2(192, 192)
+
+[node name="shop_pedestal" node_paths=PackedStringArray("DISPLAY_TOOLTIP") instance=ExtResource("1_51vvj")]
+script = ExtResource("2_lhggx")
+DISPLAY_ITEM = null
+DISPLAY_TOOLTIP = NodePath("tooltip")
+
+[node name="item_icon" type="Sprite2D" parent="." index="0"]
+unique_name_in_owner = true
+scale = Vector2(4, 4)
+texture = ExtResource("3_8lo7g")
+
+[node name="item_info" type="Panel" parent="." index="1"]
+unique_name_in_owner = true
+visible = false
+z_index = 500
+offset_left = -192.0
+offset_top = -392.0
+offset_right = 192.0
+offset_bottom = -64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_t2es0")
+
+[node name="MarginContainer" type="MarginContainer" parent="item_info" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="item_info/MarginContainer" index="0"]
+layout_mode = 2
+
+[node name="item_desc" type="RichTextLabel" parent="item_info/MarginContainer/VBoxContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "kkhkjfhsdajhnihjkhmdsackjfhskjhncgkshk"
+fit_content = true
+
+[node name="Control" type="Control" parent="item_info/MarginContainer/VBoxContainer" index="1"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="item_quote" type="RichTextLabel" parent="item_info/MarginContainer/VBoxContainer" index="2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/italics_font_size = 32
+bbcode_enabled = true
+text = "[i]klafchjkshnfcjhskcghfskjghcukfhmughk[/i]"
+fit_content = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+shape = SubResource("RectangleShape2D_mihmv")
+
+[node name="tooltip" type="RichTextLabel" parent="." index="3"]
+unique_name_in_owner = true
+offset_left = -128.0
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 128.0
+theme_override_font_sizes/normal_font_size = 32
+text = "Buy"
+horizontal_alignment = 1
+
+[connection signal="interacted" from="." to="." method="_on_interacted"]

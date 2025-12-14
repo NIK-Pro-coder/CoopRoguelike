@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://1cnl8xu3ywa6"]
+
+[ext_resource type="Texture2D" uid="uid://cbc21bvg7oaxc" path="res://Weapons/Rusty Dagger/dagger-poke.png" id="1_d800o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vt24c"]
+atlas = ExtResource("1_d800o")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbdd7"]
+atlas = ExtResource("1_d800o")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ne4tm"]
+atlas = ExtResource("1_d800o")
+region = Rect2(0, 32, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vt24c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbdd7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ne4tm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]

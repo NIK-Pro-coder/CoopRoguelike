@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://r4qx2l571fow"]
+
+[ext_resource type="Resource" uid="uid://dostvefnfqscv" path="res://Accessories/Bloodthirst/bloodthirst.tres" id="1_uf0ie"]
+[ext_resource type="Script" uid="uid://ceiusvsj6txjt" path="res://Glyphs/Base Glyph/base_glyph.gd" id="2_fwo7d"]
+[ext_resource type="Texture2D" uid="uid://csbppxg1ogo7v" path="res://Accessories/Bloodthirst/bloodthirst.png" id="3_707nw"]
+[ext_resource type="Script" uid="uid://b0awyqeutl36c" path="res://Items/Base Item/base_item.gd" id="4_gf23i"]
+
+[resource]
+script = ExtResource("4_gf23i")
+NAME = "Bloodthirst"
+DESCRIPTION = "Killing an enemy grants a temporary damage and movement speed buff"
+QUOTE = "You're now thirsty for blood or something, idk..."
+TEXTURE = ExtResource("3_707nw")
+RARITY = 3
+IS_ACCESSORY = true
+ACCESSORY = ExtResource("1_uf0ie")
+metadata/_custom_type_script = "uid://b0awyqeutl36c"

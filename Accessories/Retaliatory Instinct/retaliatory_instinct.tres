@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://be1148eonh07v"]
+
+[ext_resource type="Script" uid="uid://poj53hvstfk4" path="res://Accessories/Retaliatory Instinct/retaliatory_instinct.gd" id="1_0rjfu"]
+[ext_resource type="Texture2D" uid="uid://ch8ggi4eq4lwr" path="res://Accessories/Retaliatory Instinct/retaliatory_instinct.png" id="1_8lj5u"]
+
+[resource]
+script = ExtResource("1_0rjfu")
+NAME = "Retaliatory Instinct"
+DESC = "Every hit you recive grants +5% damage to your next attack"
+ICON = ExtResource("1_8lj5u")
+PASSIVE_UPDATE_TIME = 0.1

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Power" load_steps=3 format=3 uid="uid://bpo48rch6aqqs"]
+
+[ext_resource type="Texture2D" uid="uid://nr7drkijttf8" path="res://Powers/Sprites/punching_arm.png" id="1_pl1b5"]
+[ext_resource type="Script" uid="uid://c3uxlcixym3ir" path="res://Powers/new_power.gd" id="1_sxaf1"]
+
+[resource]
+script = ExtResource("1_sxaf1")
+NAME = "Punching Arm"
+DESC = "Increase knockback by 10%"
+TEXTURE = ExtResource("1_pl1b5")
+AFFECTED_STAT = 9
+CHANGE = 10.0

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LootTable" load_steps=7 format=3 uid="uid://dhktpnvkjear4"]
+
+[ext_resource type="Script" uid="uid://b0awyqeutl36c" path="res://Items/Base Item/base_item.gd" id="1_5x6wg"]
+[ext_resource type="Script" uid="uid://by4ji3sx1olru" path="res://Loot Table/loot_table.gd" id="2_feylg"]
+[ext_resource type="Resource" uid="uid://dqnjnva8dfopk" path="res://Potions/endurance_potion.tres" id="2_pirlo"]
+[ext_resource type="Resource" uid="uid://vf5xb6a0xxws" path="res://Potions/lifeforce_potion.tres" id="3_srds7"]
+[ext_resource type="Resource" uid="uid://chhslhg6l8s11" path="res://Potions/rage_potion.tres" id="4_ivcm7"]
+[ext_resource type="Resource" uid="uid://dcc1sgal1l5gc" path="res://Potions/speed_potion.tres" id="5_g4rf7"]
+
+[resource]
+script = ExtResource("2_feylg")
+ITEM_POOL = Array[ExtResource("1_5x6wg")]([ExtResource("2_pirlo"), ExtResource("3_srds7"), ExtResource("4_ivcm7"), ExtResource("5_g4rf7")])
+metadata/_custom_type_script = "uid://by4ji3sx1olru"

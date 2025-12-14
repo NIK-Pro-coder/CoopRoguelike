@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://c8228xe1bneab"]
+
+[ext_resource type="Resource" uid="uid://d2id44gq3k22u" path="res://Accessories/Equalizer/equalizer.tres" id="1_wal75"]
+[ext_resource type="Script" uid="uid://ceiusvsj6txjt" path="res://Glyphs/Base Glyph/base_glyph.gd" id="2_sq56l"]
+[ext_resource type="Texture2D" uid="uid://2usy45qdg8su" path="res://Accessories/Equalizer/equalizer.png" id="3_8k01b"]
+[ext_resource type="Script" uid="uid://b0awyqeutl36c" path="res://Items/Base Item/base_item.gd" id="4_un52c"]
+
+[resource]
+script = ExtResource("4_un52c")
+NAME = "Equalizer"
+DESCRIPTION = "Deal double damage to enemies with more health than you"
+QUOTE = "The real communist approach"
+TEXTURE = ExtResource("3_8k01b")
+RARITY = 5
+IS_ACCESSORY = true
+ACCESSORY = ExtResource("1_wal75")
+metadata/_custom_type_script = "uid://b0awyqeutl36c"

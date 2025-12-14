@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b77a7fbaiyf7n"]
+
+[ext_resource type="Script" uid="uid://dpuqa7mf88frs" path="res://Components/Interaction Component/interaction.gd" id="1_tr8ha"]
+
+[node name="interaction" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_tr8ha")
+TOOLTIP = "Tooltip"

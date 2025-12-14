@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://i5y1titd4xrl"]
+
+[ext_resource type="Texture2D" uid="uid://sjdc1hunikb5" path="res://Weapons/Rusty Mace/worn_down_mace.png" id="1_4cy2f"]
+[ext_resource type="Script" uid="uid://baxalmgwbekvx" path="res://Weapons/Rusty Mace/rusty_mace.gd" id="2_4rjny"]
+
+[resource]
+script = ExtResource("2_4rjny")
+damage = 20
+combo_length = 3
+NAME = "Worn Down Mace"
+DESCRIPTION = "Is slower than the Worn Down Sword but has more damage and area control"
+QUOTE = "Uga booga, me do big damage, me happy"
+TEXTURE = ExtResource("1_4cy2f")
+EQUIPPABLE = true

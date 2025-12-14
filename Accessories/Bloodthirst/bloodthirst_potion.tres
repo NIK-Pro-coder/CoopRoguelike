@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Potion" load_steps=6 format=3 uid="uid://djoeqjombsmkx"]
+
+[ext_resource type="Script" uid="uid://o5cmmqyjxg7e" path="res://Stat Change/stat_change.gd" id="1_nwm2r"]
+[ext_resource type="Texture2D" uid="uid://fujprqadaioh" path="res://Accessories/Bloodthirst/bloodthirst_potion.png" id="2_nwm2r"]
+[ext_resource type="Script" uid="uid://025wicb2kaex" path="res://Potions/potion.gd" id="3_rieon"]
+
+[sub_resource type="Resource" id="Resource_nwm2r"]
+script = ExtResource("1_nwm2r")
+AFFECTED_STAT = 1
+CHANGE = 25.0
+metadata/_custom_type_script = "uid://o5cmmqyjxg7e"
+
+[sub_resource type="Resource" id="Resource_4gxok"]
+script = ExtResource("1_nwm2r")
+AFFECTED_STAT = 21
+CHANGE = 10.0
+metadata/_custom_type_script = "uid://o5cmmqyjxg7e"
+
+[resource]
+script = ExtResource("3_rieon")
+EFFECTS = Array[ExtResource("1_nwm2r")]([SubResource("Resource_nwm2r"), SubResource("Resource_4gxok")])
+EFFECT_ICON = ExtResource("2_nwm2r")
+metadata/_custom_type_script = "uid://025wicb2kaex"

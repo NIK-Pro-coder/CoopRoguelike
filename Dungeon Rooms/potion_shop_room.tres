@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DungeonRoom" load_steps=5 format=3 uid="uid://egrxs4sreluk"]
+
+[ext_resource type="Script" uid="uid://cinl0y2b5xi38" path="res://Room Features/room_feature.gd" id="1_xra5v"]
+[ext_resource type="Resource" uid="uid://d3qv3l4enc1fg" path="res://Room Features/Potion Shop/potion_shop.tres" id="2_xra5v"]
+[ext_resource type="Texture2D" uid="uid://tl3svvxk58o7" path="res://Dungeon Rooms/Sprites/potion_shop_room.png" id="3_xra5v"]
+[ext_resource type="Script" uid="uid://df4bs8fmdf2bu" path="res://Dungeon Rooms/dungeon_room.gd" id="4_h78qb"]
+
+[resource]
+script = ExtResource("4_h78qb")
+ROOM_ICON = ExtResource("3_xra5v")
+ROOM_NAME = "Potion Shop Room"
+ROOM_FEATURES = Array[ExtResource("1_xra5v")]([ExtResource("2_xra5v")])
+ROOM_WEIGHT = 15.0
+metadata/_custom_type_script = "uid://df4bs8fmdf2bu"

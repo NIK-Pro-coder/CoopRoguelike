@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c0tl0oy6vb3hg"]
+
+[ext_resource type="Script" uid="uid://dhfsthlbpux1i" path="res://Accessories/Crystal Core/crystal_core.gd" id="1_fm0xk"]
+[ext_resource type="Texture2D" uid="uid://c18nnn07n761h" path="res://Accessories/Crystal Core/crystal_core.png" id="1_se6k7"]
+
+[resource]
+script = ExtResource("1_fm0xk")
+NAME = "Crystal Core"
+DESC = "Gain 5 mana every hit you land"
+ICON = ExtResource("1_se6k7")

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dj85y8ur518hr"]
+
+[ext_resource type="Script" uid="uid://cc01chhecg1jl" path="res://Accessories/Rage Brew/rage_brew.gd" id="1_i8o53"]
+
+[resource]
+script = ExtResource("1_i8o53")
+PASSIVE_UPDATE_TIME = 0.1

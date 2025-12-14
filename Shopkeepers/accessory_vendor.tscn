@@ -1,0 +1,35 @@
+[gd_scene load_steps=10 format=3 uid="uid://bl0raxpigm1vv"]
+
+[ext_resource type="PackedScene" uid="uid://dfhp3h1cghq8" path="res://Shopkeepers/base_shopkeeper.tscn" id="1_qmqq4"]
+[ext_resource type="Resource" uid="uid://soqxctm30lva" path="res://Loot Table/accessory_loot_table.tres" id="2_mpuah"]
+[ext_resource type="Script" uid="uid://6a7hl6ey3wuo" path="res://Dialogs/Dialogs/dialog_box_res.gd" id="2_yos8k"]
+[ext_resource type="Script" uid="uid://c5ru625xkbymx" path="res://Dialogs/Dialogs/dialog_res.gd" id="3_mpuah"]
+
+[sub_resource type="Resource" id="Resource_kwqrr"]
+script = ExtResource("2_yos8k")
+TEXT = "Honestly I have no clue what to make this guy say"
+metadata/_custom_type_script = "uid://6a7hl6ey3wuo"
+
+[sub_resource type="Resource" id="Resource_o2jag"]
+script = ExtResource("2_yos8k")
+SPEAKER = 1
+TEXT = "Uhmm, who are you talking to exactly?"
+metadata/_custom_type_script = "uid://6a7hl6ey3wuo"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dc3ar"]
+load_path = "res://.godot/imported/player-idle.png-ea4300f27d9321630930a69c35ff93f8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ygx8"]
+atlas = SubResource("CompressedTexture2D_dc3ar")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="Resource" id="Resource_tp0ya"]
+script = ExtResource("3_mpuah")
+DIALOG_BOXES = Array[ExtResource("2_yos8k")]([SubResource("Resource_kwqrr"), SubResource("Resource_o2jag")])
+NPC_NAME = "Shopkeeper"
+NPC_ICON = SubResource("AtlasTexture_7ygx8")
+metadata/_custom_type_script = "uid://c5ru625xkbymx"
+
+[node name="accessory_vendor" instance=ExtResource("1_qmqq4")]
+LOOT_TABLE = ExtResource("2_mpuah")
+DIALOG = SubResource("Resource_tp0ya")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://yuebuvoyjngp"]
+
+[ext_resource type="Script" uid="uid://b36n3pqmd30dg" path="res://Items/Health Potion/health_potion.gd" id="1_lyhh3"]
+[ext_resource type="Script" uid="uid://ceiusvsj6txjt" path="res://Glyphs/Base Glyph/base_glyph.gd" id="1_tbmkt"]
+[ext_resource type="Texture2D" uid="uid://ctxfrbnf6auyl" path="res://Items/Health Potion/HealingPotion.png" id="2_2lqta"]
+
+[resource]
+script = ExtResource("1_lyhh3")
+NAME = "Health Potion"
+DESCRIPTION = "Restores 10 health when used"
+TEXTURE = ExtResource("2_2lqta")

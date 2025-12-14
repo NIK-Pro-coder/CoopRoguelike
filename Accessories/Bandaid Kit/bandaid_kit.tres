@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://csy4awgi12eep"]
+
+[ext_resource type="Texture2D" uid="uid://c6c1hwr3e4pic" path="res://Accessories/Bandaid Kit/bandaid_kit.png" id="1_em388"]
+[ext_resource type="Script" uid="uid://ka63f8455w7e" path="res://Accessories/Bandaid Kit/bandaid_kit.gd" id="1_vpg3d"]
+
+[resource]
+script = ExtResource("1_vpg3d")
+NAME = "Bandaid Kit"
+DESC = "Heal nearby players when you heal"
+ICON = ExtResource("1_em388")

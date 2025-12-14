@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bmdc5vyp5wufm"]
+
+[ext_resource type="Script" uid="uid://dwbktcoyfhjbs" path="res://Accessories/Flimsy Shield/flimsy_shield.gd" id="1_dd0gx"]
+[ext_resource type="Texture2D" uid="uid://dapv4n6bndbhu" path="res://Accessories/Flimsy Shield/flimsy_shield.png" id="1_r8bo4"]
+
+[resource]
+script = ExtResource("1_dd0gx")
+NAME = "Flimsy Shield"
+DESC = "Gain 25% max hp as shields at start of wave"
+ICON = ExtResource("1_r8bo4")

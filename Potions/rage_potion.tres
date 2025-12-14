@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Potion" load_steps=6 format=3 uid="uid://chhslhg6l8s11"]
+
+[ext_resource type="Script" uid="uid://o5cmmqyjxg7e" path="res://Stat Change/stat_change.gd" id="1_fgsa1"]
+[ext_resource type="Texture2D" uid="uid://tf3dp75p7dm2" path="res://Potions/Sprites/Buff Icons/rage_potion.png" id="2_6qiow"]
+[ext_resource type="Texture2D" uid="uid://chuv8da4triky" path="res://Potions/Sprites/Item Icons/rage_potion.png" id="3_6ku3x"]
+[ext_resource type="Script" uid="uid://025wicb2kaex" path="res://Potions/potion.gd" id="3_ds3vo"]
+
+[sub_resource type="Resource" id="Resource_3qnd5"]
+script = ExtResource("1_fgsa1")
+AFFECTED_STAT = 1
+CHANGE = 50.0
+metadata/_custom_type_script = "uid://o5cmmqyjxg7e"
+
+[resource]
+script = ExtResource("3_ds3vo")
+DURATION = 60.0
+EFFECTS = Array[ExtResource("1_fgsa1")]([SubResource("Resource_3qnd5")])
+EFFECT_ICON = ExtResource("2_6qiow")
+NAME = "Rage Potion"
+DESCRIPTION = "Increase damage by 50% for 1 minute"
+QUOTE = "Your rage fills the air!"
+TEXTURE = ExtResource("3_6ku3x")
+metadata/_custom_type_script = "uid://025wicb2kaex"

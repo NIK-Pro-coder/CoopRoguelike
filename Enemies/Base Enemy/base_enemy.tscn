@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwlby5wp01cdl"]
+
+[ext_resource type="Script" uid="uid://cjgy0b7k8jo6q" path="res://Enemies/Base Enemy/base_enemy.gd" id="1_qyrfp"]
+[ext_resource type="PackedScene" uid="uid://ntpu8pjibyrw" path="res://Components/Health Component/health_coponent.tscn" id="2_rauw3"]
+[ext_resource type="Theme" uid="uid://ltg03tu30kkp" path="res://UI.tres" id="3_vixk2"]
+
+[sub_resource type="Curve" id="Curve_vixk2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_inatf"]
+curve = SubResource("Curve_vixk2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5mu5h"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(45, 45, 0)
+angle_min = -45.0
+angle_max = 45.0
+spread = 180.0
+initial_velocity_max = 25.0
+gravity = Vector3(0, 0, 0)
+scale_min = 6.0
+scale_max = 9.0
+scale_curve = SubResource("CurveTexture_inatf")
+color = Color(1, 1, 1, 0.5)
+
+[node name="base_enemy" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 5
+motion_mode = 1
+script = ExtResource("1_qyrfp")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="healthCoponent" parent="." node_paths=PackedStringArray("DISPLAY_BAR") instance=ExtResource("2_rauw3")]
+position = Vector2(312, 128)
+DISPLAY_BAR = NodePath("../healthBar")
+
+[node name="healthBar" type="ProgressBar" parent="."]
+offset_right = 4.0
+offset_bottom = 27.0
+theme = ExtResource("3_vixk2")
+show_percentage = false
+
+[node name="recalculateTargetTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="attackCooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="footsteps" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+z_index = -1
+emitting = false
+amount = 50
+fixed_fps = 0
+draw_order = 0
+process_material = SubResource("ParticleProcessMaterial_5mu5h")
+
+[connection signal="death" from="healthCoponent" to="." method="_on_health_coponent_death"]
+[connection signal="timeout" from="recalculateTargetTimer" to="." method="_on_recalculate_target_timer_timeout"]

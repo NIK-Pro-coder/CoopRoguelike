@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DungeonRoom" load_steps=5 format=3 uid="uid://ca0es8e7ij5jf"]
+
+[ext_resource type="Script" uid="uid://cinl0y2b5xi38" path="res://Room Features/room_feature.gd" id="1_2qn5g"]
+[ext_resource type="Resource" uid="uid://dnx7k6qu01rm8" path="res://Room Features/Accessory Shop/accessory_shop.tres" id="2_2qn5g"]
+[ext_resource type="Texture2D" uid="uid://blchbvf3rdhn3" path="res://Dungeon Rooms/Sprites/accessory_shop_room.png" id="3_2qn5g"]
+[ext_resource type="Script" uid="uid://df4bs8fmdf2bu" path="res://Dungeon Rooms/dungeon_room.gd" id="4_rj2n5"]
+
+[resource]
+script = ExtResource("4_rj2n5")
+ROOM_ICON = ExtResource("3_2qn5g")
+ROOM_NAME = "Accessory Shop Room"
+ROOM_FEATURES = Array[ExtResource("1_2qn5g")]([ExtResource("2_2qn5g")])
+ROOM_WEIGHT = 15.0
+metadata/_custom_type_script = "uid://df4bs8fmdf2bu"

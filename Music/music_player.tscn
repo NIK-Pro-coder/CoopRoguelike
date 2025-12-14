@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpttl5dtj0dih"]
+
+[ext_resource type="Script" uid="uid://cm8u7l8xraix0" path="res://Music/music_player.gd" id="1_o67y4"]
+[ext_resource type="AudioStream" uid="uid://cxg8h5i7nacjo" path="res://Music/coop_roguelike_theme.wav" id="2_gvq4t"]
+
+[sub_resource type="Animation" id="Animation_kehtn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("track2:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("track1:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_gvq4t"]
+resource_name = "fade_in_new"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("track2:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-80.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("track1:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xahgd"]
+_data = {
+&"RESET": SubResource("Animation_kehtn"),
+&"fade_in_new": SubResource("Animation_gvq4t")
+}
+
+[node name="music_player" type="Node"]
+process_mode = 3
+script = ExtResource("1_o67y4")
+
+[node name="track1" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_gvq4t")
+autoplay = true
+
+[node name="track2" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+
+[node name="anim" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_xahgd")
+}
+
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]

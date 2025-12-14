@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt6itolq5k3oy"]
+
+[ext_resource type="Script" uid="uid://dl5jbsajcsshr" path="res://Damage Num/damage_num.gd" id="1_sly0t"]
+[ext_resource type="Theme" uid="uid://ltg03tu30kkp" path="res://UI.tres" id="1_x7dgo"]
+
+[node name="damageNum" type="Node2D"]
+script = ExtResource("1_sly0t")
+
+[node name="textNum" type="RichTextLabel" parent="."]
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+theme = ExtResource("1_x7dgo")
+theme_override_colors/default_color = Color(1, 0.566667, 0, 0.662745)
+theme_override_font_sizes/normal_font_size = 32
+text = "10"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

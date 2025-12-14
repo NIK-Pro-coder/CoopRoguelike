@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="LootTable" load_steps=8 format=3 uid="uid://s8rnc8k5liy3"]
+
+[ext_resource type="Script" uid="uid://b0awyqeutl36c" path="res://Items/Base Item/base_item.gd" id="1_bjbew"]
+[ext_resource type="Resource" uid="uid://dufnv5f7ke435" path="res://Weapons/Recurve Bow/recurve_bow.tres" id="2_4jaol"]
+[ext_resource type="Script" uid="uid://by4ji3sx1olru" path="res://Loot Table/loot_table.gd" id="2_urorh"]
+[ext_resource type="Resource" uid="uid://wiu4fxj0jokx" path="res://Weapons/Rusty Dagger/worn_down_dagger.tres" id="3_4ltyx"]
+[ext_resource type="Resource" uid="uid://i5y1titd4xrl" path="res://Weapons/Rusty Mace/worn_down_mace.tres" id="4_e218s"]
+[ext_resource type="Resource" uid="uid://2dxp0qtgimoy" path="res://Weapons/Rusty Spear/worn_down_spear.tres" id="5_we3rw"]
+[ext_resource type="Resource" uid="uid://oxkpa0udjw36" path="res://Weapons/Rusty Sword/worn_down_sword.tres" id="6_s5m8l"]
+
+[resource]
+script = ExtResource("2_urorh")
+ITEM_POOL = Array[ExtResource("1_bjbew")]([ExtResource("2_4jaol"), ExtResource("3_4ltyx"), ExtResource("4_e218s"), ExtResource("5_we3rw"), ExtResource("6_s5m8l")])
+metadata/_custom_type_script = "uid://by4ji3sx1olru"

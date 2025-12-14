@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://btqdk7mouutf6"]
+
+[ext_resource type="Script" uid="uid://bhjwk2rpmh6kv" path="res://Telegraphs/generic_telegraph.gd" id="1_poll6"]
+
+[node name="generic_telegraph" type="Node2D" groups=["telegraph"]]
+script = ExtResource("1_poll6")
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

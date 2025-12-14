@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dnx7k6qu01rm8"]
+
+[ext_resource type="Script" uid="uid://dbx6efmv2keku" path="res://Room Features/Accessory Shop/accessory_shop.gd" id="1_8bljw"]
+
+[resource]
+script = ExtResource("1_8bljw")
+metadata/_custom_type_script = "uid://cinl0y2b5xi38"

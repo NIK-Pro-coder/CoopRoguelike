@@ -1,0 +1,158 @@
+[gd_scene load_steps=10 format=3 uid="uid://dl8u6qokqmbyx"]
+
+[ext_resource type="Script" uid="uid://dmsq6b3n3d3ko" path="res://Chest/chest.gd" id="1_urnrk"]
+[ext_resource type="PackedScene" uid="uid://b77a7fbaiyf7n" path="res://Components/Interaction Component/interaction.tscn" id="2_gj4rf"]
+[ext_resource type="Shader" uid="uid://b8n5ola03mmvj" path="res://Chest/blur.gdshader" id="7_8o3n0"]
+[ext_resource type="Theme" uid="uid://ltg03tu30kkp" path="res://UI.tres" id="7_g4xu0"]
+[ext_resource type="Texture2D" uid="uid://bi81cb5eob3s3" path="res://Chest/chest.png" id="12_0w3fq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbo4i"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07ty7"]
+size = Vector2(128, 128)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g4xu0"]
+shader = ExtResource("7_8o3n0")
+shader_parameter/blur_size = Vector2(2, 2)
+shader_parameter/inner_radius_fraction = 0.35
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8o3n0"]
+
+[node name="chest" type="StaticBody2D"]
+process_mode = 3
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_urnrk")
+
+[node name="tooltip" type="RichTextLabel" parent="."]
+z_index = 500
+offset_left = -88.0
+offset_top = -88.0
+offset_right = 88.0
+offset_bottom = -32.0
+theme = ExtResource("7_g4xu0")
+theme_override_font_sizes/normal_font_size = 32
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vbo4i")
+
+[node name="interaction" parent="." node_paths=PackedStringArray("DISPLAY_TOOLTIP") instance=ExtResource("2_gj4rf")]
+process_mode = 1
+TOOLTIP = "Open"
+DISPLAY_TOOLTIP = NodePath("../tooltip")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction"]
+shape = SubResource("RectangleShape2D_07ty7")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("12_0w3fq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -156.0
+offset_top = -88.0
+offset_right = 157.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_g4xu0")
+color = Color(0, 0, 0, 0.75)
+
+[node name="selector" type="ColorRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = 1.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_g4xu0")
+
+[node name="strip" type="HBoxContainer" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -328.0
+offset_top = -100.0
+offset_right = 328.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_g4xu0")
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_g4xu0")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -72.0
+offset_right = 128.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_g4xu0")
+texture = SubResource("PlaceholderTexture2D_8o3n0")
+
+[node name="claim" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = 100.0
+offset_right = 128.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_g4xu0")
+theme_override_font_sizes/normal_font_size = 24
+text = "(A) Claim"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_g4xu0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("7_g4xu0")
+
+[node name="rewardsLeft" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("7_g4xu0")
+theme_override_font_sizes/normal_font_size = 32
+text = "5 rewards left"
+fit_content = true
+
+[node name="rewardsGot" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("7_g4xu0")
+
+[node name="waitgamble" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="interacted" from="interaction" to="." method="_on_interaction_interacted"]

@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://cajp6ae7bbwgw"]
+
+[ext_resource type="Texture2D" uid="uid://cjraxmvgw4mpd" path="res://icon.svg" id="1_bqtfr"]
+[ext_resource type="Script" uid="uid://c8kmowhhftah2" path="res://Revive Totem/revive_totem.gd" id="1_n8f13"]
+[ext_resource type="Shader" uid="uid://2wa4lpmnwvn0" path="res://Player/player.gdshader" id="2_8kpiw"]
+[ext_resource type="Shader" uid="uid://dvcclsp56dp7o" path="res://Revive Totem/revive_totem.gdshader" id="4_s88le"]
+[ext_resource type="Theme" uid="uid://ltg03tu30kkp" path="res://UI.tres" id="4_xgfqk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s88le"]
+radius = 208.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xgfqk"]
+shader = ExtResource("2_8kpiw")
+shader_parameter/hue_shift = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wpk2w"]
+shader = ExtResource("4_s88le")
+shader_parameter/revive_progress = 1.0
+shader_parameter/hue_shift = 0.0
+
+[node name="reviveTotem" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_n8f13")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_s88le")
+debug_color = Color(0, 0.5, 0, 0.42)
+
+[node name="Icon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_xgfqk")
+scale = Vector2(0.5, 1)
+texture = ExtResource("1_bqtfr")
+
+[node name="progress" type="TextureProgressBar" parent="."]
+unique_name_in_owner = true
+z_index = -100
+material = SubResource("ShaderMaterial_wpk2w")
+offset_left = -256.0
+offset_top = -256.0
+offset_right = -128.0
+offset_bottom = -128.0
+scale = Vector2(4, 4)
+theme = ExtResource("4_xgfqk")
+value = 100.0
+fill_mode = 4
+texture_progress = ExtResource("1_bqtfr")

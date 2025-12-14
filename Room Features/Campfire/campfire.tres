@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://8bkmqld6xpvu"]
+
+[ext_resource type="Script" uid="uid://ddr4ly4rpidk4" path="res://Room Features/Campfire/campfire.gd" id="1_ktidj"]
+
+[resource]
+script = ExtResource("1_ktidj")
+metadata/_custom_type_script = "uid://cinl0y2b5xi38"

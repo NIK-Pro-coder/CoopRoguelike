@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://c4jl5ufyim3qp"]
+
+[ext_resource type="Resource" uid="uid://c0tl0oy6vb3hg" path="res://Accessories/Crystal Core/crystal_core.tres" id="1_umpv8"]
+[ext_resource type="Script" uid="uid://ceiusvsj6txjt" path="res://Glyphs/Base Glyph/base_glyph.gd" id="2_idu8y"]
+[ext_resource type="Texture2D" uid="uid://c18nnn07n761h" path="res://Accessories/Crystal Core/crystal_core.png" id="3_umpv8"]
+[ext_resource type="Script" uid="uid://b0awyqeutl36c" path="res://Items/Base Item/base_item.gd" id="4_cdef8"]
+
+[resource]
+script = ExtResource("4_cdef8")
+NAME = "Crystal Core"
+DESCRIPTION = "Gain 5 mana every hit you land"
+QUOTE = "Sadly you cannot use this to super dash"
+TEXTURE = ExtResource("3_umpv8")
+RARITY = 5
+IS_ACCESSORY = true
+ACCESSORY = ExtResource("1_umpv8")
+metadata/_custom_type_script = "uid://b0awyqeutl36c"

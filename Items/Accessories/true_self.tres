@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://c83yg0ap6n8oy"]
+
+[ext_resource type="Resource" uid="uid://bqi3lh1edvw41" path="res://Accessories/True Self/true_self.tres" id="1_cj8yr"]
+[ext_resource type="Script" uid="uid://b0awyqeutl36c" path="res://Items/Base Item/base_item.gd" id="4_a3oqt"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ry7bc"]
+size = Vector2(32, 32)
+
+[resource]
+script = ExtResource("4_a3oqt")
+NAME = "True Self"
+DESCRIPTION = "Every 30 damage you take your True Form lashes out towards nearby enemies"
+QUOTE = "Be one with yourself"
+TEXTURE = SubResource("PlaceholderTexture2D_ry7bc")
+RARITY = 9
+IS_ACCESSORY = true
+ACCESSORY = ExtResource("1_cj8yr")
+metadata/_custom_type_script = "uid://b0awyqeutl36c"

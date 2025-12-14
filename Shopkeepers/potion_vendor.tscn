@@ -1,0 +1,56 @@
+[gd_scene load_steps=14 format=3 uid="uid://cg46agihb6l7b"]
+
+[ext_resource type="PackedScene" uid="uid://dfhp3h1cghq8" path="res://Shopkeepers/base_shopkeeper.tscn" id="1_vcxw3"]
+[ext_resource type="Resource" uid="uid://dhktpnvkjear4" path="res://Loot Table/potion_loot_table.tres" id="2_17jsm"]
+[ext_resource type="Script" uid="uid://6a7hl6ey3wuo" path="res://Dialogs/Dialogs/dialog_box_res.gd" id="2_gixtl"]
+[ext_resource type="Script" uid="uid://c5ru625xkbymx" path="res://Dialogs/Dialogs/dialog_res.gd" id="3_17jsm"]
+
+[sub_resource type="Resource" id="Resource_c0y5a"]
+script = ExtResource("2_gixtl")
+TEXT = "Hello explorer! Care to take a look at my wares?"
+metadata/_custom_type_script = "uid://6a7hl6ey3wuo"
+
+[sub_resource type="Resource" id="Resource_2exwr"]
+script = ExtResource("2_gixtl")
+SPEAKER = 1
+TEXT = "Sure thing! But who are you selling these potions to? There's literally nobody here."
+metadata/_custom_type_script = "uid://6a7hl6ey3wuo"
+
+[sub_resource type="Resource" id="Resource_1ivwy"]
+script = ExtResource("2_gixtl")
+TEXT = "Well, you see, I sell these potions to..."
+metadata/_custom_type_script = "uid://6a7hl6ey3wuo"
+
+[sub_resource type="Resource" id="Resource_jlvio"]
+script = ExtResource("2_gixtl")
+TEXT = "Uhmmm..."
+metadata/_custom_type_script = "uid://6a7hl6ey3wuo"
+
+[sub_resource type="Resource" id="Resource_np1p5"]
+script = ExtResource("2_gixtl")
+TEXT = "Listen, it's not important who I sell my potions to, do you want them or not?"
+metadata/_custom_type_script = "uid://6a7hl6ey3wuo"
+
+[sub_resource type="Resource" id="Resource_orild"]
+script = ExtResource("2_gixtl")
+SPEAKER = 1
+TEXT = "Sure I want them, I'll go take a look"
+metadata/_custom_type_script = "uid://6a7hl6ey3wuo"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nankl"]
+load_path = "res://.godot/imported/player-idle.png-ea4300f27d9321630930a69c35ff93f8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1305u"]
+atlas = SubResource("CompressedTexture2D_nankl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="Resource" id="Resource_7wqk1"]
+script = ExtResource("3_17jsm")
+DIALOG_BOXES = Array[ExtResource("2_gixtl")]([SubResource("Resource_c0y5a"), SubResource("Resource_2exwr"), SubResource("Resource_1ivwy"), SubResource("Resource_jlvio"), SubResource("Resource_np1p5"), SubResource("Resource_orild")])
+NPC_NAME = "Shopkeeper"
+NPC_ICON = SubResource("AtlasTexture_1305u")
+metadata/_custom_type_script = "uid://c5ru625xkbymx"
+
+[node name="potion_vendor" instance=ExtResource("1_vcxw3")]
+LOOT_TABLE = ExtResource("2_17jsm")
+DIALOG = SubResource("Resource_7wqk1")

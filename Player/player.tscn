@@ -1,0 +1,283 @@
+[gd_scene load_steps=32 format=3 uid="uid://byg2xw6qqapmn"]
+
+[ext_resource type="Script" uid="uid://3fur6p8qx5j6" path="res://Player/player.gd" id="1_4ntmi"]
+[ext_resource type="Shader" uid="uid://2wa4lpmnwvn0" path="res://Player/player.gdshader" id="2_vtle1"]
+[ext_resource type="Texture2D" uid="uid://cq5smrion4uoc" path="res://Player/player-idle.png" id="3_fhl08"]
+[ext_resource type="Theme" uid="uid://ltg03tu30kkp" path="res://UI.tres" id="4_gwnis"]
+[ext_resource type="PackedScene" uid="uid://ki8fyj7lxnsn" path="res://Spells/Zap Spell/zap_spell.tscn" id="4_k53q1"]
+[ext_resource type="Texture2D" uid="uid://bchx42pscaqlh" path="res://Player/player-walk.png" id="4_vtle1"]
+[ext_resource type="PackedScene" uid="uid://ntpu8pjibyrw" path="res://Components/Health Component/health_coponent.tscn" id="6_fhl08"]
+[ext_resource type="PackedScene" uid="uid://castrtcka8x82" path="res://Components/Effect Component/effect_component.tscn" id="8_od3ui"]
+[ext_resource type="Shader" uid="uid://c31pljybbb3lh" path="res://Player/matrix_display.gdshader" id="9_00tjw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ntmi"]
+size = Vector2(56, 104)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_od3ui"]
+shader = ExtResource("2_vtle1")
+shader_parameter/hue_shift = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtle1"]
+atlas = ExtResource("3_fhl08")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_od3ui"]
+atlas = ExtResource("3_fhl08")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00tjw"]
+atlas = ExtResource("3_fhl08")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3vf3"]
+atlas = ExtResource("3_fhl08")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apopc"]
+atlas = ExtResource("4_vtle1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5htga"]
+atlas = ExtResource("4_vtle1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5o4e"]
+atlas = ExtResource("4_vtle1")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gu6f8"]
+atlas = ExtResource("4_vtle1")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkpta"]
+atlas = ExtResource("4_vtle1")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfmf2"]
+atlas = ExtResource("4_vtle1")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_apopc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtle1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_od3ui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00tjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3vf3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apopc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5htga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5o4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gu6f8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkpta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfmf2")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
+}]
+
+[sub_resource type="Animation" id="Animation_vtle1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_od3ui"]
+resource_name = "dash_ready"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fhl08"]
+resource_name = "potion_ready"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_00tjw"]
+resource_name = "spell_ready"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_od3ui"]
+_data = {
+&"RESET": SubResource("Animation_vtle1"),
+&"dash_ready": SubResource("Animation_od3ui"),
+&"potion_ready": SubResource("Animation_fhl08"),
+&"spell_ready": SubResource("Animation_00tjw")
+}
+
+[sub_resource type="Curve" id="Curve_fhl08"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_fhl08"]
+curve = SubResource("Curve_fhl08")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vtle1"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, 52.76, 0)
+emission_shape = 3
+emission_box_extents = Vector3(21.135, 12.125, 0)
+angle_min = -45.0
+angle_max = 45.0
+spread = 180.0
+initial_velocity_max = 25.0
+gravity = Vector3(0, 0, 0)
+scale_min = 6.0
+scale_max = 9.0
+scale_curve = SubResource("CurveTexture_fhl08")
+color = Color(1, 1, 1, 0.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x3vf3"]
+shader = ExtResource("9_00tjw")
+shader_parameter/shield_hp = 0.0
+shader_parameter/shield_ready = false
+
+[node name="player" type="CharacterBody2D" groups=["ally", "player"]]
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("1_4ntmi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 4)
+shape = SubResource("RectangleShape2D_4ntmi")
+
+[node name="Icon" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_od3ui")
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_apopc")
+animation = &"walk"
+autoplay = "idle"
+
+[node name="zap_spell" parent="." instance=ExtResource("4_k53q1")]
+position = Vector2(-168, 32)
+
+[node name="dashCooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="dashDuration" type="Timer" parent="."]
+one_shot = true
+
+[node name="nametag" type="RichTextLabel" parent="."]
+visible = false
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = -64.0
+theme = ExtResource("4_gwnis")
+theme_override_font_sizes/normal_font_size = 42
+text = "Player -1"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="healthBar" type="ProgressBar" parent="."]
+offset_left = -64.0
+offset_top = 72.0
+offset_right = 64.0
+offset_bottom = 99.0
+theme = ExtResource("4_gwnis")
+show_percentage = false
+
+[node name="healthCoponent" parent="." node_paths=PackedStringArray("DISPLAY_BAR") instance=ExtResource("6_fhl08")]
+position = Vector2(-176, 56)
+DISPLAY_BAR = NodePath("../healthBar")
+
+[node name="healPotionCooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_od3ui")
+}
+
+[node name="footsteps" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+z_index = -1
+amount = 10
+fixed_fps = 0
+draw_order = 0
+process_material = SubResource("ParticleProcessMaterial_vtle1")
+
+[node name="effectComponent" parent="." instance=ExtResource("8_od3ui")]
+unique_name_in_owner = true
+
+[node name="matrix_display" type="ColorRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_x3vf3")
+offset_left = -112.0
+offset_top = -112.0
+offset_right = 112.0
+offset_bottom = 112.0
+
+[connection signal="timeout" from="dashCooldown" to="." method="_on_dash_cooldown_timeout"]
+[connection signal="timeout" from="dashDuration" to="." method="_on_dash_duration_timeout"]
+[connection signal="damaged" from="healthCoponent" to="." method="_on_health_coponent_damaged"]
+[connection signal="death" from="healthCoponent" to="." method="_on_health_coponent_death"]
+[connection signal="healed" from="healthCoponent" to="." method="_on_health_coponent_healed"]
+[connection signal="timeout" from="healPotionCooldown" to="." method="_on_heal_potion_cooldown_timeout"]
+[connection signal="effects_changed" from="effectComponent" to="." method="_on_effect_component_effects_changed"]

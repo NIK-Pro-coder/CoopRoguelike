@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bbciuy2xj541b"]
+
+[ext_resource type="Script" uid="uid://jwueckl0x8i3" path="res://Accessories/Combo Gloves/combo_gloves.gd" id="1_kjm6c"]
+
+[resource]
+script = ExtResource("1_kjm6c")

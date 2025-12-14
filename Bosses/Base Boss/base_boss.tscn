@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://lqjqhc38sygm"]
+
+[ext_resource type="Script" uid="uid://b2pe4t3r2si68" path="res://Bosses/Base Boss/base_boss.gd" id="1_5nguh"]
+[ext_resource type="PackedScene" uid="uid://ntpu8pjibyrw" path="res://Components/Health Component/health_coponent.tscn" id="2_sycqg"]
+
+[node name="base_boss" type="CharacterBody2D" groups=["boss", "enemy"]]
+collision_layer = 4
+script = ExtResource("1_5nguh")
+
+[node name="icon" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+
+[node name="collider" type="CollisionShape2D" parent="."]
+
+[node name="healthCoponent" parent="." instance=ExtResource("2_sycqg")]
+unique_name_in_owner = true
+
+[node name="stun_timer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true

@@ -1,0 +1,298 @@
+[gd_scene load_steps=17 format=3 uid="uid://ok0bd3q6152y"]
+
+[ext_resource type="Theme" uid="uid://ltg03tu30kkp" path="res://UI.tres" id="1_8p382"]
+[ext_resource type="Script" uid="uid://csg6hrb0mndk3" path="res://HUD/hud_template.gd" id="1_8vw5v"]
+[ext_resource type="Shader" uid="uid://2wa4lpmnwvn0" path="res://Player/player.gdshader" id="3_5kmti"]
+[ext_resource type="Texture2D" uid="uid://cq5smrion4uoc" path="res://Player/player-idle.png" id="4_hrnhk"]
+[ext_resource type="Texture2D" uid="uid://bqym4t22mfcmu" path="res://HUD/HUDDash.png" id="5_hrnhk"]
+[ext_resource type="Texture2D" uid="uid://bu566psf5me8b" path="res://HUD/HUDPotion.png" id="6_lwsra"]
+[ext_resource type="Texture2D" uid="uid://emv5bnhyeyd3" path="res://HUD/HUDSpell.png" id="7_2fd85"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0srh5"]
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0srh5"]
+shader = ExtResource("3_5kmti")
+shader_parameter/hue_shift = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwsra"]
+atlas = ExtResource("4_hrnhk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8p382"]
+bg_color = Color(1, 0.33333334, 0.34901962, 0.5019608)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5kmti"]
+bg_color = Color(0.51, 0.545, 1, 0.5)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrnhk"]
+bg_color = Color(0, 0, 0, 0.5)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwsra"]
+bg_color = Color(1, 0.24780053, 0.25524214, 0.75000006)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_woxb8"]
+bg_color = Color(0.78, 0.754, 0, 0.7490196)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fd85"]
+bg_color = Color(0, 0.64705884, 0.70980394, 0.7490196)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="hudTemplate" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_8p382")
+script = ExtResource("1_8vw5v")
+
+[node name="bg" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 216.0
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8p382")
+theme_override_styles/panel = SubResource("StyleBoxFlat_0srh5")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("1_8p382")
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_8p382")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_8p382")
+
+[node name="playerImage" type="TextureRect" parent="VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_0srh5")
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("1_8p382")
+texture = SubResource("AtlasTexture_lwsra")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_8p382")
+
+[node name="playerName" type="RichTextLabel" parent="VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_8p382")
+theme_override_font_sizes/normal_font_size = 13
+text = "Player 1"
+fit_content = true
+
+[node name="healthbar" type="ProgressBar" parent="VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 19)
+layout_mode = 2
+theme = ExtResource("1_8p382")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/fill = SubResource("StyleBoxFlat_8p382")
+value = 50.0
+show_percentage = false
+
+[node name="healthText" type="RichTextLabel" parent="VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/healthbar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -8.5
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8p382")
+theme_override_font_sizes/normal_font_size = 12
+text = "jhjdklha"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="manabar" type="ProgressBar" parent="VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 19)
+layout_mode = 2
+theme = ExtResource("1_8p382")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/fill = SubResource("StyleBoxFlat_5kmti")
+value = 50.0
+show_percentage = false
+
+[node name="manaText" type="RichTextLabel" parent="VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/manabar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -8.5
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8p382")
+theme_override_font_sizes/normal_font_size = 12
+text = "afgdfghfdhha"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_8p382")
+
+[node name="dashControl" type="Control" parent="VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("1_8p382")
+
+[node name="dash" type="TextureProgressBar" parent="VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/dashControl"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 96.0
+scale = Vector2(0.665, 0.665)
+theme = ExtResource("1_8p382")
+value = 50.0
+fill_mode = 3
+texture_under = ExtResource("5_hrnhk")
+texture_progress = ExtResource("5_hrnhk")
+tint_under = Color(1, 1, 1, 0.25098)
+
+[node name="potionControl" type="Control" parent="VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("1_8p382")
+
+[node name="potion" type="TextureProgressBar" parent="VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/potionControl"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 96.0
+scale = Vector2(0.665, 0.665)
+theme = ExtResource("1_8p382")
+value = 50.0
+fill_mode = 3
+texture_under = ExtResource("6_lwsra")
+texture_progress = ExtResource("6_lwsra")
+tint_under = Color(1, 1, 1, 0.25)
+
+[node name="potionAmt" type="RichTextLabel" parent="VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/potionControl/potion"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("1_8p382")
+theme_override_font_sizes/normal_font_size = 32
+text = "1"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="spellControl" type="Control" parent="VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("1_8p382")
+
+[node name="spell" type="TextureProgressBar" parent="VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/spellControl"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 96.0
+scale = Vector2(0.665, 0.665)
+theme = ExtResource("1_8p382")
+value = 50.0
+fill_mode = 3
+texture_under = ExtResource("7_2fd85")
+texture_progress = ExtResource("7_2fd85")
+tint_under = Color(1, 1, 1, 0.25)
+
+[node name="effects" type="GridContainer" parent="VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 14
+theme_override_constants/v_separation = 14
+columns = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="rage_bar" type="ProgressBar" parent="VBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_hrnhk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lwsra")
+value = 50.0
+show_percentage = false
+
+[node name="honey_bar" type="ProgressBar" parent="VBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_hrnhk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_woxb8")
+value = 50.0
+show_percentage = false
+
+[node name="shield_bar" type="ProgressBar" parent="VBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_hrnhk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2fd85")
+value = 50.0
+show_percentage = false

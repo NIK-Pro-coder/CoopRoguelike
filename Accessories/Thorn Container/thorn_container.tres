@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bh5y8cdkm6qxj"]
+
+[ext_resource type="Script" uid="uid://cke5hmk5302ip" path="res://Accessories/Thorn Container/thorn_container.gd" id="1_m55ra"]
+[ext_resource type="Texture2D" uid="uid://beng3gqom8qfb" path="res://Accessories/Thorn Container/thorn_container.png" id="1_olhvh"]
+
+[resource]
+script = ExtResource("1_m55ra")
+NAME = "Thorn Container"
+DESC = "Release damaging thorns when you heal, damage is half of hp healed"
+ICON = ExtResource("1_olhvh")

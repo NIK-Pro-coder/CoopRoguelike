@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d2id44gq3k22u"]
+
+[ext_resource type="Script" uid="uid://c1ydk5wifbdqh" path="res://Accessories/Equalizer/equalizer.gd" id="1_wrok2"]
+
+[resource]
+script = ExtResource("1_wrok2")

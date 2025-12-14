@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://dc1alhprnmpth"]
+
+[ext_resource type="Resource" uid="uid://b5hviqjdsgr30" path="res://Accessories/Furious Cocktail/furious_cocktail.tres" id="1_l6oj2"]
+[ext_resource type="Script" uid="uid://b0awyqeutl36c" path="res://Items/Base Item/base_item.gd" id="4_l6oe4"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_loysf"]
+size = Vector2(32, 32)
+
+[resource]
+script = ExtResource("4_l6oe4")
+NAME = "Furious Cocktail"
+DESCRIPTION = "Gives 5 random debuff on wave start, then gives 5 random buffs"
+QUOTE = "How did we get here?"
+TEXTURE = SubResource("PlaceholderTexture2D_loysf")
+RARITY = 7
+IS_ACCESSORY = true
+ACCESSORY = ExtResource("1_l6oj2")
+metadata/_custom_type_script = "uid://b0awyqeutl36c"

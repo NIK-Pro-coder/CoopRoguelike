@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Potion" load_steps=6 format=3 uid="uid://dcc1sgal1l5gc"]
+
+[ext_resource type="Script" uid="uid://o5cmmqyjxg7e" path="res://Stat Change/stat_change.gd" id="1_3qnd5"]
+[ext_resource type="Texture2D" uid="uid://2hd7uwc788vv" path="res://Potions/Sprites/Buff Icons/speed_potion.png" id="2_hlo0o"]
+[ext_resource type="Script" uid="uid://025wicb2kaex" path="res://Potions/potion.gd" id="3_b3il5"]
+[ext_resource type="Texture2D" uid="uid://bt6ro4g7gr270" path="res://Potions/Sprites/Item Icons/speed_potion.png" id="3_bmix1"]
+
+[sub_resource type="Resource" id="Resource_3qnd5"]
+script = ExtResource("1_3qnd5")
+AFFECTED_STAT = 21
+CHANGE = 50.0
+metadata/_custom_type_script = "uid://o5cmmqyjxg7e"
+
+[resource]
+script = ExtResource("3_b3il5")
+DURATION = 60.0
+EFFECTS = Array[ExtResource("1_3qnd5")]([SubResource("Resource_3qnd5")])
+EFFECT_ICON = ExtResource("2_hlo0o")
+NAME = "Speed Potion"
+DESCRIPTION = "Increase speed by 50% for 1 minute"
+QUOTE = "Zoom zoom zoom"
+TEXTURE = ExtResource("3_bmix1")
+metadata/_custom_type_script = "uid://025wicb2kaex"

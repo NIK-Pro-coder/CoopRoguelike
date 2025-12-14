@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://cc0nc0ocyiqin"]
+
+[ext_resource type="Theme" uid="uid://ltg03tu30kkp" path="res://UI.tres" id="1_fs7gj"]
+[ext_resource type="Script" uid="uid://da1g7d3ftkk0m" path="res://Inventory/inv_slot.gd" id="1_l0omc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0omc"]
+bg_color = Color(0, 0, 0, 0.5)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="invSlot" type="Panel"]
+custom_minimum_size = Vector2(96, 96)
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_fs7gj")
+theme_override_styles/panel = SubResource("StyleBoxFlat_l0omc")
+script = ExtResource("1_l0omc")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_fs7gj")
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_fs7gj")

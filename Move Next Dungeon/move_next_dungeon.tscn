@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcdmu3ngef04k"]
+
+[ext_resource type="PackedScene" uid="uid://b77a7fbaiyf7n" path="res://Components/Interaction Component/interaction.tscn" id="1_1yao1"]
+[ext_resource type="Texture2D" uid="uid://cjraxmvgw4mpd" path="res://icon.svg" id="2_xni7h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xni7h"]
+size = Vector2(112, 192)
+
+[node name="move_next_dungeon" node_paths=PackedStringArray("DISPLAY_TOOLTIP") instance=ExtResource("1_1yao1")]
+scale = Vector2(2, 2)
+TOOLTIP = "Summon Boss"
+DISPLAY_TOOLTIP = NodePath("RichTextLabel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_xni7h")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." index="1"]
+offset_left = -128.0
+offset_top = -144.0
+offset_right = 128.0
+offset_bottom = -80.0
+horizontal_alignment = 1
+
+[node name="Icon" type="Sprite2D" parent="." index="2"]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(0.375, 1)
+texture = ExtResource("2_xni7h")

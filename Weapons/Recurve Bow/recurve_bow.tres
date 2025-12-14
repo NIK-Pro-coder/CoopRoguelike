@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dufnv5f7ke435"]
+
+[ext_resource type="Script" uid="uid://cbm4bo668a4g5" path="res://Weapons/Recurve Bow/recurve_bow.gd" id="1_3i5hj"]
+[ext_resource type="Texture2D" uid="uid://q3tmxh5eaqok" path="res://Weapons/Recurve Bow/recurve_bow.png" id="1_vyumv"]
+
+[resource]
+script = ExtResource("1_3i5hj")
+damage = 5
+NAME = "Recurve Bow"
+DESCRIPTION = "Shoots bowling arrows from a distance"
+QUOTE = "Where do the arrows come from? Nobody knows!"
+TEXTURE = ExtResource("1_vyumv")
+RARITY = 9
+EQUIPPABLE = true

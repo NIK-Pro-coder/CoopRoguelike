@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfhp3h1cghq8"]
+
+[ext_resource type="PackedScene" uid="uid://cw4o7bm3tjs3a" path="res://NPCs/base_npc.tscn" id="1_jeud0"]
+[ext_resource type="Script" uid="uid://dyh7qvjll8a86" path="res://Shopkeepers/base_shopkeeper.gd" id="2_mh448"]
+[ext_resource type="PackedScene" uid="uid://cs03pmkfca6va" path="res://Shopkeepers/shop_pedestal.tscn" id="11_2exwr"]
+
+[node name="base_shopkeeper" node_paths=PackedStringArray("PEDESTALS") instance=ExtResource("1_jeud0")]
+script = ExtResource("2_mh448")
+LOOT_TABLE = null
+PEDESTALS = [NodePath("shop_pedestal"), NodePath("shop_pedestal2"), NodePath("shop_pedestal3")]
+
+[node name="RichTextLabel" parent="." index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="shop_pedestal" parent="." index="4" instance=ExtResource("11_2exwr")]
+position = Vector2(264, 8)
+
+[node name="shop_pedestal2" parent="." index="5" instance=ExtResource("11_2exwr")]
+position = Vector2(560, 8)
+
+[node name="shop_pedestal3" parent="." index="6" instance=ExtResource("11_2exwr")]
+position = Vector2(856, 8)

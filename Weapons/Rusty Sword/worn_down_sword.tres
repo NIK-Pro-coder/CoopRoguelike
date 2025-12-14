@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://oxkpa0udjw36"]
+
+[ext_resource type="Texture2D" uid="uid://b835x0rxiine7" path="res://Weapons/Rusty Sword/worn_down_sword.png" id="1_wydc6"]
+[ext_resource type="Script" uid="uid://7yke3tos4eje" path="res://Weapons/Rusty Sword/rusty_sword.gd" id="2_so0b2"]
+
+[resource]
+script = ExtResource("2_so0b2")
+damage = 10
+combo_length = 3
+NAME = "Worn Down Sword"
+DESCRIPTION = "The most basic weapon, truly a jack of all trades and a master of none"
+QUOTE = "The wonky blade is a sylistic choice"
+TEXTURE = ExtResource("1_wydc6")
+EQUIPPABLE = true

@@ -1,0 +1,213 @@
+[gd_scene load_steps=18 format=3 uid="uid://4h0rbqs803ol"]
+
+[ext_resource type="PackedScene" uid="uid://s0svga2h4x74" path="res://Lobby/lobby.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://w17e82nlba7o" path="res://maincamera.gd" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://b80sc53k8qhau" path="res://Main Menu/main_menu.tscn" id="2_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://bgof4e6kkmc2u" path="res://Wave Manager/wave_manager.tscn" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://j78i52o1tiew" path="res://Xp Manager/xp_manager.tscn" id="4_1bvp3"]
+[ext_resource type="Theme" uid="uid://ltg03tu30kkp" path="res://UI.tres" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bn62ramudpvvn" path="res://Level Up/levelup.tscn" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://qk764k5bdfto" path="res://Bosses/bossbar.gd" id="6_dg77c"]
+[ext_resource type="PackedScene" uid="uid://ck4k6joxjjxtw" path="res://Dungeon Manager/dungeon_manager.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://cx50rgubpdxik" path="res://Defeat Screen/defeat_screen.tscn" id="8_kek77"]
+[ext_resource type="Shader" uid="uid://cg35wwqy7dfd7" path="res://HUD/damage_indicator.gdshader" id="8_w48qg"]
+[ext_resource type="PackedScene" uid="uid://bxr7bcwoh8sey" path="res://Inventory/inventory.tscn" id="9_4c57u"]
+[ext_resource type="Script" uid="uid://bcmu74qa5df1c" path="res://HUD/damage_indicator.gd" id="9_vivmo"]
+[ext_resource type="PackedScene" uid="uid://ruwi6r0vlvwo" path="res://Dialogs/Dialog Manager/dialog_mngr.tscn" id="14_2cqfq"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_h2yge"]
+vertices = PackedVector2Array(7262.37, -6662.44, 7781.59, 6485.9, -8277.53, 6342.09, -7646.47, -7365.53)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-7656, -7376, 7272, -6672, 7792, 6496, -8288, 6352)])
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vivmo"]
+shader = ExtResource("8_w48qg")
+shader_parameter/damage_taken = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kek77"]
+bg_color = Color(1, 0.331, 0.369, 0.75)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="main" type="Node2D"]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_h2yge")
+
+[node name="maincamera" type="Node2D" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+script = ExtResource("2_0xm2m")
+
+[node name="Camera2D" type="Camera2D" parent="maincamera"]
+
+[node name="ColorRect" type="ColorRect" parent="maincamera/Camera2D"]
+z_index = -4096
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4906.0
+offset_top = -4906.0
+offset_right = 4906.0
+offset_bottom = 4906.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.13333334, 0.1254902, 0.20392157, 1)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="main_menu" parent="CanvasLayer2" node_paths=PackedStringArray("OTHER_LAYER", "LOBBY") instance=ExtResource("2_ycdy4")]
+OTHER_LAYER = NodePath("../../CanvasLayer")
+LOBBY = NodePath("../../CanvasLayer/lobby")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="lobby" parent="CanvasLayer" node_paths=PackedStringArray("WAVE_MNGR") instance=ExtResource("1_ig7tw")]
+unique_name_in_owner = true
+process_mode = 4
+visible = false
+WAVE_MNGR = NodePath("../waveManager")
+
+[node name="waveManager" parent="CanvasLayer" instance=ExtResource("3_1bvp3")]
+unique_name_in_owner = true
+
+[node name="xpManager" parent="CanvasLayer" instance=ExtResource("4_1bvp3")]
+unique_name_in_owner = true
+process_mode = 1
+visible = false
+
+[node name="HUD" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_lquwl")
+
+[node name="damage_indicator" type="ColorRect" parent="CanvasLayer/HUD"]
+unique_name_in_owner = true
+z_index = 500
+material = SubResource("ShaderMaterial_vivmo")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_vivmo")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HUD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_lquwl")
+
+[node name="players" type="HBoxContainer" parent="CanvasLayer/HUD/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("5_lquwl")
+theme_override_constants/separation = 220
+
+[node name="minimap" type="GridContainer" parent="CanvasLayer/HUD/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("5_lquwl")
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 3
+
+[node name="marginV" type="MarginContainer" parent="CanvasLayer/HUD/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("5_lquwl")
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 2
+
+[node name="corridorV" type="GridContainer" parent="CanvasLayer/HUD/MarginContainer/marginV"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("5_lquwl")
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="marginH" type="MarginContainer" parent="CanvasLayer/HUD/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("5_lquwl")
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 8
+
+[node name="corridorH" type="GridContainer" parent="CanvasLayer/HUD/MarginContainer/marginH"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("5_lquwl")
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="bossbar" type="ProgressBar" parent="CanvasLayer/HUD/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("5_lquwl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_kek77")
+value = 50.0
+show_percentage = false
+script = ExtResource("6_dg77c")
+
+[node name="bossname" type="RichTextLabel" parent="CanvasLayer/HUD/MarginContainer/bossbar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Boss Name (100 / 100)"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="levelup" parent="CanvasLayer" instance=ExtResource("6_7mycd")]
+visible = false
+
+[node name="inventory" parent="CanvasLayer" instance=ExtResource("9_4c57u")]
+unique_name_in_owner = true
+visible = false
+
+[node name="defeatScreen" parent="CanvasLayer" instance=ExtResource("8_kek77")]
+visible = false
+
+[node name="dialog_mngr" parent="CanvasLayer" instance=ExtResource("14_2cqfq")]
+visible = false
+
+[node name="dungeonManager" parent="." instance=ExtResource("7_272bh")]
+unique_name_in_owner = true
+process_mode = 1
+
+[connection signal="boss_defeated" from="CanvasLayer/waveManager" to="dungeonManager" method="_on_wave_manager_boss_defeated"]
+[connection signal="room_clear" from="CanvasLayer/waveManager" to="CanvasLayer/inventory" method="_on_wave_manager_room_clear"]
+[connection signal="room_clear" from="CanvasLayer/waveManager" to="dungeonManager" method="_on_wave_manager_room_clear"]
+[connection signal="levelup" from="CanvasLayer/xpManager" to="CanvasLayer/levelup" method="showLevelup"]
+[connection signal="room_changed" from="dungeonManager" to="CanvasLayer/lobby" method="_on_dungeon_manager_room_changed"]
+[connection signal="spawn_boss" from="dungeonManager" to="CanvasLayer/waveManager" method="_on_dungeon_manager_spawn_boss"]
+[connection signal="start_waves" from="dungeonManager" to="CanvasLayer/waveManager" method="_on_dungeon_manager_start_waves"]

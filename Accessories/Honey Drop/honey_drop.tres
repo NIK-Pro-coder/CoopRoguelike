@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cgqjfaxg81s2t"]
+
+[ext_resource type="Script" uid="uid://k5fipwci3sse" path="res://Accessories/Honey Drop/honey_drop.gd" id="1_ov6xu"]
+
+[resource]
+script = ExtResource("1_ov6xu")
+PASSIVE_UPDATE_TIME = 0.1

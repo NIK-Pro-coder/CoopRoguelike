@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://bqwp4j5km154s"]
+
+[ext_resource type="Script" uid="uid://b0awyqeutl36c" path="res://Items/Base Item/base_item.gd" id="1_f2hfy"]
+
+[resource]
+script = ExtResource("1_f2hfy")
+ITEM_NAME = "Base Item"
+ITEM_DESSCRIPTION = "Lorem ipsum dolor sit amet"
+ITEM_EQUIPPABLE = false
+ITEM_EQUIP_SLOT = 0
+ITEM_CHARGES = 1

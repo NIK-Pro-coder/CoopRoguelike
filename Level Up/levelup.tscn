@@ -1,0 +1,124 @@
+[gd_scene load_steps=18 format=3 uid="uid://bn62ramudpvvn"]
+
+[ext_resource type="Theme" uid="uid://ltg03tu30kkp" path="res://UI.tres" id="1_8jhx0"]
+[ext_resource type="Script" uid="uid://csjxgovmkmjos" path="res://Level Up/levelup.gd" id="2_chbm7"]
+[ext_resource type="Script" uid="uid://c3uxlcixym3ir" path="res://Powers/new_power.gd" id="3_vgcwg"]
+[ext_resource type="Resource" uid="uid://c4l2bog8nqnfp" path="res://Powers/damage_power.tres" id="4_o7b7a"]
+[ext_resource type="Resource" uid="uid://cd14n1i44882c" path="res://Powers/dash_cooldown_power.tres" id="5_yk5vi"]
+[ext_resource type="Resource" uid="uid://jk3bua5lkyj" path="res://Powers/dash_duration_power.tres" id="6_e5yth"]
+[ext_resource type="Resource" uid="uid://cxav7paeqagpx" path="res://Powers/dash_speed_power.tres" id="7_d7jyo"]
+[ext_resource type="Resource" uid="uid://bpo48rch6aqqs" path="res://Powers/knockback_power.tres" id="8_mvpu5"]
+[ext_resource type="Resource" uid="uid://cdehjh1606gr0" path="res://Powers/mana_gain_power.tres" id="9_4mug8"]
+[ext_resource type="Resource" uid="uid://b2rkh4npy25nb" path="res://Powers/max_hp_power.tres" id="10_j5mu4"]
+[ext_resource type="Resource" uid="uid://cbadqgriins3" path="res://Powers/max_mana_power.tres" id="11_vhwlr"]
+[ext_resource type="Resource" uid="uid://dpqpogox3g5nw" path="res://Powers/potion_cooldown_power.tres" id="12_ckvq3"]
+[ext_resource type="Resource" uid="uid://bh5rebpqtniaf" path="res://Powers/potion_healing_power.tres" id="13_c3i1i"]
+[ext_resource type="Resource" uid="uid://d2njvyridig3c" path="res://Powers/speed_power.tres" id="14_k6020"]
+
+[sub_resource type="Curve" id="Curve_e5yth"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.502008, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_e5yth"]
+curve = SubResource("Curve_e5yth")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d7jyo"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(576, 1, 0)
+direction = Vector3(0, -1, 0)
+spread = 15.0
+initial_velocity_min = 225.0
+initial_velocity_max = 325.0
+angular_velocity_min = -45.000015
+angular_velocity_max = 44.999985
+gravity = Vector3(0, 0, 0)
+scale_min = 11.849999
+scale_max = 24.449999
+scale_curve = SubResource("CurveTexture_e5yth")
+color = Color(1, 0.4666667, 0, 1)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[node name="levelup" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8jhx0")
+script = ExtResource("2_chbm7")
+powers = Array[ExtResource("3_vgcwg")]([ExtResource("4_o7b7a"), ExtResource("5_yk5vi"), ExtResource("6_e5yth"), ExtResource("7_d7jyo"), ExtResource("8_mvpu5"), ExtResource("9_4mug8"), ExtResource("10_j5mu4"), ExtResource("11_vhwlr"), ExtResource("12_ckvq3"), ExtResource("13_c3i1i"), ExtResource("14_k6020")])
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8jhx0")
+color = Color(0, 0, 0, 0.5)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8jhx0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_8jhx0")
+theme_override_constants/separation = 215
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_8jhx0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_8jhx0")
+theme_override_font_sizes/normal_font_size = 32
+text = "Upgrade time!"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="playerName" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_8jhx0")
+theme_override_font_sizes/normal_font_size = 24
+text = "Player -1's choice"
+fit_content = true
+
+[node name="powers" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("1_8jhx0")
+theme_override_constants/separation = 220
+alignment = 1
+
+[node name="confirmText" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_8jhx0")
+theme_override_font_sizes/normal_font_size = 24
+text = "(A) Confirm"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="confetti" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+z_index = 1
+position = Vector2(576, 704)
+amount = 500
+lifetime = 10.0
+fixed_fps = 0
+draw_order = 0
+process_material = SubResource("ParticleProcessMaterial_d7jyo")

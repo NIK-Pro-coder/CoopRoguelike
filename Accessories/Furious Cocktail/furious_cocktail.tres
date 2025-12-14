@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b5hviqjdsgr30"]
+
+[ext_resource type="Script" uid="uid://denih8h3aegnn" path="res://Accessories/Furious Cocktail/furious_cocktail.gd" id="1_a41a7"]
+
+[resource]
+script = ExtResource("1_a41a7")

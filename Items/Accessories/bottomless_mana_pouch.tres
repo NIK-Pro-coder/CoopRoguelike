@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://b1tekq0yg1l5r"]
+
+[ext_resource type="Resource" uid="uid://76jx2cpgqgm5" path="res://Accessories/Bottomless Mana Pouch/bottomless_mana_pouch.tres" id="1_axi8f"]
+[ext_resource type="Script" uid="uid://ceiusvsj6txjt" path="res://Glyphs/Base Glyph/base_glyph.gd" id="2_davl0"]
+[ext_resource type="Texture2D" uid="uid://e70ov5owj3n6" path="res://Accessories/Bottomless Mana Pouch/bottomless_mana_pouch.png" id="3_axi8f"]
+[ext_resource type="Script" uid="uid://b0awyqeutl36c" path="res://Items/Base Item/base_item.gd" id="4_d3q0t"]
+
+[resource]
+script = ExtResource("4_d3q0t")
+NAME = "Bottomless Mana Pouch"
+DESCRIPTION = "Provides +1 mana/s"
+QUOTE = "Where does the mana even come from?"
+TEXTURE = ExtResource("3_axi8f")
+RARITY = 7
+IS_ACCESSORY = true
+ACCESSORY = ExtResource("1_axi8f")
+metadata/_custom_type_script = "uid://b0awyqeutl36c"

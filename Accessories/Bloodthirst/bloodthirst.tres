@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dostvefnfqscv"]
+
+[ext_resource type="Script" uid="uid://n7bhakthful" path="res://Accessories/Bloodthirst/bloodthirst.gd" id="1_a83vg"]
+
+[resource]
+script = ExtResource("1_a83vg")

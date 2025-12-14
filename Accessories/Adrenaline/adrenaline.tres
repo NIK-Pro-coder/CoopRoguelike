@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cw65q0gw4srs2"]
+
+[ext_resource type="Texture2D" uid="uid://dh3e020efir7d" path="res://Accessories/Adrenaline/adrenaline.png" id="1_4ybf6"]
+[ext_resource type="Script" uid="uid://btra57rh5l64q" path="res://Accessories/Adrenaline/adrenaline.gd" id="1_fsood"]
+
+[resource]
+script = ExtResource("1_fsood")
+NAME = "Adrenaline"
+DESC = "Gain up to +100% damage based on how low your health is"
+ICON = ExtResource("1_4ybf6")

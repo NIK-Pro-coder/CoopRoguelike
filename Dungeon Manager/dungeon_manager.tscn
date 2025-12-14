@@ -1,0 +1,79 @@
+[gd_scene load_steps=18 format=3 uid="uid://ck4k6joxjjxtw"]
+
+[ext_resource type="Script" uid="uid://botrwwrng2cxv" path="res://Dungeon Manager/dungeon_manager.gd" id="1_ewn5q"]
+[ext_resource type="Script" uid="uid://df4bs8fmdf2bu" path="res://Dungeon Rooms/dungeon_room.gd" id="2_noohq"]
+[ext_resource type="Texture2D" uid="uid://mifultanhyja" path="res://Dungeon Manager/door-top-opent.png" id="2_w6gd6"]
+[ext_resource type="Resource" uid="uid://b4s5a2jqoruhu" path="res://Dungeon Rooms/standard_fight_room.tres" id="3_63cuv"]
+[ext_resource type="Resource" uid="uid://cp8dp3pq7dixv" path="res://Dungeon Rooms/miniboss_fight_room.tres" id="4_63cuv"]
+[ext_resource type="Resource" uid="uid://c0smel7007h42" path="res://Dungeon Rooms/bossfight_room.tres" id="5_1tly6"]
+[ext_resource type="Resource" uid="uid://c264c8ljasjx0" path="res://Dungeon Rooms/campfire_room.tres" id="6_vax4v"]
+[ext_resource type="Resource" uid="uid://bg665s0stcqoe" path="res://Dungeon Rooms/sigma_npc.tres" id="7_eohc7"]
+[ext_resource type="Resource" uid="uid://egrxs4sreluk" path="res://Dungeon Rooms/potion_shop_room.tres" id="8_g244h"]
+[ext_resource type="Resource" uid="uid://ca0es8e7ij5jf" path="res://Dungeon Rooms/accessory_shop_room.tres" id="9_vwmlk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywsas"]
+atlas = ExtResource("2_w6gd6")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_noohq"]
+atlas = ExtResource("2_w6gd6")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63cuv"]
+atlas = ExtResource("2_w6gd6")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tly6"]
+atlas = ExtResource("2_w6gd6")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vax4v"]
+atlas = ExtResource("2_w6gd6")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eohc7"]
+atlas = ExtResource("2_w6gd6")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g244h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywsas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_noohq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63cuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tly6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vax4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eohc7")
+}],
+"loop": false,
+"name": &"open",
+"speed": 12.0
+}]
+
+[node name="dungeonManager" type="Node2D"]
+script = ExtResource("1_ewn5q")
+DUNGEON_ROOMS = Array[ExtResource("2_noohq")]([ExtResource("3_63cuv"), ExtResource("4_63cuv"), ExtResource("5_1tly6"), ExtResource("6_vax4v"), ExtResource("7_eohc7"), ExtResource("8_g244h"), ExtResource("9_vwmlk")])
+HIDDEN = Color(0, 0, 0, 0)
+UNDISCOVERED = Color(0, 0, 0, 0.5)
+DISCOVERED = Color(1, 1, 1, 1)
+ACTIVE = Color(1, 0.816667, 0, 1)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="door" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_g244h")
+animation = &"open"

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bd51pxing0pl6"]
+
+[ext_resource type="Script" uid="uid://xj0mugd4m2af" path="res://Accessories/Defensive Matrix/defensive_matrix.gd" id="1_3vejn"]
+
+[resource]
+script = ExtResource("1_3vejn")
+PASSIVE_UPDATE_TIME = 0.1

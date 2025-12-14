@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d3qv3l4enc1fg"]
+
+[ext_resource type="Script" uid="uid://brehp6j85s7b" path="res://Room Features/Potion Shop/potion_shop.gd" id="1_kay08"]
+
+[resource]
+script = ExtResource("1_kay08")
+metadata/_custom_type_script = "uid://cinl0y2b5xi38"

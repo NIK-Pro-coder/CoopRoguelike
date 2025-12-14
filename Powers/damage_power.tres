@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Power" load_steps=3 format=3 uid="uid://c4l2bog8nqnfp"]
+
+[ext_resource type="Script" uid="uid://c3uxlcixym3ir" path="res://Powers/new_power.gd" id="1_8xy8n"]
+[ext_resource type="Texture2D" uid="uid://btpivq8aekegj" path="res://Powers/Sprites/sharper_weapons.png" id="1_gn7bi"]
+
+[resource]
+script = ExtResource("1_8xy8n")
+NAME = "Sharper Weapons"
+DESC = "Increase damage by 10%"
+TEXTURE = ExtResource("1_gn7bi")
+AFFECTED_STAT = 1
+CHANGE = 10.0

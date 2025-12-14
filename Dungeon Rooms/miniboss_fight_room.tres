@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DungeonRoom" load_steps=4 format=3 uid="uid://cp8dp3pq7dixv"]
+
+[ext_resource type="Script" uid="uid://cinl0y2b5xi38" path="res://Room Features/room_feature.gd" id="1_7s30j"]
+[ext_resource type="Script" uid="uid://df4bs8fmdf2bu" path="res://Dungeon Rooms/dungeon_room.gd" id="2_ijcce"]
+[ext_resource type="Texture2D" uid="uid://ca3bjhx8htqmb" path="res://Dungeon Rooms/Sprites/miniboss_fight_room.png" id="2_q06iq"]
+
+[resource]
+script = ExtResource("2_ijcce")
+ROOM_ICON = ExtResource("2_q06iq")
+ROOM_NAME = "Miniboss Fight Room"
+IS_HOSTILE = true
+ROOM_WEIGHT = 35.0
+metadata/_custom_type_script = "uid://df4bs8fmdf2bu"

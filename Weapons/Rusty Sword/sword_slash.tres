@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://oi2xy7poh0l0"]
+
+[ext_resource type="Texture2D" uid="uid://cnbuh3o7e16bv" path="res://Weapons/Rusty Sword/sword-slash.png" id="1_ktyv1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynq8t"]
+atlas = ExtResource("1_ktyv1")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anqxd"]
+atlas = ExtResource("1_ktyv1")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwcbp"]
+atlas = ExtResource("1_ktyv1")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8rho"]
+atlas = ExtResource("1_ktyv1")
+region = Rect2(0, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6et2u"]
+atlas = ExtResource("1_ktyv1")
+region = Rect2(64, 32, 64, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynq8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_anqxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwcbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8rho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6et2u")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]

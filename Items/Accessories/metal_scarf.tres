@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://c08nbovfsymjx"]
+
+[ext_resource type="Resource" uid="uid://g8kh2cab7adg" path="res://Accessories/Metal Scarf/metal_scarf.tres" id="1_i6lfn"]
+[ext_resource type="Script" uid="uid://ceiusvsj6txjt" path="res://Glyphs/Base Glyph/base_glyph.gd" id="2_dx31g"]
+[ext_resource type="Texture2D" uid="uid://cgmqymnhqrdpo" path="res://Accessories/Metal Scarf/metal_scarf.png" id="3_i6lfn"]
+[ext_resource type="Script" uid="uid://b0awyqeutl36c" path="res://Items/Base Item/base_item.gd" id="4_wy7xq"]
+
+[resource]
+script = ExtResource("4_wy7xq")
+NAME = "Metal Scarf"
+DESCRIPTION = "Gives 17% damage reduction"
+QUOTE = "Legends say this was made from a worm's skin"
+TEXTURE = ExtResource("3_i6lfn")
+RARITY = 9
+IS_ACCESSORY = true
+ACCESSORY = ExtResource("1_i6lfn")
+metadata/_custom_type_script = "uid://b0awyqeutl36c"

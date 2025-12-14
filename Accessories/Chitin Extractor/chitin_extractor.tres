@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cwhe3oxm8sj18"]
+
+[ext_resource type="Texture2D" uid="uid://cajmb04inqi6b" path="res://Accessories/Chitin Extractor/chitin_extractor.png" id="1_1vaqu"]
+[ext_resource type="Script" uid="uid://cnh7dqrm3bt3s" path="res://Accessories/Chitin Extractor/chitin_extarctor.gd" id="1_4r8t6"]
+
+[resource]
+script = ExtResource("1_4r8t6")
+NAME = "Chitin Extractor"
+DESC = "Gain 5% max hp as shield when you kill an enemy"
+ICON = ExtResource("1_1vaqu")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://v67xbqauwyom"]
+
+[ext_resource type="Texture2D" uid="uid://du1perj33o0rw" path="res://Accessories/Ram Horns/ram_horns.png" id="1_lktox"]
+[ext_resource type="Script" uid="uid://bw88bcpdtl2fy" path="res://Accessories/Ram Horns/ram_horns.gd" id="1_nvtrj"]
+
+[resource]
+script = ExtResource("1_nvtrj")
+NAME = "Ram Horns"
+DESC = "Dashing through enemies deals damage to them"
+ICON = ExtResource("1_lktox")

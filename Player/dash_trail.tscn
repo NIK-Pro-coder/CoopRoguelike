@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://drc368exkkx08"]
+
+[ext_resource type="Script" uid="uid://bb3mw3r6kn58j" path="res://Player/dash_trail.gd" id="1_72v4q"]
+[ext_resource type="Shader" uid="uid://2wa4lpmnwvn0" path="res://Player/player.gdshader" id="1_yrpgw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_atx84"]
+shader = ExtResource("1_yrpgw")
+shader_parameter/hue_shift = 0.0
+
+[node name="dashTrail" type="Sprite2D"]
+material = SubResource("ShaderMaterial_atx84")
+scale = Vector2(4, 4)
+script = ExtResource("1_72v4q")
+
+[node name="lifetime" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+autostart = true

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://ck25iiryuk30r"]
+
+[ext_resource type="Resource" uid="uid://cj42n2brk2gim" path="res://Accessories/Reactive Nanites/reactive_nanites.tres" id="1_n82x6"]
+[ext_resource type="Script" uid="uid://ceiusvsj6txjt" path="res://Glyphs/Base Glyph/base_glyph.gd" id="2_iapc5"]
+[ext_resource type="Texture2D" uid="uid://cjau5tn5sp5ap" path="res://Accessories/Reactive Nanites/reactive_nanites.png" id="3_n82x6"]
+[ext_resource type="Script" uid="uid://b0awyqeutl36c" path="res://Items/Base Item/base_item.gd" id="4_4ekd7"]
+
+[resource]
+script = ExtResource("4_4ekd7")
+NAME = "Reactive Nanites"
+DESCRIPTION = "Heal 50% of a hits damage over 5s, unless you get hit again in this period"
+QUOTE = "Sam would not appreciate"
+TEXTURE = ExtResource("3_n82x6")
+RARITY = 5
+IS_ACCESSORY = true
+ACCESSORY = ExtResource("1_n82x6")
+metadata/_custom_type_script = "uid://b0awyqeutl36c"

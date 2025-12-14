@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ddw7n40dvr1lb"]
+
+[ext_resource type="Script" uid="uid://mn26qvu8i5q4" path="res://Accessories/Lucky Dice/lucky_dice.gd" id="1_n8jro"]
+[ext_resource type="Texture2D" uid="uid://lmmwm88ssxx3" path="res://Accessories/Lucky Dice/lucky_dice.png" id="1_nh8bh"]
+
+[resource]
+script = ExtResource("1_n8jro")
+NAME = "Lucky Dice"
+DESC = "When you get hit, increase the chance to heal all the damage from the next attack, if you do so, reset the chance"
+ICON = ExtResource("1_nh8bh")

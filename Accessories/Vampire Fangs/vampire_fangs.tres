@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cvl2mkr8pkvl"]
+
+[ext_resource type="Script" uid="uid://bbg2a2m6xsp3f" path="res://Accessories/Vampire Fangs/vampire_fangs.gd" id="1_n61t1"]
+[ext_resource type="Texture2D" uid="uid://cf76u0yqththm" path="res://Accessories/Vampire Fangs/vampire_fangs.png" id="1_pmjuk"]
+
+[resource]
+script = ExtResource("1_n61t1")
+NAME = "Vampire Fangs"
+DESC = "Heal for 5% of damage dealt"
+ICON = ExtResource("1_pmjuk")

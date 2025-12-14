@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://v6yb8sd3dn0s"]
+
+[ext_resource type="Script" uid="uid://ceiusvsj6txjt" path="res://Glyphs/Base Glyph/base_glyph.gd" id="1_5pxss"]
+[ext_resource type="Script" uid="uid://b0awyqeutl36c" path="res://Items/Base Item/base_item.gd" id="1_fslp5"]
+[ext_resource type="Resource" uid="uid://04asvxsfqoaj" path="res://Glyphs/Lifesteal Glyph/lifesteal_glyph.tres" id="1_upcpw"]
+[ext_resource type="Texture2D" uid="uid://bm3tcq8olnbmn" path="res://Items/Glyph Shards/LifestealGlyphShard.png" id="3_fx682"]
+
+[resource]
+script = ExtResource("1_fslp5")
+NAME = "Lifesteal Glyph Shard"
+DESCRIPTION = "A shard for the Lifesteal glyph"
+TEXTURE = ExtResource("3_fx682")
+RARITY = 25000
+GLYPH_SHARD = true
+GLYPH = ExtResource("1_upcpw")
+SHARD_NUM = 8
+metadata/_custom_type_script = "uid://b0awyqeutl36c"

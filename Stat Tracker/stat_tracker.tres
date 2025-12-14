@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="StatTracker" load_steps=2 format=3 uid="uid://j5vn1dksirbw"]
+
+[ext_resource type="Script" uid="uid://6rwedc3nn0hr" path="res://Stat Tracker/stat_tracker.gd" id="1_v5too"]
+
+[resource]
+script = ExtResource("1_v5too")

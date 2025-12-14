@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://f2burwamhdjn"]
+
+[ext_resource type="Resource" uid="uid://clc7yya4kpx85" path="res://Accessories/Regen Band/regen_band.tres" id="1_yq0qn"]
+[ext_resource type="Script" uid="uid://ceiusvsj6txjt" path="res://Glyphs/Base Glyph/base_glyph.gd" id="2_apo65"]
+[ext_resource type="Texture2D" uid="uid://bxpn8a28k7iui" path="res://Accessories/Regen Band/regen_band.png" id="3_yq0qn"]
+[ext_resource type="Script" uid="uid://b0awyqeutl36c" path="res://Items/Base Item/base_item.gd" id="4_p1au8"]
+
+[resource]
+script = ExtResource("4_p1au8")
+NAME = "Regen Band"
+DESCRIPTION = "During combat provides +1 hp every 2.5 seconds"
+QUOTE = "if only I could merge this with the mana pouch..."
+TEXTURE = ExtResource("3_yq0qn")
+RARITY = 7
+IS_ACCESSORY = true
+ACCESSORY = ExtResource("1_yq0qn")
+metadata/_custom_type_script = "uid://b0awyqeutl36c"

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Potion" load_steps=6 format=3 uid="uid://dqnjnva8dfopk"]
+
+[ext_resource type="Script" uid="uid://o5cmmqyjxg7e" path="res://Stat Change/stat_change.gd" id="1_4hd2k"]
+[ext_resource type="Texture2D" uid="uid://cy16307grky3r" path="res://Potions/Sprites/Buff Icons/endurance_potion.png" id="2_hyppo"]
+[ext_resource type="Script" uid="uid://025wicb2kaex" path="res://Potions/potion.gd" id="3_6xbq4"]
+[ext_resource type="Texture2D" uid="uid://uy70jwapolcc" path="res://Potions/Sprites/Item Icons/endurance_potion.png" id="3_7uwut"]
+
+[sub_resource type="Resource" id="Resource_3qnd5"]
+script = ExtResource("1_4hd2k")
+AFFECTED_STAT = 25
+CHANGE = -50.0
+metadata/_custom_type_script = "uid://o5cmmqyjxg7e"
+
+[resource]
+script = ExtResource("3_6xbq4")
+DURATION = 60.0
+EFFECTS = Array[ExtResource("1_4hd2k")]([SubResource("Resource_3qnd5")])
+EFFECT_ICON = ExtResource("2_hyppo")
+NAME = "Endurance Potion"
+DESCRIPTION = "Increases damage reduction by 50% for 1 minute"
+QUOTE = "Made from dragon scales! Not really..."
+TEXTURE = ExtResource("3_7uwut")
+metadata/_custom_type_script = "uid://025wicb2kaex"

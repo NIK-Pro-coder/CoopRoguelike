@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://beqofo3huv5gp"]
+
+[sub_resource type="Curve" id="Curve_2ds7u"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_wyxmc"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_4bcc5"]
+curve_x = SubResource("Curve_2ds7u")
+curve_y = SubResource("Curve_wyxmc")
+
+[sub_resource type="Curve" id="Curve_d4jbq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.68245125, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_tx6pq"]
+curve = SubResource("Curve_d4jbq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ujkpf"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 150.0
+initial_velocity_max = 250.0
+directional_velocity_min = -100.000015
+directional_velocity_max = 99.999985
+directional_velocity_curve = SubResource("CurveXYZTexture_4bcc5")
+gravity = Vector3(0, 0, 0)
+scale_min = 10.0
+scale_max = 15.0
+scale_curve = SubResource("CurveTexture_tx6pq")
+color = Color(1, 0.39, 0.39, 0.7490196)
+
+[node name="rage_effect" type="GPUParticles2D"]
+emitting = false
+amount = 25
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ujkpf")

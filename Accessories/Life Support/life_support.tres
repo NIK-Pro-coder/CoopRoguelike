@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://2ckjby0o7ule"]
+
+[ext_resource type="Script" uid="uid://ba573ugmerp3h" path="res://Accessories/Life Support/life_support.gd" id="1_fbe0g"]
+
+[resource]
+script = ExtResource("1_fbe0g")

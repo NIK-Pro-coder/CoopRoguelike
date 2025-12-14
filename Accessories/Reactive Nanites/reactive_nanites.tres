@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cj42n2brk2gim"]
+
+[ext_resource type="Texture2D" uid="uid://cjau5tn5sp5ap" path="res://Accessories/Reactive Nanites/reactive_nanites.png" id="1_f2myx"]
+[ext_resource type="Script" uid="uid://du8lxbffu5ln" path="res://Accessories/Reactive Nanites/reactive_nanites.gd" id="1_gync4"]
+
+[resource]
+script = ExtResource("1_gync4")
+NAME = "Reactive Nanites"
+DESC = "Heal 50% of a hits damage over 5s, unless you get hit again in this period"
+ICON = ExtResource("1_f2myx")
+PASSIVE_UPDATE_TIME = 0.1

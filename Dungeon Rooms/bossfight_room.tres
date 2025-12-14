@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DungeonRoom" load_steps=5 format=3 uid="uid://c0smel7007h42"]
+
+[ext_resource type="Script" uid="uid://cinl0y2b5xi38" path="res://Room Features/room_feature.gd" id="1_le4o3"]
+[ext_resource type="Resource" uid="uid://dv8e62crvab2g" path="res://Room Features/Boss Spawner/boss_spawner.tres" id="2_4fndi"]
+[ext_resource type="Script" uid="uid://df4bs8fmdf2bu" path="res://Dungeon Rooms/dungeon_room.gd" id="2_kqn45"]
+[ext_resource type="Texture2D" uid="uid://bogclv68rtlgq" path="res://Dungeon Rooms/Sprites/bossfight_room.png" id="3_4fndi"]
+
+[resource]
+script = ExtResource("2_kqn45")
+ROOM_ICON = ExtResource("3_4fndi")
+ROOM_NAME = "Bossfight Room"
+NEEDS_BIG_ROOM = true
+HIGHLIGHT_ON_MAP = true
+ROOM_FEATURES = Array[ExtResource("1_le4o3")]([ExtResource("2_4fndi")])
+ROOM_WEIGHT = 10.0
+REQUIRED_AMT = 3
+metadata/_custom_type_script = "uid://df4bs8fmdf2bu"

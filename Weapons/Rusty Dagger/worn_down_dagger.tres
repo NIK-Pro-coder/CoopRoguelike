@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://wiu4fxj0jokx"]
+
+[ext_resource type="Texture2D" uid="uid://8ris15x7ka4i" path="res://Weapons/Rusty Dagger/worn_down_dagger.png" id="1_n0jh5"]
+[ext_resource type="Script" uid="uid://bndbsxnd1bpek" path="res://Weapons/Rusty Dagger/rusty_dagger.gd" id="2_14mjd"]
+
+[resource]
+script = ExtResource("2_14mjd")
+damage = 5
+NAME = "Worn Down Dagger"
+DESCRIPTION = "Attacks quite quickly when compared to the Worn Down Sword but has less damage and knockback"
+QUOTE = "Stab stab, hehe!"
+TEXTURE = ExtResource("1_n0jh5")
+EQUIPPABLE = true

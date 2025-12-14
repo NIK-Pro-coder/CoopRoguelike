@@ -1,0 +1,122 @@
+[gd_scene load_steps=10 format=3 uid="uid://s0svga2h4x74"]
+
+[ext_resource type="Theme" uid="uid://ltg03tu30kkp" path="res://UI.tres" id="1_oxtak"]
+[ext_resource type="Script" uid="uid://cubpo6vgok3vn" path="res://Lobby/lobby.gd" id="2_1qw4d"]
+[ext_resource type="Script" uid="uid://ctobrtqlco6o4" path="res://Weapons/Base Weapon/base_weapon.gd" id="3_dn8eh"]
+[ext_resource type="AudioStream" uid="uid://h54r5bftv22r" path="res://Sounds/join.wav" id="3_kd8pr"]
+[ext_resource type="AudioStream" uid="uid://dxda1qnma74ny" path="res://Sounds/ready.wav" id="4_ib2es"]
+[ext_resource type="Resource" uid="uid://oxkpa0udjw36" path="res://Weapons/Rusty Sword/worn_down_sword.tres" id="4_qw7qs"]
+[ext_resource type="Resource" uid="uid://2dxp0qtgimoy" path="res://Weapons/Rusty Spear/worn_down_spear.tres" id="5_aoogx"]
+[ext_resource type="Resource" uid="uid://i5y1titd4xrl" path="res://Weapons/Rusty Mace/worn_down_mace.tres" id="6_p8sy6"]
+[ext_resource type="Resource" uid="uid://wiu4fxj0jokx" path="res://Weapons/Rusty Dagger/worn_down_dagger.tres" id="7_6805v"]
+
+[node name="lobby" type="Control"]
+process_mode = 3
+z_index = 200
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_oxtak")
+script = ExtResource("2_1qw4d")
+STARTER_WEAPONS = Array[ExtResource("3_dn8eh")]([ExtResource("4_qw7qs"), ExtResource("5_aoogx"), ExtResource("6_p8sy6"), ExtResource("7_6805v")])
+
+[node name="bg" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_oxtak")
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_oxtak")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_oxtak")
+alignment = 2
+
+[node name="startIn" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme = ExtResource("1_oxtak")
+theme_override_font_sizes/normal_font_size = 32
+text = "Starting in 5s"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="playerContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_oxtak")
+theme_override_constants/separation = 15
+
+[node name="tips" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_oxtak")
+
+[node name="join" type="RichTextLabel" parent="MarginContainer/VBoxContainer/tips"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_oxtak")
+text = "(A) Join"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="leave" type="RichTextLabel" parent="MarginContainer/VBoxContainer/tips"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_oxtak")
+text = "(B) Leave
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="readyup" type="RichTextLabel" parent="MarginContainer/VBoxContainer/tips"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_oxtak")
+text = "(X) Ready Up"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="switch" type="RichTextLabel" parent="MarginContainer/VBoxContainer/tips"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_oxtak")
+text = "(L Stick) Change Weapon "
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="join" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kd8pr")
+
+[node name="ready" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ib2es")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

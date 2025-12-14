@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://c0tdym662n81c"]
+
+[ext_resource type="Resource" uid="uid://ddw7n40dvr1lb" path="res://Accessories/Lucky Dice/lucky_dice.tres" id="1_0o6mr"]
+[ext_resource type="Script" uid="uid://ceiusvsj6txjt" path="res://Glyphs/Base Glyph/base_glyph.gd" id="2_kjjhm"]
+[ext_resource type="Texture2D" uid="uid://lmmwm88ssxx3" path="res://Accessories/Lucky Dice/lucky_dice.png" id="3_0o6mr"]
+[ext_resource type="Script" uid="uid://b0awyqeutl36c" path="res://Items/Base Item/base_item.gd" id="4_kmux2"]
+
+[resource]
+script = ExtResource("4_kmux2")
+NAME = "Lucky Dice"
+DESCRIPTION = "When you get hit, increase the chance to dodge the next hit, if you do so, reset the chance"
+QUOTE = "Let's go gambling!"
+TEXTURE = ExtResource("3_0o6mr")
+RARITY = 5
+IS_ACCESSORY = true
+ACCESSORY = ExtResource("1_0o6mr")
+metadata/_custom_type_script = "uid://b0awyqeutl36c"

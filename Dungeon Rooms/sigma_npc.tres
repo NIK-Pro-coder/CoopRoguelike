@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DungeonRoom" load_steps=5 format=3 uid="uid://bg665s0stcqoe"]
+
+[ext_resource type="Script" uid="uid://cinl0y2b5xi38" path="res://Room Features/room_feature.gd" id="1_fpjag"]
+[ext_resource type="Texture2D" uid="uid://dwxm1euy326vq" path="res://Dungeon Rooms/Sprites/sigma_npc.png" id="2_fpjag"]
+[ext_resource type="Resource" uid="uid://bvu8kswts50p0" path="res://Room Features/Sigma Npc/sigma_npc.tres" id="2_w6vqo"]
+[ext_resource type="Script" uid="uid://df4bs8fmdf2bu" path="res://Dungeon Rooms/dungeon_room.gd" id="3_yj4so"]
+
+[resource]
+script = ExtResource("3_yj4so")
+ROOM_ICON = ExtResource("2_fpjag")
+ROOM_NAME = "Sigma Npc Room"
+ROOM_FEATURES = Array[ExtResource("1_fpjag")]([ExtResource("2_w6vqo")])
+ROOM_WEIGHT = 25.0
+metadata/_custom_type_script = "uid://df4bs8fmdf2bu"

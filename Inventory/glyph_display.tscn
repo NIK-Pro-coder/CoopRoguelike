@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbflojqv6a0hk"]
+
+[ext_resource type="Theme" uid="uid://ltg03tu30kkp" path="res://UI.tres" id="1_8rf6g"]
+[ext_resource type="Script" uid="uid://c66d75w8joxfu" path="res://Inventory/glyph_display.gd" id="2_01hp3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01hp3"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wtwqt"]
+size = Vector2(96, 96)
+
+[node name="glyphDisplay" type="Panel"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_8rf6g")
+theme_override_styles/panel = SubResource("StyleBoxFlat_01hp3")
+script = ExtResource("2_01hp3")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8rf6g")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_8rf6g")
+
+[node name="icon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+theme = ExtResource("1_8rf6g")
+texture = SubResource("PlaceholderTexture2D_wtwqt")
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_8rf6g")
+
+[node name="gname" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_8rf6g")
+theme_override_font_sizes/normal_font_size = 24
+text = "Glyph Name"
+fit_content = true
+
+[node name="text" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_8rf6g")
+text = "Glyph Name
+x shards"
+fit_content = true

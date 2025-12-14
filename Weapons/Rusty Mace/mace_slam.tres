@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://d21oabnb3467i"]
+
+[ext_resource type="Texture2D" uid="uid://cmo1rb8w6nnyl" path="res://Weapons/Rusty Mace/mace-slam.png" id="1_2lt0e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hvk2"]
+atlas = ExtResource("1_2lt0e")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfj44"]
+atlas = ExtResource("1_2lt0e")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdh7c"]
+atlas = ExtResource("1_2lt0e")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m5qx"]
+atlas = ExtResource("1_2lt0e")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wxvq"]
+atlas = ExtResource("1_2lt0e")
+region = Rect2(64, 64, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hvk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfj44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdh7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7m5qx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wxvq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.5
+}]

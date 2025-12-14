@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://04asvxsfqoaj"]
+
+[ext_resource type="Script" uid="uid://c521d38cj537d" path="res://Glyphs/Lifesteal Glyph/lifesteal_glyph.gd" id="1_vb7i1"]
+[ext_resource type="Texture2D" uid="uid://crt2d0tornqlw" path="res://Glyphs/Lifesteal Glyph/LifestealGlyph.png" id="1_ytcyl"]
+
+[resource]
+script = ExtResource("1_vb7i1")
+NAME = "Lifesteal Glyph"
+DESCRIPTION = "Provides a small amount of healing when hitting an enemy"
+TEXTURE = ExtResource("1_ytcyl")
+SHARDS_FOR_LEVEL = 6

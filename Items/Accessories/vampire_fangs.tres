@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://du4ujot61ctuk"]
+
+[ext_resource type="Resource" uid="uid://cvl2mkr8pkvl" path="res://Accessories/Vampire Fangs/vampire_fangs.tres" id="1_16b3y"]
+[ext_resource type="Script" uid="uid://ceiusvsj6txjt" path="res://Glyphs/Base Glyph/base_glyph.gd" id="2_nq7ok"]
+[ext_resource type="Texture2D" uid="uid://cf76u0yqththm" path="res://Accessories/Vampire Fangs/vampire_fangs.png" id="3_16b3y"]
+[ext_resource type="Script" uid="uid://b0awyqeutl36c" path="res://Items/Base Item/base_item.gd" id="4_af6ej"]
+
+[resource]
+script = ExtResource("4_af6ej")
+NAME = "Vampire Fangs"
+DESCRIPTION = "Heal for 10% of damage dealt"
+QUOTE = "Sucking enemies dry since 1897"
+TEXTURE = ExtResource("3_16b3y")
+RARITY = 3
+IS_ACCESSORY = true
+ACCESSORY = ExtResource("1_16b3y")
+metadata/_custom_type_script = "uid://b0awyqeutl36c"

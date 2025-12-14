@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Potion" load_steps=5 format=3 uid="uid://8rj3j2i7puub"]
+
+[ext_resource type="Script" uid="uid://o5cmmqyjxg7e" path="res://Stat Change/stat_change.gd" id="1_xbe6m"]
+[ext_resource type="Texture2D" uid="uid://cpya24bp5l7jq" path="res://Accessories/Rage Brew/rage_potion.png" id="2_xbe6m"]
+[ext_resource type="Script" uid="uid://025wicb2kaex" path="res://Potions/potion.gd" id="3_8xps5"]
+
+[sub_resource type="Resource" id="Resource_xbe6m"]
+script = ExtResource("1_xbe6m")
+AFFECTED_STAT = 1
+CHANGE = 75.0
+metadata/_custom_type_script = "uid://o5cmmqyjxg7e"
+
+[resource]
+script = ExtResource("3_8xps5")
+DURATION = 5.0
+EFFECTS = Array[ExtResource("1_xbe6m")]([SubResource("Resource_xbe6m")])
+EFFECT_ICON = ExtResource("2_xbe6m")
+metadata/_custom_type_script = "uid://025wicb2kaex"

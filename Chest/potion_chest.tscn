@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://yh04vgmibxkq"]
+
+[ext_resource type="PackedScene" uid="uid://dl8u6qokqmbyx" path="res://Chest/chest.tscn" id="1_3fc02"]
+[ext_resource type="Resource" uid="uid://dhktpnvkjear4" path="res://Loot Table/potion_loot_table.tres" id="2_rjfeu"]
+
+[node name="potion_chest" instance=ExtResource("1_3fc02")]
+modulate = Color(1, 0.5573358, 0, 1)
+LOOT_TABLE = ExtResource("2_rjfeu")

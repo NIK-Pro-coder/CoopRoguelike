@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://2dxp0qtgimoy"]
+
+[ext_resource type="Texture2D" uid="uid://b5vdqmr6524ls" path="res://Weapons/Rusty Spear/worn_down_spear.png" id="1_e33t0"]
+[ext_resource type="Script" uid="uid://dc82bqv17kxox" path="res://Weapons/Rusty Spear/rusty_spear.gd" id="2_sy20n"]
+
+[resource]
+script = ExtResource("2_sy20n")
+damage = 10
+combo_length = 3
+NAME = "Worn Down Spear"
+DESCRIPTION = "Offers more range that the Worn Down Sword but is slightly slower"
+QUOTE = "I feel like Socrates the way I'm poking at my enemies"
+TEXTURE = ExtResource("1_e33t0")
+EQUIPPABLE = true

@@ -1,0 +1,33 @@
+[gd_scene load_steps=9 format=3 uid="uid://c62yahsgop68i"]
+
+[ext_resource type="PackedScene" uid="uid://cw4o7bm3tjs3a" path="res://NPCs/base_npc.tscn" id="1_6gat1"]
+[ext_resource type="Script" uid="uid://6a7hl6ey3wuo" path="res://Dialogs/Dialogs/dialog_box_res.gd" id="2_8jued"]
+[ext_resource type="Script" uid="uid://c5ru625xkbymx" path="res://Dialogs/Dialogs/dialog_res.gd" id="3_dhsa0"]
+
+[sub_resource type="Resource" id="Resource_divx5"]
+script = ExtResource("2_8jued")
+TEXT = "This is a test dialog!"
+metadata/_custom_type_script = "uid://6a7hl6ey3wuo"
+
+[sub_resource type="Resource" id="Resource_nqhc2"]
+script = ExtResource("2_8jued")
+SPEAKER = 1
+TEXT = "And this is the player's response!"
+metadata/_custom_type_script = "uid://6a7hl6ey3wuo"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wfu4o"]
+load_path = "res://.godot/imported/player-idle.png-ea4300f27d9321630930a69c35ff93f8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qldl4"]
+atlas = SubResource("CompressedTexture2D_wfu4o")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="Resource" id="Resource_hw0xa"]
+script = ExtResource("3_dhsa0")
+DIALOG_BOXES = Array[ExtResource("2_8jued")]([SubResource("Resource_divx5"), SubResource("Resource_nqhc2")])
+NPC_NAME = "Sigma Npc Name"
+NPC_ICON = SubResource("AtlasTexture_qldl4")
+metadata/_custom_type_script = "uid://c5ru625xkbymx"
+
+[node name="sigma_npc" instance=ExtResource("1_6gat1")]
+DIALOG = SubResource("Resource_hw0xa")

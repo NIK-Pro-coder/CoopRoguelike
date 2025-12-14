@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://b4piphi17odac"]
+
+[ext_resource type="Resource" uid="uid://bd51pxing0pl6" path="res://Accessories/Defensive Matrix/defensive_matrix.tres" id="1_ndyka"]
+[ext_resource type="Script" uid="uid://ceiusvsj6txjt" path="res://Glyphs/Base Glyph/base_glyph.gd" id="2_igyc8"]
+[ext_resource type="Texture2D" uid="uid://cljd43vgx37yr" path="res://Accessories/Defensive Matrix/defensive_matrix.png" id="3_pubyd"]
+[ext_resource type="Script" uid="uid://b0awyqeutl36c" path="res://Items/Base Item/base_item.gd" id="4_lbiw5"]
+
+[resource]
+script = ExtResource("4_lbiw5")
+NAME = "Defensive Matrix"
+DESCRIPTION = "Generate a shield that can absorb 2 hits, once broken it takes 10 seconds to recharge, taking damage resets the recharge time"
+QUOTE = "Scavenged from a broken-down rover"
+TEXTURE = ExtResource("3_pubyd")
+RARITY = 3
+IS_ACCESSORY = true
+ACCESSORY = ExtResource("1_ndyka")
+metadata/_custom_type_script = "uid://b0awyqeutl36c"

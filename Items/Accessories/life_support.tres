@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://clnljt630cjai"]
+
+[ext_resource type="Resource" uid="uid://2ckjby0o7ule" path="res://Accessories/Life Support/life_support.tres" id="1_5cq4o"]
+[ext_resource type="Script" uid="uid://ceiusvsj6txjt" path="res://Glyphs/Base Glyph/base_glyph.gd" id="2_rahxg"]
+[ext_resource type="Texture2D" uid="uid://chduq7jfrlpop" path="res://Accessories/Life Support/life_support.png" id="3_5cq4o"]
+[ext_resource type="Script" uid="uid://b0awyqeutl36c" path="res://Items/Base Item/base_item.gd" id="4_m2tc1"]
+
+[resource]
+script = ExtResource("4_m2tc1")
+NAME = "Life Support"
+DESCRIPTION = "When above 50% hp life 1hp/s and give 2hp/s to your nearest ally"
+QUOTE = "Bit immoral, no? People could use this"
+TEXTURE = ExtResource("3_5cq4o")
+RARITY = 7
+IS_ACCESSORY = true
+ACCESSORY = ExtResource("1_5cq4o")
+metadata/_custom_type_script = "uid://b0awyqeutl36c"

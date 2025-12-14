@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh5o4jioayoff"]
+
+[ext_resource type="Script" uid="uid://c7q0x50aiuljr" path="res://DamageAreas/damage_area.gd" id="1_wgjan"]
+
+[node name="playerDamageArea" type="Area2D"]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_wgjan")
+
+[node name="lifetimeTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="lifetimeTimer" to="." method="_on_lifetime_timer_timeout"]

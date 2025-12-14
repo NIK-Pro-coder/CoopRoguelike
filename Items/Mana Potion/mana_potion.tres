@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dpg23wh673r0u"]
+
+[ext_resource type="Script" uid="uid://clu5o2wshkmj5" path="res://Items/Mana Potion/mana_potion.gd" id="1_3gaww"]
+[ext_resource type="Script" uid="uid://ceiusvsj6txjt" path="res://Glyphs/Base Glyph/base_glyph.gd" id="1_ed387"]
+[ext_resource type="Texture2D" uid="uid://c5codmqf0fbnf" path="res://Items/Mana Potion/ManaPotion.png" id="2_0hfv1"]
+
+[resource]
+script = ExtResource("1_3gaww")
+NAME = "Mana Potion"
+DESCRIPTION = "Restores 10 mana when used"
+TEXTURE = ExtResource("2_0hfv1")

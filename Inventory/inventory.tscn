@@ -1,0 +1,319 @@
+[gd_scene load_steps=9 format=3 uid="uid://bxr7bcwoh8sey"]
+
+[ext_resource type="Theme" uid="uid://ltg03tu30kkp" path="res://UI.tres" id="1_uov6c"]
+[ext_resource type="Script" uid="uid://bhp0f73uporyp" path="res://Inventory/inventory.gd" id="2_xqyry"]
+[ext_resource type="PackedScene" uid="uid://8cgudfaa6ahe" path="res://Inventory/enchant_screen.tscn" id="8_7vu34"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vu34"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xqyry"]
+size = Vector2(96, 96)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ccxh"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_88mhb"]
+bg_color = Color(0, 0, 0, 0.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqyry"]
+bg_color = Color(1, 0.340043, 0.304075, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="inventory" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_uov6c")
+script = ExtResource("2_xqyry")
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_uov6c")
+color = Color(0, 0, 0, 0.6)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_uov6c")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_uov6c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_uov6c")
+
+[node name="playerName" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_uov6c")
+theme_override_font_sizes/normal_font_size = 32
+text = "Player -1"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="spacer1" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_uov6c")
+
+[node name="powerups" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "Power Ups"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="powerContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_uov6c")
+columns = 3
+
+[node name="spacer2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_uov6c")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_uov6c")
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_uov6c")
+
+[node name="Control" type="Panel" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7vu34")
+
+[node name="wicon" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 96.0
+size_flags_vertical = 3
+theme = ExtResource("1_uov6c")
+texture = SubResource("PlaceholderTexture2D_xqyry")
+
+[node name="wname" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_uov6c")
+text = "Weapon"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_uov6c")
+
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ccxh")
+
+[node name="sicon" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 96.0
+size_flags_vertical = 3
+theme = ExtResource("1_uov6c")
+texture = SubResource("PlaceholderTexture2D_xqyry")
+
+[node name="sname" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_uov6c")
+text = "Spell"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="spacer3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_uov6c")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Accessories"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="accessories" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_uov6c")
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="spacer4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_uov6c")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_uov6c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_uov6c")
+
+[node name="coinAmt" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_uov6c")
+theme_override_font_sizes/normal_font_size = 24
+text = "500 cigarettes"
+fit_content = true
+
+[node name="spacer1" type="Control" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_uov6c")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_uov6c")
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_uov6c")
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 5
+
+[node name="spacer2" type="Control" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_uov6c")
+
+[node name="name" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_uov6c")
+theme_override_font_sizes/normal_font_size = 24
+text = "Base Item"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="description" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_uov6c")
+text = "Item description
+Lorem ipsum dolor sit amet"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="quote" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "[i]'item quote'[/i]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="spacer3" type="Control" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_uov6c")
+
+[node name="buttons" type="HBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_uov6c")
+
+[node name="enchant" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/buttons"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_uov6c")
+theme_override_font_sizes/normal_font_size = 24
+text = "(X) Add Glyphs"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="useEquip" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_uov6c")
+theme_override_font_sizes/normal_font_size = 24
+text = "Use / Equip"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="scavenge" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/buttons"]
+unique_name_in_owner = true
+z_index = 200
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_uov6c")
+theme_override_font_sizes/normal_font_size = 24
+text = "(B) Scavenge
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="scavengeProgress" type="ProgressBar" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/buttons/scavenge"]
+unique_name_in_owner = true
+z_index = -100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_uov6c")
+theme_override_styles/background = SubResource("StyleBoxFlat_88mhb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xqyry")
+show_percentage = false
+
+[node name="enchantScreen" parent="." instance=ExtResource("8_7vu34")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1

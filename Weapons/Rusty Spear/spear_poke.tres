@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://do5s7jq5kols0"]
+
+[ext_resource type="Texture2D" uid="uid://mm3ldnyor08k" path="res://Weapons/Rusty Spear/spear-poke.png" id="1_2swqn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khpga"]
+atlas = ExtResource("1_2swqn")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7p1s"]
+atlas = ExtResource("1_2swqn")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55ow2"]
+atlas = ExtResource("1_2swqn")
+region = Rect2(0, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5hcy"]
+atlas = ExtResource("1_2swqn")
+region = Rect2(32, 64, 32, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khpga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7p1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55ow2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5hcy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]

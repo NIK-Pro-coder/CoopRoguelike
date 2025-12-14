@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bvu8kswts50p0"]
+
+[ext_resource type="Script" uid="uid://2dj0mqglxj60" path="res://Room Features/Sigma Npc/sigma_npc.gd" id="1_d2iqr"]
+
+[resource]
+script = ExtResource("1_d2iqr")
+metadata/_custom_type_script = "uid://cinl0y2b5xi38"

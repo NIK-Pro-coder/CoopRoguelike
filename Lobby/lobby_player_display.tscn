@@ -1,0 +1,115 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmy5q03p4feae"]
+
+[ext_resource type="Shader" uid="uid://2wa4lpmnwvn0" path="res://Player/player.gdshader" id="1_gxisn"]
+[ext_resource type="Script" uid="uid://ctm4qkrv1qlt3" path="res://Lobby/lobby_player_display.gd" id="1_s64gd"]
+[ext_resource type="Theme" uid="uid://ltg03tu30kkp" path="res://UI.tres" id="1_uul0o"]
+[ext_resource type="Texture2D" uid="uid://cq5smrion4uoc" path="res://Player/player-idle.png" id="3_s64gd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uul0o"]
+bg_color = Color(0.10748, 0.10748, 0.10748, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p47a7"]
+shader = ExtResource("1_gxisn")
+shader_parameter/hue_shift = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uul0o"]
+atlas = ExtResource("3_s64gd")
+region = Rect2(0, 0, 32, 32)
+
+[node name="lobbyPlayerDisplay" type="Panel"]
+size_flags_horizontal = 3
+theme = ExtResource("1_uul0o")
+theme_override_styles/panel = SubResource("StyleBoxFlat_uul0o")
+script = ExtResource("1_s64gd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_uul0o")
+alignment = 1
+
+[node name="spacer1" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_uul0o")
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme = ExtResource("1_uul0o")
+
+[node name="icon" type="TextureRect" parent="VBoxContainer/Control"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_p47a7")
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_uul0o")
+texture = SubResource("AtlasTexture_uul0o")
+
+[node name="spacer2" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_uul0o")
+
+[node name="name" type="RichTextLabel" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_uul0o")
+theme_override_font_sizes/normal_font_size = 24
+text = "Player -1"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="readyState" type="RichTextLabel" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_uul0o")
+text = "Not ready"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="spacer3" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_uul0o")
+
+[node name="wname" type="RichTextLabel" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_uul0o")
+theme_override_font_sizes/normal_font_size = 24
+text = "Weapon Name"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="wdesc" type="RichTextLabel" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_uul0o")
+text = "Lorem ipsum dolor sit amet"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="spacer4" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_uul0o")
