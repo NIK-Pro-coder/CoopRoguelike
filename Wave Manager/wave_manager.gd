@@ -8,9 +8,9 @@ class_name WaveManager
 @export var waves_per_room: int = 3
 @export var biome_list: Array[Biome]
 @export var spawn_bosses: bool = true
-@export var wave_end_rewards: Array[PackedScene]
 
 @export var loot_tables: Array[LootTable]
+@export var wave_rewards: Array[LootTable]
 
 @onready var waveTimer = $waveTimer
 @onready var waveDisplay = $MarginContainer/RichTextLabel
@@ -33,6 +33,8 @@ var room_cleared = true
 
 signal room_clear
 
+var gach_ball = preload("res://Gacha Ball/gacha_ball.tscn")
+
 func _process(_delta: float) -> void:
   if !dungeon_boss :
     %xpManager.visible = true
@@ -46,11 +48,14 @@ func _process(_delta: float) -> void:
   elif not waveTimer.is_stopped() :
     waveDisplay.text = "Wave %s / %s in %ss" % [wavenun+1, waves_per_room, int(int(waveTimer.time_left * 100) / 100.0)]
     if wavenun >= waves_per_room :
-      var chest = wave_end_rewards.pick_random().instantiate()
-      chest.position.y -= 192
-      get_tree().get_root().add_child.call_deferred(chest)
-      
-      %dungeonManager.posToRoom[%dungeonManager.currentRoom].add_to_storage(chest)
+      for i in get_tree().get_nodes_in_group("player") :
+        var ball: GachaBall = gach_ball.instantiate()
+        ball.LOOT_POOL = wave_rewards.pick_random()
+        ball.global_position = i.global_position
+        ball.global_position.y -= 150
+        get_tree().get_root().add_child.call_deferred(ball)
+        
+        %dungeonManager.posToRoom[%dungeonManager.currentRoom].add_to_storage(ball)
       
       %xpManager.emitLevelUpSignal()
       room_cleared = true
@@ -119,6 +124,8 @@ func spawnWave() :
     
     i.global_position.x = randi_range(-2000, 2000)
     i.global_position.y = randi_range(-2000, 2000)
+    
+    i.wave_scaling = 1 + floor(totwavenum / 5.0) * .1
     
     get_tree().get_root().add_child.call_deferred(i)
     

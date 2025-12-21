@@ -12,11 +12,7 @@ func normal_atk(player: Player, dir: Vector2) :
   return dmg
 
 func special_atk(player: Player, dir: Vector2) :
-  var tex := AtlasTexture.new()
-  tex.atlas = load("res://Weapons/Rusty Sword/sword-slash.png")
-  tex.region = Rect2(128, 0, 64, 32)
-  
-  var dmg: DamageArea = Qol.create_atk().set_rect_shape(Vector2(100, 250)).add_sprite(tex).instantiate()
+  var dmg: DamageArea = Qol.create_atk().set_rect_shape(Vector2(100, 250)).add_animation(load("res://Weapons/Rusty Sword/sword_poke.tres")).instantiate()
   dmg.rotation = dir.angle()
   dmg.rotation_degrees += 90
   dmg.lifetime = .25

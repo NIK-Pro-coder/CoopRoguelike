@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://mnajfa7tia13"]
+
+[ext_resource type="Script" uid="uid://bhydek02qjiid" path="res://Weapons/Knockback Stick/knockback_stick.gd" id="1_73sda"]
+[ext_resource type="Texture2D" uid="uid://dsdxookguqahw" path="res://Weapons/Knockback Stick/knockback_stick.png" id="1_wdm8w"]
+
+[resource]
+script = ExtResource("1_73sda")
+damage = 10
+combo_length = 3
+NAME = "Knockback Stick"
+DESCRIPTION = "Slap the enemy in front of you, on the third attack slap with more strength"
+QUOTE = "A dead guy once sold me this weapon"
+TEXTURE = ExtResource("1_wdm8w")

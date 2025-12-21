@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://c4ddml62c5jmh"]
+
+[ext_resource type="Texture2D" uid="uid://c4p8qyvi7onke" path="res://Weapons/Rusty Sword/sword_poke.png" id="1_v44ya"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shc3i"]
+atlas = ExtResource("1_v44ya")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khyv0"]
+atlas = ExtResource("1_v44ya")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyapv"]
+atlas = ExtResource("1_v44ya")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l04kc"]
+atlas = ExtResource("1_v44ya")
+region = Rect2(0, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_026pd"]
+atlas = ExtResource("1_v44ya")
+region = Rect2(32, 64, 32, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shc3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khyv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyapv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l04kc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_026pd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]

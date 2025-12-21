@@ -1,24 +1,24 @@
-res://Weapons/Rusty Dagger
-res://Weapons/Rusty Dagger/
-res://Weapons/Rusty Mace
-res://Weapons/Rusty Mace/
-res://Weapons/Rusty Spear
-res://Weapons/Rusty Spear/
-res://Weapons/Rusty Sword
-res://Weapons/Rusty Sword/
-res://Loot Table
-res://Loot Table/
-res://Lobby
+res://Weapons/Crossbow/
+res://Weapons/Blowpipe/
+res://Room Indicator
+res://Enemies/Sniper Enemy
+res://Gacha Ball
+res://Weapons/Syringes/
+res://Weapons/Cosmic Judgement/
+res://Weapons/Mechanic's Wrench/
+res://Weapons/Spore Sac/
 res://
-res://Accessories/Rage Brew/
-res://Accessories/Bloodthirst/
-res://Shopkeepers
-res://NPCs/Sigma Npc
-res://Dialogs/Dialogs/
-res://HUD
-res://Bosses/Crystal Golem/Sprites/Animations
-res://Campfire
-res://Dialogs
-res://NPCs
+res://Weapons/Battle Standard/
+res://Weapons/Deck Of Cards
+res://Weapons/Deck Of Cards/
+res://Potions/
+res://Dungeon Manager
+res://Dungeon Rooms/
+res://Weapons/Heal Ray/
+res://Weapons/Javelin/
+res://Weapons/Worn Down Boomerang
+res://Weapons/Worn Down Boomerang/
+res://Weapons/Knockback Stick
+res://Weapons/Knockback Stick/
 /home/nikolai/coop-roguelike/Exports/Web
 /home/nikolai/coop-roguelike/Exports

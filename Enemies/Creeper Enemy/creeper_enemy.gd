@@ -24,7 +24,7 @@ func _on_explosion_timer_timeout() -> void:
   area.attacker = self
   area.global_position = global_position
   area.lifetime = .25
-  area.damage = 25
+  area.damage = int((25 * stat_tracker.DAMAGE_PERCENT + stat_tracker.DAMAGE) * wave_scaling)
   
   get_tree().get_root().add_child.call_deferred(area)
   $AudioStreamPlayer2D.play()

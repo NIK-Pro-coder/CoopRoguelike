@@ -1,14 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://bgof4e6kkmc2u"]
+[gd_scene load_steps=9 format=3 uid="uid://bgof4e6kkmc2u"]
 
 [ext_resource type="Theme" uid="uid://ltg03tu30kkp" path="res://UI.tres" id="1_xqx3c"]
 [ext_resource type="Script" uid="uid://dkoaxaud0axja" path="res://Wave Manager/wave_manager.gd" id="2_hmgol"]
 [ext_resource type="Script" uid="uid://ct8n5niwge7yu" path="res://Biomes/base_biome.gd" id="3_d662e"]
 [ext_resource type="Resource" uid="uid://ofdtwvjdk03m" path="res://Biomes/Crystal Hollow/crystal_hollow.tres" id="4_w2qpw"]
-[ext_resource type="PackedScene" uid="uid://dgfm122vkmgqv" path="res://Chest/accessory_chest.tscn" id="5_w2qpw"]
-[ext_resource type="PackedScene" uid="uid://yh04vgmibxkq" path="res://Chest/potion_chest.tscn" id="6_7mcfd"]
 [ext_resource type="Script" uid="uid://by4ji3sx1olru" path="res://Loot Table/loot_table.gd" id="7_6uff3"]
 [ext_resource type="Resource" uid="uid://soqxctm30lva" path="res://Loot Table/accessory_loot_table.tres" id="8_yvxay"]
 [ext_resource type="Resource" uid="uid://dhktpnvkjear4" path="res://Loot Table/potion_loot_table.tres" id="9_4dr78"]
+[ext_resource type="Resource" uid="uid://s8rnc8k5liy3" path="res://Loot Table/weapon_loot_table.tres" id="11_fl417"]
 
 [node name="waveManager" type="Control"]
 visible = false
@@ -21,8 +20,8 @@ grow_vertical = 2
 theme = ExtResource("1_xqx3c")
 script = ExtResource("2_hmgol")
 biome_list = Array[ExtResource("3_d662e")]([ExtResource("4_w2qpw")])
-wave_end_rewards = Array[PackedScene]([ExtResource("5_w2qpw"), ExtResource("6_7mcfd")])
-loot_tables = Array[ExtResource("7_6uff3")]([ExtResource("8_yvxay"), ExtResource("9_4dr78")])
+loot_tables = Array[ExtResource("7_6uff3")]([ExtResource("8_yvxay"), ExtResource("9_4dr78"), ExtResource("11_fl417")])
+wave_rewards = Array[ExtResource("7_6uff3")]([ExtResource("11_fl417"), ExtResource("8_yvxay")])
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LootTable" load_steps=27 format=3 uid="uid://soqxctm30lva"]
+[gd_resource type="Resource" script_class="LootTable" load_steps=26 format=3 uid="uid://soqxctm30lva"]
 
 [ext_resource type="Script" uid="uid://b0awyqeutl36c" path="res://Items/Base Item/base_item.gd" id="1_psrhk"]
 [ext_resource type="Resource" uid="uid://v668s8cfqqcb" path="res://Items/Accessories/adrenaline.tres" id="2_5uqhs"]
@@ -13,7 +13,6 @@
 [ext_resource type="Resource" uid="uid://b4piphi17odac" path="res://Items/Accessories/defensive_matrix.tres" id="10_xcjgo"]
 [ext_resource type="Resource" uid="uid://c8228xe1bneab" path="res://Items/Accessories/equalizer.tres" id="11_2hn1n"]
 [ext_resource type="Resource" uid="uid://bc8cdayhdrkvs" path="res://Items/Accessories/flimsy_shield.tres" id="12_d2xdl"]
-[ext_resource type="Resource" uid="uid://dc1alhprnmpth" path="res://Items/Accessories/furious_cocktail.tres" id="13_2kkih"]
 [ext_resource type="Resource" uid="uid://dk880v5cdelk4" path="res://Items/Accessories/honey_drop.tres" id="14_3qst6"]
 [ext_resource type="Resource" uid="uid://clnljt630cjai" path="res://Items/Accessories/life_support.tres" id="15_6qv0v"]
 [ext_resource type="Resource" uid="uid://c0tdym662n81c" path="res://Items/Accessories/lucky_dice.tres" id="16_bs5ic"]
@@ -29,5 +28,5 @@
 
 [resource]
 script = ExtResource("2_u4yv6")
-ITEM_POOL = Array[ExtResource("1_psrhk")]([ExtResource("2_5uqhs"), ExtResource("3_mcyub"), ExtResource("4_31wfg"), ExtResource("5_wnt30"), ExtResource("6_f7ai3"), ExtResource("7_mgadh"), ExtResource("8_rgtnt"), ExtResource("9_avxnk"), ExtResource("10_xcjgo"), ExtResource("11_2hn1n"), ExtResource("12_d2xdl"), ExtResource("13_2kkih"), ExtResource("14_3qst6"), ExtResource("15_6qv0v"), ExtResource("16_bs5ic"), ExtResource("17_3o5cs"), ExtResource("18_3cutj"), ExtResource("19_kq2c2"), ExtResource("20_nxwq8"), ExtResource("21_238he"), ExtResource("22_w6607"), ExtResource("23_io1fo"), ExtResource("24_80nnk"), ExtResource("25_h4y0j")])
+ITEM_POOL = Array[ExtResource("1_psrhk")]([ExtResource("2_5uqhs"), ExtResource("3_mcyub"), ExtResource("4_31wfg"), ExtResource("5_wnt30"), ExtResource("6_f7ai3"), ExtResource("7_mgadh"), ExtResource("8_rgtnt"), ExtResource("9_avxnk"), ExtResource("10_xcjgo"), ExtResource("11_2hn1n"), ExtResource("12_d2xdl"), ExtResource("14_3qst6"), ExtResource("15_6qv0v"), ExtResource("16_bs5ic"), ExtResource("17_3o5cs"), ExtResource("18_3cutj"), ExtResource("19_kq2c2"), ExtResource("20_nxwq8"), ExtResource("21_238he"), ExtResource("22_w6607"), ExtResource("23_io1fo"), ExtResource("24_80nnk"), ExtResource("25_h4y0j")])
 metadata/_custom_type_script = "uid://by4ji3sx1olru"

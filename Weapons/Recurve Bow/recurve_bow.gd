@@ -11,8 +11,9 @@ func spawn_atk(player: Player, dir: Vector2):
   dmg.attacker = player
   dmg.knockback = dir.normalized() * 100
   dmg.direction = dir.normalized() * 50
+  dmg.piercing = 0
   
-  stop_atk(.1)
+  isAttacking = false
   set_cooldown(.3)
   
   return [dmg]

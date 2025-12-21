@@ -19,8 +19,8 @@ func _process(delta: float) -> void:
     if iframes[i] <= 0 :
       iframes.erase(i)
 
-func revive() :
-  health = max_health
+func revive(w: float) :
+  health = int(max_health * w)
   updateBar()
 
 var invincible = false
@@ -72,7 +72,10 @@ func healDmg(amt: int) :
   if amt < 0 :
     return dealDmg(-amt)
   
-  if health >= max_health :
+  if amt == 0 :
+    return
+  
+  if health >= max_health or health <= 0 :
     return
   
   health += amt
@@ -104,6 +107,9 @@ func add_shield(amt: int) :
 func dealDmg(amt: int) :
   if amt < 0 :
     return healDmg(-amt)
+  
+  if amt == 0 :
+    return
   
   if health <= 0 :
     return

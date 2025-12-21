@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Potion" load_steps=4 format=3 uid="uid://cai7kp7cdyi7d"]
+
+[ext_resource type="Script" uid="uid://o5cmmqyjxg7e" path="res://Stat Change/stat_change.gd" id="1_fwxb7"]
+[ext_resource type="Texture2D" uid="uid://b7ajhdwmlvafj" path="res://Potions/Sprites/Buff Icons/poison_potion.png" id="2_fwxb7"]
+[ext_resource type="Script" uid="uid://025wicb2kaex" path="res://Potions/potion.gd" id="3_febms"]
+
+[resource]
+script = ExtResource("3_febms")
+EFFECT_ICON = ExtResource("2_fwxb7")
+DOT = 2
+metadata/_custom_type_script = "uid://025wicb2kaex"

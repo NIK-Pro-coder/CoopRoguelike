@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://cm726e5ydhxuc"]
+
+[ext_resource type="PackedScene" uid="uid://dwlby5wp01cdl" path="res://Enemies/Base Enemy/base_enemy.tscn" id="1_1x353"]
+[ext_resource type="Script" uid="uid://b6oob43jrfdh8" path="res://Enemies/Target Dummy/target_dummy.gd" id="2_1x353"]
+[ext_resource type="Texture2D" uid="uid://cjraxmvgw4mpd" path="res://icon.svg" id="4_xilgg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4e6a8"]
+size = Vector2(128, 128)
+
+[node name="target_dummy" node_paths=PackedStringArray("Icon") groups=["roompart"] instance=ExtResource("1_1x353")]
+script = ExtResource("2_1x353")
+knockback_mult = 0.0
+Icon = NodePath("Icon")
+
+[node name="Icon" type="Sprite2D" parent="." index="0"]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("4_xilgg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_4e6a8")
+debug_color = Color(1, 0, 0, 0.42)
+
+[node name="healthBar" parent="." index="4"]
+offset_left = -128.0
+offset_top = 72.0
+offset_right = 128.0
+offset_bottom = 104.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." index="8"]
+offset_left = -184.0
+offset_top = 104.0
+offset_right = 192.0
+offset_bottom = 192.0
+theme_override_font_sizes/normal_font_size = 32
+text = "100 / 100"
+horizontal_alignment = 1
+
+[node name="effectContainer" type="GridContainer" parent="." index="10"]
+unique_name_in_owner = true
+offset_left = -128.0
+offset_top = 152.0
+offset_right = 128.0
+offset_bottom = 504.0
+columns = 4

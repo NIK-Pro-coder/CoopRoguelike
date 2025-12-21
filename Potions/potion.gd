@@ -5,4 +5,5 @@ class_name Potion
 @export var EFFECTS: Array[StatChange] = []
 
 @export var EFFECT_ICON: Texture2D = preload("res://Potions/Sprites/Buff Icons/buff_bg.png")
-@export var ID_BUFF: bool = true
+
+@export var DOT: int = 0

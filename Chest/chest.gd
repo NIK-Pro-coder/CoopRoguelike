@@ -68,6 +68,9 @@ func _process(_delta: float) -> void:
     
     var center_idx = 6
     
+    if gamble_num > 1 :
+      pass#center_idx += 2
+    
     rewards.append(strip[center_idx].duplicate())
     
     print(strip[center_idx].NAME)

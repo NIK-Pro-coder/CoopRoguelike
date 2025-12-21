@@ -5,13 +5,13 @@ func spawn_atk(player: Player, dir: Vector2):
   dmg.rotation = dir.angle()
   dmg.rotation_degrees += 90
   dmg.lifetime = .25
-  dmg.global_position = player.global_position + dir * 100
+  dmg.global_position = player.global_position + dir * 150
   dmg.attacker = player
   dmg.knockback = dir.normalized() * 100
   dmg.iframe_amount = .25
   dmg.iframe_group = str(player.get_instance_id())
   
-  stop_atk(.1)
+  isAttacking = false
   set_cooldown(.1)
   
   return [dmg]

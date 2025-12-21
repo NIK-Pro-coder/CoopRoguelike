@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cymwg8t7ugcyb"]
+
+[sub_resource type="Curve" id="Curve_jq7yx"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.6295265, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_x22qe"]
+curve = SubResource("Curve_jq7yx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_who8r"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 64, 1)
+gravity = Vector3(0, 0, 0)
+scale_min = 4.0
+scale_max = 8.0
+scale_curve = SubResource("CurveTexture_x22qe")
+color = Color(0, 0.76862043, 1, 0.5)
+
+[node name="railgunParticles" type="GPUParticles2D"]
+amount = 25
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_who8r")

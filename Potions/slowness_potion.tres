@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Potion" load_steps=6 format=3 uid="uid://eq4lp7jvwp4q"]
+
+[ext_resource type="Script" uid="uid://o5cmmqyjxg7e" path="res://Stat Change/stat_change.gd" id="1_lsyjc"]
+[ext_resource type="Texture2D" uid="uid://ddeladh2ik27i" path="res://Potions/Sprites/Buff Icons/slowness_potion.png" id="2_4mt65"]
+[ext_resource type="Script" uid="uid://025wicb2kaex" path="res://Potions/potion.gd" id="4_mtmpc"]
+
+[sub_resource type="Resource" id="Resource_3qnd5"]
+script = ExtResource("1_lsyjc")
+AFFECTED_STAT = 21
+CHANGE = -10.0
+metadata/_custom_type_script = "uid://o5cmmqyjxg7e"
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lsyjc"]
+size = Vector2(32, 32)
+
+[resource]
+script = ExtResource("4_mtmpc")
+DURATION = 60.0
+EFFECTS = Array[ExtResource("1_lsyjc")]([SubResource("Resource_3qnd5")])
+EFFECT_ICON = ExtResource("2_4mt65")
+NAME = "Slowness Potion"
+DESCRIPTION = "Decrease speed by 10% for 1 minute"
+TEXTURE = SubResource("PlaceholderTexture2D_lsyjc")
+metadata/_custom_type_script = "uid://025wicb2kaex"

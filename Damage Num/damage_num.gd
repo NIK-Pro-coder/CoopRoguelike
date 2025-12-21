@@ -8,10 +8,10 @@ class_name DamageNum
 var velocity = 64
 
 func _ready() -> void:
-  $Timer.start(LIFETIME)
+  $Timer.start(LIFETIME + abs(DAMAGE) / 30.0)
   
-  position.x += randf_range(-10, 10)
-  position.y += randf_range(-10, 10)
+  position.x += randf_range(-25, 25)
+  position.y += randf_range(-25, 25)
 
 func _process(_delta: float) -> void:
   $textNum.text = str(abs(DAMAGE))

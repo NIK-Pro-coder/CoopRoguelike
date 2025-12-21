@@ -21,7 +21,7 @@ func update_passive(player: Player):
     if !can_heal :
       continue
     
-    if i != player and (dst < min_dist or min_dist < 0) and (i as Player).healtcomponent.health < (i as Player).healtcomponent.max_health :
+    if i != player and (i as Player).healtcomponent.health > 0 and (dst < min_dist or min_dist < 0) and (i as Player).healtcomponent.health < (i as Player).healtcomponent.max_health :
       min_dist = dst
       closest = i
 

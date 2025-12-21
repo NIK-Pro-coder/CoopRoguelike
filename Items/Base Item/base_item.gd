@@ -20,10 +20,6 @@ enum Rarity {
 @export var RARITY: Rarity = Rarity.COMMON
 @export var VALUE_OFFSET: int = 0
 
-@export var EQUIPPABLE: bool = false
-var GLYPH_SHARD: bool = false
-var IS_POTION: bool = false
-
 var EQUIP_SCENE: Weapon
 var EQUIP_ENCHANTS: Array[Glyph]
 
@@ -49,8 +45,9 @@ func getItemCoinValue() -> int :
 func use(p: Player) :
   if self is Potion :
     p.effectcomponent.add_potion(self)
-  elif EQUIPPABLE :
-    p.equip_weapon(self)
+  elif self is Weapon :
+    if p.weapon.canSwap :
+      p.equip_weapon(self)
   elif IS_ACCESSORY :
     return
   else :

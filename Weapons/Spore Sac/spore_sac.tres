@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dhua3t20mwvv1"]
+
+[ext_resource type="Script" uid="uid://7jn7okobw45h" path="res://Weapons/Spore Sac/spore_sac.gd" id="1_tl8o3"]
+[ext_resource type="Texture2D" uid="uid://d2m8u155bumxb" path="res://Weapons/Spore Sac/spore_sac.png" id="1_xq0j5"]
+
+[resource]
+script = ExtResource("1_tl8o3")
+weapon_class = 3
+NAME = "Spore Sac"
+DESCRIPTION = "Throw spores that heal allies over time and damage enemies over time"
+QUOTE = "Me love big plant, she give me this, me happy"
+TEXTURE = ExtResource("1_xq0j5")
+RARITY = 9
+metadata/_custom_type_script = "uid://ctobrtqlco6o4"

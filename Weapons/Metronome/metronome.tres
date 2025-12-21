@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://5wgrcr3vsfmk"]
+
+[ext_resource type="Texture2D" uid="uid://c4rjncd3w6d06" path="res://Weapons/Metronome/metronome.png" id="1_0kjf8"]
+[ext_resource type="Script" uid="uid://dmteuqi28lln8" path="res://Weapons/Metronome/metronome.gd" id="1_mii30"]
+
+[resource]
+script = ExtResource("1_mii30")
+damage = 10
+NAME = "Metronome"
+DESCRIPTION = "Hitting an enemy on-beat deals double damage, hitting off-beat deals half damage"
+QUOTE = "Music man!"
+TEXTURE = ExtResource("1_0kjf8")
+RARITY = 7
+EQUIPPABLE = true

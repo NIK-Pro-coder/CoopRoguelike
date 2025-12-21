@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://p0qb0avb8loy"]
+
+[ext_resource type="Script" uid="uid://b7hj8nx4ameba" path="res://Spells/Zap Spell/zap_spell.gd" id="1_c6xnt"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c6xnt"]
+size = Vector2(32, 32)
+
+[resource]
+script = ExtResource("1_c6xnt")
+COOLDOWN = 2.5
+MANA_COST = 20
+NAME = "Zap Spell"
+DESCRIPTION = "Zaps the nearest enemy, dealing 15 damage"
+QUOTE = "A wise man once said: \"Electricity!\""
+TEXTURE = SubResource("PlaceholderTexture2D_c6xnt")
+RARITY = null
+VALUE_OFFSET = null
+MAX_CHARGES = null
+IS_ACCESSORY = null

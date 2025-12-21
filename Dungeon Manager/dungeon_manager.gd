@@ -184,6 +184,10 @@ func generateGrid() -> void:
         posToRect[Vector2(x, y)].color = HIDDEN
         possible_room_positions.push_back(Vector2(x,y))
   
+  for i in posToRoom :
+    posToRoom[i].clear_room()
+  posToRoom.clear()
+  
   possible_room_positions.erase(currentRoom)
   posToRoom[currentRoom] = load("res://Dungeon Rooms/campfire_room.tres").duplicate()
   
@@ -197,9 +201,6 @@ func generateGrid() -> void:
   for i in possible_room_positions :
     var room = getRandomRoom(i.x, i.y)
     posToRoom[i] = room
-  
-  for i in posToRoom :
-    posToRoom[i].place_features(self)
   
   clearedRooms.append(currentRoom)
   
@@ -219,6 +220,8 @@ var clearedRooms: Array[Vector2] = []
 @onready var timer = $Timer
 
 signal room_changed
+
+var doorIndicator = preload("res://Room Indicator/room_indicator.tscn")
 
 func changeRoom(_body: Node2D, dir: Vector2) :
   if !room_cleared :
@@ -260,7 +263,7 @@ func changeRoom(_body: Node2D, dir: Vector2) :
   # Load current room's walls & exits
   loadCurrentRoom()
   
-  for i in get_tree().get_nodes_in_group("player") :
+  for i in get_tree().get_nodes_in_group("ally") :
     i.global_position = -dir * room_size
   
   if !posToRoom[currentRoom].IS_HOSTILE :
@@ -393,11 +396,9 @@ func loadCurrentRoom() :
 
     add_child.call_deferred(spr)
     
-    var room_icon := Sprite2D.new()
-    room_icon.texture = posToRoom[currentRoom + o].ROOM_ICON
-    room_icon.scale = Vector2.ONE * 4
-    room_icon.global_position = spr.global_position
-    room_icon.global_position.y += 160
+    var room_icon: RoomIndicator = doorIndicator.instantiate()
+    room_icon.ICON = posToRoom[currentRoom + o].ROOM_ICON
+    room_icon.DOOR_POS = spr.global_position + Vector2(0, 160)
     room_icon.add_to_group("roompart")
     
     add_child.call_deferred(room_icon)
@@ -429,12 +430,6 @@ func _process(_delta: float) -> void:
   clearedRooms.clear()
   generateGrid()
   boss_defeated = false
-  
-  var chest: Chest = %waveManager.wave_end_rewards.pick_random().instantiate()
-  
-  posToRoom[currentRoom].add_to_storage(chest)
-  
-  add_child.call_deferred(chest)
 
 func _on_wave_manager_boss_defeated() -> void:
   boss_defeated = true

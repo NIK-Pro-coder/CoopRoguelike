@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://b8wcaae2s4ldu"]
+
+[ext_resource type="Texture2D" uid="uid://d3q1quaggdi1k" path="res://Weapons/Worn Down Boomerang/worn_down_boomerang_fly.png" id="1_sjw5u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2lex"]
+atlas = ExtResource("1_sjw5u")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40rbr"]
+atlas = ExtResource("1_sjw5u")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmdxk"]
+atlas = ExtResource("1_sjw5u")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37te8"]
+atlas = ExtResource("1_sjw5u")
+region = Rect2(32, 32, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2lex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40rbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmdxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37te8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dfu08hn3q8adx"]
+
+[ext_resource type="Script" uid="uid://bvrorec8ijw43" path="res://Weapons/Wizard Staff/wizard_staff.gd" id="1_7prkc"]
+[ext_resource type="Texture2D" uid="uid://bt2s4n2nnbx3b" path="res://Weapons/Wizard Staff/wizard_staff.png" id="1_iesqf"]
+
+[resource]
+script = ExtResource("1_7prkc")
+damage = 10
+combo_length = 3
+NAME = "Wizard Staff"
+DESCRIPTION = "Grants more max mana, mana gain and upgrade spells when held"
+QUOTE = "Some call me... Tim"
+TEXTURE = ExtResource("1_iesqf")
+RARITY = 9
+EQUIPPABLE = true

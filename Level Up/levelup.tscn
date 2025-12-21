@@ -42,6 +42,7 @@ hue_variation_max = 1.0
 
 [node name="levelup" type="Control"]
 process_mode = 3
+z_index = 501
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -104,6 +105,7 @@ theme_override_constants/separation = 220
 alignment = 1
 
 [node name="confirmText" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 theme = ExtResource("1_8jhx0")

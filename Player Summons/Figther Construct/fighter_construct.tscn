@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://yj3p6g7lyawd"]
+
+[ext_resource type="PackedScene" uid="uid://omf84l7hc7lm" path="res://Player Summons/Base Summon/player_summon.tscn" id="1_1o1oy"]
+[ext_resource type="Script" uid="uid://b6slfipvyvlh8" path="res://Player Summons/Figther Construct/fighter_construct.gd" id="1_8uvlx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4y0m"]
+size = Vector2(64, 64)
+
+[node name="fighter_construct" instance=ExtResource("1_1o1oy")]
+script = ExtResource("1_8uvlx")
+
+[node name="healthCoponent" parent="." index="1"]
+max_health = 75
+
+[node name="CollisionShape2D" parent="." index="3"]
+shape = SubResource("RectangleShape2D_a4y0m")

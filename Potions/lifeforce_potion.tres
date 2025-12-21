@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_3qnd5"]
 script = ExtResource("1_2gi7o")
 AFFECTED_STAT = 15
-CHANGE = 50.0
+CHANGE = 10.0
 metadata/_custom_type_script = "uid://o5cmmqyjxg7e"
 
 [resource]
@@ -17,7 +17,7 @@ DURATION = 60.0
 EFFECTS = Array[ExtResource("1_2gi7o")]([SubResource("Resource_3qnd5")])
 EFFECT_ICON = ExtResource("2_mv23j")
 NAME = "Lifeforce Potion"
-DESCRIPTION = "Increase max health by 50% for 1 minute"
+DESCRIPTION = "Increase max health by 10% for 1 minute"
 QUOTE = "You feel revitalized!"
 TEXTURE = ExtResource("3_a7rsa")
 metadata/_custom_type_script = "uid://025wicb2kaex"

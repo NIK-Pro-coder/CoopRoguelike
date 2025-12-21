@@ -6,9 +6,9 @@
 [ext_resource type="AudioStream" uid="uid://h54r5bftv22r" path="res://Sounds/join.wav" id="3_kd8pr"]
 [ext_resource type="AudioStream" uid="uid://dxda1qnma74ny" path="res://Sounds/ready.wav" id="4_ib2es"]
 [ext_resource type="Resource" uid="uid://oxkpa0udjw36" path="res://Weapons/Rusty Sword/worn_down_sword.tres" id="4_qw7qs"]
-[ext_resource type="Resource" uid="uid://2dxp0qtgimoy" path="res://Weapons/Rusty Spear/worn_down_spear.tres" id="5_aoogx"]
-[ext_resource type="Resource" uid="uid://i5y1titd4xrl" path="res://Weapons/Rusty Mace/worn_down_mace.tres" id="6_p8sy6"]
-[ext_resource type="Resource" uid="uid://wiu4fxj0jokx" path="res://Weapons/Rusty Dagger/worn_down_dagger.tres" id="7_6805v"]
+[ext_resource type="Resource" uid="uid://dm2k3g2v7wopf" path="res://Weapons/Syringes/syringes.tres" id="6_dn8eh"]
+[ext_resource type="Resource" uid="uid://dff0qlf8nfx27" path="res://Weapons/Fighter Staff/fighter_staff.tres" id="7_qw7qs"]
+[ext_resource type="Resource" uid="uid://dv8sfflvbrcv6" path="res://Weapons/Worn Down Boomerang/worn_down_boomerang.tres" id="8_qw7qs"]
 
 [node name="lobby" type="Control"]
 process_mode = 3
@@ -21,7 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_oxtak")
 script = ExtResource("2_1qw4d")
-STARTER_WEAPONS = Array[ExtResource("3_dn8eh")]([ExtResource("4_qw7qs"), ExtResource("5_aoogx"), ExtResource("6_p8sy6"), ExtResource("7_6805v")])
+STARTER_WEAPONS = Array[ExtResource("3_dn8eh")]([ExtResource("4_qw7qs"), ExtResource("8_qw7qs"), ExtResource("6_dn8eh"), ExtResource("7_qw7qs")])
 
 [node name="bg" type="ColorRect" parent="."]
 visible = false

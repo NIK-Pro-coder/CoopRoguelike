@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://db2rdpdv8coxc"]
+
+[ext_resource type="Script" uid="uid://dwbgit4byih6u" path="res://Weapons/Flute/flute_aoe.gd" id="1_i7y8h"]
+[ext_resource type="Shader" uid="uid://c0f2lww2pg61p" path="res://Weapons/Flute/flute_aoe.gdshader" id="2_0nevs"]
+[ext_resource type="Texture2D" uid="uid://cjraxmvgw4mpd" path="res://icon.svg" id="3_mshqw"]
+[ext_resource type="Texture2D" uid="uid://do8syuix4pr50" path="res://Weapons/Flute/flute_note.png" id="4_mshqw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2u3h7"]
+radius = 520.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_heabb"]
+shader = ExtResource("2_0nevs")
+shader_parameter/active = false
+shader_parameter/precision = 96.0
+
+[sub_resource type="Curve" id="Curve_heabb"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.04178273, 1), 0.0, 0.0, 0, 0, Vector2(0.74651814, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_3ef4n"]
+curve = SubResource("Curve_heabb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i8osx"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 519.7
+spread = 180.0
+initial_velocity_min = 16.0
+initial_velocity_max = 16.0
+gravity = Vector3(0, 0, 0)
+scale_min = 4.0
+scale_max = 4.0
+scale_curve = SubResource("CurveTexture_3ef4n")
+
+[node name="flute_aoe" type="Area2D"]
+z_index = -1
+collision_layer = 0
+collision_mask = 36
+script = ExtResource("1_i7y8h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2u3h7")
+
+[node name="dot" type="Timer" parent="."]
+autostart = true
+
+[node name="sprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_heabb")
+scale = Vector2(10.125001, 10.124999)
+texture = ExtResource("3_mshqw")
+
+[node name="particles" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+emitting = false
+amount = 15
+texture = ExtResource("4_mshqw")
+process_material = SubResource("ParticleProcessMaterial_i8osx")
+
+[connection signal="timeout" from="dot" to="." method="_on_dot_timeout"]

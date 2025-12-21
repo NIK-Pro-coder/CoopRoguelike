@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://omf84l7hc7lm"]
+
+[ext_resource type="Script" uid="uid://dweugsbfpjfkh" path="res://Player Summons/Base Summon/player_summon.gd" id="1_kxycf"]
+[ext_resource type="Texture2D" uid="uid://cjraxmvgw4mpd" path="res://icon.svg" id="1_r61vd"]
+[ext_resource type="PackedScene" uid="uid://ntpu8pjibyrw" path="res://Components/Health Component/health_coponent.tscn" id="2_cqde4"]
+[ext_resource type="PackedScene" uid="uid://castrtcka8x82" path="res://Components/Effect Component/effect_component.tscn" id="4_g36lq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqde4"]
+size = Vector2(64, 64)
+
+[node name="player_summon" type="CharacterBody2D" groups=["ally"]]
+collision_layer = 32
+motion_mode = 1
+script = ExtResource("1_kxycf")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_r61vd")
+
+[node name="healthCoponent" parent="." node_paths=PackedStringArray("DISPLAY_BAR") instance=ExtResource("2_cqde4")]
+unique_name_in_owner = true
+DISPLAY_BAR = NodePath("../healthbar")
+max_health = 50
+
+[node name="healthbar" type="ProgressBar" parent="."]
+offset_left = -64.0
+offset_top = 48.0
+offset_right = 64.0
+offset_bottom = 64.0
+show_percentage = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cqde4")
+
+[node name="nav_agent" type="NavigationAgent2D" parent="."]
+unique_name_in_owner = true
+debug_use_custom = true
+debug_path_custom_color = Color(0, 1, 0, 1)
+
+[node name="recalc_target" type="Timer" parent="."]
+autostart = true
+
+[node name="action_cooldown" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="effectComponent" parent="." instance=ExtResource("4_g36lq")]
+unique_name_in_owner = true
+
+[connection signal="death" from="healthCoponent" to="." method="_on_health_coponent_death"]
+[connection signal="timeout" from="recalc_target" to="." method="_on_recalc_target_timeout"]

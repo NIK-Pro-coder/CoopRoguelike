@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bg2kr25e1b2fu"]
+
+[ext_resource type="Script" uid="uid://d2wj3rqe0m0jk" path="res://Weapons/Magic Katanas/magic_katanas.gd" id="1_as421"]
+[ext_resource type="Texture2D" uid="uid://dh3g8fktb0nna" path="res://Weapons/Magic Katanas/magic_katanas.png" id="1_in2cv"]
+
+[resource]
+script = ExtResource("1_as421")
+damage = 5
+weapon_class = 2
+NAME = "Magic Katanas"
+DESCRIPTION = "Summons five magical, autonomous katanas that will swing at nearby enemies"
+QUOTE = "Fashoined straight from top-tier magical method"
+TEXTURE = ExtResource("1_in2cv")
+RARITY = 7

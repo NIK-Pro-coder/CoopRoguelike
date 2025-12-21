@@ -6,9 +6,8 @@
 [resource]
 script = ExtResource("1_3i5hj")
 damage = 5
+weapon_class = 1
 NAME = "Recurve Bow"
 DESCRIPTION = "Shoots bowling arrows from a distance"
 QUOTE = "Where do the arrows come from? Nobody knows!"
 TEXTURE = ExtResource("1_vyumv")
-RARITY = 9
-EQUIPPABLE = true

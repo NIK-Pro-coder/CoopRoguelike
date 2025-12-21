@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dm2k3g2v7wopf"]
+
+[ext_resource type="Texture2D" uid="uid://cjxkfy4pf4rmv" path="res://Weapons/Syringes/syringe.png" id="1_hvoij"]
+[ext_resource type="Script" uid="uid://dg01p5iycc0og" path="res://Weapons/Syringes/syringes.gd" id="1_wqtyo"]
+
+[resource]
+script = ExtResource("1_wqtyo")
+damage = 5
+weapon_class = 3
+NAME = "Syringe"
+DESCRIPTION = "Stick allies and enemies with your syringe, hittinng allies will heal them, hitting enemies will damage them"
+QUOTE = "Adrenaline not included"
+TEXTURE = ExtResource("1_hvoij")

@@ -83,6 +83,7 @@ func slam() :
   )
 
 var charge_dir: Vector2
+var charge_area: DamageArea
 
 func charge() :
   var p: Player = get_closest_player()
@@ -667,15 +668,17 @@ func _process(delta: float) -> void:
   if charge_dir :
     velocity = charge_dir * 6500
     
-    var area: DamageArea = get_square_damage_area(Vector2(1500, 1500))
+    if charge_area == null :
+      charge_area = get_square_damage_area(Vector2(1500, 1500))
+      
+      charge_area.rotation = velocity.angle()
+      charge_area.damage = 25
+      charge_area.lifetime = .1
+      charge_area.iframe_group = "boss_charge"
+      
+      get_tree().get_root().add_child.call_deferred(charge_area)
     
-    area.rotation = velocity.angle()
-    area.global_position = global_position
-    area.damage = 25
-    area.lifetime = .1
-    area.iframe_group = "boss_charge"
-    
-    get_tree().get_root().add_child.call_deferred(area)
+    charge_area.global_position = global_position
   
   if digging :
     velocity = (dig_pos - global_position).normalized() * 2500
@@ -738,6 +741,9 @@ func _process(delta: float) -> void:
     cam.addScreenshake(25)
     
     charge_dir = Vector2.ZERO
+    if charge_area :
+      charge_area.queue_free()
+      charge_area = null
     
     var t := Timer.new()
     add_child(t)

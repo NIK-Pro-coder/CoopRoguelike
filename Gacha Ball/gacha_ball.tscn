@@ -1,0 +1,233 @@
+[gd_scene load_steps=23 format=3 uid="uid://hmhspb5u325q"]
+
+[ext_resource type="PackedScene" uid="uid://b77a7fbaiyf7n" path="res://Components/Interaction Component/interaction.tscn" id="1_x3e0k"]
+[ext_resource type="Shader" uid="uid://ccjsfy7g34bof" path="res://Gacha Ball/gacha_ball.gdshader" id="2_40fuf"]
+[ext_resource type="Script" uid="uid://cgdthvjmuubni" path="res://Gacha Ball/gacha_ball.gd" id="2_ethjp"]
+[ext_resource type="Texture2D" uid="uid://bbh4xs7vuyehf" path="res://Gacha Ball/gacha_ball-Sheet.png" id="2_x3e0k"]
+[ext_resource type="Resource" uid="uid://soqxctm30lva" path="res://Loot Table/accessory_loot_table.tres" id="3_lubp1"]
+[ext_resource type="Texture2D" uid="uid://6vqrdt5tv658" path="res://Gacha Ball/gacha_ball_big.png" id="6_j5raq"]
+[ext_resource type="Texture2D" uid="uid://dh3e020efir7d" path="res://Accessories/Adrenaline/adrenaline.png" id="7_886aw"]
+[ext_resource type="Shader" uid="uid://cy0u7u73xdw85" path="res://Gacha Ball/gacha_ball_given.gdshader" id="7_x8rlu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ethjp"]
+size = Vector2(128, 128)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ethjp"]
+shader = ExtResource("2_40fuf")
+shader_parameter/color = Vector3(0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40fuf"]
+atlas = ExtResource("2_x3e0k")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ethjp"]
+atlas = ExtResource("2_x3e0k")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lubp1"]
+atlas = ExtResource("2_x3e0k")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5raq"]
+atlas = ExtResource("2_x3e0k")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_886aw"]
+atlas = ExtResource("2_x3e0k")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8rlu"]
+atlas = ExtResource("2_x3e0k")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rc47y"]
+atlas = ExtResource("2_x3e0k")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lurmt"]
+atlas = ExtResource("2_x3e0k")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrp7b"]
+atlas = ExtResource("2_x3e0k")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rxmp3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40fuf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ethjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lubp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5raq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_886aw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8rlu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rc47y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lurmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrp7b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j5raq"]
+shader = ExtResource("2_40fuf")
+shader_parameter/color = Vector3(0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rc47y"]
+shader = ExtResource("7_x8rlu")
+shader_parameter/color = Vector3(1, 0, 0)
+
+[node name="gacha_ball" node_paths=PackedStringArray("DISPLAY_TOOLTIP") instance=ExtResource("1_x3e0k")]
+process_mode = 3
+script = ExtResource("2_ethjp")
+LOOT_POOL = ExtResource("3_lubp1")
+TOOLTIP = "Open"
+DISPLAY_TOOLTIP = NodePath("RichTextLabel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_ethjp")
+
+[node name="sprite" type="AnimatedSprite2D" parent="." index="1"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_ethjp")
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_rxmp3")
+autoplay = "default"
+frame = 8
+frame_progress = 0.24078093
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." index="2"]
+offset_left = -128.0
+offset_top = 72.0
+offset_right = 128.0
+offset_bottom = 207.0
+theme_override_font_sizes/normal_font_size = 32
+text = "Open
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="3"]
+visible = false
+
+[node name="Control" type="Control" parent="CanvasLayer" index="0"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.75000006)
+
+[node name="Control" type="Control" parent="CanvasLayer/Control" index="1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sprite_big" type="TextureRect" parent="CanvasLayer/Control/Control" index="0"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_j5raq")
+custom_minimum_size = Vector2(384, 384)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -192.0
+offset_right = 192.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(192, 192)
+texture = ExtResource("6_j5raq")
+
+[node name="sprite_given" type="TextureRect" parent="CanvasLayer/Control/Control" index="1"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_rc47y")
+custom_minimum_size = Vector2(384, 384)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -192.0
+offset_right = 192.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_886aw")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control" index="2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="claim_text" type="RichTextLabel" parent="CanvasLayer/Control/MarginContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 32
+text = "(A) Claim"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="item_name" type="RichTextLabel" parent="CanvasLayer/Control/MarginContainer" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 25
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_font_sizes/normal_font_size = 64
+text = "Item Name"
+fit_content = true
+horizontal_alignment = 1
+
+[connection signal="interacted" from="." to="." method="_on_interacted"]

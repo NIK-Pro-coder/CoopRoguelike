@@ -3,7 +3,7 @@ class_name Boss
 
 @export var cam: MainCamera
 
-var damageAreaScene: PackedScene = preload("res://DamageAreas/enemy_damage_area.tscn")
+var damageAreaScene: PackedScene = load("res://DamageAreas/enemy_damage_area.tscn")
 var telegraphScene: PackedScene = preload("res://Telegraphs/generic_telegraph.tscn")
 
 func get_square_damage_area(size: Vector2) :
@@ -14,6 +14,7 @@ func get_square_damage_area(size: Vector2) :
   (shape.shape as RectangleShape2D).size = size
   
   a.add_child(shape)
+  a.piercing = -1
   
   return a
 

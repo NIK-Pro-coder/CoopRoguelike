@@ -13,7 +13,7 @@ config_version=5
 config/name="Coop Roguelike"
 run/main_scene="uid://4h0rbqs803ol"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://db7hsr7tmf1cm"
 
 [autoload]
 
@@ -117,6 +117,10 @@ k_roll={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":67,"key_label":0,"unicode":99,"location":0,"echo":false,"script":null)
 ]
 }
+test={
+"deadzone": 0.2,
+"events": [null, null, null]
+}
 
 [layer_names]
 
@@ -125,6 +129,7 @@ k_roll={
 2d_physics/layer_3="enemy"
 2d_physics/layer_4="player attack"
 2d_physics/layer_5="enemy attack"
+2d_physics/layer_6="allies"
 
 [rendering]
 

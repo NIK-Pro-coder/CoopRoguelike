@@ -1,6 +1,6 @@
-res://Biomes/Crystal Hollow/crystal_hollow.tres::a5a17a65da0ba5ee8c907b7f62f822fb::1765134665::res://.godot/exported/133200997/export-c53e1a5fdd3a071724e6734c6b3e1deb-crystal_hollow.res
+res://Biomes/Crystal Hollow/crystal_hollow.tres::70128a37ed1b0dda2c8c804094d6df07::1766216317::res://.godot/exported/133200997/export-c53e1a5fdd3a071724e6734c6b3e1deb-crystal_hollow.res
 res://Chest/chest.tscn::671afc324536db42bd31d51f85f84bfe::1765607766::res://.godot/exported/133200997/export-5739d885b9d5c7de01125984dcdcf288-chest.scn
-res://Chest/item_strip_display.tscn::559bd5cddec2811291b5dcd8066c6fc3::1765277453::res://.godot/exported/133200997/export-d73304585857eea9488ae49af0843faa-item_strip_display.scn
+res://Chest/item_strip_display.tscn::2d7ad98bce45a92dfe5f55ced9559722::1766174843::res://.godot/exported/133200997/export-d73304585857eea9488ae49af0843faa-item_strip_display.scn
 res://Components/Health Component/health_coponent.tscn::a8e6b9cb78cb86bc24095da638afd4bb::1761682602::res://.godot/exported/133200997/export-375dfdc6f4a4d2845f29ebe3010d3b75-health_coponent.scn
 res://Components/Interaction Component/interaction.tscn::5dd91b17991d84726b7ad729e41c878e::1764783280::res://.godot/exported/133200997/export-05c7851583e559a818de2c0a28a3b306-interaction.scn
 res://Damage Num/damage_num.tscn::c9dce81310b6ab5b903449e3c0b44bd2::1756904850::res://.godot/exported/133200997/export-b91ff1e2ce51a1eb95af630c6b54e6c1-damage_num.scn
@@ -8,36 +8,34 @@ res://Defeat Screen/defeat_screen.tscn::acc28765da3d0e61f5871e6867160fc5::176520
 res://Defeat Screen/stat_screen_player.tscn::96361568d72204e35ca5fdfca5cd4129::1765203874::res://.godot/exported/133200997/export-3439d20e7a2a71e704711a13bf5df61c-stat_screen_player.scn
 res://Dropped Item/dropped_item.tscn::932c1ace826999aad414286866ada1cd::1763930897::res://.godot/exported/133200997/export-3979119a185c5f1f41bdc4caee01b861-dropped_item.scn
 res://Dungeon Manager/dungeon_manager.tscn::c0f5c1c880a317d5cb341aa43c4f4db5::1765100578::res://.godot/exported/133200997/export-9dfbbf930452fa8b6ad5132616a259bb-dungeon_manager.scn
-res://Enemies/Base Enemy/base_enemy.tscn::7fb2843259fe3f816014c23385337823::1764016655::res://.godot/exported/133200997/export-674cc7c1bfa92a627982613b0892a4c2-base_enemy.scn
+res://Enemies/Base Enemy/base_enemy.tscn::1f07088284225f83ef31670a91020457::1766049564::res://.godot/exported/133200997/export-674cc7c1bfa92a627982613b0892a4c2-base_enemy.scn
 res://Enemies/Creeper Enemy/creeper_enemy.tscn::044ea1f12d4211ecbe7ff2bc9280fdeb::1764786266::res://.godot/exported/133200997/export-096445e8cfa0dc8e8c36ed30f4679a33-creeper_enemy.scn
-res://Enemies/Fast Enemy/fast_enemy.tscn::69f2d3ef318192f77921dd3a5d8134f5::1764786264::res://.godot/exported/133200997/export-93b558cd940d9eaf1b0a0ce1079e1b1a-fast_enemy.scn
+res://Enemies/Fast Enemy/fast_enemy.tscn::69f2d3ef318192f77921dd3a5d8134f5::1766049765::res://.godot/exported/133200997/export-93b558cd940d9eaf1b0a0ce1079e1b1a-fast_enemy.scn
 res://Enemies/Melee Enemy/melee_enemy.tscn::068a20529833d1a4599a49ac465f9233::1765103310::res://.godot/exported/133200997/export-6a6e9a14b0de8ca325bcbb98b694e078-melee_enemy.scn
-res://Enemies/Ranged Enemy/ranged_enemy.tscn::bf79b4723fbe9ab3d2e2f899585433ac::1764786260::res://.godot/exported/133200997/export-5c2f629d2f2e65cbb96c96d1ed74a18f-ranged_enemy.scn
+res://Enemies/Ranged Enemy/ranged_enemy.tscn::ab4f778acb58ecd2457f9ecba148f917::1765833831::res://.godot/exported/133200997/export-5c2f629d2f2e65cbb96c96d1ed74a18f-ranged_enemy.scn
 res://Glyphs/Lifesteal Glyph/lifesteal_glyph.tres::f0221a5e6d6afe30b006da1f336e8976::1757505718::res://.godot/exported/133200997/export-90a49353ccb61c63c3672fae199def56-lifesteal_glyph.res
 res://Heal Orb/heal_orb.tscn::d74f122781e345c77a2c100cc9a1fc78::1757265388::res://.godot/exported/133200997/export-267913e2c980a12dcc271daf64e2bbc2-heal_orb.scn
 res://HUD/hud_template.tscn::bd2cc615e8e74b9b7db437ae7cdb8017::1765607460::res://.godot/exported/133200997/export-42a87b266d233b472d234ca660c2f638-hud_template.scn
 res://Inventory/enchant_screen.tscn::62a62b2818e63f97ae80217b0cb511ed::1761759015::res://.godot/exported/133200997/export-6a203dcc944182f6e7233efc4a54db40-enchant_screen.scn
 res://Inventory/glyph_display.tscn::2b5138c92b138b28e8ec5d8cc09fe922::1761759025::res://.godot/exported/133200997/export-da64a27385d107a09699028919c86317-glyph_display.scn
-res://Inventory/inventory.tscn::6b5cc833b71e49c6177c5c7fc3d12727::1765735455::res://.godot/exported/133200997/export-b37a3c821a347912389c3a4e74e0807e-inventory.scn
-res://Inventory/inv_slot.tscn::fffc22903d775233fda3a90f50c579cb::1764780183::res://.godot/exported/133200997/export-d5081bd86b00cb5a28fe070f1615a0db-inv_slot.scn
+res://Inventory/inventory.tscn::1056b5d98253b22f8ae97b5c668a899d::1765991710::res://.godot/exported/133200997/export-b37a3c821a347912389c3a4e74e0807e-inventory.scn
+res://Inventory/inv_slot.tscn::c91b299fd999a51c85c481724d4ef279::1765991735::res://.godot/exported/133200997/export-d5081bd86b00cb5a28fe070f1615a0db-inv_slot.scn
 res://Items/Base Item/base_item.tres::41147a1206c9d5d4b0b791ca53a9dee1::1763983285::res://.godot/exported/133200997/export-23f73f2cfcb7743fbfa6aadb1830fc03-base_item.res
 res://Items/Glyph Shards/lifesteal_shard.tres::057d25834a17a7a0921cc78396dafb36::1763983285::res://.godot/exported/133200997/export-c7da759cf1a1e95ec21883efb2cf8e5d-lifesteal_shard.res
 res://Items/Health Potion/health_potion.tres::4daf290f5ba4e4ea1f4996a8b156faab::1763983285::res://.godot/exported/133200997/export-8910822f6ecf9a4f5c271ce07eeeeb6a-health_potion.res
 res://Items/Mana Potion/mana_potion.tres::6f286aa0d360e57925622344b5fff2b4::1763983285::res://.godot/exported/133200997/export-ae7eace17edc53624d8a8672b24e9cb7-mana_potion.res
-res://Level Up/levelup.tscn::fd47813b592ccfa5bf8e3b75cb029e0b::1763983046::res://.godot/exported/133200997/export-e80aa4fb33e9e0a92797595bae35b470-levelup.scn
-res://Lobby/lobby.tscn::98ebbac044e7b1e10e2b33d9e663d848::1765435094::res://.godot/exported/133200997/export-824e17462b0446f43924d32a66ef305a-lobby.scn
+res://Level Up/levelup.tscn::e1e7214d8da18d99eadc8b0ba7618526::1766234783::res://.godot/exported/133200997/export-e80aa4fb33e9e0a92797595bae35b470-levelup.scn
+res://Lobby/lobby.tscn::bebc3249ae2efa63aa5b17d6e8181068::1766159610::res://.godot/exported/133200997/export-824e17462b0446f43924d32a66ef305a-lobby.scn
 res://Lobby/lobby_player_display.tscn::87eda7979db909d9d771709d836cce06::1761759093::res://.godot/exported/133200997/export-edbbaed31785085a1d3c18c111da5f2d-lobby_player_display.scn
 res://Move Next Dungeon/move_next_dungeon.tscn::cc9363a53dfd6ff059bd1c4ded126155::1764588989::res://.godot/exported/133200997/export-488b74dccfa0bd46ec69397687c4b35a-move_next_dungeon.scn
 res://Player/dash_trail.tscn::77bc5d5e56f7f090cefa0754216b9334::1761658468::res://.godot/exported/133200997/export-4b122ca7dccbb450593e31e569bb9993-dash_trail.scn
-res://Player/player.tscn::1a3417948a788953b7677c1a2ad1377b::1765557900::res://.godot/exported/133200997/export-d267b47f7e81a3258979164d56d0d9c2-player.scn
-res://Powers/Power Template/power_template.tscn::ad2dec8b2512fedbb77a6a76f87282ca::1765736947::res://.godot/exported/133200997/export-e3d3c4cbb0e2e337fc836fdd74256b89-power_template.scn
+res://Player/player.tscn::bb02da30fe9c19f79bca5a1846a2cfe5::1765831808::res://.godot/exported/133200997/export-d267b47f7e81a3258979164d56d0d9c2-player.scn
+res://Powers/Power Template/power_template.tscn::e74376dc15e7c4b15ab9c723488607c5::1765918741::res://.godot/exported/133200997/export-e3d3c4cbb0e2e337fc836fdd74256b89-power_template.scn
 res://Revive Totem/revive_totem.tscn::2d66bf13af45adbbbe83624026d357ae::1765627660::res://.godot/exported/133200997/export-5fceda04e63973c7b4317decd72bb854-revive_totem.scn
-res://Spells/Base Spell/base_spell.tscn::f762b14dbf6bd63b7f491d4b359c6124::1757006131::res://.godot/exported/133200997/export-6f61829b55309b4217d350c88714b416-base_spell.scn
-res://Spells/Zap Spell/zap_spell.tscn::b8ee7b0d8e4c159dcfa991e4504a6093::1763743443::res://.godot/exported/133200997/export-1506ac2e0454f08710691155978cfa92-zap_spell.scn
-res://Wave Manager/wave_manager.tscn::017db31f676d29a2f9db8f40820b4b0c::1765628171::res://.godot/exported/133200997/export-0ac2796d4b4422be040e77c26d6f1ad0-wave_manager.scn
+res://Wave Manager/wave_manager.tscn::cfe1b26a8b0d8950881caab71a0da580::1766179611::res://.godot/exported/133200997/export-0ac2796d4b4422be040e77c26d6f1ad0-wave_manager.scn
 res://Xp Manager/xp_manager.tscn::b808da5091742d39b1a7c51562438804::1763205517::res://.godot/exported/133200997/export-202b42b342c79816dffb95e7de400f1e-xp_manager.scn
 res://Xp Orb/xp_orb.tscn::27ac653944125eacd1a39585bd9c0ff8::1765649166::res://.godot/exported/133200997/export-b9ca92b25d501787a56b82a25f70397f-xp_orb.scn
-res://main.tscn::6c21c0127336e55d9917c2913806985b::1765738336::res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn
+res://main.tscn::4d7102856769c8bb26b28825e86ffd26::1766234418::res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn
 res://UI.tres::08af8b910848e7b7104e37cd45528d6b::1761759411::res://.godot/exported/133200997/export-b10a30535fd59307670f8b74271c0edd-UI.res
 res://Powers/damage_power.tres::8e3d39b7bae7beb9820d7036cc04ab9c::1763983046::res://.godot/exported/133200997/export-239ee69811ab87236703558d455ce03c-damage_power.res
 res://Powers/dash_cooldown_power.tres::2fafc46871a1c2984e783b02d5234c17::1763983046::res://.godot/exported/133200997/export-6480d17b0b5957b5b04976b0ff6ed149-dash_cooldown_power.res
@@ -51,28 +49,28 @@ res://Powers/potion_cooldown_power.tres::a3e79f0c526c6bbdfaa1b53924a317fd::17639
 res://Powers/potion_healing_power.tres::825bf81eb0f37b40aa0742b964218501::1763983046::res://.godot/exported/133200997/export-a67b9d7f162bc0613af1877533b623d2-potion_healing_power.res
 res://Powers/speed_power.tres::15844333779dd12e3957a9db0f2b4241::1765102480::res://.godot/exported/133200997/export-178764cb192ba5bd644a3f0722897595-speed_power.res
 res://Accessories/Adrenaline/adrenaline.tres::fa3702858fbad9d3147dd0516b832acd::1763929872::res://.godot/exported/133200997/export-f4c156eddc57ca76217832f5f6ec13aa-adrenaline.res
-res://Accessories/Alchemy Kit/alchemy_kit.tres::890013f8d1354ea675b7c1430b58f695::1765737955::res://.godot/exported/133200997/export-0690e9e2799e0f3f3c2fb44f2116216a-alchemy_kit.res
+res://Accessories/Alchemy Kit/alchemy_kit.tres::890013f8d1354ea675b7c1430b58f695::1766229464::res://.godot/exported/133200997/export-0690e9e2799e0f3f3c2fb44f2116216a-alchemy_kit.res
 res://Accessories/Base/base_accessory.tres::4475ed2ae5f7889526490b8f9a675d1b::1763733574::res://.godot/exported/133200997/export-5e7b1e192cd50e9aad2e565752b3b1df-base_accessory.res
-res://Accessories/Bottomless Mana Pouch/bottomless_mana_pouch.tres::d40941a0d8dd6708c538e6efc497d922::1765737955::res://.godot/exported/133200997/export-dce9ae22e11384a73c0938f042bfa365-bottomless_mana_pouch.res
+res://Accessories/Bottomless Mana Pouch/bottomless_mana_pouch.tres::d40941a0d8dd6708c538e6efc497d922::1766229464::res://.godot/exported/133200997/export-dce9ae22e11384a73c0938f042bfa365-bottomless_mana_pouch.res
 res://Accessories/Chitin Extractor/chitin_extractor.tres::550eb9283c24d2abae07d782937f1d48::1763900531::res://.godot/exported/133200997/export-6fe15a781dfd2afa7a70d46052c2109b-chitin_extractor.res
 res://Accessories/Crystal Core/crystal_core.tres::4fe5935028d167614076cfaedab077b7::1763901644::res://.godot/exported/133200997/export-13a3d7c919c0170341c95623c37f13d4-crystal_core.res
 res://Accessories/Flimsy Shield/flimsy_shield.tres::2547bf82f74af42b2b79ff8a366dfff8::1763900531::res://.godot/exported/133200997/export-e1901fe0ac58be676e96f6f0796c8c48-flimsy_shield.res
 res://Accessories/Honey Drop/honey_drop.tres::a670b52bad78957ea87c4c7cf4bd73af::1765131434::res://.godot/exported/133200997/export-b7eb2dead8eca9ed30a1845abaec212f-honey_drop.res
 res://Accessories/Life Support/life_support.tres::cc47e9aaab3119ae6c23d8e5b2e31c76::1765097942::res://.godot/exported/133200997/export-54156a7b3d41ab4700bee52b9f167de9-life_support.res
 res://Accessories/Lucky Dice/lucky_dice.tres::6bc50e5428f0508d8965244fc5254d2c::1763900531::res://.godot/exported/133200997/export-2c1f27c54dfd1220a41b3843dbc8be71-lucky_dice.res
-res://Accessories/Metal Scarf/metal_scarf.tres::26ebed0c84abffeb32271b299c5f22e1::1765737955::res://.godot/exported/133200997/export-041bb9485ba02bb1e239b724405434f9-metal_scarf.res
+res://Accessories/Metal Scarf/metal_scarf.tres::26ebed0c84abffeb32271b299c5f22e1::1766229464::res://.godot/exported/133200997/export-041bb9485ba02bb1e239b724405434f9-metal_scarf.res
 res://Accessories/Ram Horns/ram_horns.tres::ff48fb07eaa542c6c2854bcce4d4eea8::1763899091::res://.godot/exported/133200997/export-924b99d27dde73aeb46572bd988a840f-ram_horns.res
 res://Accessories/Reactive Nanites/reactive_nanites.tres::3b87655a559cacad9f655acd1a801cfd::1763901644::res://.godot/exported/133200997/export-bb51c88d1918d122c912a1de31a61066-reactive_nanites.res
-res://Accessories/Regen Band/regen_band.tres::04e553dc17b7134e82af0e0b22c9105d::1765737955::res://.godot/exported/133200997/export-b79303dc4af88f284e2e067b2bb4d94c-regen_band.res
+res://Accessories/Regen Band/regen_band.tres::04e553dc17b7134e82af0e0b22c9105d::1766229464::res://.godot/exported/133200997/export-b79303dc4af88f284e2e067b2bb4d94c-regen_band.res
 res://Accessories/Retaliatory Instinct/retaliatory_instinct.tres::cc9a061c5b6458e2533ccc72a9ca64d5::1763901644::res://.godot/exported/133200997/export-af1f9022ea9ac9c43e3a76260d99adf8-retaliatory_instinct.res
 res://Accessories/Thorn Container/thorn_container.tres::48665fa58c5e22a6efb4815026d7d616::1763930602::res://.godot/exported/133200997/export-426008cbfd135f54ec3e6341d6dd8046-thorn_container.res
 res://Accessories/Vampire Fangs/vampire_fangs.tres::e40f036f43c7536c59fe5a5434a823de::1763930646::res://.godot/exported/133200997/export-762bd1617e1e56b9356578a9b7c2cee2-vampire_fangs.res
-res://Chest/accessory_chest.tscn::ceb32f74558c27e68799ec64bd3f5dc8::1765607773::res://.godot/exported/133200997/export-a0f587ae3e57373639a51d310ac432f6-accessory_chest.scn
+res://Chest/accessory_chest.tscn::ceb32f74558c27e68799ec64bd3f5dc8::1765881436::res://.godot/exported/133200997/export-a0f587ae3e57373639a51d310ac432f6-accessory_chest.scn
 res://Components/Health Component/stylebox_bg.tres::fc8ec008301a6716bd792fedc417d7ef::1763896195::res://.godot/exported/133200997/export-3dd2f8080a53e234c629b2e35b99e79e-stylebox_bg.res
 res://Components/Health Component/stylebox_hp.tres::91f7be34ec07ee334b32b2aa2921c2f9::1763896195::res://.godot/exported/133200997/export-34b114ab92b5ff2b320606cb355e5dee-stylebox_hp.res
 res://Components/Health Component/stylebox_shield.tres::fb694947509c1862010056d2250b0d3c::1763896195::res://.godot/exported/133200997/export-110a099adcfd8a7a04a56a0afad505ac-stylebox_shield.res
-res://DamageAreas/enemy_damage_area.tscn::280d79332a1277869477028c786d8bf9::1763748086::res://.godot/exported/133200997/export-bb44c01f3d104110da423545fa29ea1a-enemy_damage_area.scn
-res://DamageAreas/player_damage_area.tscn::27d4982f368c17a5d69fa1d136b6d03e::1763820600::res://.godot/exported/133200997/export-1f7d44cd990c6966e283563cfc293406-player_damage_area.scn
+res://DamageAreas/enemy_damage_area.tscn::122e219031d08d799055384dba899d35::1765832646::res://.godot/exported/133200997/export-bb44c01f3d104110da423545fa29ea1a-enemy_damage_area.scn
+res://DamageAreas/player_damage_area.tscn::27d4982f368c17a5d69fa1d136b6d03e::1765832283::res://.godot/exported/133200997/export-1f7d44cd990c6966e283563cfc293406-player_damage_area.scn
 res://Items/Accessories/adrenaline.tres::920f4bab15d4962c534416ffb70da46c::1765276714::res://.godot/exported/133200997/export-f4341217db20026972a207daba34dabc-adrenaline.res
 res://Items/Accessories/bandaid_kit.tres::223788000556befa8c743368e63a3fe1::1765276714::res://.godot/exported/133200997/export-18007f491447fcdb1933f41df562eb25-bandaid_kit.res
 res://Items/Accessories/bottomless_mana_pouch.tres::6c1c4aff64983e0f1a381533721be960::1765276714::res://.godot/exported/133200997/export-e45b67ae40c8b53a693f6baf46bc860e-bottomless_mana_pouch.res
@@ -91,14 +89,14 @@ res://Items/Accessories/thorn_container.tres::3b5e6e489ec464f230434a22b7b9eb7e::
 res://Items/Accessories/retaliatory_instinct.tres::8e78e8d65a324f21b0057c1534a4c039::1765276714::res://.godot/exported/133200997/export-b7897161358cfe7ce8479f16b85b3946-retaliatory_instinct.res
 res://Stat Tracker/stat_tracker.tres::ee0c40aec9da7bf4b62eae08133bb6c6::1763739476::res://.godot/exported/133200997/export-ef2bc0b414276c57c92a9b8d9cdcf7ad-stat_tracker.res
 res://Chest/potion_chest.tscn::0607e8089941380a56ca1f0c568859de::1765607775::res://.godot/exported/133200997/export-a8a2546641c52349c4adb476c10f6242-potion_chest.scn
-res://Components/Effect Component/effect_component.tscn::54c4636d0c205145bc883323a3b7fc0f::1763984385::res://.godot/exported/133200997/export-3b00ecd0636825f1e82893087dea24fe-effect_component.scn
+res://Components/Effect Component/effect_component.tscn::c1b661fe70e3d347a9b70e6b5e74fd00::1766054592::res://.godot/exported/133200997/export-3b00ecd0636825f1e82893087dea24fe-effect_component.scn
 res://Music/music_player.tscn::88cf35c05abdbe06318a0168a48ad832::1764097175::res://.godot/exported/133200997/export-4c6def1d0e51b1da3c9026f96718eefd-music_player.scn
-res://Bosses/Base Boss/base_boss.tscn::4f1936bc4d895e8f9687e75ae66c2356::1764699196::res://.godot/exported/133200997/export-2aeff08bbdb793d12a48c831876cd2cd-base_boss.scn
-res://Bosses/Crystal Golem/crystal_golem.tscn::a16b4cbecb3fe370e7a749ee129a119b::1765189426::res://.godot/exported/133200997/export-1550bf60581a5469bef5849fad35c2dc-crystal_golem.scn
+res://Bosses/Base Boss/base_boss.tscn::4f1936bc4d895e8f9687e75ae66c2356::1766150220::res://.godot/exported/133200997/export-2aeff08bbdb793d12a48c831876cd2cd-base_boss.scn
+res://Bosses/Crystal Golem/crystal_golem.tscn::a16b4cbecb3fe370e7a749ee129a119b::1766040901::res://.godot/exported/133200997/export-1550bf60581a5469bef5849fad35c2dc-crystal_golem.scn
 res://Items/Accessories/alchemy_kit.tres::f15b5876310547009eb7f273a3817e13::1765276714::res://.godot/exported/133200997/export-4089cc3bb686ce741d73acbcc14a5b7d-alchemy_kit.res
 res://Telegraphs/generic_telegraph.tscn::014c6deda6a36164716f89e7a0e3f7fd::1764338855::res://.godot/exported/133200997/export-e1a84ba504d87240f62e26d7901906a5-generic_telegraph.scn
 res://Main Menu/main_menu.tscn::493beb04c1c5b3d32d5499fa7fa684c3::1764620694::res://.godot/exported/133200997/export-ed43cd7fe34e5fed8391c2fd8e17bfae-main_menu.scn
-res://Dungeon Rooms/bossfight_room.tres::c86adc6b565d2a181235662d7e7e0393::1765106218::res://.godot/exported/133200997/export-a9e7ef2b3972870eb0dccc67136d50e1-bossfight_room.res
+res://Dungeon Rooms/bossfight_room.tres::c86adc6b565d2a181235662d7e7e0393::1766094592::res://.godot/exported/133200997/export-a9e7ef2b3972870eb0dccc67136d50e1-bossfight_room.res
 res://Dungeon Rooms/campfire_room.tres::ef53c1f130e6e39ade832e39d74229e5::1764675570::res://.godot/exported/133200997/export-623380cbbfe3459f87949b46713f1471-campfire_room.res
 res://Dungeon Rooms/miniboss_fight_room.tres::418fd88a3ece04a13053929f03094634::1764783201::res://.godot/exported/133200997/export-e6e5b137cf433eb88c72a7b15fc0f6b8-miniboss_fight_room.res
 res://Dungeon Rooms/standard_fight_room.tres::ba6105f6d2b67810e7563e881c64a653::1764590475::res://.godot/exported/133200997/export-08cf7d12187c40e443f02685532e2397-standard_fight_room.res
@@ -111,14 +109,14 @@ res://Dialogs/Dialogs/sample_dialog.tres::71994c36ceb2b3ff1a31e625c805fce9::1764
 res://Dungeon Rooms/sigma_npc.tres::abbae629c6454e5130751044f1dae145::1764712011::res://.godot/exported/133200997/export-409e9e2f2efbd340f8b9d01fdeb63f7c-sigma_npc.res
 res://NPCs/Sigma Npc/sigma_npc.tscn::76b3c86fd4f716daddafa8530dbfe6ed::1764711662::res://.godot/exported/133200997/export-bbbb149fbb3a367c88ffa42b6d5f889b-sigma_npc.scn
 res://Room Features/Sigma Npc/sigma_npc.tres::fc90f69d649675aba785e4cd0db40864::1764711380::res://.godot/exported/133200997/export-dccf816a96348997f062487a09dd1882-sigma_npc.res
-res://Dungeon Rooms/accessory_shop_room.tres::fdb1cf6ea626db7361a16d4431213f8e::1764789008::res://.godot/exported/133200997/export-cae95749d94654b7c304428ae53719d5-accessory_shop_room.res
+res://Dungeon Rooms/accessory_shop_room.tres::7775114176249e37595b197652c48b45::1766000691::res://.godot/exported/133200997/export-cae95749d94654b7c304428ae53719d5-accessory_shop_room.res
 res://Dungeon Rooms/potion_shop_room.tres::58730eaf41d598d10228b1197427290a::1764789008::res://.godot/exported/133200997/export-04ca1e94b2553b4c7e7189e088f4f3fd-potion_shop_room.res
 res://Room Features/Accessory Shop/accessory_shop.tres::3e1e83231041adfc5278be4ee4650052::1764783258::res://.godot/exported/133200997/export-6ddf2a524548d1bc538cad8099ee23ed-accessory_shop.res
 res://Room Features/Potion Shop/potion_shop.tres::c8aaf6c5d584159cf0144182a1c479f8::1764782967::res://.godot/exported/133200997/export-662f1d2d8dc37bbfc8405e34c6f92f89-potion_shop.res
 res://Shopkeepers/accessory_vendor.tscn::2a60d6991d2008a348be1a404d719480::1765607847::res://.godot/exported/133200997/export-9fb04f1775e189969021cb5d65ad50e0-accessory_vendor.scn
 res://Shopkeepers/base_shopkeeper.tscn::1ccf2f0d3d5806d5652339ff80b3fd7e::1765607826::res://.godot/exported/133200997/export-5cc539be1530ed474e2f299d16f43e1c-base_shopkeeper.scn
 res://Shopkeepers/potion_vendor.tscn::9b19348db520d300fad653a5071b25fa::1765607847::res://.godot/exported/133200997/export-24d9ddd90c5e9054d88e8e0aabde46c0-potion_vendor.scn
-res://Shopkeepers/shop_pedestal.tscn::a26e3fc06b59745e2a23132aa1cee074::1765558685::res://.godot/exported/133200997/export-0d7731ffbd069ca7a07fb18ba8e7cc27-shop_pedestal.scn
+res://Shopkeepers/shop_pedestal.tscn::5bb9af831e848a9e907d571fa514f552::1766053773::res://.godot/exported/133200997/export-0d7731ffbd069ca7a07fb18ba8e7cc27-shop_pedestal.scn
 res://Accessories/Bloodthirst/bloodthirst.tres::8d4bbafaf7354e577853507ae3220365::1765007734::res://.godot/exported/133200997/export-2479f450015eaf2b8b1e54ac2b1d66db-bloodthirst.res
 res://Accessories/Bloodthirst/bloodthirst_potion.tres::2dd3a4f5e3485d19a232330e8c607b32::1765560625::res://.godot/exported/133200997/export-2b15df3c35643b820574bb6e546e6e3b-bloodthirst_potion.res
 res://Accessories/Combo Gloves/combo_gloves.tres::0fe2ffd7d13b1c7ff0e72bb6d96952ae::1765009009::res://.godot/exported/133200997/export-d24ca888ab34f742ce33556018ac216c-combo_gloves.res
@@ -136,23 +134,69 @@ res://Items/Accessories/defensive_matrix.tres::99f066360e524e519bb3a8eccd9fd557:
 res://Accessories/True Self/true_self.tres::b70a9f2fd6f0ba8e3c4564bec52b28fd::1765128908::res://.godot/exported/133200997/export-eed8c0c7050e3771b818d28afd4b7da1-true_self.res
 res://Enemies/Charging Enemy/charging_enemy.tscn::12ec5bdfe98f20ede7a581d51f193df7::1765135647::res://.godot/exported/133200997/export-b79d5c32a8e56e8a9d8ef9996b573233-charging_enemy.scn
 res://Enemies/Wall Raising Enemy/wall_raising_enemy.tscn::d5b234a4cb304a82a0a430200576cefb::1765189007::res://.godot/exported/133200997/export-3451a68d434e4a7e99d6f6b4f1ce5fdd-wall_raising_enemy.scn
-res://Items/Accessories/true_self.tres::55d26d52ffd875f0b6a9571021d68d8d::1765737955::res://.godot/exported/133200997/export-c03d193a0d3d2860535d6421ed472128-true_self.res
-res://Lobby/weapon_equip.tscn::845f10ee11848f12fd852ad31afd31a6::1765192672::res://.godot/exported/133200997/export-2989c5a05f27aa37f46f4c78d1ad21cb-weapon_equip.scn
+res://Items/Accessories/true_self.tres::55d26d52ffd875f0b6a9571021d68d8d::1766229464::res://.godot/exported/133200997/export-c03d193a0d3d2860535d6421ed472128-true_self.res
+res://Lobby/weapon_equip.tscn::845f10ee11848f12fd852ad31afd31a6::1765794226::res://.godot/exported/133200997/export-2989c5a05f27aa37f46f4c78d1ad21cb-weapon_equip.scn
 res://Accessories/Furious Cocktail/furious_cocktail.tres::0efca4f0b10538ae56b62e74d33e7bc2::1765277857::res://.godot/exported/133200997/export-1d24ba976d716816652b85050a8f43b1-furious_cocktail.res
-res://Items/Accessories/furious_cocktail.tres::9b09dc09c34b36a1c66662e4ebaa2126::1765737955::res://.godot/exported/133200997/export-58ca6c8ffca96b6691ac629667764e97-furious_cocktail.res
-res://Potions/endurance_potion.tres::04b64a00ee461545c67a6df2f99d3e4b::1765737955::res://.godot/exported/133200997/export-64624b37ee263e41ee7a225bdd609926-endurance_potion.res
-res://Potions/lifeforce_potion.tres::20ecb0bfb209eb142497f025bf8d4361::1765737955::res://.godot/exported/133200997/export-49c1a45e60857b666d453e262ad2e51b-lifeforce_potion.res
-res://Potions/rage_potion.tres::da15bd8343128d395428dbfad0b38647::1765737955::res://.godot/exported/133200997/export-9aca8e84e1e437e51246314c9f10b8aa-rage_potion.res
-res://Potions/speed_potion.tres::7541972b9f32db6ee93d3ca2a0dd0ce6::1765737955::res://.godot/exported/133200997/export-9c316349f0c90f40b5fe858310eac888-speed_potion.res
+res://Items/Accessories/furious_cocktail.tres::9b09dc09c34b36a1c66662e4ebaa2126::1766229464::res://.godot/exported/133200997/export-58ca6c8ffca96b6691ac629667764e97-furious_cocktail.res
+res://Potions/endurance_potion.tres::b847882ad26491cebe514793735d4472::1766229464::res://.godot/exported/133200997/export-64624b37ee263e41ee7a225bdd609926-endurance_potion.res
+res://Potions/lifeforce_potion.tres::908d4ce8ae5b715875a707ddd0ff6d71::1766229464::res://.godot/exported/133200997/export-49c1a45e60857b666d453e262ad2e51b-lifeforce_potion.res
+res://Potions/rage_potion.tres::95b4a18012714ad3d094f5f8cad670f9::1766229464::res://.godot/exported/133200997/export-9aca8e84e1e437e51246314c9f10b8aa-rage_potion.res
+res://Potions/speed_potion.tres::6b88da446a90b80ed9a4ea5503a425a0::1766229464::res://.godot/exported/133200997/export-9c316349f0c90f40b5fe858310eac888-speed_potion.res
 res://Weapons/Rusty Dagger/worn_down_dagger.tres::017f2ddb191a046a67fd6d0c28a96f4d::1765734779::res://.godot/exported/133200997/export-1e8f78ba9e441812f9945f76da242c5c-worn_down_dagger.res
 res://Weapons/Rusty Mace/worn_down_mace.tres::2f3cb1a1f9e4e978ef40be113c10fbce::1765734809::res://.godot/exported/133200997/export-57c661adcd8d894222a1ecd105193668-worn_down_mace.res
 res://Weapons/Rusty Spear/worn_down_spear.tres::14d66539f94e103ffcff5ffcefc8c1aa::1765734904::res://.godot/exported/133200997/export-1408f90a06b989dc506ef3c3181f6805-worn_down_spear.res
 res://Weapons/Rusty Sword/worn_down_sword.tres::78e7c5c29338ca0a0a06d86adba38d7b::1765537327::res://.godot/exported/133200997/export-c6384e9c77c06e3834b9a144afec8ff8-worn_down_sword.res
-res://Loot Table/accessory_loot_table.tres::9de7833d789a58e26fc1669fba03209c::1765627906::res://.godot/exported/133200997/export-6911d72a70e8fdd03d7618e49149b582-accessory_loot_table.res
+res://Loot Table/accessory_loot_table.tres::bbe27982cdfd824be90cba9bebb11cf6::1766231384::res://.godot/exported/133200997/export-6911d72a70e8fdd03d7618e49149b582-accessory_loot_table.res
 res://Loot Table/potion_loot_table.tres::783a4a3dfb3e0aacbef3b1f74fc1185f::1765607359::res://.godot/exported/133200997/export-1690560b2e7df66060c34daf1fd42ff1-potion_loot_table.res
-res://Loot Table/weapon_loot_table.tres::ac32dd3766b388ee6d70f2d7037b99cf::1765735217::res://.godot/exported/133200997/export-5ddb69bbc1e7a23725f583551a8c52a1-weapon_loot_table.res
-res://Weapons/Recurve Bow/recurve_bow.tres::db6a8785ffad6c9c49f89ebea70c42ec::1765735039::res://.godot/exported/133200997/export-ae56a6b553243e57789811c31c3c586f-recurve_bow.res
+res://Loot Table/weapon_loot_table.tres::050d0ff05bcf49caabafacee8553c187::1766158858::res://.godot/exported/133200997/export-5ddb69bbc1e7a23725f583551a8c52a1-weapon_loot_table.res
+res://Weapons/Recurve Bow/recurve_bow.tres::4ccad3011a4c3450042acbd3a4e63158::1765984940::res://.godot/exported/133200997/export-ae56a6b553243e57789811c31c3c586f-recurve_bow.res
 res://Weapons/Rusty Dagger/dagger_poke.tres::7f409d8fb360dc5eb56f15d976710ed5::1765738336::res://.godot/exported/133200997/export-9a5b93bfb434776260086c3250a4e60a-dagger_poke.res
 res://Weapons/Rusty Mace/mace_slam.tres::982e70185d8ba02a4ed0759acdd4da00::1765738260::res://.godot/exported/133200997/export-c8e07a9c393a9f421f02174b129ca2cf-mace_slam.res
 res://Weapons/Rusty Spear/spear_poke.tres::ee92b981f49ba01ded0013abe617e80d::1765737955::res://.godot/exported/133200997/export-3b74e54ce0ca45eed5608229912148f8-spear_poke.res
 res://Weapons/Rusty Sword/sword_slash.tres::4e6d9e7d28012a4a81b2c5604e67c23d::1765735455::res://.godot/exported/133200997/export-dd534f79eb20d8f680f234aa77b98f1a-sword_slash.res
+res://Chest/weapon_chest.tscn::4efb5e54a9211fdf963a25f7a8be7c6c::1765749163::res://.godot/exported/133200997/export-c8ccb6f7ad47f2819265588dd0c47529-weapon_chest.scn
+res://Weapons/Mana Railgun/mana_railgun.tres::b1abddc5a58b0847f326399e6cb47704::1765984940::res://.godot/exported/133200997/export-8e8dc895aecd94488e11d05a410b2612-mana_railgun.res
+res://Weapons/Mana Railgun/railgun_particles.tscn::c6d9c8f74fcb1af2fecb2766772c4ea8::1765746907::res://.godot/exported/133200997/export-57d929296ecaa24f7f3b9fb9c8c572a4-railgun_particles.scn
+res://Player Summons/Base Summon/player_summon.tscn::94dd321fcaed602d46582057d44093ba::1766157893::res://.godot/exported/133200997/export-413e3a6d467ecf1d6a90b03ae4b4552a-player_summon.scn
+res://Player Summons/Figther Construct/fighter_construct.tscn::34ce3be67f8f7c164d8a3c89787a5ef0::1766157881::res://.godot/exported/133200997/export-094fd56e4b1df59e7e08fed18d8eeeb3-fighter_construct.scn
+res://String Display/stringdisplay.tscn::bebdb01b553602db710f3e7df65a2128::1765795868::res://.godot/exported/133200997/export-15c1eb4aae0f1a276a9145ba9e6f6311-stringdisplay.scn
+res://Weapons/Burning Coals/burning_coals.tres::9c0cd197c0386190f31b3d6b70940bb3::1765984940::res://.godot/exported/133200997/export-1704841c30f062c68d2a37764c812187-burning_coals.res
+res://Weapons/Fighter Staff/fighter_staff.tres::29f38021916bb117ff85cf83458f7cb5::1766229464::res://.godot/exported/133200997/export-299033cf692fb910dadeb55ed184e060-fighter_staff.res
+res://Weapons/Knockback Stick/knockback_stick.tres::712e8c6cf76040d521996c25838409f4::1765817868::res://.godot/exported/133200997/export-8ad50e9057c6a78af4d01f00abf96a79-knockback_stick.res
+res://Weapons/Metronome/metronome.tres::5fd4d7fdff711093ef4573d656ae6a91::1765817868::res://.godot/exported/133200997/export-3854fefc4b01c21460937c4a169d8187-metronome.res
+res://Weapons/Metronome/metronome_bar.tscn::53be3fa022be4d0de9e06b9c91410a41::1765902064::res://.godot/exported/133200997/export-2f23ee7e3603611b6b9c45f9bb46dc4b-metronome_bar.scn
+res://Weapons/Wizard Staff/wizard_staff.tres::24dd65c0b1f4d867a7c706d3f8c4ec76::1765833920::res://.godot/exported/133200997/export-0079415b1760cc18a499faf315605e04-wizard_staff.res
+res://Spells/Zap Spell/zap_spell.tres::0696e3f13e92479dd6bb70dd2e4b64d1::1766229464::res://.godot/exported/133200997/export-f757ea9ac807d5dd097ca92981621e74-zap_spell.res
+res://Weapons/Flute/flute.tres::8ebd90657f7a84e061fbb300ba6930ef::1765984940::res://.godot/exported/133200997/export-9049454988cfd5eef0830ba9ac5728af-flute.res
+res://Weapons/Flute/flute_aoe.tscn::2b63f2d5d8b99a014ebfb94874e9e8df::1766001423::res://.godot/exported/133200997/export-606754662b58fe94ef8b40d575f45936-flute_aoe.scn
+res://Weapons/Rusty Sword/sword_poke.tres::fddd8b525575529519e698b254e72d26::1765900474::res://.godot/exported/133200997/export-6364faf7515b77757410e78e525ef7c0-sword_poke.res
+res://Dungeon Rooms/dungeon_tileset.tres::6e8181b10a4c895b527e46152ee39eeb::1766003869::res://.godot/exported/133200997/export-5a7817c1fcf33d8d56c280853580fa72-dungeon_tileset.res
+res://Enemies/Target Dummy/target_dummy.tscn::a5e1fb7b69d769daba4abab6785ed139::1766051054::res://.godot/exported/133200997/export-7e413539b094cb8acc9e2a4c0ec23a20-target_dummy.scn
+res://Player Summons/Healing Dummy/healing_dummy.tscn::3c6c51120eaa26f60223b09c155d3b93::1766232475::res://.godot/exported/133200997/export-ec3117d6f4262bfb4f9f7a018ae02c9e-healing_dummy.scn
+res://Potions/fragile_potion.tres::c81bb172234cd918e3f5fb3f0e9efdc0::1766229464::res://.godot/exported/133200997/export-be534ed2ae47340aafaf40416c08318c-fragile_potion.res
+res://Potions/healing_potion.tres::aa5e13512b76e8d3b153afa38b26b5bb::1766053773::res://.godot/exported/133200997/export-0cd3fb3e3fd900546d8cecefa0ba7db5-healing_potion.res
+res://Potions/poison_potion.tres::e348241eab8499630713a5075e3373ff::1766154171::res://.godot/exported/133200997/export-b5c3267d37d34c8917ff7d7183c047b9-poison_potion.res
+res://Potions/slowness_potion.tres::2d8265c45f2ab48ec95a9e79e9a11193::1766229464::res://.godot/exported/133200997/export-71d8ff6369c8beb6335cef0db8a63b1b-slowness_potion.res
+res://Potions/weakness_potion.tres::61088cd50d9027600d1b03cc6e457d69::1766229464::res://.godot/exported/133200997/export-9daad79559f3c746e5f911dc9ce957df-weakness_potion.res
+res://Weapons/Battle Standard/battle_standard.tres::de58f7e441d2adb3e763ed8b94e18c77::1766154017::res://.godot/exported/133200997/export-0a4d24422cce99a860e450e7e9316836-battle_standard.res
+res://Weapons/Battle Standard/battle_standard_aoe.tscn::a4c64238ffd4a7f993f81fc8e49c3993::1766147627::res://.godot/exported/133200997/export-6119adc8e9fb359c8a7ac6040ea1c28d-battle_standard_aoe.scn
+res://Weapons/Deck Of Cards/deck_of_cards.tres::6bdff9017d50cb49ad0a41107b5a9b31::1766053843::res://.godot/exported/133200997/export-413e40816bce67be3dff1838ea8e42d2-deck_of_cards.res
+res://Weapons/Deck Of Cards/thrown_card.tres::dc53cb5d487ffd6b96db483668c3733c::1766054463::res://.godot/exported/133200997/export-39556f3a961941099b906165e222f04d-thrown_card.res
+res://Weapons/Heal Ray/heal_ray.tres::9d6efa44fc5eed7eae997905ce468de5::1765991448::res://.godot/exported/133200997/export-15b1bc07834ea27f1a03cf4540e9197e-heal_ray.res
+res://Weapons/Heal Ray/heal_ray_particle.tscn::a9486cdecb91e5d9c77ff285e7bf7bf5::1765990900::res://.godot/exported/133200997/export-d6a3c52486bec46f1d0814380a453b17-heal_ray_particle.scn
+res://Weapons/Javelin/javelin.tres::633c10d4985401299da8e1eebf484629::1765984940::res://.godot/exported/133200997/export-c6b3cc22bb44f8246745d8557ea85a5a-javelin.res
+res://Weapons/Worn Down Boomerang/worn_down_boomerang.tres::60b8fb71dcf3e7273d68fec7c00049f3::1766231811::res://.godot/exported/133200997/export-87e71c2bae5bf9849c035cd4a8fbceb4-worn_down_boomerang.res
+res://Weapons/Worn Down Boomerang/worn_down_boomerang_fly.tres::a5e761e764661e86731c13baec53951c::1765906174::res://.godot/exported/133200997/export-10753f0cbd4b96f2c3ebd2ae5d173d18-worn_down_boomerang_fly.res
+res://Weapons/Mechanic's Wrench/mechanics_wrench.tres::f48ee100b89b7626990b68612f0265a4::1766094890::res://.godot/exported/133200997/export-bf01f56a2ae32eeb1efc4bf91b4f0a06-mechanics_wrench.res
+res://Weapons/Mechanic's Wrench/mechanics_wrench_turret.tscn::5889eb08ff7ae18ac7ecccd21194cefb::1766213675::res://.godot/exported/133200997/export-884df8e280ebe55f42fc932ffb660954-mechanics_wrench_turret.scn
+res://Weapons/Spore Sac/spore_sac.tres::ffe1381b2177cac47fc23ad0423ad046::1766084615::res://.godot/exported/133200997/export-61ed45e08128d3f139ee85841d26a433-spore_sac.res
+res://Gacha Ball/gacha_ball.tscn::3077cdf3220a631ff6a770396cd8a2fc::1766231387::res://.godot/exported/133200997/export-b43958d027fd659b6734d804e65b1d29-gacha_ball.scn
+res://Player Summons/Floating Eyeball/floating_eyeball.tscn::6fdc5547e955b749ec344f7cc3d5658c::1766159170::res://.godot/exported/133200997/export-91cdc4c36e0aa6a88b120062935e515f-floating_eyeball.scn
+res://Player Summons/Magic Katana/magic_katana.tscn::8de7f259380a3d7f5cd9cbd2ef780484::1766158863::res://.godot/exported/133200997/export-70ab481abf3f0b4884c9246a62ee0d39-magic_katana.scn
+res://Weapons/Cosmic Judgement/cosmic_judgement.tres::18cd73e944ca425965e3d53aa59fe7d3::1766152857::res://.godot/exported/133200997/export-851e7a1468d43714318162732115c8d1-cosmic_judgement.res
+res://Weapons/Cosmic Judgement/cosmic_judgement_target.tscn::87cabc3f54d8b11c0c33e736d688a4c0::1766164897::res://.godot/exported/133200997/export-389eecc3df63787e8418c295a3ef813c-cosmic_judgement_target.scn
+res://Weapons/Devious Looker/devious_looker.tres::211a9e1ae9680bb31137a55cbb029612::1766159126::res://.godot/exported/133200997/export-927afc435bda7cd7678f2070bf1f9d6e-devious_looker.res
+res://Weapons/Magic Katanas/magic_katanas.tres::283e63f0cd154e0a5fa011729450208f::1766159610::res://.godot/exported/133200997/export-eece4200de224a2184fd72a2a7ea989c-magic_katanas.res
+res://Weapons/Syringes/syringes.tres::042d2e01cf0d3b1bdee5579cf5acee77::1766153359::res://.godot/exported/133200997/export-b7e695660ba791fa5dd8af02aa68ffb6-syringes.res
+res://Enemies/Sniper Enemy/sniper_enemy.tscn::5867af95f21df920aa5bc0b97a412cd6::1766216508::res://.godot/exported/133200997/export-5f6419342574d7631b2b4fdc3f1453f5-sniper_enemy.scn
+res://Room Indicator/room_indicator.tscn::de49d8549bdc60a339597cb1d4f29e0f::1766234193::res://.godot/exported/133200997/export-db7da1c7002d65e2da5a309ca4ab4d23-room_indicator.scn

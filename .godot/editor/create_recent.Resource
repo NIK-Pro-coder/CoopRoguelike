@@ -1,7 +1,9 @@
-SpriteFrames
-LootTable
 Resource
+Weapon
+SpriteFrames
 Potion
+TileSet
+LootTable
 Dialog
 RoomFeature
 DungeonRoom

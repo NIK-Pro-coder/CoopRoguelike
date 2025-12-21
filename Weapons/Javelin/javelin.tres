@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://byfl22akv7jas"]
+
+[ext_resource type="Texture2D" uid="uid://wykxke6jniag" path="res://Weapons/Javelin/javelin.png" id="1_a7v61"]
+[ext_resource type="Script" uid="uid://b6n0j7nf2h4ln" path="res://Weapons/Javelin/javelin.gd" id="1_fw08h"]
+
+[resource]
+script = ExtResource("1_fw08h")
+damage = 10
+weapon_class = 1
+NAME = "Javelin"
+DESCRIPTION = "Thorws up to 5 javelins that stick to the ground, after havingthrown all five you will recall them to you"
+QUOTE = "If only theis weapon had the power of the sun inside of it"
+TEXTURE = ExtResource("1_a7v61")
+RARITY = 3
+EQUIPPABLE = true

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cju0y46tudpou"]
+
+[ext_resource type="Texture2D" uid="uid://blchbvf3rdhn3" path="res://Dungeon Rooms/Sprites/accessory_shop_room.png" id="1_m61yw"]
+[ext_resource type="Script" uid="uid://hfc1gbxn7eat" path="res://Room Indicator/room_indicator.gd" id="2_8oelt"]
+
+[node name="room_indicator" type="Sprite2D" groups=["roompart"]]
+scale = Vector2(4, 4)
+texture = ExtResource("1_m61yw")
+script = ExtResource("2_8oelt")
+
+[node name="visible" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_entered" from="visible" to="." method="_on_visible_screen_entered"]
+[connection signal="screen_exited" from="visible" to="." method="_on_visible_screen_exited"]

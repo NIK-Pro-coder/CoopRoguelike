@@ -25,6 +25,8 @@ func set_shape(shape: CollisionShape2D) :
 func set_rect_shape(size: Vector2) :
   var shape := CollisionShape2D.new()
   shape.shape = RectangleShape2D.new()
+  size.x = abs(size.x)
+  size.y = abs(size.y)
   (shape.shape as RectangleShape2D).size = size
   
   return set_shape(shape)

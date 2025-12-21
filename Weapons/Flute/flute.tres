@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c1m6facichitj"]
+
+[ext_resource type="Texture2D" uid="uid://dvq4k35bvwrjw" path="res://Weapons/Flute/flute.png" id="1_0mdsf"]
+[ext_resource type="Script" uid="uid://2k4ovwg8e5gx" path="res://Weapons/Flute/flute.gd" id="1_tcgxp"]
+
+[resource]
+script = ExtResource("1_tcgxp")
+damage = 5
+weapon_class = 3
+NAME = "Flute"
+DESCRIPTION = "Swing the flute like a sword, when not attacking you also generate an area that heals allies
+"
+QUOTE = "I still have to hear Hotpasta's performance"
+TEXTURE = ExtResource("1_0mdsf")
+RARITY = 5

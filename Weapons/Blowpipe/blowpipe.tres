@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://diutlo48tjrh0"]
+
+[ext_resource type="Texture2D" uid="uid://o4fe1l7504as" path="res://Weapons/Blowpipe/blowpipe.png" id="1_3mgjt"]
+[ext_resource type="Script" uid="uid://c35arc13mfb33" path="res://Weapons/Blowpipe/blowpipe.gd" id="1_amd58"]
+
+[resource]
+script = ExtResource("1_amd58")
+damage = 5
+weapon_class = 1
+NAME = "Blowpipe"
+DESCRIPTION = "Shoot darts at enemies, dealing decent damage and poisonin them"
+QUOTE = "A fierce purple goblin once used this"
+TEXTURE = ExtResource("1_3mgjt")

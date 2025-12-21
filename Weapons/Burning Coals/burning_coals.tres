@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://caxcixjrroqcf"]
+
+[ext_resource type="Texture2D" uid="uid://yk2bpui4rt7n" path="res://Weapons/Burning Coals/burning_coals.png" id="1_ctcty"]
+[ext_resource type="Script" uid="uid://e6fr6l7vcqbg" path="res://Weapons/Burning Coals/burning_coals.gd" id="1_wqct5"]
+
+[resource]
+script = ExtResource("1_wqct5")
+damage = 5
+weapon_class = 1
+NAME = "Burning Coals"
+DESCRIPTION = "Throw burning coals on the ground, dealing constant damage"
+QUOTE = "These are pretty hot, just like you ;)"
+TEXTURE = ExtResource("1_ctcty")
+RARITY = 7

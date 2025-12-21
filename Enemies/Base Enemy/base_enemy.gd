@@ -22,13 +22,21 @@ var knockback: Vector2 = Vector2.ZERO
 @onready var attack_cooldown_timer: Timer = $attackCooldown
 @onready var healthcomponent: HealthComponent = $healthCoponent
 @onready var footstep_particle: GPUParticles2D = %footsteps
+@onready var effectcomp: EffectComponent = %effectComponent
 
-var damageAreaScene = preload("res://DamageAreas/enemy_damage_area.tscn")
+var damageAreaScene = load("res://DamageAreas/enemy_damage_area.tscn")
 var telegraphScene = preload("res://Telegraphs/generic_telegraph.tscn")
 
 @export var Icon: Sprite2D
 
+var wave_scaling: float = 1
+var stat_tracker := StatTracker.new()
+
 func _ready():
+  healthcomponent.set_max_hp(int(healthcomponent.max_health * wave_scaling))
+  
+  damageAreaScene.instantiate()
+  
   # These values need to be adjusted for the actor's speed
   # and the navigation layout.
   navigation_agent.path_desired_distance = 4.0
@@ -67,6 +75,10 @@ func _process(_delta: float) -> void:
   visible = healthcomponent.health > 0 and visible
   
   footstep_particle.emitting = velocity != Vector2.ZERO
+
+  stat_tracker.reset()
+  effectcomp.apply_effects(stat_tracker)
+  healthcomponent.damage_mult = stat_tracker.DAMAGE_TAKEN_PERCENT
 
 var time_alive := 0.0
 
@@ -109,7 +121,7 @@ func _physics_process(_delta):
   var current_agent_position: Vector2 = global_position
   var next_path_position: Vector2 = navigation_agent.get_next_path_position()
 
-  velocity = current_agent_position.direction_to(next_path_position) * movement_speed
+  velocity = current_agent_position.direction_to(next_path_position) * (movement_speed * stat_tracker.SPEED_PERCENT + stat_tracker.SPEED)
   move_and_slide()
 
 var xpOrbScene = preload("res://Xp Orb/xp_orb.tscn")

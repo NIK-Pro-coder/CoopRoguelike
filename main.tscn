@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://4h0rbqs803ol"]
+[gd_scene load_steps=20 format=3 uid="uid://4h0rbqs803ol"]
 
 [ext_resource type="PackedScene" uid="uid://s0svga2h4x74" path="res://Lobby/lobby.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://w17e82nlba7o" path="res://maincamera.gd" id="2_0xm2m"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://bxr7bcwoh8sey" path="res://Inventory/inventory.tscn" id="9_4c57u"]
 [ext_resource type="Script" uid="uid://bcmu74qa5df1c" path="res://HUD/damage_indicator.gd" id="9_vivmo"]
 [ext_resource type="PackedScene" uid="uid://ruwi6r0vlvwo" path="res://Dialogs/Dialog Manager/dialog_mngr.tscn" id="14_2cqfq"]
+[ext_resource type="PackedScene" uid="uid://cm726e5ydhxuc" path="res://Enemies/Target Dummy/target_dummy.tscn" id="15_vivmo"]
+[ext_resource type="PackedScene" uid="uid://crsedt70gnwul" path="res://Player Summons/Healing Dummy/healing_dummy.tscn" id="16_2cqfq"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_h2yge"]
 vertices = PackedVector2Array(7262.37, -6662.44, 7781.59, 6485.9, -8277.53, 6342.09, -7646.47, -7365.53)
@@ -81,6 +83,7 @@ visible = false
 
 [node name="HUD" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
+z_index = 500
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -91,7 +94,7 @@ theme = ExtResource("5_lquwl")
 
 [node name="damage_indicator" type="ColorRect" parent="CanvasLayer/HUD"]
 unique_name_in_owner = true
-z_index = 500
+z_index = -1
 material = SubResource("ShaderMaterial_vivmo")
 layout_mode = 1
 anchors_preset = 15
@@ -203,6 +206,12 @@ visible = false
 [node name="dungeonManager" parent="." instance=ExtResource("7_272bh")]
 unique_name_in_owner = true
 process_mode = 1
+
+[node name="target_dummy" parent="." instance=ExtResource("15_vivmo")]
+position = Vector2(-368, 216)
+
+[node name="healing_dummy" parent="." instance=ExtResource("16_2cqfq")]
+position = Vector2(432, 216)
 
 [connection signal="boss_defeated" from="CanvasLayer/waveManager" to="dungeonManager" method="_on_wave_manager_boss_defeated"]
 [connection signal="room_clear" from="CanvasLayer/waveManager" to="CanvasLayer/inventory" method="_on_wave_manager_room_clear"]

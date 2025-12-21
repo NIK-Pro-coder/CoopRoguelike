@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_3qnd5"]
 script = ExtResource("1_fgsa1")
 AFFECTED_STAT = 1
-CHANGE = 50.0
+CHANGE = 10.0
 metadata/_custom_type_script = "uid://o5cmmqyjxg7e"
 
 [resource]
@@ -17,7 +17,7 @@ DURATION = 60.0
 EFFECTS = Array[ExtResource("1_fgsa1")]([SubResource("Resource_3qnd5")])
 EFFECT_ICON = ExtResource("2_6qiow")
 NAME = "Rage Potion"
-DESCRIPTION = "Increase damage by 50% for 1 minute"
+DESCRIPTION = "Increase damage by 10% for 1 minute"
 QUOTE = "Your rage fills the air!"
 TEXTURE = ExtResource("3_6ku3x")
 metadata/_custom_type_script = "uid://025wicb2kaex"

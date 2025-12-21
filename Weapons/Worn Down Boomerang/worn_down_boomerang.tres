@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dv8sfflvbrcv6"]
+
+[ext_resource type="Texture2D" uid="uid://cek1hr386dr5x" path="res://Weapons/Worn Down Boomerang/worn_down_boomerang.png" id="1_3eufq"]
+[ext_resource type="Script" uid="uid://bybv2pl2knen5" path="res://Weapons/Worn Down Boomerang/worn_down_boomerang.gd" id="1_pxbeo"]
+
+[resource]
+script = ExtResource("1_pxbeo")
+damage = 5
+weapon_class = 1
+NAME = "Worn Down Boomerang"
+DESCRIPTION = "Thows a boomerang that returns after to you after a few seconds"
+QUOTE = "Once I knew a guy that would have loved this weapon, Carl was his name, I think"
+TEXTURE = ExtResource("1_3eufq")

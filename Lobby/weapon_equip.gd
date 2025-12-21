@@ -14,4 +14,8 @@ func _process(delta: float) -> void:
   %description.visible = %RichTextLabel.visible
 
 func _on_interacted(p: Player) -> void:
+  if p.weapon.NAME == EQUIP_WEAPON.NAME :
+    return
   p.equip_weapon(EQUIP_WEAPON)
+  
+  Qol.display_string(p.global_position - Vector2(0, 100), "Equipped '%s'" % [EQUIP_WEAPON.NAME])

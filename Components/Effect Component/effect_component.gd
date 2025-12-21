@@ -3,12 +3,14 @@ class_name EffectComponent
 
 var stat_changes: Dictionary[Timer, StatChange] = {}
 var stat_icons: Dictionary[Timer, Texture2D] = {}
+var stat_dots: Dictionary[Timer, int] = {}
 
 signal effects_changed
 
 func remove_effect(t: Timer) :
   stat_changes.erase(t)
   stat_icons.erase(t)
+  stat_dots.erase(t)
   
   effects_changed.emit()
 
@@ -18,6 +20,7 @@ func add_potion(potion: Potion) :
   t.one_shot = true
   
   stat_icons[t] = potion.EFFECT_ICON.duplicate()
+  stat_dots[t] = potion.DOT
     
   add_child(t)
   t.start(potion.DURATION)
@@ -40,3 +43,19 @@ func add_potion(potion: Potion) :
 func apply_effects(stats: StatTracker) :
   for i in stat_changes.values() :
     (i as StatChange).apply(stats)
+
+func _on_dot_update_timeout() -> void:
+  var hp: HealthComponent = Qol.findHpComp(get_parent())
+
+  if not hp :
+    return
+  
+  var s: int = 0
+  
+  for i in stat_dots.values() :
+    s += i
+  
+  if s == 0 :
+    return
+  
+  hp.dealDmg(s)

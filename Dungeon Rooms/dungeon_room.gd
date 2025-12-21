@@ -28,9 +28,15 @@ func get_room_size(dungeon: DungeonMngr) :
 func get_room_weight(_x: float, _y: float) -> float :
   return ROOM_WEIGHT
 
-var decor_precision: int = 256
+var decor_precision: int = 64
+var decor_position_mult: float = 5
+var decor_min_noise: float = .65
+
+var loaded_room: bool = false
 
 func place_features(dungeon: DungeonMngr) -> void :
+  loaded_room = true
+  
   var room_size = get_room_size(dungeon)
   
   noise = FastNoiseLite.new()
@@ -43,35 +49,49 @@ func place_features(dungeon: DungeonMngr) -> void :
     
     i.place_feature(dungeon, self)
   
+  var tilemap := TileMapLayer.new()
+  tilemap.tile_set = load("res://Dungeon Rooms/dungeon_tileset.tres")
+  tilemap.scale = Vector2.ONE * 4
+  tilemap.z_index = -100
+  
   for y in range(-room_size, room_size, decor_precision) :
     for x in range(-room_size, room_size, decor_precision) :
-      if randf() <= .5 * (noise.get_noise_2d(x / float(decor_precision), y / float(decor_precision))) :
+      var n = noise.get_noise_2d(x, y)
+      n = (n + 1) / 2.0
+            
+      @warning_ignore("integer_division")
+      var cell_coords := Vector2i(x / 64, y / 64)
+      
+      if n < decor_min_noise :
         continue
       
-      var decor: Sprite2D = Sprite2D.new()
-      var tex: AtlasTexture = AtlasTexture.new()
-      tex.atlas = load("res://Dungeon Manager/floor-decor.png")
-      tex.region.size = Vector2(16, 16)
-      tex.region.position = Vector2(randi_range(0, int(tex.atlas.get_size().x/16)-1)*16, 0)
-      
-      decor.texture = tex
-      decor.scale = Vector2.ONE * 4
-      decor.global_position = Vector2(x,y) + Vector2.from_angle(deg_to_rad(randi_range(-180, 180))) * randi_range(0, 250)
-      decor.z_index = -100
-      add_to_storage(decor)
-      
-      dungeon.get_tree().get_root().add_child.call_deferred(decor)
+      tilemap.set_cell(cell_coords, 0, Vector2(randi_range(0, 3), 0))
+  
+  add_to_storage(tilemap)
+  dungeon.get_tree().get_root().add_child.call_deferred(tilemap)
   
   unload_features(dungeon)
+
+func clear_room() :
+  for i in feature_storage :
+    if !is_instance_valid(instance_from_id(i)) :
+      continue
+      
+    instance_from_id(i).queue_free()
 
 func add_to_storage(what: Node2D) :
   feature_storage[what.get_instance_id()] = what.global_position
 
-func load_features(_dungeon: DungeonMngr) -> void :
+func load_features(dungeon: DungeonMngr) -> void :
+  if !loaded_room :
+    place_features(dungeon)
+  
   for i in feature_storage :
     if !is_instance_valid(instance_from_id(i)) :
       feature_storage.erase(i)
       continue
+      
+    (instance_from_id(i) as Node).process_mode = Node.PROCESS_MODE_INHERIT
     
     instance_from_id(i).global_position = feature_storage[i]
 
@@ -80,6 +100,8 @@ func unload_features(dungeon: DungeonMngr) -> void :
     if !is_instance_valid(instance_from_id(i)) :
       feature_storage.erase(i)
       continue
+    
+    (instance_from_id(i) as Node).process_mode = Node.PROCESS_MODE_DISABLED
     
     feature_storage[i] = instance_from_id(i).global_position
     instance_from_id(i).global_position = -Vector2.ONE * dungeon.ROOM_SIZE * 5

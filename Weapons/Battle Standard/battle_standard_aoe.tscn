@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://buh1ai16krkpy"]
+
+[ext_resource type="Script" uid="uid://c758x7ox8bqvg" path="res://Weapons/Battle Standard/battle_standard_aoe.gd" id="1_mbbch"]
+[ext_resource type="Shader" uid="uid://s3h515v0txdj" path="res://Weapons/Battle Standard/battle_standard_aoe.gdshader" id="2_ugkpv"]
+[ext_resource type="Texture2D" uid="uid://cjraxmvgw4mpd" path="res://icon.svg" id="3_47nsk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hpsur"]
+radius = 384.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_64xlt"]
+shader = ExtResource("2_ugkpv")
+
+[node name="battle_standard_aoe" type="Area2D"]
+collision_layer = 0
+collision_mask = 32
+script = ExtResource("1_mbbch")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hpsur")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_64xlt")
+scale = Vector2(6, 6)
+texture = ExtResource("3_47nsk")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

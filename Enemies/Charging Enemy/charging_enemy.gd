@@ -7,6 +7,7 @@ var charging: bool = false
 var charge_dir: Vector2
 
 var t: GenericTelegraph
+var a: DamageArea
 
 func _ready():
   super._ready()
@@ -51,24 +52,29 @@ func _physics_process(delta):
       
       %charge_timer.stop()
     
-    var area: DamageArea = damageAreaScene.instantiate()
-    area.iframe_group = str(get_instance_id())
-    area.damage = 10
-    area.global_position = global_position
-    area.lifetime = .1
-    area.rotation = charge_dir.angle()
+    if a == null :
+      a = damageAreaScene.instantiate()
+      a.iframe_group = str(get_instance_id())
+      a.damage = int((10 * stat_tracker.DAMAGE_PERCENT + stat_tracker.DAMAGE) * wave_scaling)
+      a.lifetime = -1
+      a.rotation = charge_dir.angle()
+      
+      var shape = CollisionShape2D.new()
+      
+      shape.shape = RectangleShape2D.new()
+      (shape.shape as RectangleShape2D).size = Vector2(100, 200)
+      shape.debug_color = Color(1, 0, 0, .42)
+      
+      a.add_child(shape)
+      
+      get_tree().get_root().add_child.call_deferred(a)
     
-    var shape = CollisionShape2D.new()
-    
-    shape.shape = RectangleShape2D.new()
-    (shape.shape as RectangleShape2D).size = Vector2(100, 200)
-    shape.debug_color = Color(1, 0, 0, .42)
-    
-    area.add_child(shape)
-    
-    get_tree().get_root().add_child.call_deferred(area)
+    a.global_position = global_position
     
     return
+  elif a :
+    a.queue_free()
+    a = null
   
   super._physics_process(delta)
 
@@ -77,8 +83,14 @@ func on_death():
     t.queue_free()
     charge_windup = false
     charging = false
+  if a :
+    a.queue_free()
+    a = null
   
   super.on_death()
 
 func _on_charge_timer_timeout() -> void:
   charging = false
+  if a :
+    a.queue_free()
+    a = null

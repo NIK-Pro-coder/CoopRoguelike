@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://2x2xcllmnykg"]
+
+[ext_resource type="Script" uid="uid://ds1ks2dni8y12" path="res://Weapons/Cosmic Judgement/cosmic_judgement.gd" id="1_04x6e"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_04x6e"]
+size = Vector2(32, 32)
+
+[resource]
+script = ExtResource("1_04x6e")
+damage = 100
+weapon_class = 1
+can_charge = true
+charge_time = 10.0
+NAME = "Cosmic Judgement"
+DESCRIPTION = "Call down an ancient beam of destruction on your target's location, it is sure to annihilate anything in it's way"
+QUOTE = "Heaven's light shall shine brigther than ever"
+TEXTURE = SubResource("PlaceholderTexture2D_04x6e")
+RARITY = 1

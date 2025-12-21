@@ -1,4 +1,5 @@
 extends Control
+class_name ItemStripDisp
 
 @export var DISPLAY_ITEM: Item
 

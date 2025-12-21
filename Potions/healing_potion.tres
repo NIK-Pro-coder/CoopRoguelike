@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Potion" load_steps=4 format=3 uid="uid://bb0aeopx1tug4"]
+
+[ext_resource type="Script" uid="uid://o5cmmqyjxg7e" path="res://Stat Change/stat_change.gd" id="1_tkbod"]
+[ext_resource type="Texture2D" uid="uid://bnk0ar5p4qv8n" path="res://Potions/Sprites/Buff Icons/healing_potion.png" id="2_tkbod"]
+[ext_resource type="Script" uid="uid://025wicb2kaex" path="res://Potions/potion.gd" id="3_kdox4"]
+
+[resource]
+script = ExtResource("3_kdox4")
+EFFECT_ICON = ExtResource("2_tkbod")
+DOT = -5
+metadata/_custom_type_script = "uid://025wicb2kaex"

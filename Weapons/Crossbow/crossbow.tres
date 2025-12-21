@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bjmrw54wdbi2w"]
+
+[ext_resource type="Script" uid="uid://c0ipbm357bhs" path="res://Weapons/Crossbow/crossbow.gd" id="1_88f0x"]
+[ext_resource type="Texture2D" uid="uid://i53kh1brrahk" path="res://Weapons/Crossbow/crossbow.png" id="1_qm8lr"]
+
+[resource]
+script = ExtResource("1_88f0x")
+damage = 10
+weapon_class = 1
+NAME = "Crossbow"
+DESCRIPTION = "Slowly fires a piercing shot that deals good damage"
+QUOTE = "Holding this make me want to pillage some villages"
+TEXTURE = ExtResource("1_qm8lr")

@@ -1,14 +1,14 @@
-[gd_scene load_steps=32 format=3 uid="uid://byg2xw6qqapmn"]
+[gd_scene load_steps=34 format=3 uid="uid://byg2xw6qqapmn"]
 
 [ext_resource type="Script" uid="uid://3fur6p8qx5j6" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Shader" uid="uid://2wa4lpmnwvn0" path="res://Player/player.gdshader" id="2_vtle1"]
 [ext_resource type="Texture2D" uid="uid://cq5smrion4uoc" path="res://Player/player-idle.png" id="3_fhl08"]
 [ext_resource type="Theme" uid="uid://ltg03tu30kkp" path="res://UI.tres" id="4_gwnis"]
-[ext_resource type="PackedScene" uid="uid://ki8fyj7lxnsn" path="res://Spells/Zap Spell/zap_spell.tscn" id="4_k53q1"]
 [ext_resource type="Texture2D" uid="uid://bchx42pscaqlh" path="res://Player/player-walk.png" id="4_vtle1"]
 [ext_resource type="PackedScene" uid="uid://ntpu8pjibyrw" path="res://Components/Health Component/health_coponent.tscn" id="6_fhl08"]
 [ext_resource type="PackedScene" uid="uid://castrtcka8x82" path="res://Components/Effect Component/effect_component.tscn" id="8_od3ui"]
 [ext_resource type="Shader" uid="uid://c31pljybbb3lh" path="res://Player/matrix_display.gdshader" id="9_00tjw"]
+[ext_resource type="Texture2D" uid="uid://o4fe1l7504as" path="res://Weapons/Blowpipe/blowpipe.png" id="9_x3vf3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ntmi"]
 size = Vector2(56, 104)
@@ -198,8 +198,22 @@ shader = ExtResource("9_00tjw")
 shader_parameter/shield_hp = 0.0
 shader_parameter/shield_ready = false
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3vf3"]
+bg_color = Color(0, 0, 0, 0.25)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_00tjw"]
+bg_color = Color(0, 0.71787286, 0.3973156, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [node name="player" type="CharacterBody2D" groups=["ally", "player"]]
-collision_layer = 2
+collision_layer = 34
 motion_mode = 1
 script = ExtResource("1_4ntmi")
 
@@ -213,9 +227,6 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_apopc")
 animation = &"walk"
 autoplay = "idle"
-
-[node name="zap_spell" parent="." instance=ExtResource("4_k53q1")]
-position = Vector2(-168, 32)
 
 [node name="dashCooldown" type="Timer" parent="."]
 one_shot = true
@@ -273,6 +284,25 @@ offset_left = -112.0
 offset_top = -112.0
 offset_right = 112.0
 offset_bottom = 112.0
+
+[node name="weapon_charge_bar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -64.0
+offset_top = -80.0
+offset_right = 64.0
+offset_bottom = -64.0
+theme_override_styles/background = SubResource("StyleBoxFlat_x3vf3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_00tjw")
+max_value = 1.0
+value = 0.5
+show_percentage = false
+
+[node name="weapons_spr" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+z_index = -1
+position = Vector2(32, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("9_x3vf3")
 
 [connection signal="timeout" from="dashCooldown" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="timeout" from="dashDuration" to="." method="_on_dash_duration_timeout"]

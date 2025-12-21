@@ -28,6 +28,7 @@ enum Stats {
   POTION_AMOUNT_PERCENT,
   DAMAGE_TAKEN,
   DAMAGE_TAKEN_PERCENT,
+  SPELL_POWER,
 }
 
 @export var DAMAGE: int = 0
@@ -68,6 +69,8 @@ enum Stats {
 
 @export var DAMAGE_TAKEN: int = 0
 @export_range(0, 1, 0.01, "or_greater") var DAMAGE_TAKEN_PERCENT: float = 1
+
+@export var SPELL_POWER: int = 0
 
 func reset() :
   for i in Stats :

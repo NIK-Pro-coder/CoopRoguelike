@@ -26,7 +26,7 @@ func attack(atk_target: Node2D):
         ).instantiate()
         
       area.iframe_group = str(get_instance_id())
-      area.damage = 20
+      area.damage = int((20 * stat_tracker.DAMAGE_PERCENT + stat_tracker.DAMAGE) * wave_scaling)
       area.global_position = telegraph.global_position
       area.lifetime = .5
       

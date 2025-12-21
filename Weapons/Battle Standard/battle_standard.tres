@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://pjgl1pbp7iyj"]
+
+[ext_resource type="Texture2D" uid="uid://dyc3mvj8qd23o" path="res://Weapons/Battle Standard/battle_standard.png" id="1_8d4h5"]
+[ext_resource type="Script" uid="uid://4q7qh2u3mawy" path="res://Weapons/Battle Standard/battle_standard.gd" id="1_msl8w"]
+
+[resource]
+script = ExtResource("1_msl8w")
+damage = 5
+weapon_class = 3
+NAME = "Battle Standard"
+DESCRIPTION = "Holding this standard will increase your ally's speed within the aoe"
+QUOTE = "Now we shall follow the standards of battle!"
+TEXTURE = ExtResource("1_8d4h5")

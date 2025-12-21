@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Potion" load_steps=6 format=3 uid="uid://0ymlj0yvmie0"]
+
+[ext_resource type="Script" uid="uid://o5cmmqyjxg7e" path="res://Stat Change/stat_change.gd" id="1_htmc5"]
+[ext_resource type="Texture2D" uid="uid://jsfleqwxa5xs" path="res://Potions/Sprites/Buff Icons/fragile_potion.png" id="2_jpd5h"]
+[ext_resource type="Script" uid="uid://025wicb2kaex" path="res://Potions/potion.gd" id="4_sgm3f"]
+
+[sub_resource type="Resource" id="Resource_3qnd5"]
+script = ExtResource("1_htmc5")
+AFFECTED_STAT = 25
+CHANGE = 10.0
+metadata/_custom_type_script = "uid://o5cmmqyjxg7e"
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_htmc5"]
+size = Vector2(32, 32)
+
+[resource]
+script = ExtResource("4_sgm3f")
+DURATION = 60.0
+EFFECTS = Array[ExtResource("1_htmc5")]([SubResource("Resource_3qnd5")])
+EFFECT_ICON = ExtResource("2_jpd5h")
+NAME = "Endurance Potion"
+DESCRIPTION = "Decreases damage reduction by 10% for 1 minute"
+TEXTURE = SubResource("PlaceholderTexture2D_htmc5")
+metadata/_custom_type_script = "uid://025wicb2kaex"

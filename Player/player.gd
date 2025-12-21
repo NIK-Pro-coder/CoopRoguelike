@@ -50,7 +50,7 @@ var mappedInputs: Dictionary[String, Array] = {}
 ]
 
 @onready var weapon: Weapon
-@onready var spell: Spell = $zap_spell
+var spell: Spell = preload("res://Spells/Zap Spell/zap_spell.tres").duplicate()
 
 @onready var dashCooldown: Timer = $dashCooldown
 @onready var dashDuration: Timer = $dashDuration
@@ -97,7 +97,10 @@ func play_animation(anim_name: String) :
   sprite.play(anim_name)
 
 func equip_weapon(w: Weapon) :
+  if weapon :
+    weapon.on_unequip(self)
   weapon = w.duplicate()
+  weapon.on_equip(self)
 
 func is_action_pressed(act_name: String) :
   if !act_name in mappedInputs :
@@ -162,6 +165,8 @@ func recalculate_accessories() :
 func recalculate_powers() :
   for i in powers :
     i.apply_power(stat_changes)
+  
+  weapon.change_stats(self, stat_changes)
 
 func init_accessories() :
   for i in accessory_timers :
@@ -181,10 +186,11 @@ func init_accessories() :
 func _ready() :
   recalculate_powers()
   
+  weaponChargeBar.add_theme_stylebox_override("fill", weaponChargeBar.get_theme_stylebox("fill").duplicate())
+  
   sprite.material = sprite.material.duplicate()
   mana = actual_max_mana
   
-  spell.cooldownTimer.connect("timeout", func(): animation_player.play("spell_ready"))
   nametag.text = NAME
   
   %matrix_display.material = %matrix_display.material.duplicate()
@@ -253,8 +259,22 @@ func handle_movement() :
 func get_actual_stat(stat: String) :
   return self[stat.to_upper()] * stat_changes[stat.to_upper() + "_PERCENT"] + stat_changes[stat.to_upper()]
 
+@onready var weaponChargeBar: ProgressBar = %weapon_charge_bar
+
 func _process(_delta: float) -> void:
+  %weapons_spr.texture = weapon.TEXTURE
+  %weapons_spr.visible = !weapon.hasCooldown
+  %weapons_spr.position.x = 32 * (-1 if sprite.flip_h else 1)
+  %weapons_spr.flip_h = sprite.flip_h
+  
   sprite.material.set_shader_parameter("hue_shift", MAIN_COLOR)
+  
+  weaponChargeBar.visible = weapon.can_charge
+  weaponChargeBar.value = weapon.get_charge_progress()
+  if weapon.get_charge_progress() >= 1 :
+    (weaponChargeBar.get_theme_stylebox("fill") as StyleBoxFlat).bg_color = Color(0.0, 0.718, 0.397)
+  else :
+    (weaponChargeBar.get_theme_stylebox("fill") as StyleBoxFlat).bg_color = Color(0.0, 0.675, 0.773)
   
   HUD.player_name = nametag.text
   HUD.player_color = MAIN_COLOR
@@ -265,15 +285,11 @@ func _process(_delta: float) -> void:
   
   HUD.dash_cooldown = int(100.0 - (dashCooldown.time_left / get_actual_stat("dash_cooldown")) * 100.0)
   
-  if (spell.cooldownTimer as Timer).is_stopped() :
-    if spell.canUse :
-      HUD.spell_cooldown = 100
-    else :
-      HUD.spell_cooldown = 0
+  if spell.cooldownTimer and is_instance_valid(spell.cooldownTimer) :
+    HUD.spell_cooldown = 100 - int((spell.cooldownTimer.time_left / spell.cooldownTimer.wait_time) * 100)
   else :
-    HUD.spell_cooldown = 100 - (spell.cooldownTimer.time_left / spell.COOLDOWN) * 100
+    HUD.spell_cooldown = 100
   HUD.spell_cost = spell.MANA_COST
-  HUD.spell_hast_target = spell.hasTargets
   
   HUD.health = healtcomponent.health
   HUD.max_health = healtcomponent.max_health
@@ -313,6 +329,8 @@ func recalculate_stats() :
   healtcomponent.damage_mult = get_actual_stat("damage_taken")
   
   actual_max_mana = get_actual_stat("max_mana")
+
+var last_attacking: bool = false
 
 func _physics_process(_delta: float) -> void:
   recalculate_stats()
@@ -383,24 +401,29 @@ func _physics_process(_delta: float) -> void:
     potions -= 1
     potionsDrank += 1
   
+  var enemyPos := Vector2.ZERO
+  var enemyDist := -1
+  for i in get_tree().get_nodes_in_group("enemy") :
+    var pos = (i as Node2D).global_position
+    if (pos - global_position).normalized().dot(lastMoveDir) >= .8 and (enemyDist < 0 or pos.distance_squared_to(global_position) < enemyDist) :
+      enemyDist = int(pos.distance_squared_to(global_position))
+      enemyPos = pos
+  
+  
+  var atkPos := lastMoveDir
+  if enemyDist >= 0 :
+    atkPos = (enemyPos - global_position).normalized()
+    
+    
   if is_action_pressed("attack") :
-    var enemyPos := Vector2.ZERO
-    var enemyDist := -1
-    for i in get_tree().get_nodes_in_group("enemy") :
-      var pos = (i as Node2D).global_position
-      if (pos - global_position).normalized().dot(lastMoveDir) >= .8 and (enemyDist < 0 or pos.distance_squared_to(global_position) < enemyDist) :
-        enemyDist = int(pos.distance_squared_to(global_position))
-        enemyPos = pos
-    
-    var atkPos := lastMoveDir
-    if enemyDist >= 0 :
-      atkPos = (enemyPos - global_position).normalized()
-    
     weapon.attack(self, atkPos)
-    
-  if is_action_pressed("spell") and spell.canUse and spell.hasTargets and mana >= spell.MANA_COST :
-    mana -= spell.MANA_COST
-    spell.cast()
+  elif last_attacking :
+    weapon.attack_stop(self, atkPos)
+  
+  last_attacking = is_action_pressed("attack")
+  
+  if is_action_pressed("spell") :
+    spell.cast(self)
 
 var revivetotem = preload("res://Revive Totem/revive_totem.tscn")
 
@@ -424,7 +447,7 @@ func revive(pos: Vector2) :
   add_to_group("ally")
   $CollisionShape2D.debug_color.a = .42
   $Icon.modulate.a = 1
-  $healthCoponent.revive()
+  $healthCoponent.revive(.5)
   
   global_position = pos
 

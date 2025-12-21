@@ -24,5 +24,6 @@ func attack(_target: Node2D) :
   area.rotation_degrees += 90
   area.direction = (target.global_position - global_position).normalized() * 10
   area.attacker = self
+  area.damage = int((5 * stat_tracker.DAMAGE_PERCENT + stat_tracker.DAMAGE) * wave_scaling)
   
   get_tree().get_root().add_child.call_deferred(area)

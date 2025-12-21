@@ -4,3 +4,8 @@
 
 [node name="effectComponent" type="Node"]
 script = ExtResource("1_pln7e")
+
+[node name="dot_update" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="dot_update" to="." method="_on_dot_update_timeout"]

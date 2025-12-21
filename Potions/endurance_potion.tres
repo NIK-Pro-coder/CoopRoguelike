@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_3qnd5"]
 script = ExtResource("1_4hd2k")
 AFFECTED_STAT = 25
-CHANGE = -50.0
+CHANGE = -10.0
 metadata/_custom_type_script = "uid://o5cmmqyjxg7e"
 
 [resource]
@@ -17,7 +17,7 @@ DURATION = 60.0
 EFFECTS = Array[ExtResource("1_4hd2k")]([SubResource("Resource_3qnd5")])
 EFFECT_ICON = ExtResource("2_hyppo")
 NAME = "Endurance Potion"
-DESCRIPTION = "Increases damage reduction by 50% for 1 minute"
+DESCRIPTION = "Increases damage reduction by 10% for 1 minute"
 QUOTE = "Made from dragon scales! Not really..."
 TEXTURE = ExtResource("3_7uwut")
 metadata/_custom_type_script = "uid://025wicb2kaex"

@@ -17,6 +17,8 @@ var pressed = false
 
 var selectedPowers: Array[Power] = []
 
+@onready var confirmText: RichTextLabel = %confirmText
+
 func _process(_delta: float) -> void:
   var view_size := get_viewport_rect()
   
@@ -40,7 +42,8 @@ func _process(_delta: float) -> void:
   var p_device = players[player_turn]
   
   $MarginContainer/VBoxContainer/VBoxContainer/playerName.text = "Player %s: %s upgrade%s left" % [p_device+1, max_levelups-levelup_num, "" if max_levelups-levelup_num==1 else "s"]
-  $MarginContainer/VBoxContainer/confirmText.visible = askConfirm
+  confirmText.visible = askConfirm
+  confirmText.text = "(A) Confirm" if p_device >= 0 else "(X) Confirm"
   
   if askConfirm :
     if Input.is_joy_button_pressed(p_device, JOY_BUTTON_B) if p_device >= 0 else Input.is_action_just_pressed("k_roll") :
@@ -73,6 +76,8 @@ func _process(_delta: float) -> void:
       pressed = true
   else :
     pressed = false
+  
+  
   
   if !moved and (Input.get_joy_axis(p_device, JOY_AXIS_LEFT_X) < -.5 if p_device >= 0 else Input.is_action_just_pressed("k_left")) :
     selected -= 1

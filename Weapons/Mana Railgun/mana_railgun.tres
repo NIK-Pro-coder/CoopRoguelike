@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://wrv4ynbqxhv5"]
+
+[ext_resource type="Texture2D" uid="uid://djvepm0uvb0s1" path="res://Weapons/Mana Railgun/mana_railgun.png" id="1_i6ia3"]
+[ext_resource type="Script" uid="uid://c28cf6pfy3g0t" path="res://Weapons/Mana Railgun/mana_railgun.gd" id="1_s05xn"]
+
+[resource]
+script = ExtResource("1_s05xn")
+damage = 50
+weapon_class = 1
+can_charge = true
+charge_time = 5.0
+NAME = "Mana Railgun"
+DESCRIPTION = "Requires charge to shoot, the more charge the more damage"
+QUOTE = "Some say concentrated mana can even pierce titanium!"
+TEXTURE = ExtResource("1_i6ia3")
+RARITY = 3

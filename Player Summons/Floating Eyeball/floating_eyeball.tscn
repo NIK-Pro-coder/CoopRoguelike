@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://klvcpmcc5y3i"]
+
+[ext_resource type="PackedScene" uid="uid://omf84l7hc7lm" path="res://Player Summons/Base Summon/player_summon.tscn" id="1_vqorc"]
+[ext_resource type="Script" uid="uid://db0l3pbvsf050" path="res://Player Summons/Floating Eyeball/floating_eyeball.gd" id="2_t2li2"]
+[ext_resource type="Texture2D" uid="uid://bo0d5jiro5sg0" path="res://Player Summons/Floating Eyeball/floating_eyeball.png" id="3_8ggvk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rp3j"]
+size = Vector2(64, 64)
+
+[node name="floating_eyeball" instance=ExtResource("1_vqorc")]
+script = ExtResource("2_t2li2")
+TARGET_DISTANCE = 750.0
+ACTION_COOLDOWN = 2.0
+
+[node name="Icon" parent="." index="0"]
+scale = Vector2(4, 4)
+texture = ExtResource("3_8ggvk")
+
+[node name="healthCoponent" parent="." index="1"]
+max_health = 25
+
+[node name="CollisionShape2D" parent="." index="3"]
+shape = SubResource("RectangleShape2D_3rp3j")

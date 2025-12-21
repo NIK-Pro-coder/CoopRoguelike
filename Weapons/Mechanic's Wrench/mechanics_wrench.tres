@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://b6gqf6mdv3sfa"]
+
+[ext_resource type="Texture2D" uid="uid://c4uc4p2ltmqhv" path="res://Weapons/Mechanic's Wrench/mechanics_wrench.png" id="1_7r8j3"]
+[ext_resource type="Script" uid="uid://c5hy8mufn44by" path="res://Weapons/Mechanic's Wrench/mechanics_wrench.gd" id="1_niq7j"]
+
+[resource]
+script = ExtResource("1_niq7j")
+damage = 5
+weapon_class = 3
+NAME = "Mechanic's Wrench"
+DESCRIPTION = "Swing your wrench forward, every 50 damage dealt the turret on your back will upgrade itself"
+QUOTE = "Engineer's in the field, farm boy charm..."
+TEXTURE = ExtResource("1_7r8j3")
+RARITY = 3

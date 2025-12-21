@@ -28,7 +28,7 @@ COLORS = Dictionary[int, Color]({
 5: Color(0.7647059, 0, 1, 1),
 7: Color(0, 0.46666667, 1, 1),
 9: Color(0, 0.78039217, 0.06666667, 1),
-11: Color(0.19607843, 0.19607843, 0.19607843, 1)
+11: Color(1, 1, 1, 1)
 })
 
 [node name="bg" type="Panel" parent="."]

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dff0qlf8nfx27"]
+
+[ext_resource type="Script" uid="uid://crf1o143r4xb3" path="res://Weapons/Fighter Staff/fighter_staff.gd" id="1_k8dwn"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_23rjb"]
+size = Vector2(32, 32)
+
+[resource]
+script = ExtResource("1_k8dwn")
+damage = 5
+weapon_class = 2
+NAME = "Fighter Staff"
+DESCRIPTION = "Summon a Figther Construct to fight for you, when attacking with a contruct already summoned you will swing the staff"
+QUOTE = "Molding rocks from the ground into constructs I see!"
+TEXTURE = SubResource("PlaceholderTexture2D_23rjb")

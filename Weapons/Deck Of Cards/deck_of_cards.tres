@@ -1,0 +1,25 @@
+[gd_resource type="Resource" load_steps=12 format=3 uid="uid://ddgdrsxwn21pf"]
+
+[ext_resource type="Texture2D" uid="uid://u5x6wdcqxltf" path="res://Weapons/Deck Of Cards/deck_of_cards.png" id="1_4jid6"]
+[ext_resource type="Script" uid="uid://bsnnbp5iewko6" path="res://Weapons/Deck Of Cards/deck_of_cards.gd" id="1_l57bv"]
+[ext_resource type="Script" uid="uid://025wicb2kaex" path="res://Potions/potion.gd" id="1_os5ig"]
+[ext_resource type="Resource" uid="uid://0ymlj0yvmie0" path="res://Potions/fragile_potion.tres" id="2_6c0ur"]
+[ext_resource type="Resource" uid="uid://cpjdnxhi78lh0" path="res://Potions/weakness_potion.tres" id="3_n64l6"]
+[ext_resource type="Resource" uid="uid://eq4lp7jvwp4q" path="res://Potions/slowness_potion.tres" id="4_4jid6"]
+[ext_resource type="Resource" uid="uid://dqnjnva8dfopk" path="res://Potions/endurance_potion.tres" id="5_5nq2g"]
+[ext_resource type="Resource" uid="uid://cai7kp7cdyi7d" path="res://Potions/poison_potion.tres" id="5_n64l6"]
+[ext_resource type="Resource" uid="uid://chhslhg6l8s11" path="res://Potions/rage_potion.tres" id="6_b03y7"]
+[ext_resource type="Resource" uid="uid://dcc1sgal1l5gc" path="res://Potions/speed_potion.tres" id="7_ivyeh"]
+[ext_resource type="Resource" uid="uid://bb0aeopx1tug4" path="res://Potions/healing_potion.tres" id="8_6c0ur"]
+
+[resource]
+script = ExtResource("1_l57bv")
+positive_effects = Array[ExtResource("1_os5ig")]([ExtResource("5_5nq2g"), ExtResource("6_b03y7"), ExtResource("7_ivyeh"), ExtResource("8_6c0ur")])
+negative_effects = Array[ExtResource("1_os5ig")]([ExtResource("2_6c0ur"), ExtResource("3_n64l6"), ExtResource("4_4jid6"), ExtResource("5_n64l6")])
+damage = 5
+weapon_class = 3
+NAME = "Deck of Cards"
+DESCRIPTION = "Throws random cards from your deck, each card debuffs enemies and buffs allies"
+QUOTE = "My firend Jimbo gave me this one"
+TEXTURE = ExtResource("1_4jid6")
+RARITY = 7

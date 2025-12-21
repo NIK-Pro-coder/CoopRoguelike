@@ -32,5 +32,6 @@ theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 theme = ExtResource("1_fs7gj")

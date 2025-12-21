@@ -9,7 +9,12 @@ class_name DamageArea
 @export var iframe_group: String = ""
 @export var iframe_amount: float = .5
 
-@export var friendly_fire: bool = false
+@export var apply_effects: Array[Potion]
+
+@export var piercing: int = -1
+var pierced = 0
+
+var friendly_fire: bool = false
 
 @onready var lifetimeTimer: Timer = $lifetimeTimer
 
@@ -29,6 +34,8 @@ func recursiveHealthComponentSearch(startnode: Node) :
   
   return null
 
+signal on_hit(body: Node2D)
+
 func dealDamageToBody(body: Node2D) :
   if body == attacker :
     return
@@ -43,6 +50,13 @@ func dealDamageToBody(body: Node2D) :
   if healthcomponent.has_iframes(i_group) :
     return
   
+  pierced += 1
+    
+  var effect: EffectComponent = Qol.findEffectComp(body)
+  if effect :
+    for i in apply_effects :
+      effect.add_potion(i)
+  
   if is_instance_valid(attacker) and attacker is Player :
     (attacker as Player).damageDone += damage
     
@@ -52,6 +66,8 @@ func dealDamageToBody(body: Node2D) :
     body.knockback += knockback * (body.knockback_mult if "knockback_mult" in body else 1)
   
   healthcomponent.dealDmg(damage)
+  
+  on_hit.emit(body)
   
   if is_instance_valid(attacker) and attacker is Player :
     for i in attacker.accessories :
@@ -107,3 +123,7 @@ func _physics_process(_delta: float) -> void:
   if monitoring :
     for body in get_overlapping_bodies() :
       dealDamageToBody(body)
+
+      if piercing >= 0 and pierced > piercing :
+        queue_free()
+        break

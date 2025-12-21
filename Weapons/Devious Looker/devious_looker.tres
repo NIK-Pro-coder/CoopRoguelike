@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cb4pnwwihlwje"]
+
+[ext_resource type="Script" uid="uid://bl0x1a2u6ggdm" path="res://Weapons/Devious Looker/devious_looker.gd" id="1_rm5j4"]
+[ext_resource type="Texture2D" uid="uid://bms25fg3nlr4m" path="res://Weapons/Devious Looker/devious_looker.png" id="1_sf1qh"]
+
+[resource]
+script = ExtResource("1_rm5j4")
+damage = 5
+weapon_class = 2
+NAME = "Devious Looker"
+DESCRIPTION = "Summons three floating eyeballs that shoot lasersa at nearby enemies"
+QUOTE = "Me when I don't skip eye day"
+TEXTURE = ExtResource("1_sf1qh")
+RARITY = 9

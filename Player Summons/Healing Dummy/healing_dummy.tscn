@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://crsedt70gnwul"]
+
+[ext_resource type="PackedScene" uid="uid://omf84l7hc7lm" path="res://Player Summons/Base Summon/player_summon.tscn" id="1_fow6f"]
+[ext_resource type="Script" uid="uid://nat3fadnk8dr" path="res://Player Summons/Healing Dummy/healing_dummy.gd" id="2_b04y1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rodnk"]
+size = Vector2(128, 128)
+
+[node name="healing_dummy" groups=["roompart"] instance=ExtResource("1_fow6f")]
+script = ExtResource("2_b04y1")
+TARGET = 2
+
+[node name="Icon" parent="." index="0"]
+modulate = Color(0, 1, 0, 1)
+scale = Vector2(1, 1)
+
+[node name="healthCoponent" parent="." index="1"]
+max_health = 100
+
+[node name="healthbar" parent="." index="2"]
+offset_left = -128.0
+offset_top = 72.0
+offset_right = 128.0
+offset_bottom = 104.0
+
+[node name="CollisionShape2D" parent="." index="3"]
+shape = SubResource("RectangleShape2D_rodnk")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." index="7"]
+offset_left = -128.0
+offset_top = 104.0
+offset_right = 128.0
+offset_bottom = 168.0
+theme_override_font_sizes/normal_font_size = 32
+text = "100 / 100"
+horizontal_alignment = 1
+
+[node name="effectContainer" type="GridContainer" parent="." index="9"]
+unique_name_in_owner = true
+offset_left = -128.0
+offset_top = 160.0
+offset_right = 128.0
+offset_bottom = 528.0
+columns = 4

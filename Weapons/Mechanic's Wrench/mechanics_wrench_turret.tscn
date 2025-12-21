@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbm15wtw833ab"]
+
+[ext_resource type="Script" uid="uid://b07onlqfh73g8" path="res://Weapons/Mechanic's Wrench/mechanics_wrench_turret.gd" id="1_s2jou"]
+[ext_resource type="Shader" uid="uid://04c47hvil2uo" path="res://Weapons/Mechanic's Wrench/mechanics_wrench_turret.gdshader" id="2_ilpuw"]
+[ext_resource type="Texture2D" uid="uid://cjraxmvgw4mpd" path="res://icon.svg" id="2_wvwa4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kh7j0"]
+radius = 450.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s2jou"]
+bg_color = Color(0.8, 0.48000002, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fdui8"]
+shader = ExtResource("2_ilpuw")
+shader_parameter/has_target = true
+shader_parameter/level = 0.0
+
+[node name="mechanics_wrench_turret" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_s2jou")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_kh7j0")
+
+[node name="scrap_charge" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = 48.0
+offset_top = -56.0
+offset_right = 72.0
+offset_bottom = 56.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_s2jou")
+max_value = 50.0
+value = 25.0
+fill_mode = 3
+show_percentage = false
+
+[node name="shoot_timer" type="Timer" parent="."]
+autostart = true
+
+[node name="lvl_num" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+offset_left = 51.0
+offset_top = -96.0
+offset_right = 187.0
+offset_bottom = -51.0
+theme_override_font_sizes/normal_font_size = 32
+text = "0"
+fit_content = true
+
+[node name="range_indicator" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+z_index = -1
+material = SubResource("ShaderMaterial_fdui8")
+scale = Vector2(7.125, 7.125)
+texture = ExtResource("2_wvwa4")
+
+[connection signal="timeout" from="shoot_timer" to="." method="_on_timer_timeout"]

@@ -65,46 +65,78 @@ func _ready() -> void:
     
     posToSlot[Vector2(i-3, 0)] = slot
   
-  #region STARTING ACCESSORIES
-  # addItem(load("res://Items/Accessories/adrenaline.tres"))
-  # addItem(load("res://Items/Accessories/alchemy_kit.tres"))
-  # addItem(load("res://Items/Accessories/bandaid_kit.tres"))
-  # addItem(load("res://Items/Accessories/bloodthirst.tres"))
-  # addItem(load("res://Items/Accessories/bottomless_mana_pouch.tres"))
-  # addItem(load("res://Items/Accessories/chitin_extractor.tres"))
-  # addItem(load("res://Items/Accessories/combo_gloves.tres"))
-  # addItem(load("res://Items/Accessories/crystal_core.tres"))
-  # addItem(load("res://Items/Accessories/defensive_matrix.tres"))
-  # addItem(load("res://Items/Accessories/equalizer.tres"))
-  # addItem(load("res://Items/Accessories/flimsy_shield.tres"))
-  # addItem(load("res://Items/Accessories/honey_drop.tres"))
-  # addItem(load("res://Items/Accessories/life_support.tres"))
-  # addItem(load("res://Items/Accessories/lucky_dice.tres"))
-  # addItem(load("res://Items/Accessories/metal_scarf.tres"))
-  # addItem(load("res://Items/Accessories/rage_brew.tres"))
-  # addItem(load("res://Items/Accessories/ram_horns.tres"))
-  # addItem(load("res://Items/Accessories/reactive_nanites.tres"))
-  # addItem(load("res://Items/Accessories/regen_band.tres"))
-  # addItem(load("res://Items/Accessories/retaliatory_instinct.tres"))
-  # addItem(load("res://Items/Accessories/thorn_container.tres"))
-  # addItem(load("res://Items/Accessories/true_self.tres"))
-  # addItem(load("res://Items/Accessories/vampire_fangs.tres"))
-  #endregion
-  
-  #region STARTING POTIONS
-  # addItem(load("res://Potions/endurance_potion.tres"))
-  # addItem(load("res://Potions/lifeforce_potion.tres"))
-  # addItem(load("res://Potions/rage_potion.tres"))
-  # addItem(load("res://Potions/speed_potion.tres"))
-  #endregion
-  
-  #region STARTING WEAPONS
-  # addItem(load("res://Weapons/Rusty Sword/worn_down_sword.tres"))
-  # addItem(load("res://Weapons/Rusty Mace/worn_down_mace.tres"))
-  # addItem(load("res://Weapons/Rusty Dagger/worn_down_dagger.tres"))
-  # addItem(load("res://Weapons/Rusty Spear/worn_down_spear.tres"))
-  # addItem(load("res://Weapons/Recurve Bow/recurve_bow.tres"))
-  #endregion
+  if OS.is_debug_build() :
+    #region STARTING ACCESSORIES
+    # addItem(load("res://Items/Accessories/adrenaline.tres"))
+    # addItem(load("res://Items/Accessories/alchemy_kit.tres"))
+    # addItem(load("res://Items/Accessories/bandaid_kit.tres"))
+    # addItem(load("res://Items/Accessories/bloodthirst.tres"))
+    # addItem(load("res://Items/Accessories/bottomless_mana_pouch.tres"))
+    # addItem(load("res://Items/Accessories/chitin_extractor.tres"))
+    # addItem(load("res://Items/Accessories/combo_gloves.tres"))
+    # addItem(load("res://Items/Accessories/crystal_core.tres"))
+    # addItem(load("res://Items/Accessories/defensive_matrix.tres"))
+    # addItem(load("res://Items/Accessories/equalizer.tres"))
+    # addItem(load("res://Items/Accessories/flimsy_shield.tres"))
+    # addItem(load("res://Items/Accessories/honey_drop.tres"))
+    # addItem(load("res://Items/Accessories/life_support.tres"))
+    # addItem(load("res://Items/Accessories/lucky_dice.tres"))
+    # addItem(load("res://Items/Accessories/metal_scarf.tres"))
+    # addItem(load("res://Items/Accessories/rage_brew.tres"))
+    # addItem(load("res://Items/Accessories/ram_horns.tres"))
+    # addItem(load("res://Items/Accessories/reactive_nanites.tres"))
+    # addItem(load("res://Items/Accessories/regen_band.tres"))
+    # addItem(load("res://Items/Accessories/retaliatory_instinct.tres"))
+    # addItem(load("res://Items/Accessories/thorn_container.tres"))
+    # addItem(load("res://Items/Accessories/true_self.tres"))
+    # addItem(load("res://Items/Accessories/vampire_fangs.tres"))
+    #endregion
+    
+    #region STARTING POTIONS
+    # addItem(load("res://Potions/endurance_potion.tres"))
+    # addItem(load("res://Potions/lifeforce_potion.tres"))
+    # addItem(load("res://Potions/rage_potion.tres"))
+    # addItem(load("res://Potions/speed_potion.tres"))
+    #endregion
+    
+    #region MELLEE WEAPONS
+    # addItem(load("res://Weapons/Rusty Sword/worn_down_sword.tres"))
+    # addItem(load("res://Weapons/Rusty Mace/worn_down_mace.tres"))
+    # addItem(load("res://Weapons/Rusty Dagger/worn_down_dagger.tres"))
+    # addItem(load("res://Weapons/Rusty Spear/worn_down_spear.tres"))
+    # addItem(load("res://Weapons/Knockback Stick/knockback_stick.tres"))
+    # addItem(load("res://Weapons/Wizard Staff/wizard_staff.tres"))
+    # addItem(load("res://Weapons/Metronome/metronome.tres"))
+    #endregion
+    
+    #region RANGED WEAPONS
+    # addItem(load("res://Weapons/Recurve Bow/recurve_bow.tres"))
+    # addItem(load("res://Weapons/Mana Railgun/mana_railgun.tres"))
+    # addItem(load("res://Weapons/Burning Coals/burning_coals.tres"))
+    # addItem(load("res://Weapons/Worn Down Boomerang/worn_down_boomerang.tres"))
+    # addItem(load("res://Weapons/Javelin/javelin.tres"))
+    # addItem(load("res://Weapons/Cosmic Judgement/cosmic_judgement.tres"))
+    # addItem(load("res://Weapons/Blowpipe/blowpipe.tres"))
+    addItem(load("res://Weapons/Crossbow/crossbow.tres"))
+    #endregion
+    
+    #region SUMMON WEAPONS
+    # addItem(load("res://Weapons/Fighter Staff/fighter_staff.tres"))
+    # addItem(load("res://Weapons/Mechanic's Wrench/mechanics_wrench.tres"))
+    # addItem(load("res://Weapons/Devious Looker/devious_looker.tres"))
+    # addItem(load("res://Weapons/Magic Katanas/magic_katanas.tres"))
+    #endregion
+    
+    #region SUPPORT WEAPONS
+    # addItem(load("res://Weapons/Flute/flute.tres"))
+    # addItem(load("res://Weapons/Heal Ray/heal_ray.tres"))
+    # addItem(load("res://Weapons/Deck Of Cards/deck_of_cards.tres"))
+    # addItem(load("res://Weapons/Battle Standard/battle_standard.tres"))
+    # addItem(load("res://Weapons/Spore Sac/spore_sac.tres"))
+    # addItem(load("res://Weapons/Syringes/syringes.tres"))
+    #endregion
+    
+    pass
   
   selectSlot(selectedPos)
 
@@ -121,6 +153,7 @@ func selectSlot(pos: Vector2) :
     button_scavenge.visible = true
     
     item_name.text = item.NAME
+    item_name.add_theme_color_override("default_color", Qol.RARITY_COLORS[item.RARITY])
     item_description.text = item.DESCRIPTION
     item_quote.text = ("[i]'%s'[/i]" % [item.QUOTE]) if len(item.QUOTE) > 0 else ""
     if item.EQUIP_ENCHANTS :
@@ -128,8 +161,10 @@ func selectSlot(pos: Vector2) :
       for i in item.EQUIP_ENCHANTS :
         item_description.text += "%s (lvl %s)\n" % [(i as Glyph).NAME, (i as Glyph).glyph_level]
         
-    if item.EQUIPPABLE :
+    if item is Weapon :
       button_use_equip.text = "(%s) Equip" % [button_equip]
+      if DISPLAY_PLAYER and !DISPLAY_PLAYER.weapon.canSwap :
+        button_use_equip.text = "Cannot equip right now"
     elif item.IS_ACCESSORY and DISPLAY_PLAYER :
       if selectedPos.x >= 0 :
         button_use_equip.text = "(%s) Equip" % [button_equip]
@@ -163,9 +198,9 @@ func unselectSlot(pos: Vector2) :
 var dropItemScene = preload("res://Dropped Item/dropped_item.tscn")
 
 func addItem(item: Item) :
-  if item.GLYPH_SHARD :
-    enchantScreen.addGlyphShards(item.GLYPH, item.SHARD_NUM)
-    return
+  # if item.GLYPH_SHARD :
+  #   enchantScreen.addGlyphShards(item.GLYPH, item.SHARD_NUM)
+  #   return
   
   if len(inventory) >= INV_SIZE.x * INV_SIZE.y :
     var i: DroppedItem = dropItemScene.instantiate()
@@ -270,17 +305,23 @@ func _process(_delta: float) -> void:
     if %scavengeProgress.value >= 100 :
       coins += int(posToItem[selectedPos].getItemCoinValue() * .75)
       removeItem(selectedPos)
+      
+      if selectedPos.x < 0 :
+        DISPLAY_PLAYER.accessories[3 + selectedPos.x] = null
     
     if (Input.is_joy_button_pressed(DISPLAY_PLAYER.DEVICE_ID, JOY_BUTTON_A) if DISPLAY_PLAYER.DEVICE_ID >= 0 else Input.is_action_just_pressed("k_attack")) and can_use :
-      if posToItem[selectedPos].EQUIPPABLE :
+      if posToItem[selectedPos] is Weapon and DISPLAY_PLAYER.weapon.canSwap :
         addItem(DISPLAY_PLAYER.weapon)
         
         wname.text = posToItem[selectedPos].NAME
         wicon.texture = posToItem[selectedPos].TEXTURE
       
       posToItem[selectedPos].use(DISPLAY_PLAYER)
+
+      if posToItem[selectedPos].charges_used >= posToItem[selectedPos].MAX_CHARGES :
+        removeItem(selectedPos)
       
-      if posToItem[selectedPos] is Potion or posToItem[selectedPos].EQUIPPABLE or posToItem[selectedPos].charges_used >= posToItem[selectedPos].MAX_CHARGES :
+      if posToItem[selectedPos] is Potion or (posToItem[selectedPos] is Weapon and DISPLAY_PLAYER.weapon.canSwap) :
         removeItem(selectedPos)
       else :
         if posToItem[selectedPos].IS_ACCESSORY :
@@ -344,8 +385,8 @@ func showMyInventory(p: Player) :
   wname.text = p.weapon.NAME
   wicon.texture = p.weapon.TEXTURE
   
-  sname.text = p.spell.SPELL_NAME
-  sicon.texture = p.spell.SPELL_ICON
+  sname.text = p.spell.NAME
+  sicon.texture = p.spell.TEXTURE
 
   for i in power_container.get_children() :
     i.queue_free()

@@ -24,7 +24,7 @@ func attack(_target: Node2D) :
   area.rotation = dir.angle()
   area.rotation_degrees += 90
   area.lifetime = .25
-  area.damage = 5
+  area.damage = int((5 * stat_tracker.DAMAGE_PERCENT + stat_tracker.DAMAGE) * wave_scaling)
   area.knockback = dir.normalized() * 150
   area.attacker = self
   

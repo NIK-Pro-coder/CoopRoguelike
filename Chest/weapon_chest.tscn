@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://4ii83n3c3hub"]
+
+[ext_resource type="PackedScene" uid="uid://dl8u6qokqmbyx" path="res://Chest/chest.tscn" id="1_kpaso"]
+[ext_resource type="Resource" uid="uid://s8rnc8k5liy3" path="res://Loot Table/weapon_loot_table.tres" id="2_kpaso"]
+
+[node name="weapon_chest" instance=ExtResource("1_kpaso")]
+modulate = Color(0.7716042, 0.21886161, 0.99999994, 1)
+LOOT_TABLE = ExtResource("2_kpaso")

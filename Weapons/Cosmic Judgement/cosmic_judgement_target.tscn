@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://chnyvivfrjl2s"]
+
+[ext_resource type="Script" uid="uid://cyuqrupt83r7d" path="res://Weapons/Cosmic Judgement/cosmic_judgement_target.gd" id="1_7jswr"]
+[ext_resource type="Texture2D" uid="uid://cjraxmvgw4mpd" path="res://icon.svg" id="1_w13oa"]
+[ext_resource type="Shader" uid="uid://csw2oefxnrrcr" path="res://Weapons/Cosmic Judgement/cosmic_judgement_target.gdshader" id="1_wwj4u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wwj4u"]
+radius = 440.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7jswr"]
+shader = ExtResource("1_wwj4u")
+shader_parameter/circle_progress = 0.0
+shader_parameter/line_progress = 0.0
+shader_parameter/circle_spin = 0.0
+
+[node name="cosmic_judgement_target" type="Area2D"]
+process_mode = 3
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_7jswr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wwj4u")
+
+[node name="Icon" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_7jswr")
+scale = Vector2(9, 9)
+texture = ExtResource("1_w13oa")
