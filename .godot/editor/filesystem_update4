@@ -1,0 +1,28 @@
+res://main.tscn
+res://Gacha Ball/gacha_ball.gdshader
+res://Accessories/Alchemy Kit/alchemy_kit.tres
+res://Accessories/Bottomless Mana Pouch/bottomless_mana_pouch.tres
+res://Accessories/Metal Scarf/metal_scarf.tres
+res://Accessories/Regen Band/regen_band.tres
+res://Items/Accessories/true_self.tres
+res://Gacha Ball/gacha_ball_given.gdshader
+res://Spells/Zap Spell/zap_spell.tres
+res://Weapons/Fighter Staff/fighter_staff.tres
+res://Potions/endurance_potion.tres
+res://Potions/lifeforce_potion.tres
+res://Potions/rage_potion.tres
+res://Potions/speed_potion.tres
+res://Potions/fragile_potion.tres
+res://Potions/weakness_potion.tres
+res://Potions/slowness_potion.tres
+res://Weapons/Mechanic's Wrench/mechanics_wrench_turret.gdshader
+res://Wave Manager/wave_manager.gd
+res://Player/player.gd
+res://Player/player.tscn
+res://DamageAreas/damage_area.gd
+res://Stat Tracker/stat_tracker.gd
+res://Powers/potion_cooldown_power.tres
+res://Weapons/Blowpipe/blowpipe.gd
+res://Weapons/Base Weapon/base_weapon.gd
+res://HUD/hud_template.gd
+res://HUD/hud_template.tscn

@@ -98,7 +98,8 @@ func spawnWave() :
     last = last + (1 - last) * .35
     
   for i in get_tree().get_nodes_in_group("player") :
-    (i as Player).potions = 6 + int(totwavenum / 5.0)
+    (i as Player).potions = 0
+    (i as Player).potion_charge_progress = 0
   
   wavenun += 1
   totwavenum += 1

@@ -89,10 +89,8 @@ func _process(_delta: float) -> void:
   dash_progress.value = dash_cooldown
     
   potion_progress.value = potion_cooldown
-  potion_progress.modulate = Color(.25,.25,.25) if potion_amt <= 0 or health >= max_health else Color.WHITE
+  #potion_progress.modulate = Color(.5,.5,.5) if potion_amt <= 0 or health >= max_health else Color.WHITE
   potion_amount.text = str(potion_amt)
-  if !can_use_potions :
-    potion_progress.modulate = Color(.25, .25, .25)
 
   spell_progress.value = spell_cooldown
   spell_progress.modulate = Color(.25,.25,.25) if !spell_hast_target or mana < spell_cost else Color.WHITE

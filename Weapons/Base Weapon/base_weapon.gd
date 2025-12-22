@@ -106,6 +106,7 @@ func finish_atk(player: Player, dir: Vector2) :
   var areas: Array = spawn_atk(player, dir)
   for i in areas :
     i.damage = max(1, damage * damage_mult)
+    i.attacker = player
   
   if combo_length <= 0 :
     combo = 0

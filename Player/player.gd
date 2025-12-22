@@ -19,7 +19,7 @@ var actual_max_mana = 100
 @export var POTION_AMOUNT: int = 1
 
 var mana = 0
-var potions = 6
+var potions = 0
 
 var powers: Array[Power] = []
 var stat_changes: StatTracker = StatTracker.new()
@@ -27,7 +27,7 @@ var stat_changes: StatTracker = StatTracker.new()
 @export_range(0, 1, .001) var AUTOAIM_STRENGTH: float = .5
 
 @export_category("Heal Potion")
-@export var POTION_COOLDOWN = 10
+@export var POTION_CHARGE = 100
 @export var POTION_HEALING = 20
 
 @export_category("Dash")
@@ -54,8 +54,6 @@ var spell: Spell = preload("res://Spells/Zap Spell/zap_spell.tres").duplicate()
 
 @onready var dashCooldown: Timer = $dashCooldown
 @onready var dashDuration: Timer = $dashDuration
-
-@onready var potionCooldownTimer: Timer = $healPotionCooldown
 
 @onready var nametag: RichTextLabel = $nametag
 
@@ -261,11 +259,19 @@ func get_actual_stat(stat: String) :
 
 @onready var weaponChargeBar: ProgressBar = %weapon_charge_bar
 
+@onready var potionCooldown: Timer = %potion_cooldown
+
+var potion_charge_progress: int = 0
+
 func _process(_delta: float) -> void:
   %weapons_spr.texture = weapon.TEXTURE
   %weapons_spr.visible = !weapon.hasCooldown
   %weapons_spr.position.x = 32 * (-1 if sprite.flip_h else 1)
   %weapons_spr.flip_h = sprite.flip_h
+  
+  if potion_charge_progress >= get_actual_stat("potion_charge") :
+    potion_charge_progress -= get_actual_stat("potion_charge")
+    potions += 1
   
   sprite.material.set_shader_parameter("hue_shift", MAIN_COLOR)
   
@@ -279,9 +285,8 @@ func _process(_delta: float) -> void:
   HUD.player_name = nametag.text
   HUD.player_color = MAIN_COLOR
   
-  HUD.potion_cooldown = 100 - int(potionCooldownTimer.time_left / get_actual_stat("potion_cooldown") * 100)
+  HUD.potion_cooldown = potion_charge_progress * (100 / get_actual_stat("potion_charge"))
   HUD.potion_amt = potions
-  HUD.can_use_potions = len(get_tree().get_nodes_in_group("enemy")) > 0
   
   HUD.dash_cooldown = int(100.0 - (dashCooldown.time_left / get_actual_stat("dash_cooldown")) * 100.0)
   
@@ -389,8 +394,8 @@ func _physics_process(_delta: float) -> void:
   if !"ally" in get_groups() :
     return
   
-  if potions > 0 and potionCooldownTimer.is_stopped() and is_action_pressed("heal") and healtcomponent.health < healtcomponent.max_health and len(get_tree().get_nodes_in_group("enemy")) > 0 :
-    if get_actual_stat("potion_cooldown"): potionCooldownTimer.start(get_actual_stat("potion_cooldown"))
+  if potions > 0 and is_action_pressed("heal") and healtcomponent.health < healtcomponent.max_health and potionCooldown.is_stopped() :
+    potionCooldown.start(.5)
     
     for _k in range(get_actual_stat("potion_amount")) :
       healtcomponent.healDmg(get_actual_stat("potion_healing"))

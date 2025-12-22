@@ -70,6 +70,8 @@ func dealDamageToBody(body: Node2D) :
   on_hit.emit(body)
   
   if is_instance_valid(attacker) and attacker is Player :
+    (attacker as Player).potion_charge_progress += damage
+    
     for i in attacker.accessories :
       if !i or !body is Enemy :
         continue

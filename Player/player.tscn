@@ -258,9 +258,6 @@ show_percentage = false
 position = Vector2(-176, 56)
 DISPLAY_BAR = NodePath("../healthBar")
 
-[node name="healPotionCooldown" type="Timer" parent="."]
-one_shot = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_od3ui")
@@ -304,10 +301,13 @@ position = Vector2(32, 0)
 scale = Vector2(2, 2)
 texture = ExtResource("9_x3vf3")
 
+[node name="potion_cooldown" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
 [connection signal="timeout" from="dashCooldown" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="timeout" from="dashDuration" to="." method="_on_dash_duration_timeout"]
 [connection signal="damaged" from="healthCoponent" to="." method="_on_health_coponent_damaged"]
 [connection signal="death" from="healthCoponent" to="." method="_on_health_coponent_death"]
 [connection signal="healed" from="healthCoponent" to="." method="_on_health_coponent_healed"]
-[connection signal="timeout" from="healPotionCooldown" to="." method="_on_heal_potion_cooldown_timeout"]
 [connection signal="effects_changed" from="effectComponent" to="." method="_on_effect_component_effects_changed"]

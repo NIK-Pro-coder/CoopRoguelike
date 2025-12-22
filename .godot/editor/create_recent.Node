@@ -1,3 +1,4 @@
+Timer
 Sprite2D
 CollisionShape2D
 VisibleOnScreenNotifier2D
@@ -10,5 +11,4 @@ CanvasLayer
 AnimatedSprite2D
 AnimationPlayer
 Area2D
-Timer
 ProgressBar

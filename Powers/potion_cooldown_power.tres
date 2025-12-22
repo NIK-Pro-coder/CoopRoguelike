@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_0rfty")
 NAME = "Slimmer Potions"
-DESC = "Decrease potion cooldown by 10%"
+DESC = "Decrease damage needed to charge potion by 10%"
 TEXTURE = ExtResource("1_v1q06")
 AFFECTED_STAT = 17
 CHANGE = -10.0

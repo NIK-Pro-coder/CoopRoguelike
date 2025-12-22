@@ -18,8 +18,8 @@ enum Stats {
   MAX_MANA_PERCENT,
   MAX_HP,
   MAX_HP_PERCENT,
-  POTION_COOLDOWN,
-  POTION_COOLDOWN_PERCENT,
+  POTION_CHARGE,
+  POTION_CHARGE_PERCENT,
   POTION_HEALING,
   POTION_HEALING_PERCENT,
   SPEED,
@@ -55,8 +55,8 @@ enum Stats {
 @export var MAX_HP: int = 0
 @export_range(0, 1, 0.01, "or_greater") var MAX_HP_PERCENT: float = 1
 
-@export var POTION_COOLDOWN: int = 0
-@export_range(0, 1, 0.01, "or_greater") var POTION_COOLDOWN_PERCENT: float = 1
+@export var POTION_CHARGE: int = 0
+@export_range(0, 1, 0.01, "or_greater") var POTION_CHARGE_PERCENT: float = 1
 
 @export var POTION_HEALING: int = 0
 @export_range(0, 1, 0.01, "or_greater") var POTION_HEALING_PERCENT: float = 1
