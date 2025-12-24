@@ -1,3 +1,4 @@
+EnemyState
 Resource
 Weapon
 SpriteFrames

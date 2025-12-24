@@ -10,8 +10,8 @@ func spawn_atk(player: Player, dir: Vector2) -> Array[DamageArea]:
   var neg_pot = negative_effects.pick_random().duplicate()
   var pos_pot = positive_effects.pick_random().duplicate()
   
-  neg_pot.DURATION = 7
-  pos_pot.DURATION = 4
+  neg_pot.DURATION = 10
+  pos_pot.DURATION = 10
   
   dmg_enemy.global_position = player.global_position
   dmg_enemy.direction = dir * 25
@@ -27,8 +27,8 @@ func spawn_atk(player: Player, dir: Vector2) -> Array[DamageArea]:
   dmg_player.rotation = dir.angle()
   
   if randf() >= .5 :
-    dmg_player.apply_effects.append(pos_pot)
     dmg_enemy.apply_effects.append(neg_pot)
+  dmg_player.apply_effects.append(pos_pot)
   
   stop_atk(.35)
   set_cooldown(.45)

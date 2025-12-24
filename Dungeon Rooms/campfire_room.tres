@@ -9,6 +9,7 @@
 script = ExtResource("2_md6qi")
 ROOM_ICON = ExtResource("2_tsy05")
 ROOM_NAME = "Campfire Room"
+NEEDS_BIG_ROOM = true
 ROOM_FEATURES = Array[ExtResource("1_0ul7k")]([ExtResource("2_7c3v0")])
 ROOM_WEIGHT = 10.0
 metadata/_custom_type_script = "uid://df4bs8fmdf2bu"

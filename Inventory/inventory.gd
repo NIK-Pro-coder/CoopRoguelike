@@ -133,12 +133,12 @@ func _ready() -> void:
     #endregion
     
     #region SUPPORT WEAPONS
-    addItem(load("res://Weapons/Flute/flute.tres"))
-    addItem(load("res://Weapons/Heal Ray/heal_ray.tres"))
-    addItem(load("res://Weapons/Deck Of Cards/deck_of_cards.tres"))
-    addItem(load("res://Weapons/Battle Standard/battle_standard.tres"))
-    addItem(load("res://Weapons/Spore Sac/spore_sac.tres"))
-    addItem(load("res://Weapons/Syringes/syringes.tres"))
+    # addItem(load("res://Weapons/Flute/flute.tres"))
+    # addItem(load("res://Weapons/Heal Ray/heal_ray.tres"))
+    # addItem(load("res://Weapons/Deck Of Cards/deck_of_cards.tres"))
+    # addItem(load("res://Weapons/Battle Standard/battle_standard.tres"))
+    # addItem(load("res://Weapons/Spore Sac/spore_sac.tres"))
+    # addItem(load("res://Weapons/Syringes/syringes.tres"))
     #endregion
     
     pass

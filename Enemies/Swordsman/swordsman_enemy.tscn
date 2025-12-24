@@ -1,0 +1,33 @@
+[gd_scene load_steps=9 format=3 uid="uid://cf6pdml4tgl07"]
+
+[ext_resource type="PackedScene" uid="uid://dtlvx5y7rhueu" path="res://Enemies/State Machine/state_machine_enemy.tscn" id="1_nflhx"]
+[ext_resource type="Texture2D" uid="uid://cjraxmvgw4mpd" path="res://icon.svg" id="2_oypb1"]
+[ext_resource type="Script" uid="uid://c15fhgf5gdx0u" path="res://Enemies/Swordsman/swordsman_follow.gd" id="2_tly6y"]
+[ext_resource type="Script" uid="uid://cksmjyqssc5f1" path="res://Enemies/Swordsman/swordsman_circle.gd" id="3_tly6y"]
+[ext_resource type="Script" uid="uid://20rn1m14bn4s" path="res://Enemies/Swordsman/swordsman_move_away.gd" id="4_0dm3a"]
+[ext_resource type="Script" uid="uid://nida2s17hm0n" path="res://Enemies/Swordsman/swordsman_move_in.gd" id="5_op5j7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tly6y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_oypb1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dm3a"]
+size = Vector2(128, 128)
+
+[node name="swordsman_enemy" instance=ExtResource("1_nflhx")]
+STATES = Array[GDScript]([ExtResource("2_tly6y"), ExtResource("3_tly6y"), ExtResource("4_0dm3a"), ExtResource("5_op5j7")])
+XP_VALUE = 50
+SPEED = 450.0
+
+[node name="sprite" parent="." index="4"]
+sprite_frames = SubResource("SpriteFrames_tly6y")
+
+[node name="CollisionShape2D" parent="." index="5"]
+shape = SubResource("RectangleShape2D_0dm3a")

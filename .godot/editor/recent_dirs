@@ -1,7 +1,11 @@
+res://Enemies/Swordsman
+res://Enemies/State Machine/
+res://Enemies/State Machine
+res://Enemies/Target Dummy
+res://Enemies/Static Enemy
 res://Weapons/Crossbow/
 res://Weapons/Blowpipe/
 res://Room Indicator
-res://Enemies/Sniper Enemy
 res://Gacha Ball
 res://Weapons/Syringes/
 res://Weapons/Cosmic Judgement/
@@ -16,9 +20,5 @@ res://Dungeon Manager
 res://Dungeon Rooms/
 res://Weapons/Heal Ray/
 res://Weapons/Javelin/
-res://Weapons/Worn Down Boomerang
-res://Weapons/Worn Down Boomerang/
-res://Weapons/Knockback Stick
-res://Weapons/Knockback Stick/
 /home/nikolai/coop-roguelike/Exports/Web
 /home/nikolai/coop-roguelike/Exports

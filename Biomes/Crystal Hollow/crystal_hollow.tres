@@ -1,17 +1,11 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=10 format=3 uid="uid://ofdtwvjdk03m"]
+[gd_resource type="Resource" script_class="Biome" load_steps=4 format=3 uid="uid://ofdtwvjdk03m"]
 
-[ext_resource type="PackedScene" uid="uid://5bd5sivtoy3p" path="res://Enemies/Creeper Enemy/creeper_enemy.tscn" id="1_k1l6h"]
 [ext_resource type="PackedScene" uid="uid://dbjjk2lpilxjh" path="res://Bosses/Crystal Golem/crystal_golem.tscn" id="1_x30uo"]
-[ext_resource type="PackedScene" uid="uid://biunelepqwa3h" path="res://Enemies/Fast Enemy/fast_enemy.tscn" id="2_x30uo"]
-[ext_resource type="PackedScene" uid="uid://clg36eri05at1" path="res://Enemies/Melee Enemy/melee_enemy.tscn" id="3_rtbae"]
-[ext_resource type="PackedScene" uid="uid://xteuqhfckow3" path="res://Enemies/Ranged Enemy/ranged_enemy.tscn" id="4_63h72"]
+[ext_resource type="PackedScene" uid="uid://cqxjrxipwoe85" path="res://Enemies/Static Enemy/static_enemy.tscn" id="2_7jcuu"]
 [ext_resource type="Script" uid="uid://ct8n5niwge7yu" path="res://Biomes/base_biome.gd" id="5_tu643"]
-[ext_resource type="PackedScene" uid="uid://hijhk4sobusj" path="res://Enemies/Charging Enemy/charging_enemy.tscn" id="6_rtbae"]
-[ext_resource type="PackedScene" uid="uid://cfkj2brtsm61l" path="res://Enemies/Wall Raising Enemy/wall_raising_enemy.tscn" id="7_63h72"]
-[ext_resource type="PackedScene" uid="uid://c1k5f15pqqvna" path="res://Enemies/Sniper Enemy/sniper_enemy.tscn" id="8_tu643"]
 
 [resource]
 script = ExtResource("5_tu643")
 BIOME_NAME = "Crystal Hollow"
-ENEMY_POOL = Array[PackedScene]([ExtResource("1_k1l6h"), ExtResource("2_x30uo"), ExtResource("3_rtbae"), ExtResource("4_63h72"), ExtResource("6_rtbae"), ExtResource("7_63h72"), ExtResource("8_tu643")])
+ENEMY_POOL = Array[PackedScene]([ExtResource("2_7jcuu")])
 BOSS = ExtResource("1_x30uo")

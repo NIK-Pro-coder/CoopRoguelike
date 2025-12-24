@@ -110,7 +110,7 @@ func spawnWave() :
   
   while true :
     var possible_enemies = enemy_pool.duplicate().filter(func (a: Enemy): 
-      return a.points_for_wave <= remaining_points
+      return a.XP_VALUE <= remaining_points
     )
     
     if len(possible_enemies) == 0 :
@@ -118,7 +118,7 @@ func spawnWave() :
     
     possible_enemies.shuffle()
     enemies.append((possible_enemies[0] as Enemy).duplicate())
-    remaining_points -= (possible_enemies[0] as Enemy).points_for_wave
+    remaining_points -= (possible_enemies[0] as Enemy).XP_VALUE
 
   for i in enemies :
     remaining_enemies.append(i)

@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1k5f15pqqvna"]
+
+[ext_resource type="PackedScene" uid="uid://dwlby5wp01cdl" path="res://Enemies/Base Enemy/base_enemy.tscn" id="1_xanm4"]
+[ext_resource type="Texture2D" uid="uid://cjraxmvgw4mpd" path="res://icon.svg" id="2_7rw61"]
+[ext_resource type="Script" uid="uid://cgju7jfa027x4" path="res://Enemies/Sniper/sniper_enemy.gd" id="2_ti1ko"]
+[ext_resource type="Shader" uid="uid://1bubu18emj3n" path="res://Enemies/Base Enemy/spawn_shader.gdshader" id="3_ti1ko"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1a7op"]
+shader = ExtResource("3_ti1ko")
+shader_parameter/progress = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ti1ko"]
+size = Vector2(128, 128)
+
+[node name="sniper_enemy" node_paths=PackedStringArray("Icon") instance=ExtResource("1_xanm4")]
+script = ExtResource("2_ti1ko")
+movement_target = 0
+target_distance = 3000
+points_for_wave = 35
+Icon = NodePath("Icon")
+
+[node name="healthCoponent" parent="." index="1"]
+max_health = 50
+
+[node name="healthBar" parent="." index="2"]
+offset_left = -64.0
+offset_top = 72.0
+offset_right = 64.0
+offset_bottom = 96.0
+
+[node name="Icon" type="Sprite2D" parent="." index="7"]
+material = SubResource("ShaderMaterial_1a7op")
+texture = ExtResource("2_7rw61")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="8"]
+shape = SubResource("RectangleShape2D_ti1ko")
