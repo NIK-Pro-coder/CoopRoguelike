@@ -25,6 +25,7 @@ size = Vector2(128, 128)
 STATES = Array[GDScript]([ExtResource("2_tly6y"), ExtResource("3_tly6y"), ExtResource("4_0dm3a"), ExtResource("5_op5j7")])
 XP_VALUE = 50
 SPEED = 450.0
+knockback_mult = 0.5
 
 [node name="sprite" parent="." index="4"]
 sprite_frames = SubResource("SpriteFrames_tly6y")

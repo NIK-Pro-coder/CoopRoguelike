@@ -60,6 +60,12 @@ func _process(_delta: float) -> void:
   if !navAgent.is_navigation_finished() :
     velocity = (navAgent.get_next_path_position() - global_position).normalized() * (SPEED * stat_tracker.SPEED_PERCENT + stat_tracker.SPEED)
   
+  if aggro :
+    if aggro.global_position.x < global_position.x :
+      sprite.flip_h = true
+    elif aggro.global_position.x > global_position.x :
+      sprite.flip_h = false
+
   move_and_slide()
 
 func on_death() :

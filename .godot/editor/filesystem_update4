@@ -41,3 +41,8 @@ res://Main Menu/main_menu.gd
 res://Dungeon Rooms/campfire_room.tres
 res://Enemies/Swordsman/swordsman_move_in.gd
 res://Player Summons/Figther Construct/fighter_construct.tscn
+res://Enemies/Ranged/ranged_enemy.tscn
+res://Enemies/Ranged/ranged_follow.gd
+res://Enemies/Ranged/ranged_shoot.gd
+res://Enemies/Ranged/ranged_run_away.gd
+res://Enemies/Ranged/ranged_enemy_shot.tscn

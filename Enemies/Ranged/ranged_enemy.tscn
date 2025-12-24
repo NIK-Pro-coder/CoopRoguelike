@@ -1,77 +1,33 @@
-[gd_scene load_steps=12 format=3 uid="uid://xteuqhfckow3"]
+[gd_scene load_steps=8 format=3 uid="uid://dfo7ng1jgwd2u"]
 
-[ext_resource type="PackedScene" uid="uid://dwlby5wp01cdl" path="res://Enemies/Base Enemy/base_enemy.tscn" id="1_sit14"]
-[ext_resource type="Script" uid="uid://c0jn0vmo0ql7i" path="res://Enemies/Ranged/ranged_enemy.gd" id="2_0cf8l"]
-[ext_resource type="Texture2D" uid="uid://boklvki5vwbmh" path="res://Enemies/Ranged/ranged-enemy.png" id="3_0cf8l"]
-[ext_resource type="Shader" uid="uid://1bubu18emj3n" path="res://Enemies/Base Enemy/spawn_shader.gdshader" id="3_upf3r"]
-[ext_resource type="PackedScene" uid="uid://bnaq8cqqqw60a" path="res://DamageAreas/enemy_damage_area.tscn" id="4_0cf8l"]
+[ext_resource type="PackedScene" uid="uid://dtlvx5y7rhueu" path="res://Enemies/State Machine/state_machine_enemy.tscn" id="1_xjx22"]
+[ext_resource type="Script" uid="uid://d2c6ewt6phwx5" path="res://Enemies/Ranged/ranged_follow.gd" id="2_10u0p"]
+[ext_resource type="Texture2D" uid="uid://boklvki5vwbmh" path="res://Enemies/Ranged/ranged-enemy.png" id="2_gfhst"]
+[ext_resource type="Script" uid="uid://cg5y2rkn64lw8" path="res://Enemies/Ranged/ranged_shoot.gd" id="3_10u0p"]
+[ext_resource type="Script" uid="uid://dfth1xeno3oc2" path="res://Enemies/Ranged/ranged_run_away.gd" id="4_g3l6f"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2w2oy"]
-shader = ExtResource("3_upf3r")
-shader_parameter/progress = 0.0
+[sub_resource type="SpriteFrames" id="SpriteFrames_10u0p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gfhst")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0cf8l"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3l6f"]
 size = Vector2(64, 96)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_upf3r"]
+[node name="ranged_enemy" instance=ExtResource("1_xjx22")]
+STATES = Array[GDScript]([ExtResource("2_10u0p"), ExtResource("3_10u0p"), ExtResource("4_g3l6f")])
+MAX_HP = 50
+XP_VALUE = 30
 
-[sub_resource type="Curve" id="Curve_0cf8l"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_upf3r"]
-curve = SubResource("Curve_0cf8l")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2w2oy"]
-particle_flag_disable_z = true
-gravity = Vector3(0, 0, 0)
-scale_min = 10.0
-scale_max = 10.0
-scale_curve = SubResource("CurveTexture_upf3r")
-color = Color(0.8784314, 0.3529412, 0.3529412, 1)
-
-[node name="ranged_enemy" node_paths=PackedStringArray("Icon") instance=ExtResource("1_sit14")]
-script = ExtResource("2_0cf8l")
-movement_speed = 300.0
-movement_target = 0
-target_distance = 2000
-attack_cooldown = 2.0
-points_for_wave = 55
-Icon = NodePath("Icon")
-
-[node name="healthCoponent" parent="." index="1"]
-max_health = 50
-
-[node name="healthBar" parent="." index="2"]
-offset_left = -64.0
-offset_top = 56.0
-offset_right = 64.0
-offset_bottom = 88.0
-
-[node name="Icon" type="Sprite2D" parent="." index="5"]
-material = SubResource("ShaderMaterial_2w2oy")
+[node name="sprite" parent="." index="4"]
 scale = Vector2(4, 4)
-texture = ExtResource("3_0cf8l")
+sprite_frames = SubResource("SpriteFrames_10u0p")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="6"]
-shape = SubResource("RectangleShape2D_0cf8l")
-debug_color = Color(1, 0, 0, 0.42)
-
-[node name="bullet" parent="." index="8" instance=ExtResource("4_0cf8l")]
-unique_name_in_owner = true
-visible = false
-position = Vector2(232, -16)
-monitoring = false
-monitorable = false
-lifetime = -1.0
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="bullet" index="1"]
-shape = SubResource("RectangleShape2D_upf3r")
-debug_color = Color(1, 0, 0, 0.42000002)
-
-[node name="CPUParticles2D" type="GPUParticles2D" parent="bullet" index="2"]
-amount = 80
-lifetime = 0.5
-fixed_fps = 0
-draw_order = 0
-process_material = SubResource("ParticleProcessMaterial_2w2oy")
+[node name="CollisionShape2D" parent="." index="5"]
+shape = SubResource("RectangleShape2D_g3l6f")

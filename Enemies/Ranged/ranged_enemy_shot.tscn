@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://di4q2naao3vr4"]
+
+[ext_resource type="PackedScene" uid="uid://bnaq8cqqqw60a" path="res://DamageAreas/enemy_damage_area.tscn" id="1_luden"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yj0cs"]
+size = Vector2(16, 16)
+
+[sub_resource type="Curve" id="Curve_luden"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.24739584, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_yj0cs"]
+curve = SubResource("Curve_luden")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7hc0e"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_min = 16.0
+scale_max = 16.0
+scale_curve = SubResource("CurveTexture_yj0cs")
+color = Color(1, 0, 0, 1)
+
+[node name="ranged_enemy_shot" instance=ExtResource("1_luden")]
+lifetime = 10.0
+piercing = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_yj0cs")
+debug_color = Color(1, 0, 0, 0.42000002)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="2"]
+amount = 10
+speed_scale = 5.0
+process_material = SubResource("ParticleProcessMaterial_7hc0e")
