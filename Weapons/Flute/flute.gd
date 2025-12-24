@@ -37,7 +37,7 @@ func spawn_atk(player: Player, dir: Vector2) -> Array[DamageArea]:
     activate_timer.queue_free()
     activate_timer = null
   
-  activate_timer = Qol.create_timer(func(): aoe.active = true, .7)
+  activate_timer = Qol.create_timer(func(): if aoe: aoe.active = true, .7)
   
   stop_atk(.1)
   set_cooldown(.5)

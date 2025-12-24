@@ -126,19 +126,19 @@ func _ready() -> void:
     #endregion
     
     #region SUMMON WEAPONS
-    addItem(load("res://Weapons/Fighter Staff/fighter_staff.tres"))
-    addItem(load("res://Weapons/Mechanic's Wrench/mechanics_wrench.tres"))
-    addItem(load("res://Weapons/Devious Looker/devious_looker.tres"))
-    addItem(load("res://Weapons/Magic Katanas/magic_katanas.tres"))
+    # addItem(load("res://Weapons/Fighter Staff/fighter_staff.tres"))
+    # addItem(load("res://Weapons/Mechanic's Wrench/mechanics_wrench.tres"))
+    # addItem(load("res://Weapons/Devious Looker/devious_looker.tres"))
+    # addItem(load("res://Weapons/Magic Katanas/magic_katanas.tres"))
     #endregion
     
     #region SUPPORT WEAPONS
-    # addItem(load("res://Weapons/Flute/flute.tres"))
-    # addItem(load("res://Weapons/Heal Ray/heal_ray.tres"))
-    # addItem(load("res://Weapons/Deck Of Cards/deck_of_cards.tres"))
-    # addItem(load("res://Weapons/Battle Standard/battle_standard.tres"))
-    # addItem(load("res://Weapons/Spore Sac/spore_sac.tres"))
-    # addItem(load("res://Weapons/Syringes/syringes.tres"))
+    addItem(load("res://Weapons/Flute/flute.tres"))
+    addItem(load("res://Weapons/Heal Ray/heal_ray.tres"))
+    addItem(load("res://Weapons/Deck Of Cards/deck_of_cards.tres"))
+    addItem(load("res://Weapons/Battle Standard/battle_standard.tres"))
+    addItem(load("res://Weapons/Spore Sac/spore_sac.tres"))
+    addItem(load("res://Weapons/Syringes/syringes.tres"))
     #endregion
     
     pass
