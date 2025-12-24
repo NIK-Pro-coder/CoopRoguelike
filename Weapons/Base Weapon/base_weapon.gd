@@ -120,3 +120,6 @@ func on_equip(player: Player) :
 @warning_ignore("unused_parameter")
 func on_unequip(player: Player) :
   pass
+
+func get_description() -> String:
+  return "[b]- %s Weapon -[/b]\n" % [str(WeaponClasses.find_key(weapon_class)).to_lower().capitalize()] + DESCRIPTION

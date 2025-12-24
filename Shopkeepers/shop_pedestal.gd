@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
   
   %item_icon.texture = DISPLAY_ITEM.TEXTURE
   
-  %item_desc.text = DISPLAY_ITEM.DESCRIPTION
+  %item_desc.text = DISPLAY_ITEM.get_description()
   %item_quote.text = "[i]'%s'[/i]" % [DISPLAY_ITEM.QUOTE]
   
   TOOLTIP = "Buy (%s coins)" % [DISPLAY_ITEM.getItemCoinValue()]

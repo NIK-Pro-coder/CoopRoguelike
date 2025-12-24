@@ -6,5 +6,7 @@
 [resource]
 script = ExtResource("1_fsood")
 NAME = "Adrenaline"
-DESC = "Gain up to +100% damage based on how low your health is"
-ICON = ExtResource("1_4ybf6")
+DESCRIPTION = "Increase damage dealt by up to +100% based on how low your health if"
+QUOTE = "Syringes not included"
+TEXTURE = ExtResource("1_4ybf6")
+RARITY = 3

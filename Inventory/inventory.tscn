@@ -251,6 +251,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 0
+bbcode_enabled = true
 text = "Item description
 Lorem ipsum dolor sit amet"
 fit_content = true

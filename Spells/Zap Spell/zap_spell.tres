@@ -13,7 +13,3 @@ NAME = "Zap Spell"
 DESCRIPTION = "Zaps the nearest enemy, dealing 15 damage"
 QUOTE = "A wise man once said: \"Electricity!\""
 TEXTURE = SubResource("PlaceholderTexture2D_c6xnt")
-RARITY = null
-VALUE_OFFSET = null
-MAX_CHARGES = null
-IS_ACCESSORY = null

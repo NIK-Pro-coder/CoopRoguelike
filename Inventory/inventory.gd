@@ -94,9 +94,14 @@ func _ready() -> void:
     
     #region STARTING POTIONS
     # addItem(load("res://Potions/endurance_potion.tres"))
+    # addItem(load("res://Potions/fragile_potion.tres"))
+    # addItem(load("res://Potions/healing_potion.tres"))
     # addItem(load("res://Potions/lifeforce_potion.tres"))
+    # addItem(load("res://Potions/poison_potion.tres"))
     # addItem(load("res://Potions/rage_potion.tres"))
+    # addItem(load("res://Potions/slowness_potion.tres"))
     # addItem(load("res://Potions/speed_potion.tres"))
+    # addItem(load("res://Potions/weakness_potion.tres"))
     #endregion
     
     #region MELLEE WEAPONS
@@ -117,7 +122,7 @@ func _ready() -> void:
     # addItem(load("res://Weapons/Javelin/javelin.tres"))
     # addItem(load("res://Weapons/Cosmic Judgement/cosmic_judgement.tres"))
     # addItem(load("res://Weapons/Blowpipe/blowpipe.tres"))
-    addItem(load("res://Weapons/Crossbow/crossbow.tres"))
+    # addItem(load("res://Weapons/Crossbow/crossbow.tres"))
     #endregion
     
     #region SUMMON WEAPONS
@@ -154,7 +159,7 @@ func selectSlot(pos: Vector2) :
     
     item_name.text = item.NAME
     item_name.add_theme_color_override("default_color", Qol.RARITY_COLORS[item.RARITY])
-    item_description.text = item.DESCRIPTION
+    item_description.text = item.get_description()
     item_quote.text = ("[i]'%s'[/i]" % [item.QUOTE]) if len(item.QUOTE) > 0 else ""
     if item.EQUIP_ENCHANTS :
       item_description.text += "\nHas glyphs:\n"
@@ -342,9 +347,9 @@ func _process(_delta: float) -> void:
             if equip_slot >= 0 :
               var a: Accessory = posToItem[selectedPos].ACCESSORY.duplicate()
               a.NAME = posToItem[selectedPos].NAME
-              a.DESC = posToItem[selectedPos].DESCRIPTION
+              a.DESCRIPTION = posToItem[selectedPos].DESCRIPTION
               a.QUOTE = posToItem[selectedPos].QUOTE
-              a.ICON = posToItem[selectedPos].TEXTURE
+              a.TEXTURE = posToItem[selectedPos].TEXTURE
               DISPLAY_PLAYER.accessories[equip_slot] = a
               posToItem[Vector2(equip_slot-3, 0)] = posToItem[selectedPos].duplicate()
               posToSlot[Vector2(equip_slot-3, 0)].TEXTURE.texture = posToItem[selectedPos].TEXTURE

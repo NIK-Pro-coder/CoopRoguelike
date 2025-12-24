@@ -63,3 +63,9 @@ func consume(p: Player) :
 
 func _consume(_p: Player) :
   pass
+
+func get_description() -> String :
+  if IS_ACCESSORY :
+    return "[b]- Accessory -[/b]\n" + DESCRIPTION
+  
+  return DESCRIPTION

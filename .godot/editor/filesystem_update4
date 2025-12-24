@@ -16,13 +16,12 @@ res://Potions/fragile_potion.tres
 res://Potions/weakness_potion.tres
 res://Potions/slowness_potion.tres
 res://Weapons/Mechanic's Wrench/mechanics_wrench_turret.gdshader
-res://Wave Manager/wave_manager.gd
-res://Player/player.gd
-res://Player/player.tscn
-res://DamageAreas/damage_area.gd
-res://Stat Tracker/stat_tracker.gd
-res://Powers/potion_cooldown_power.tres
-res://Weapons/Blowpipe/blowpipe.gd
+res://Items/Base Item/base_item.gd
+res://Inventory/inventory.gd
+res://Accessories/Base/base_accessory.gd
+res://Accessories/Adrenaline/adrenaline.tres
+res://Inventory/inventory.tscn
 res://Weapons/Base Weapon/base_weapon.gd
-res://HUD/hud_template.gd
-res://HUD/hud_template.tscn
+res://Potions/potion.gd
+res://Shopkeepers/shop_pedestal.gd
+res://Shopkeepers/shop_pedestal.tscn
