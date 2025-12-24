@@ -29,11 +29,9 @@ func _ready() -> void:
   
   set_state(actual_states[0].get_state_name())
 
-func _process(delta: float) -> void:
+func handle_logic():
   stateDisp.visible = DEBUGGING
   stateDisp.text = "State: %s" % [current_state.get_state_name().to_upper()]
 
   if aggro :
     current_state.process_state(self, aggro)
-  
-  super._process(delta)

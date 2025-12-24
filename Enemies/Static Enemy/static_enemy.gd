@@ -29,6 +29,9 @@ func _ready() -> void:
   
   hpComp.set_max_hp(int(MAX_HP * wave_scaling))
 
+func handle_logic() :
+  pass
+
 func _process(_delta: float) -> void:
   stat_tracker.reset()
   effectComp.apply_effects(stat_tracker)
@@ -51,6 +54,8 @@ func _process(_delta: float) -> void:
       
     move_and_slide()
     return
+  
+  handle_logic()
   
   if !navAgent.is_navigation_finished() :
     velocity = (navAgent.get_next_path_position() - global_position).normalized() * (SPEED * stat_tracker.SPEED_PERCENT + stat_tracker.SPEED)

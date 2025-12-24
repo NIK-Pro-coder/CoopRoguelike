@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Biome" load_steps=4 format=3 uid="uid://ofdtwvjdk03m"]
 
 [ext_resource type="PackedScene" uid="uid://dbjjk2lpilxjh" path="res://Bosses/Crystal Golem/crystal_golem.tscn" id="1_x30uo"]
-[ext_resource type="PackedScene" uid="uid://cqxjrxipwoe85" path="res://Enemies/Static Enemy/static_enemy.tscn" id="2_7jcuu"]
+[ext_resource type="PackedScene" uid="uid://cf6pdml4tgl07" path="res://Enemies/Swordsman/swordsman_enemy.tscn" id="2_7jcuu"]
 [ext_resource type="Script" uid="uid://ct8n5niwge7yu" path="res://Biomes/base_biome.gd" id="5_tu643"]
 
 [resource]

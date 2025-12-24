@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cqxjrxipwoe85" path="res://Enemies/Static Enemy/static_enemy.tscn" id="1_73cjf"]
 [ext_resource type="Script" uid="uid://b6oob43jrfdh8" path="res://Enemies/Target Dummy/target_dummy.gd" id="2_1x353"]
 
-[node name="target_dummy" instance=ExtResource("1_73cjf")]
+[node name="target_dummy" groups=["roompart"] instance=ExtResource("1_73cjf")]
 script = ExtResource("2_1x353")
 knockback_mult = 0.0
 

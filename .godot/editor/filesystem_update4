@@ -40,3 +40,4 @@ res://Main Menu/main_menu.tscn
 res://Main Menu/main_menu.gd
 res://Dungeon Rooms/campfire_room.tres
 res://Enemies/Swordsman/swordsman_move_in.gd
+res://Player Summons/Figther Construct/fighter_construct.tscn

@@ -8,6 +8,7 @@ size = Vector2(64, 64)
 
 [node name="fighter_construct" instance=ExtResource("1_1o1oy")]
 script = ExtResource("1_8uvlx")
+SPEED = 400.0
 
 [node name="healthCoponent" parent="." index="1"]
 max_health = 75

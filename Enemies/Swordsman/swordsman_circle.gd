@@ -2,13 +2,13 @@ extends EnemyState
 
 func process_state(enemy: StateMachineEnemy, aggro: Node2D) -> void:
   enemy.set_pathing_position(
-    aggro.global_position + Vector2.from_angle(aggro.global_position.angle_to_point(enemy.global_position) + .1) * 500
+    aggro.global_position + Vector2.from_angle(aggro.global_position.angle_to_point(enemy.global_position) + .1) * 600
   )
   
   if enemy.global_position.distance_squared_to(aggro.global_position) >= 750 * 750 :
     enemy.set_state("follow")
     
-  if enemy.global_position.distance_squared_to(aggro.global_position) <= 350 * 350 :
+  if enemy.global_position.distance_squared_to(aggro.global_position) <= 500 * 500 :
     enemy.set_state("move_away")
   
   if randf() <= .015 :

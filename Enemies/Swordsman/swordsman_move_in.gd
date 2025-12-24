@@ -3,7 +3,7 @@ extends EnemyState
 var has_attacked = false
 
 func process_state(enemy: StateMachineEnemy, aggro: Node2D) -> void:
-  print(has_attacked)
+  enemy.stat_tracker.SPEED_PERCENT += .5
   
   if has_attacked :
     enemy.set_pathing_position(enemy.global_position)
@@ -23,13 +23,16 @@ func process_state(enemy: StateMachineEnemy, aggro: Node2D) -> void:
     d.lifetime = .5
     
     Qol.create_timer(func(): 
-      enemy.set_state("move_away")
+      Qol.create_timer(func() :
+        if enemy :
+          enemy.set_state("move_away")
+        
+        has_attacked = false
+      , .25)
       
       d.visible = true
       d.monitoring = true
       d.monitorable = true
-      
-      has_attacked = false
     , .25)
 
 func get_state_name() -> String: return "move_in"
