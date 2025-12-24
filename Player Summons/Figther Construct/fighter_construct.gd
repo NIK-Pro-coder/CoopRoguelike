@@ -8,3 +8,4 @@ func do_action(action_target: Vector2):
   dmg.lifetime = .1
   dmg.damage = 10 * stat_changes.DAMAGE_PERCENT + stat_changes.DAMAGE
   dmg.knockback = (action_target - global_position).normalized() * (150 * master.stat_changes.KNOCKBACK_PERCENT + master.stat_changes.KNOCKBACK)
+  dmg.attacker = master

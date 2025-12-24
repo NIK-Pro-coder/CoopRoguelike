@@ -2,6 +2,8 @@ extends Area2D
 
 @onready var icon: Sprite2D = %Icon
 
+var player: Player
+
 func _ready() -> void:
   get_tree().paused = true
   
@@ -35,8 +37,12 @@ func _process(_delta: float) -> void:
       if (i as Node2D).global_position.distance_to(global_position) <= 440 :
         if i is Enemy :
           i.healthcomponent.dealDmg(500)
+          player.potion_charge_progress += 500
+          player.damageDone += 500
         elif i is Boss :
           i.HpComp.dealDmg(500)
+          player.potion_charge_progress += 500
+          player.damageDone += 500
     queue_free()
   
     get_viewport().get_camera_2d().get_parent().locked = false

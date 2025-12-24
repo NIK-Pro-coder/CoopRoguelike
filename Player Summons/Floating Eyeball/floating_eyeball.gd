@@ -7,6 +7,7 @@ func do_action(action_target: Vector2):
   dmg.global_position = action_target
   dmg.lifetime = .1
   dmg.damage = 5 * stat_changes.DAMAGE_PERCENT + stat_changes.DAMAGE
+  dmg.attacker = master
   
   var l := Line2D.new()
   l.points = [global_position, action_target]

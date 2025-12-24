@@ -67,6 +67,9 @@ func _on_timer_timeout() -> void:
   
   hp.dealDmg(5)
   
+  player.damageDone += 5
+  player.potion_charge_progress += 5
+  
   var l := Line2D.new()
   l.points = [global_position, target.global_position]
   l.default_color = Color(0.71, 0.568, 0.0, 1.0)

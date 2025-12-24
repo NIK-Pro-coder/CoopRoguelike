@@ -7,6 +7,7 @@ func do_action(_action_target: Vector2):
   dmg.global_position = global_position
   dmg.lifetime = .1
   dmg.damage = 5 * stat_changes.DAMAGE_PERCENT + stat_changes.DAMAGE
+  dmg.attacker = master
   
   $AnimationPlayer.play("spin")
 

@@ -38,6 +38,7 @@ func on_charge(player: Player):
   if get_charge_progress() >= 1 :
     var target = targetScene.instantiate()
     target.global_position = enemy.global_position
+    target.player = player
     
     player.get_tree().get_root().add_child.call_deferred(target)
     

@@ -126,10 +126,10 @@ func _ready() -> void:
     #endregion
     
     #region SUMMON WEAPONS
-    # addItem(load("res://Weapons/Fighter Staff/fighter_staff.tres"))
-    # addItem(load("res://Weapons/Mechanic's Wrench/mechanics_wrench.tres"))
-    # addItem(load("res://Weapons/Devious Looker/devious_looker.tres"))
-    # addItem(load("res://Weapons/Magic Katanas/magic_katanas.tres"))
+    addItem(load("res://Weapons/Fighter Staff/fighter_staff.tres"))
+    addItem(load("res://Weapons/Mechanic's Wrench/mechanics_wrench.tres"))
+    addItem(load("res://Weapons/Devious Looker/devious_looker.tres"))
+    addItem(load("res://Weapons/Magic Katanas/magic_katanas.tres"))
     #endregion
     
     #region SUPPORT WEAPONS

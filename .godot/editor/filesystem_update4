@@ -29,3 +29,11 @@ res://Room Indicator/room_indicator.gd
 res://Room Indicator/room_indicator.tscn
 res://Gacha Ball/gacha_ball.gd
 res://Gacha Ball/gacha_ball.tscn
+res://Weapons/Cosmic Judgement/cosmic_judgement_target.tscn
+res://Weapons/Cosmic Judgement/cosmic_judgement.tres
+res://Weapons/Cosmic Judgement/cosmic_judgement_target.gd
+res://Weapons/Cosmic Judgement/cosmic_judgement.gd
+res://Player Summons/Figther Construct/fighter_construct.gd
+res://Player Summons/Floating Eyeball/floating_eyeball.gd
+res://Player Summons/Magic Katana/magic_katana.gd
+res://Weapons/Mechanic's Wrench/mechanics_wrench_turret.gd

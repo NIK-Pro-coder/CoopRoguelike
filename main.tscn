@@ -210,6 +210,9 @@ process_mode = 1
 [node name="target_dummy" parent="." instance=ExtResource("15_vivmo")]
 position = Vector2(-368, 216)
 
+[node name="target_dummy2" parent="." instance=ExtResource("15_vivmo")]
+position = Vector2(-544, 216)
+
 [node name="healing_dummy" parent="." instance=ExtResource("16_2cqfq")]
 position = Vector2(432, 216)
 
