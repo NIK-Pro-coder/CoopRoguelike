@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://4h0rbqs803ol"]
+[gd_scene load_steps=19 format=3 uid="uid://4h0rbqs803ol"]
 
 [ext_resource type="PackedScene" uid="uid://s0svga2h4x74" path="res://Lobby/lobby.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://w17e82nlba7o" path="res://maincamera.gd" id="2_0xm2m"]
@@ -16,12 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://ruwi6r0vlvwo" path="res://Dialogs/Dialog Manager/dialog_mngr.tscn" id="14_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://4w5m7vwj2xon" path="res://Enemies/Target Dummy/target_dummy.tscn" id="15_vivmo"]
 [ext_resource type="PackedScene" uid="uid://crsedt70gnwul" path="res://Player Summons/Healing Dummy/healing_dummy.tscn" id="16_2cqfq"]
-[ext_resource type="PackedScene" uid="uid://dfo7ng1jgwd2u" path="res://Enemies/Ranged/ranged_enemy.tscn" id="17_yaehf"]
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_h2yge"]
-vertices = PackedVector2Array(7262.367, -6662.4375, 7781.5938, 6485.8984, -8277.531, 6342.0938, -7646.4688, -7365.5313)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-7656, -7376, 7272, -6672, 7792, 6496, -8288, 6352)])
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vivmo"]
 shader = ExtResource("8_w48qg")
@@ -35,10 +29,6 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [node name="main" type="Node2D"]
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-visible = false
-navigation_polygon = SubResource("NavigationPolygon_h2yge")
 
 [node name="maincamera" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -216,9 +206,6 @@ position = Vector2(-128, 256)
 
 [node name="target_dummy2" parent="." instance=ExtResource("15_vivmo")]
 position = Vector2(-472, 256)
-
-[node name="ranged_enemy" parent="." instance=ExtResource("17_yaehf")]
-position = Vector2(-784, 480)
 
 [connection signal="boss_defeated" from="CanvasLayer/waveManager" to="dungeonManager" method="_on_wave_manager_boss_defeated"]
 [connection signal="room_clear" from="CanvasLayer/waveManager" to="CanvasLayer/inventory" method="_on_wave_manager_room_clear"]

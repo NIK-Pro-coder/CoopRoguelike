@@ -62,10 +62,12 @@ func place_features(dungeon: DungeonMngr) -> void :
       @warning_ignore("integer_division")
       var cell_coords := Vector2i(x / 64, y / 64)
       
+      tilemap.set_cell(cell_coords, 0, Vector2(0, 0))
+  
       if n < decor_min_noise :
         continue
       
-      tilemap.set_cell(cell_coords, 0, Vector2(randi_range(0, 3), 0))
+      tilemap.set_cell(cell_coords, 0, Vector2(randi_range(1, 3), 0))
   
   add_to_storage(tilemap)
   dungeon.get_tree().get_root().add_child.call_deferred(tilemap)

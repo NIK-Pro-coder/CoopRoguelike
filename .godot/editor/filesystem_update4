@@ -1,4 +1,4 @@
-res://main.tscn
+res://Enemies/Static Enemy/static_enemy.tscn
 res://Gacha Ball/gacha_ball.gdshader
 res://Accessories/Alchemy Kit/alchemy_kit.tres
 res://Accessories/Bottomless Mana Pouch/bottomless_mana_pouch.tres
@@ -16,33 +16,5 @@ res://Potions/fragile_potion.tres
 res://Potions/weakness_potion.tres
 res://Potions/slowness_potion.tres
 res://Weapons/Mechanic's Wrench/mechanics_wrench_turret.gdshader
-res://Enemies/Base Enemy/base_enemy_old.gd
-res://Biomes/Crystal Hollow/crystal_hollow.tres
-res://Enemies/Static Enemy/static_enemy.tscn
+res://main.tscn
 res://Enemies/Static Enemy/static_enemy.gd
-res://Wave Manager/wave_manager.gd
-res://Player Summons/Healing Dummy/healing_dummy.tscn
-res://Enemies/Target Dummy/target_dummy_old.tscn
-res://Enemies/Target Dummy/target_dummy.tscn
-res://Enemies/Target Dummy/target_dummy.gd
-res://Inventory/inventory.gd
-res://Weapons/Deck Of Cards/deck_of_cards.gd
-res://Enemies/State Machine/state_machine_enemy.tscn
-res://Enemies/State Machine/state.gd
-res://Enemies/State Machine/state_machine_enemy.gd
-res://Enemies/State Machine/state_follow.tres
-res://Enemies/State Machine/state_follow.gd
-res://Enemies/Swordsman/swordsman_enemy.tscn
-res://Enemies/Swordsman/swordsman_follow.gd
-res://Enemies/Swordsman/swordsman_circle.gd
-res://Enemies/Swordsman/swordsman_move_away.gd
-res://Main Menu/main_menu.tscn
-res://Main Menu/main_menu.gd
-res://Dungeon Rooms/campfire_room.tres
-res://Enemies/Swordsman/swordsman_move_in.gd
-res://Player Summons/Figther Construct/fighter_construct.tscn
-res://Enemies/Ranged/ranged_enemy.tscn
-res://Enemies/Ranged/ranged_follow.gd
-res://Enemies/Ranged/ranged_shoot.gd
-res://Enemies/Ranged/ranged_run_away.gd
-res://Enemies/Ranged/ranged_enemy_shot.tscn

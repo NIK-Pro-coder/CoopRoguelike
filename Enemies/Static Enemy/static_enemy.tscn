@@ -61,8 +61,15 @@ debug_color = Color(1, 0, 0, 0.42000002)
 
 [node name="navAgent" type="NavigationAgent2D" parent="."]
 unique_name_in_owner = true
+avoidance_enabled = true
+radius = 50.0
+neighbor_distance = 2500.0
+max_speed = 100000.0
 debug_enabled = true
+debug_use_custom = true
 debug_path_custom_color = Color(1, 0, 0, 1)
+debug_path_custom_point_size = 8.0
+debug_path_custom_line_width = 2.0
 
 [node name="aggroChange" type="Timer" parent="."]
 unique_name_in_owner = true
@@ -81,4 +88,5 @@ fit_content = true
 horizontal_alignment = 1
 
 [connection signal="death" from="healthCoponent" to="." method="on_death"]
+[connection signal="velocity_computed" from="navAgent" to="." method="_on_nav_agent_velocity_computed"]
 [connection signal="timeout" from="aggroChange" to="." method="_on_aggro_change_timeout"]

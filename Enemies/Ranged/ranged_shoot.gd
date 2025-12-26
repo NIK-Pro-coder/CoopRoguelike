@@ -15,10 +15,10 @@ func process_state(enemy: StateMachineEnemy, aggro: Node2D) -> void:
     
     Qol.create_timer(func(): hasShot = false, 1)
 
-  if enemy.global_position.distance_squared_to(aggro.global_position) >= 750 * 750 :
+  if enemy.global_position.distance_squared_to(aggro.global_position) >= 950 * 950 :
     enemy.set_state("follow")
     
-  if enemy.global_position.distance_squared_to(aggro.global_position) <= 450 * 450 :
+  if enemy.global_position.distance_squared_to(aggro.global_position) <= 650 * 650 and enemy.global_position.distance_squared_to(aggro.global_position) >= 450 * 450 :
     enemy.set_state("run_away")
 
 func get_state_name() -> String: return "shoot"

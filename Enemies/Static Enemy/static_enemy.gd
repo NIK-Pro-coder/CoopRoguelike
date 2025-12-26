@@ -44,7 +44,7 @@ func _process(_delta: float) -> void:
   
   navAgent.debug_enabled = DEBUGGING
   
-  velocity = Vector2.ZERO
+  #velocity = Vector2.ZERO
   
   if knockback :
     velocity = knockback
@@ -58,8 +58,13 @@ func _process(_delta: float) -> void:
   handle_logic()
   
   if !navAgent.is_navigation_finished() :
-    velocity = (navAgent.get_next_path_position() - global_position).normalized() * (SPEED * stat_tracker.SPEED_PERCENT + stat_tracker.SPEED)
+    var new_vel = (navAgent.get_next_path_position() - global_position).normalized() * (SPEED * stat_tracker.SPEED_PERCENT + stat_tracker.SPEED)
   
+    if navAgent.avoidance_enabled :
+      navAgent.set_velocity(new_vel)
+    else :
+      _on_nav_agent_velocity_computed(new_vel)
+    
   if aggro :
     if aggro.global_position.x < global_position.x :
       sprite.flip_h = true
@@ -108,3 +113,6 @@ func _on_aggro_change_timeout() -> void:
     if d < 0 or dist < d :
       d = dist
       aggro = i
+
+func _on_nav_agent_velocity_computed(safe_velocity: Vector2) -> void:
+  velocity = safe_velocity# * (SPEED * stat_tracker.SPEED_PERCENT + stat_tracker.SPEED)
