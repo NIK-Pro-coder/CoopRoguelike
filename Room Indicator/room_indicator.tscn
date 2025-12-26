@@ -4,11 +4,13 @@
 [ext_resource type="Script" uid="uid://hfc1gbxn7eat" path="res://Room Indicator/room_indicator.gd" id="2_8oelt"]
 
 [node name="room_indicator" type="Sprite2D" groups=["roompart"]]
+z_index = 450
 scale = Vector2(4, 4)
 texture = ExtResource("1_m61yw")
 script = ExtResource("2_8oelt")
 
 [node name="visible" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(5, 5, 10, 10)
 
 [connection signal="screen_entered" from="visible" to="." method="_on_visible_screen_entered"]
 [connection signal="screen_exited" from="visible" to="." method="_on_visible_screen_exited"]

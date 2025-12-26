@@ -18,3 +18,5 @@ res://Potions/slowness_potion.tres
 res://Weapons/Mechanic's Wrench/mechanics_wrench_turret.gdshader
 res://main.tscn
 res://Enemies/Static Enemy/static_enemy.gd
+res://Room Indicator/room_indicator.gd
+res://Room Indicator/room_indicator.tscn
