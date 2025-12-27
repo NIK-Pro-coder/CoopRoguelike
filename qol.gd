@@ -9,12 +9,12 @@ var RARITY_COLORS: Dictionary[Item.Rarity, Color] = {
   Item.Rarity.LEGENDARY: Color(1.0, 0.851, 0.0),
 }
 
-func create_atk(enemy: bool = false) :
+func create_atk(enemy: bool = false) -> AtkBuilder :
   var atk := AtkBuilder.new()
   
   return atk.create_atk(get_tree(), enemy)
 
-func create_timer(timeout: Callable, time: float = 1) :
+func create_timer(timeout: Callable, time: float = 1) -> Timer :
   var t := Timer.new()
 
   get_tree().get_root().add_child.call_deferred(t)
@@ -32,7 +32,7 @@ func create_timer(timeout: Callable, time: float = 1) :
 
 var strDisplayScene = preload("res://String Display/stringdisplay.tscn")
 
-func display_string(pos: Vector2, text: String, time: float = 1.0) :
+func display_string(pos: Vector2, text: String, time: float = 1.0) -> void :
   var disp: StringDisplay = strDisplayScene.instantiate()
   disp.LIFETIME = time
   disp.STRING = text
@@ -41,7 +41,7 @@ func display_string(pos: Vector2, text: String, time: float = 1.0) :
   
   disp.global_position = pos
   
-func findHpComp(from: Node) :
+func findHpComp(from: Node) -> HealthComponent :
   if from is HealthComponent :
     return from
   
@@ -53,7 +53,7 @@ func findHpComp(from: Node) :
   
   return null
   
-func findEffectComp(from: Node) :
+func findEffectComp(from: Node) -> EffectComponent :
   if from is EffectComponent :
     return from
   
@@ -67,7 +67,7 @@ func findEffectComp(from: Node) :
 
 var teleScene = preload("res://Telegraphs/generic_telegraph.tscn")
 
-func create_telegraph(size: Vector2, time: float = 1) :
+func create_telegraph(size: Vector2, time: float = 1) -> GenericTelegraph :
   var t: GenericTelegraph = teleScene.instantiate()
   t.TELEGRAPH_TIME = time
   t.SHAPE_SIZE = size

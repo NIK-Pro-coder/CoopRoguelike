@@ -1,3 +1,4 @@
+res://Enemies/Creeper
 res://Enemies/Ranged
 res://Enemies/Swordsman
 res://Enemies/State Machine/
@@ -19,6 +20,5 @@ res://Weapons/Deck Of Cards/
 res://Potions/
 res://Dungeon Manager
 res://Dungeon Rooms/
-res://Weapons/Heal Ray/
 /home/nikolai/coop-roguelike/Exports/Web
 /home/nikolai/coop-roguelike/Exports

@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=5 format=3 uid="uid://ofdtwvjdk03m"]
+[gd_resource type="Resource" script_class="Biome" load_steps=6 format=3 uid="uid://ofdtwvjdk03m"]
 
 [ext_resource type="PackedScene" uid="uid://dbjjk2lpilxjh" path="res://Bosses/Crystal Golem/crystal_golem.tscn" id="1_x30uo"]
 [ext_resource type="PackedScene" uid="uid://cf6pdml4tgl07" path="res://Enemies/Swordsman/swordsman_enemy.tscn" id="2_7jcuu"]
 [ext_resource type="PackedScene" uid="uid://dfo7ng1jgwd2u" path="res://Enemies/Ranged/ranged_enemy.tscn" id="3_30tmt"]
+[ext_resource type="PackedScene" uid="uid://bcpnyh80eqgdh" path="res://Enemies/Creeper/creeper_enemy.tscn" id="4_k1l6h"]
 [ext_resource type="Script" uid="uid://ct8n5niwge7yu" path="res://Biomes/base_biome.gd" id="5_tu643"]
 
 [resource]
 script = ExtResource("5_tu643")
 BIOME_NAME = "Crystal Hollow"
-ENEMY_POOL = Array[PackedScene]([ExtResource("2_7jcuu"), ExtResource("3_30tmt")])
+ENEMY_POOL = Array[PackedScene]([ExtResource("2_7jcuu"), ExtResource("3_30tmt"), ExtResource("4_k1l6h")])
 BOSS = ExtResource("1_x30uo")

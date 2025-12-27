@@ -92,6 +92,9 @@ func force_aggro(target: Node2D, time: float) :
   aggroChange.stop()
   aggroChange.start(time)
 
+func stop_pathing() :
+  set_pathing_position(global_position)
+
 func set_pathing_position(pos: Vector2) :
   navAgent.target_position = pos
 

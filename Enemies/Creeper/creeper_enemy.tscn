@@ -1,85 +1,27 @@
-[gd_scene load_steps=13 format=3 uid="uid://5bd5sivtoy3p"]
+[gd_scene load_steps=6 format=3 uid="uid://bcpnyh80eqgdh"]
 
-[ext_resource type="PackedScene" uid="uid://dwlby5wp01cdl" path="res://Enemies/Base Enemy/base_enemy.tscn" id="1_5j83d"]
-[ext_resource type="Script" uid="uid://dlmhgb7uxg157" path="res://Enemies/Creeper/creeper_enemy.gd" id="2_br2jr"]
-[ext_resource type="Shader" uid="uid://1bubu18emj3n" path="res://Enemies/Base Enemy/spawn_shader.gdshader" id="3_bnhhx"]
-[ext_resource type="Texture2D" uid="uid://78b2kcqolt25" path="res://Enemies/Creeper/creeper-enemy.png" id="3_br2jr"]
-[ext_resource type="AudioStream" uid="uid://bxaieur8uxj8p" path="res://Sounds/boom.wav" id="4_br2jr"]
+[ext_resource type="PackedScene" uid="uid://dtlvx5y7rhueu" path="res://Enemies/State Machine/state_machine_enemy.tscn" id="1_82rvy"]
+[ext_resource type="Texture2D" uid="uid://78b2kcqolt25" path="res://Enemies/Creeper/creeper-enemy.png" id="2_25w61"]
+[ext_resource type="Script" uid="uid://b7q308lqokp3f" path="res://Enemies/Creeper/creeper_charge.gd" id="2_iqiwa"]
+[ext_resource type="Script" uid="uid://dp0fp2kugqt8g" path="res://Enemies/Creeper/creeper_explode.gd" id="3_kon1x"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bnhhx"]
-shader = ExtResource("3_bnhhx")
-shader_parameter/progress = 1.29
+[sub_resource type="SpriteFrames" id="SpriteFrames_iqiwa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_25w61")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_br2jr"]
-size = Vector2(112, 128)
+[node name="creeper_enemy" instance=ExtResource("1_82rvy")]
+STATES = Array[GDScript]([ExtResource("2_iqiwa"), ExtResource("3_kon1x")])
+MAX_HP = 35
+XP_VALUE = 25
+SPEED = 750.0
 
-[sub_resource type="Gradient" id="Gradient_bnhhx"]
-offsets = PackedFloat32Array(0, 0.42105263, 0.6631579, 1)
-colors = PackedColorArray(1, 0, 0, 1, 1, 0.5, 0, 1, 0.98333335, 1, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_r678x"]
-gradient = SubResource("Gradient_bnhhx")
-
-[sub_resource type="Curve" id="Curve_hhrly"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_rhewr"]
-curve = SubResource("Curve_hhrly")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0ro2w"]
-lifetime_randomness = 0.5
-particle_flag_disable_z = true
-spread = 180.0
-initial_velocity_min = 300.0
-initial_velocity_max = 500.0
-gravity = Vector3(0, 0, 0)
-damping_min = 1.003
-damping_max = 29.574001
-scale_min = 32.0
-scale_max = 36.0
-scale_curve = SubResource("CurveTexture_rhewr")
-color_ramp = SubResource("GradientTexture1D_r678x")
-
-[node name="creeper_enemy" node_paths=PackedStringArray("Icon") instance=ExtResource("1_5j83d")]
-script = ExtResource("2_br2jr")
-EXPLOSION_FUSE = 0.5
-movement_speed = 800.0
-movement_target = 0
-points_for_wave = 45
-Icon = NodePath("Icon")
-
-[node name="healthCoponent" parent="." index="1"]
-max_health = 20
-
-[node name="healthBar" parent="." index="2"]
-offset_left = -72.0
-offset_top = 80.0
-offset_right = 64.0
-offset_bottom = 107.0
-
-[node name="Icon" type="Sprite2D" parent="." index="5"]
-material = SubResource("ShaderMaterial_bnhhx")
-position = Vector2(0, -8)
+[node name="sprite" parent="." index="4"]
 scale = Vector2(4, 4)
-texture = ExtResource("3_br2jr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="6"]
-shape = SubResource("RectangleShape2D_br2jr")
-debug_color = Color(1, 0, 0, 0.42)
-
-[node name="explosionTimer" type="Timer" parent="." index="7"]
-one_shot = true
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="8"]
-stream = ExtResource("4_br2jr")
-
-[node name="explosion" type="GPUParticles2D" parent="." index="10"]
-emitting = false
-amount = 100
-one_shot = true
-explosiveness = 1.0
-process_material = SubResource("ParticleProcessMaterial_0ro2w")
-
-[connection signal="timeout" from="explosionTimer" to="." method="_on_explosion_timer_timeout"]
-[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+sprite_frames = SubResource("SpriteFrames_iqiwa")
