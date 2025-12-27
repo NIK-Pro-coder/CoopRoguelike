@@ -49,9 +49,10 @@ func place_features(dungeon: DungeonMngr) -> void :
     
     i.place_feature(dungeon, self)
   
+  var navigation := NavigationRegion2D.new()
+  
   var tilemap := TileMapLayer.new()
   tilemap.tile_set = load("res://Dungeon Rooms/dungeon_tileset.tres")
-  tilemap.scale = Vector2.ONE * 4
   tilemap.z_index = -100
   
   for y in range(-room_size, room_size, decor_precision) :
@@ -68,9 +69,42 @@ func place_features(dungeon: DungeonMngr) -> void :
         continue
       
       tilemap.set_cell(cell_coords, 0, Vector2(randi_range(1, 3), 0))
+      
+  navigation.add_child(tilemap)
+  navigation.navigation_layers = 3
   
-  add_to_storage(tilemap)
-  dungeon.get_tree().get_root().add_child.call_deferred(tilemap)
+  add_to_storage(navigation)
+  dungeon.get_tree().get_root().add_child.call_deferred(navigation)
+  
+  var f = func() :
+    var nav_poly := NavigationPolygon.new()
+    nav_poly.vertices = PackedVector2Array([
+      Vector2(-room_size * 2, -room_size * 2),
+      Vector2(room_size * 2, -room_size * 2),
+      Vector2(room_size * 2, room_size * 2),
+      Vector2(-room_size * 2, room_size * 2)
+    ])
+    nav_poly.add_polygon([0, 1, 2, 3])
+    nav_poly.agent_radius = 12
+    
+    var source := NavigationMeshSourceGeometryData2D.new()
+    
+    NavigationServer2D.parse_source_geometry_data(
+      nav_poly,
+      source,
+      tilemap,
+    )
+    
+    NavigationServer2D.bake_from_source_geometry_data_async(
+      nav_poly,
+      source,
+      func(): 
+        navigation.navigation_polygon = nav_poly
+    )
+
+    navigation.scale = Vector2.ONE * 4
+  
+  f.call_deferred()
   
   unload_features(dungeon)
 
@@ -93,6 +127,15 @@ func load_features(dungeon: DungeonMngr) -> void :
       feature_storage.erase(i)
       continue
       
+    if instance_from_id(i) is NavigationRegion2D :
+      # Why do I have to do this? No clue.
+      Qol.create_timer(func() :
+        (instance_from_id(i) as NavigationRegion2D).enabled = false
+      , .25)
+      Qol.create_timer(func() :
+        (instance_from_id(i) as NavigationRegion2D).enabled = true
+      , .5)
+      
     (instance_from_id(i) as Node).process_mode = Node.PROCESS_MODE_INHERIT
     
     instance_from_id(i).global_position = feature_storage[i]
@@ -102,6 +145,9 @@ func unload_features(dungeon: DungeonMngr) -> void :
     if !is_instance_valid(instance_from_id(i)) :
       feature_storage.erase(i)
       continue
+    
+    if instance_from_id(i) is NavigationRegion2D :
+      (instance_from_id(i) as NavigationRegion2D).enabled = false
     
     (instance_from_id(i) as Node).process_mode = Node.PROCESS_MODE_DISABLED
     

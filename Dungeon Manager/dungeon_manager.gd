@@ -223,6 +223,14 @@ signal room_changed
 
 var doorIndicator = preload("res://Room Indicator/room_indicator.tscn")
 
+func getRoomSize(room: Vector2) :
+  var room_size: float = ROOM_SIZE
+  
+  if !posToRoom[room].IS_HOSTILE and !posToRoom[room].NEEDS_BIG_ROOM :
+    room_size = CALM_ROOM_SIZE
+  
+  return room_size
+
 func changeRoom(_body: Node2D, dir: Vector2) :
   if !room_cleared :
     return
@@ -255,13 +263,11 @@ func changeRoom(_body: Node2D, dir: Vector2) :
   for i in get_tree().get_nodes_in_group("roompart") :
     i.queue_free()
     
-  var room_size: float = ROOM_SIZE
-  
-  if !posToRoom[currentRoom].IS_HOSTILE and !posToRoom[currentRoom].NEEDS_BIG_ROOM :
-    room_size = CALM_ROOM_SIZE
     
   # Load current room's walls & exits
   loadCurrentRoom()
+  
+  var room_size = getRoomSize(currentRoom)
   
   for i in get_tree().get_nodes_in_group("ally") :
     i.global_position = -dir * room_size

@@ -61,6 +61,7 @@ debug_color = Color(1, 0, 0, 0.42000002)
 
 [node name="navAgent" type="NavigationAgent2D" parent="."]
 unique_name_in_owner = true
+path_postprocessing = 1
 avoidance_enabled = true
 radius = 50.0
 neighbor_distance = 2500.0

@@ -1,3 +1,5 @@
+TileMapLayer
+NavigationRegion2D
 GPUParticles2D
 CollisionShape2D
 RichTextLabel
@@ -10,6 +12,3 @@ CharacterBody2D
 Sprite2D
 VisibleOnScreenNotifier2D
 MarginContainer
-TextureRect
-Control
-ColorRect

@@ -8,7 +8,7 @@ func process_state(enemy: StateMachineEnemy, _aggro: Node2D) -> void:
   
   exploded = true
   
-  var t := Qol.create_telegraph(Vector2(500, 500), .25)
+  var t := Qol.create_telegraph(Vector2(500, 500), .35)
   t.global_position = enemy.global_position
   t.telegraph_finished.connect(func():
     enemy.queue_free()

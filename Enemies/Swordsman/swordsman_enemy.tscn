@@ -19,7 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0dm3a"]
-size = Vector2(128, 128)
+size = Vector2(112, 112)
 
 [node name="swordsman_enemy" instance=ExtResource("1_nflhx")]
 STATES = Array[GDScript]([ExtResource("2_tly6y"), ExtResource("3_tly6y"), ExtResource("4_0dm3a"), ExtResource("5_op5j7")])

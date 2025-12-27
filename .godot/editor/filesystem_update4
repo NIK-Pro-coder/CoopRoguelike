@@ -1,3 +1,5 @@
+res://Dungeon Rooms/dungeon_room.gd
+res://main.tscn
 res://Gacha Ball/gacha_ball.gdshader
 res://Accessories/Alchemy Kit/alchemy_kit.tres
 res://Accessories/Bottomless Mana Pouch/bottomless_mana_pouch.tres
@@ -15,14 +17,11 @@ res://Potions/fragile_potion.tres
 res://Potions/weakness_potion.tres
 res://Potions/slowness_potion.tres
 res://Weapons/Mechanic's Wrench/mechanics_wrench_turret.gdshader
-res://Enemies/Creeper/creeper_enemy.tscn
-res://Enemies/Creeper/creeper_charge.gd
-res://main.tscn
-res://Enemies/Static Enemy/static_enemy.gd
-res://Enemies/Creeper/creeper_explode.gd
-res://qol.gd
-res://Atk Builder/atk_builder.gd
-res://Biomes/Crystal Hollow/crystal_hollow.tres
-res://Dungeon Rooms/dungeon_room.gd
+res://Dungeon Manager/dungeon_manager.gd
+res://Enemies/Target Dummy/target_dummy.tscn
+res://Dungeon Rooms/big_nav_region.tscn
 res://Dungeon Rooms/dungeon_tileset.tres
 res://Enemies/Static Enemy/static_enemy.tscn
+res://Enemies/Creeper/creeper_enemy.tscn
+res://Enemies/Creeper/creeper_explode.gd
+res://Enemies/Swordsman/swordsman_enemy.tscn
