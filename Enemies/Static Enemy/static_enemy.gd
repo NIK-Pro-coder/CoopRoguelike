@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Enemy
 
 var XP_ORB_SCENE: PackedScene = preload("res://Xp Orb/xp_orb.tscn")
-var DEBUGGING: bool = false
+var DEBUGGING: bool = true
 
 @export var MAX_HP: int = 100
 @export var XP_VALUE: int = 10

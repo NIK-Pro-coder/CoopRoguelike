@@ -30,3 +30,9 @@ res://Enemies/Static Enemy/enemy.gdshader
 res://Enemies/Creeper/creeper_enemy.tscn
 res://Enemies/State Machine/state_machine_enemy.gd
 res://Weapons/Rusty Sword/sword_slash.tres
+res://Enemies/Sniper/sniper_enemy.tscn
+res://Enemies/Sniper/sniper_follow.gd
+res://Enemies/Sniper/sniper_aim.gd
+res://Enemies/Sniper/sniper_run_away.gd
+res://Enemies/Sniper/sniper_reload.gd
+res://Biomes/Crystal Hollow/crystal_hollow.tres
