@@ -1,11 +1,11 @@
-res://Dungeon Rooms
+res://Enemies/Static Enemy
 res://Enemies/Creeper
+res://Dungeon Rooms
 res://Enemies/Ranged
 res://Enemies/Swordsman
 res://Enemies/State Machine/
 res://Enemies/State Machine
 res://Enemies/Target Dummy
-res://Enemies/Static Enemy
 res://Weapons/Crossbow/
 res://Weapons/Blowpipe/
 res://Room Indicator

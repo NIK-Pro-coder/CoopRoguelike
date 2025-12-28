@@ -64,6 +64,7 @@ func dealDamageToBody(body: Node2D) :
   
   if "knockback" in body and healthcomponent.shield <= 0 :
     body.knockback += knockback * (body.knockback_mult if "knockback_mult" in body else 1)
+    healthcomponent.knocked_back.emit(knockback * (body.knockback_mult if "knockback_mult" in body else 1))
   
   healthcomponent.dealDmg(damage)
   

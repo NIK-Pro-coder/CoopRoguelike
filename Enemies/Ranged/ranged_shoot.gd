@@ -10,6 +10,7 @@ func process_state(enemy: StateMachineEnemy, aggro: Node2D) -> void:
     s.global_position = enemy.global_position
     s.direction = (aggro.global_position - enemy.global_position).normalized() * 10
     s.rotation = enemy.global_position.angle_to_point(aggro.global_position)
+    s.damage = 5 * enemy.stat_tracker.DAMAGE_PERCENT + enemy.stat_tracker.DAMAGE
 
     enemy.get_tree().get_root().add_child.call_deferred(s)
     

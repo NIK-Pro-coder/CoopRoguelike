@@ -1,9 +1,18 @@
 extends Enemy
 
+var startingPos: Vector2
+
 func _ready():
+  super._ready()
+  
   if !OS.is_debug_build() :
     queue_free()
-
+    
+  startingPos = global_position
+  
+func handle_logic():
+  set_pathing_position(startingPos)
+  
 @onready var effectCont: GridContainer = %effectContainer
 
 func _process(delta: float) -> void:

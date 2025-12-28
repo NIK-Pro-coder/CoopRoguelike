@@ -1,13 +1,13 @@
-TileMapLayer
-NavigationRegion2D
 GPUParticles2D
 CollisionShape2D
+ProgressBar
+TileMapLayer
+NavigationRegion2D
 RichTextLabel
 Enemy
 Timer
 NavigationAgent2D
 AnimatedSprite2D
-ProgressBar
 CharacterBody2D
 Sprite2D
 VisibleOnScreenNotifier2D

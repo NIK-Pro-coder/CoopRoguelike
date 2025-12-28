@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://4wu3wyx7oady"]
+
+[sub_resource type="Curve" id="Curve_dl75e"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.098958336, 1), 0.0, 0.0, 0, 0, Vector2(0.75000006, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_fuotr"]
+curve = SubResource("Curve_dl75e")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_52w8l"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 120.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 0, 0)
+scale_min = 8.0
+scale_max = 16.0
+scale_curve = SubResource("CurveTexture_fuotr")
+color = Color(1, 0, 0, 1)
+
+[node name="enemy_enrage_part" type="GPUParticles2D"]
+z_index = 2
+emitting = false
+amount = 25
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_52w8l")

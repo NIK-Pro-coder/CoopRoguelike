@@ -21,6 +21,7 @@ STATES = Array[GDScript]([ExtResource("2_iqiwa"), ExtResource("3_kon1x")])
 MAX_HP = 35
 XP_VALUE = 25
 SPEED = 750.0
+CAN_ENRAGE = false
 
 [node name="sprite" parent="." index="4"]
 scale = Vector2(4, 4)

@@ -5,7 +5,6 @@
 
 [node name="target_dummy" groups=["roompart"] instance=ExtResource("1_73cjf")]
 script = ExtResource("2_1x353")
-knockback_mult = 0.0
 
 [node name="effectContainer" type="GridContainer" parent="." index="8"]
 unique_name_in_owner = true

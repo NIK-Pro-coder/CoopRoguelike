@@ -205,7 +205,7 @@ position = Vector2(432, 216)
 position = Vector2(-128, 256)
 
 [node name="target_dummy2" parent="." instance=ExtResource("15_vivmo")]
-position = Vector2(-472, 256)
+position = Vector2(-328, 256)
 
 [connection signal="boss_defeated" from="CanvasLayer/waveManager" to="dungeonManager" method="_on_wave_manager_boss_defeated"]
 [connection signal="room_clear" from="CanvasLayer/waveManager" to="CanvasLayer/inventory" method="_on_wave_manager_room_clear"]

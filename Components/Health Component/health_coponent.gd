@@ -52,6 +52,9 @@ signal death
 signal damaged(amt: int)
 signal healed(amt: int)
 
+@warning_ignore("unused_signal")
+signal knocked_back(amt: Vector2)
+
 var damageNumScene = preload("res://Damage Num/damage_num.tscn")
 
 func addScreenshake(amt) :

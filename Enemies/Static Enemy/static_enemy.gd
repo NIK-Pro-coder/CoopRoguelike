@@ -2,11 +2,12 @@ extends CharacterBody2D
 class_name Enemy
 
 var XP_ORB_SCENE: PackedScene = preload("res://Xp Orb/xp_orb.tscn")
-var DEBUGGING: bool = true
+var DEBUGGING: bool = false
 
 @export var MAX_HP: int = 100
 @export var XP_VALUE: int = 10
 @export var SPEED: float = 250
+@export var CAN_ENRAGE: bool = true
 
 @export var knockback_mult: float = 1.0
 
@@ -15,6 +16,7 @@ var DEBUGGING: bool = true
 @onready var sprite: AnimatedSprite2D = %sprite
 @onready var navAgent: NavigationAgent2D = %navAgent
 @onready var aggroChange: Timer = %aggroChange
+@onready var enragePart: GPUParticles2D = %enemy_enrage_part
 
 var wave_scaling: float = 1.0
 
@@ -23,18 +25,51 @@ var aggro: Node2D = null
 var stat_tracker := StatTracker.new()
 
 var knockback := Vector2.ZERO
+var knockback_taken: float = 0
+var max_knockback: float = 0
+var enraged: bool = false
 
 func _ready() -> void:
   DEBUGGING = DEBUGGING and OS.is_debug_build()
   
   hpComp.set_max_hp(int(MAX_HP * wave_scaling))
+  
+  max_knockback = MAX_HP * wave_scaling
+  %knockbackBar.max_value = max_knockback
+  
+  sprite.material = sprite.material.duplicate()
 
 func handle_logic() :
   pass
+  
+func create_atk(size: Vector2, base_dmg: int, anim: SpriteFrames = null) -> DamageArea :
+  var atk := Qol.create_atk(true).set_rect_shape(size)
+  
+  if anim :
+    atk.add_animation(anim)
+  
+  var d := atk.instantiate()
+  d.damage = base_dmg * stat_tracker.DAMAGE_PERCENT + stat_tracker.DAMAGE
+  
+  return d
 
 func _process(_delta: float) -> void:
   stat_tracker.reset()
   effectComp.apply_effects(stat_tracker)
+  
+  (sprite.material as ShaderMaterial).set_shader_parameter("enraged", enraged)
+  
+  if enraged :
+    stat_tracker.DAMAGE_PERCENT += .25
+    stat_tracker.SPEED_PERCENT += .25
+  
+  if CAN_ENRAGE and !enraged and knockback_taken >= max_knockback :
+    knockback_taken = max_knockback
+    enraged = true
+    enragePart.emitting = true
+  if enraged and knockback_taken <= 0 :
+    knockback_taken = 0
+    enraged = false
   
   %hptxt.visible = DEBUGGING
   %hptxt.text = "%s / %s" % [int(hpComp.health), hpComp.max_health]
@@ -42,9 +77,13 @@ func _process(_delta: float) -> void:
   %aggroDisp.visible = DEBUGGING
   %aggroDisp.text = "Aggro: %s" % [str(aggro.name) if aggro else "None"]
   
+  %knockbackBar.visible = DEBUGGING
+  %knockbackBar.value = knockback_taken
+  
   navAgent.debug_enabled = DEBUGGING
   
-  #velocity = Vector2.ZERO
+  if enraged :
+    knockback = Vector2.ZERO
   
   if knockback :
     velocity = knockback
@@ -95,14 +134,18 @@ func force_aggro(target: Node2D, time: float) :
 func stop_pathing() :
   set_pathing_position(global_position)
 
-func set_pathing_position(pos: Vector2) :
+func set_pathing_position(pos: Vector2, force: bool = false) :
+  if !force and pos.distance_squared_to(Vector2.ZERO) >= 2000 * 2000 :
+    navAgent.target_position = pos - pos.normalized() * 250
+    return
+  
   navAgent.target_position = pos
 
-func set_pathing_target(target: Node2D) :
+func set_pathing_target(target: Node2D, force: bool = false) :
   if !target :
     return
 
-  set_pathing_position(target.global_position)
+  set_pathing_position(target.global_position, force)
 
 func _on_aggro_change_timeout() -> void:
   aggroChange.stop()
@@ -118,4 +161,7 @@ func _on_aggro_change_timeout() -> void:
       aggro = i
 
 func _on_nav_agent_velocity_computed(safe_velocity: Vector2) -> void:
-  velocity = safe_velocity# * (SPEED * stat_tracker.SPEED_PERCENT + stat_tracker.SPEED)
+  velocity = safe_velocity
+
+func _on_health_coponent_knocked_back(amt: Vector2) -> void:
+  knockback_taken += amt.length() / 5 * (-1 if enraged else 1)

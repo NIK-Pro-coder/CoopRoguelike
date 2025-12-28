@@ -59,7 +59,7 @@ func place_features(dungeon: DungeonMngr) -> void :
     for x in range(-room_size, room_size, decor_precision) :
       var n = noise.get_noise_2d(x, y)
       n = (n + 1) / 2.0
-            
+      
       @warning_ignore("integer_division")
       var cell_coords := Vector2i(x / 64, y / 64)
       

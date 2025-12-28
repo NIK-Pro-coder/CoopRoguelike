@@ -1,9 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqxjrxipwoe85"]
+[gd_scene load_steps=11 format=3 uid="uid://cqxjrxipwoe85"]
 
 [ext_resource type="Script" uid="uid://bb4lhsnewprdg" path="res://Enemies/Static Enemy/static_enemy.gd" id="1_6ln5t"]
 [ext_resource type="PackedScene" uid="uid://ntpu8pjibyrw" path="res://Components/Health Component/health_coponent.tscn" id="2_fqhmt"]
 [ext_resource type="PackedScene" uid="uid://castrtcka8x82" path="res://Components/Effect Component/effect_component.tscn" id="3_s5lhl"]
+[ext_resource type="Shader" uid="uid://c5wcldrcg1th1" path="res://Enemies/Static Enemy/enemy.gdshader" id="4_pt6j0"]
 [ext_resource type="Texture2D" uid="uid://cjraxmvgw4mpd" path="res://icon.svg" id="4_s5lhl"]
+[ext_resource type="PackedScene" uid="uid://4wu3wyx7oady" path="res://Enemies/Static Enemy/enemy_enrage_part.tscn" id="5_x4lq1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ebr65"]
+shader = ExtResource("4_pt6j0")
+shader_parameter/enraged = false
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x4lq1"]
 animations = [{
@@ -18,6 +24,13 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5lhl"]
 size = Vector2(128, 128)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5lhl"]
+bg_color = Color(0.84110856, 0.5136232, 3.85046e-07, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="static_enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
@@ -51,11 +64,13 @@ unique_name_in_owner = true
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
+material = SubResource("ShaderMaterial_ebr65")
 sprite_frames = SubResource("SpriteFrames_x4lq1")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_s5lhl")
 debug_color = Color(1, 0, 0, 0.42000002)
 
@@ -88,6 +103,20 @@ text = "Aggro: Skibidi"
 fit_content = true
 horizontal_alignment = 1
 
+[node name="knockbackBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = 72.0
+offset_top = -64.0
+offset_right = 88.0
+offset_bottom = 64.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_s5lhl")
+fill_mode = 3
+show_percentage = false
+
+[node name="enemy_enrage_part" parent="." instance=ExtResource("5_x4lq1")]
+unique_name_in_owner = true
+
 [connection signal="death" from="healthCoponent" to="." method="on_death"]
+[connection signal="knocked_back" from="healthCoponent" to="." method="_on_health_coponent_knocked_back"]
 [connection signal="velocity_computed" from="navAgent" to="." method="_on_nav_agent_velocity_computed"]
 [connection signal="timeout" from="aggroChange" to="." method="_on_aggro_change_timeout"]

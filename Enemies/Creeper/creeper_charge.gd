@@ -1,7 +1,7 @@
 extends EnemyState
 
 func process_state(enemy: StateMachineEnemy, aggro: Node2D) -> void:
-  enemy.set_pathing_target(aggro)
+  enemy.set_pathing_target(aggro, true)
   
   if enemy.global_position.distance_squared_to(aggro.global_position) <= 150 * 150 :
     enemy.stop_pathing()
