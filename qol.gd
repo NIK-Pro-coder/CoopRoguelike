@@ -25,7 +25,8 @@ func create_timer(timeout: Callable, time: float = 1) -> Timer :
   t.timeout.connect(func():
     if t.one_shot :
       t.queue_free()
-    timeout.call()
+    if timeout :
+      timeout.call()
   )
   
   return t

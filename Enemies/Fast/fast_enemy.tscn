@@ -1,39 +1,55 @@
-[gd_scene load_steps=7 format=3 uid="uid://biunelepqwa3h"]
+[gd_scene load_steps=7 format=3 uid="uid://0ggkvpyckbu4"]
 
-[ext_resource type="PackedScene" uid="uid://dwlby5wp01cdl" path="res://Enemies/Base Enemy/base_enemy.tscn" id="1_w8fe1"]
-[ext_resource type="Script" uid="uid://c8t5gxlc6lfrb" path="res://Enemies/Melee/melee_enemy.gd" id="2_k34g4"]
-[ext_resource type="Shader" uid="uid://1bubu18emj3n" path="res://Enemies/Base Enemy/spawn_shader.gdshader" id="3_k34g4"]
-[ext_resource type="Texture2D" uid="uid://dvj422hl4ed2s" path="res://Enemies/Fast/fast-enemy.png" id="3_w8fe1"]
+[ext_resource type="PackedScene" uid="uid://dtlvx5y7rhueu" path="res://Enemies/State Machine/state_machine_enemy.tscn" id="1_se6wn"]
+[ext_resource type="Script" uid="uid://bumcuviy7e6fx" path="res://Enemies/Fast/fast_sneak_up.gd" id="2_qf040"]
+[ext_resource type="Texture2D" uid="uid://dvj422hl4ed2s" path="res://Enemies/Fast/fast-enemy.png" id="3_03msc"]
+[ext_resource type="Script" uid="uid://cosrb3urot34a" path="res://Enemies/Fast/fast_attack.gd" id="3_q6lsc"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5lofn"]
-shader = ExtResource("3_k34g4")
-shader_parameter/progress = 0.0
+[sub_resource type="SpriteFrames" id="SpriteFrames_q6lsc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_03msc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4e6a8"]
-size = Vector2(80, 72)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylxcb"]
+size = Vector2(80, 64)
 
-[node name="fast_enemy" node_paths=PackedStringArray("Icon") instance=ExtResource("1_w8fe1")]
-script = ExtResource("2_k34g4")
-movement_speed = 550.0
-movement_target = 0
-points_for_wave = 15
-Icon = NodePath("Icon")
+[node name="fast_enemy" instance=ExtResource("1_se6wn")]
+STATES = Array[GDScript]([ExtResource("2_qf040"), ExtResource("3_q6lsc")])
+MAX_HP = 40
+XP_VALUE = 20
+SPEED = 400.0
 
-[node name="Icon" type="Sprite2D" parent="." index="0"]
-material = SubResource("ShaderMaterial_5lofn")
+[node name="hpbar" parent="." index="0"]
+offset_top = 40.0
+offset_bottom = 56.0
+
+[node name="hptxt" parent="." index="1"]
+offset_top = -80.0
+offset_bottom = -16.0
+
+[node name="sprite" parent="." index="4"]
 scale = Vector2(4, 4)
-texture = ExtResource("3_w8fe1")
+sprite_frames = SubResource("SpriteFrames_q6lsc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-position = Vector2(0, -4)
-shape = SubResource("RectangleShape2D_4e6a8")
-debug_color = Color(1, 0, 0, 0.42)
+[node name="CollisionShape2D" parent="." index="5"]
+shape = SubResource("RectangleShape2D_ylxcb")
 
-[node name="healthCoponent" parent="." index="3"]
-max_health = 25
+[node name="stateDisp" parent="." index="8"]
+offset_top = 96.0
+offset_bottom = 141.0
 
-[node name="healthBar" parent="." index="4"]
-offset_left = -64.0
-offset_top = 72.0
-offset_right = 64.0
-offset_bottom = 99.0
+[node name="aggroDisp" parent="." index="9"]
+offset_top = 56.0
+offset_bottom = 326.0
+
+[node name="knockbackBar" parent="." index="10"]
+offset_left = 56.0
+offset_top = -32.0
+offset_right = 72.0
+offset_bottom = 32.0

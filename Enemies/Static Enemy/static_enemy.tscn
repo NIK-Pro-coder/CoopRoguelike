@@ -70,7 +70,6 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_s5lhl")
 debug_color = Color(1, 0, 0, 0.42000002)
 

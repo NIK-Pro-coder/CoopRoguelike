@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcpnyh80eqgdh"]
+[gd_scene load_steps=7 format=3 uid="uid://bcpnyh80eqgdh"]
 
 [ext_resource type="PackedScene" uid="uid://dtlvx5y7rhueu" path="res://Enemies/State Machine/state_machine_enemy.tscn" id="1_82rvy"]
 [ext_resource type="Texture2D" uid="uid://78b2kcqolt25" path="res://Enemies/Creeper/creeper-enemy.png" id="2_25w61"]
@@ -16,6 +16,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kon1x"]
+size = Vector2(128, 128)
+
 [node name="creeper_enemy" instance=ExtResource("1_82rvy")]
 STATES = Array[GDScript]([ExtResource("2_iqiwa"), ExtResource("3_kon1x")])
 MAX_HP = 35
@@ -26,6 +29,9 @@ CAN_ENRAGE = false
 [node name="sprite" parent="." index="4"]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_iqiwa")
+
+[node name="CollisionShape2D" parent="." index="5"]
+shape = SubResource("RectangleShape2D_kon1x")
 
 [node name="navAgent" parent="." index="6"]
 path_postprocessing = 0

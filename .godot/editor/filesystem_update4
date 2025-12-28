@@ -36,3 +36,7 @@ res://Enemies/Sniper/sniper_aim.gd
 res://Enemies/Sniper/sniper_run_away.gd
 res://Enemies/Sniper/sniper_reload.gd
 res://Biomes/Crystal Hollow/crystal_hollow.tres
+res://Enemies/Fast/fast_enemy.tscn
+res://Enemies/Fast/fast_sneak_up.gd
+res://Enemies/Fast/fast_attack.gd
+res://qol.gd

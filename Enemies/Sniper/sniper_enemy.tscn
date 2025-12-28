@@ -1,12 +1,34 @@
-[gd_scene load_steps=6 format=3 uid="uid://7yo1x7gmsjmx"]
+[gd_scene load_steps=9 format=3 uid="uid://7yo1x7gmsjmx"]
 
 [ext_resource type="PackedScene" uid="uid://dtlvx5y7rhueu" path="res://Enemies/State Machine/state_machine_enemy.tscn" id="1_wvc7t"]
 [ext_resource type="Script" uid="uid://dqopq3jpv4gmr" path="res://Enemies/Sniper/sniper_follow.gd" id="2_7evcp"]
 [ext_resource type="Script" uid="uid://vwn40ftf5hi3" path="res://Enemies/Sniper/sniper_aim.gd" id="3_52ohq"]
 [ext_resource type="Script" uid="uid://puq0mdnidh5v" path="res://Enemies/Sniper/sniper_run_away.gd" id="4_arax3"]
 [ext_resource type="Script" uid="uid://cpddpjto667nh" path="res://Enemies/Sniper/sniper_reload.gd" id="5_2jyru"]
+[ext_resource type="Texture2D" uid="uid://cjraxmvgw4mpd" path="res://icon.svg" id="6_1a27a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ldlrt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_1a27a")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsy5w"]
+size = Vector2(128, 128)
 
 [node name="sniper_enemy" instance=ExtResource("1_wvc7t")]
 STATES = Array[GDScript]([ExtResource("2_7evcp"), ExtResource("3_52ohq"), ExtResource("4_arax3"), ExtResource("5_2jyru")])
+MAX_HP = 50
 XP_VALUE = 35
 SPEED = 350.0
+
+[node name="sprite" parent="." index="4"]
+sprite_frames = SubResource("SpriteFrames_ldlrt")
+
+[node name="CollisionShape2D" parent="." index="5"]
+shape = SubResource("RectangleShape2D_rsy5w")
