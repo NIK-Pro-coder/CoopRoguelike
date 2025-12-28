@@ -1,3 +1,6 @@
+res://Enemies/State Machine
+res://Enemies/Healer
+res://Enemies/Melee
 res://Enemies/Fast
 res://Enemies/Sniper
 res://Enemies/Static Enemy
@@ -6,7 +9,6 @@ res://Dungeon Rooms
 res://Enemies/Ranged
 res://Enemies/Swordsman
 res://Enemies/State Machine/
-res://Enemies/State Machine
 res://Enemies/Target Dummy
 res://Weapons/Crossbow/
 res://Weapons/Blowpipe/
@@ -18,7 +20,5 @@ res://Weapons/Mechanic's Wrench/
 res://Weapons/Spore Sac/
 res://
 res://Weapons/Battle Standard/
-res://Weapons/Deck Of Cards
-res://Weapons/Deck Of Cards/
 /home/nikolai/coop-roguelike/Exports/Web
 /home/nikolai/coop-roguelike/Exports

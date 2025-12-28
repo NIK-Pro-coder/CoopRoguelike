@@ -40,3 +40,8 @@ res://Enemies/Fast/fast_enemy.tscn
 res://Enemies/Fast/fast_sneak_up.gd
 res://Enemies/Fast/fast_attack.gd
 res://qol.gd
+res://Enemies/Melee/melee_enemy.tscn
+res://Enemies/Melee/melee_approach.gd
+res://Enemies/Healer/healer_enemy.tscn
+res://Enemies/Healer/healer_enemy.gd
+res://Enemies/Healer/healer_heal.gd

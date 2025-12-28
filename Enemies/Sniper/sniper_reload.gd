@@ -9,6 +9,9 @@ func process_state(enemy: StateMachineEnemy, _aggro: Node2D) -> void:
   reloading = true
   
   Qol.create_timer(func():
+    if !is_instance_valid(enemy) :
+      return
+    
     reloading = false
     enemy.set_state("follow")
   , 1.5)

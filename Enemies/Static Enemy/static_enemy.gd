@@ -147,18 +147,39 @@ func set_pathing_target(target: Node2D, force: bool = false) :
 
   set_pathing_position(target.global_position, force)
 
-func _on_aggro_change_timeout() -> void:
-  aggroChange.stop()
-  aggroChange.start(.5)
-  
+func get_closest_ally() :
   var d: float = -1
+  var a: Node2D
   
   for i in get_tree().get_nodes_in_group("ally") :
     var dist = (i as Node2D).global_position.distance_squared_to(global_position)
     
     if d < 0 or dist < d :
       d = dist
-      aggro = i
+      a = i
+  
+  return a
+  
+func get_closest_enemy() :
+  var d: float = -1
+  var a: Node2D
+  
+  for i in get_tree().get_nodes_in_group("enemy") :
+    var dist = (i as Node2D).global_position.distance_squared_to(global_position)
+    
+    if i != self and (d < 0 or dist < d) :
+      d = dist
+      a = i
+  
+  return a
+
+func change_aggro() :
+  aggro = get_closest_ally()
+
+func _on_aggro_change_timeout() -> void:
+  aggroChange.stop()
+  aggroChange.start(.5)
+  change_aggro()
 
 func _on_nav_agent_velocity_computed(safe_velocity: Vector2) -> void:
   velocity = safe_velocity
