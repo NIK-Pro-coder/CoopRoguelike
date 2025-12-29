@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bm745ihw7n6vi"]
+[gd_scene load_steps=7 format=3 uid="uid://bm745ihw7n6vi"]
 
 [ext_resource type="PackedScene" uid="uid://dtlvx5y7rhueu" path="res://Enemies/State Machine/state_machine_enemy.tscn" id="1_ilakm"]
 [ext_resource type="Texture2D" uid="uid://cjraxmvgw4mpd" path="res://icon.svg" id="2_qi27r"]
+[ext_resource type="Script" uid="uid://1nmdafcqehng" path="res://Enemies/Healer/healer_heal.gd" id="2_u3w3h"]
+[ext_resource type="Script" uid="uid://2bqyxhe1apb7" path="res://Enemies/Healer/healer_run_away.gd" id="3_6qd64"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u3w3h"]
 animations = [{
@@ -18,6 +20,11 @@ animations = [{
 size = Vector2(128, 128)
 
 [node name="healer_enemy" instance=ExtResource("1_ilakm")]
+STATES = Array[GDScript]([ExtResource("2_u3w3h"), ExtResource("3_6qd64")])
+MAX_HP = 25
+XP_VALUE = 30
+SPEED = 350.0
+CAN_ENRAGE = false
 
 [node name="sprite" parent="." index="4"]
 sprite_frames = SubResource("SpriteFrames_u3w3h")

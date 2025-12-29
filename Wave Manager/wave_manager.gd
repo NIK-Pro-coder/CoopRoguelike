@@ -6,7 +6,6 @@ class_name WaveManager
 @export var starting_points: int = 100
 @export var points_mult: float = .35
 @export var waves_per_room: int = 3
-@export var biome_list: Array[Biome]
 @export var spawn_bosses: bool = true
 
 @export var loot_tables: Array[LootTable]
@@ -21,10 +20,9 @@ var wavenun: int = 0
 var totwavenum: int = 0
 
 var enemy_pool: Array[Enemy] = []
-var current_biome = 0
 
 func _ready() -> void:
-  for i in biome_list[current_biome].ENEMY_POOL :
+  for i in Qol.get_current_biome().ENEMY_POOL :
     enemy_pool.append(i.instantiate())
   
   points = starting_points
@@ -33,7 +31,7 @@ var room_cleared = true
 
 signal room_clear
 
-var gach_ball = preload("res://Gacha Ball/gacha_ball.tscn")
+var gach_ball = load("res://Gacha Ball/gacha_ball.tscn")
 
 func _process(_delta: float) -> void:
   if !dungeon_boss :
@@ -95,7 +93,7 @@ func spawnWave() :
   
   for i in range(len(get_tree().get_nodes_in_group("player"))) :
     more += last
-    last = last + (1 - last) * .35
+    last = last + (1 - last) * .25
     
   for i in get_tree().get_nodes_in_group("player") :
     (i as Player).potions = 0
@@ -148,7 +146,7 @@ func _on_dungeon_manager_spawn_boss() -> void:
     return
   
   # spawn boss
-  var boss: Boss = biome_list[current_biome].BOSS.instantiate()
+  var boss: Boss = Qol.get_current_biome().BOSS.instantiate()
   get_tree().get_root().add_child(boss)
   
   boss.HpComp.DISPLAY_BAR = %bossbar

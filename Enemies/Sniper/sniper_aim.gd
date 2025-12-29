@@ -14,6 +14,9 @@ func process_state(enemy: StateMachineEnemy, aggro: Node2D) -> void:
   
   for i in range(29) :
     Qol.create_timer(func():
+      if !is_instance_valid(enemy) or !is_instance_valid(aggro) :
+        return
+      
       t.global_position = enemy.global_position + (aggro.global_position - enemy.global_position).normalized() * t.SHAPE_SIZE.x / 2.0
       t.rotation = enemy.global_position.angle_to_point(aggro.global_position)
     , i / 20.0 + .1)

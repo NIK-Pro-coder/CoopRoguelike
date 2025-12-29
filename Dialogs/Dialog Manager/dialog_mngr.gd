@@ -12,6 +12,7 @@ class_name DialogMngr
 @onready var PlayerIcon: TextureRect = %player_icon
 
 var device_id: int = -1
+var hue_shift: float = 0
 
 var dialog: Dialog
 var dialog_progress: int = 0
@@ -20,7 +21,9 @@ var text_progress: int = 0
 
 func _ready() -> void:
   visible = false
-
+  
+  PlayerIcon.material = PlayerIcon.material.duplicate()
+  
 func update_dialog() :
   var box: DialogBox = dialog.DIALOG_BOXES[dialog_progress]
   
@@ -50,6 +53,8 @@ func show_dialog(d: Dialog) :
   NpcIcon.texture = d.NPC_ICON
   PlayerIcon.texture = d.PLAYER_ICON
   
+  (PlayerIcon.material as ShaderMaterial).set_shader_parameter("hue_shift", hue_shift)
+  
   update_dialog()
 
 func _process(_delta: float) -> void:
@@ -60,6 +65,7 @@ func _process(_delta: float) -> void:
   Box.visible_characters = text_progress
 
   ContinueText.visible = Box.visible_ratio >= 1
+  ContinueText.text = ("(Y)" if device_id >= 0 else "(E)") + " Continue"
   if ContinueText.visible and (Input.is_action_pressed("k_revive") if device_id < 0 else Input.is_joy_button_pressed(device_id, JOY_BUTTON_Y)) :
     dialog_progress += 1
     if dialog_progress >= len(dialog.DIALOG_BOXES) :

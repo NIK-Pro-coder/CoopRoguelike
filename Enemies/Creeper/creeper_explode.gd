@@ -25,6 +25,8 @@ func process_state(enemy: StateMachineEnemy, _aggro: Node2D) -> void:
   
   exploded = true
   
+  enemy.stop_pathing()
+  
   telegraph = Qol.create_telegraph(Vector2(500, 500), .35)
   telegraph.global_position = enemy.global_position
   telegraph.telegraph_finished.connect(func():

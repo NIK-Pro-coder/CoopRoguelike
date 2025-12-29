@@ -1,14 +1,12 @@
-res://Enemies/Target Dummy/target_dummy.gd
-res://Enemies/Target Dummy/target_dummy.tscn
-res://Gacha Ball/gacha_ball.gdshader
+res://main.tscn
 res://Accessories/Alchemy Kit/alchemy_kit.tres
 res://Accessories/Bottomless Mana Pouch/bottomless_mana_pouch.tres
 res://Accessories/Metal Scarf/metal_scarf.tres
 res://Accessories/Regen Band/regen_band.tres
 res://Items/Accessories/true_self.tres
-res://Gacha Ball/gacha_ball_given.gdshader
 res://Spells/Zap Spell/zap_spell.tres
 res://Weapons/Fighter Staff/fighter_staff.tres
+res://Enemies/Static Enemy/enemy.gdshader
 res://Potions/endurance_potion.tres
 res://Potions/lifeforce_potion.tres
 res://Potions/rage_potion.tres
@@ -16,32 +14,19 @@ res://Potions/speed_potion.tres
 res://Potions/fragile_potion.tres
 res://Potions/weakness_potion.tres
 res://Potions/slowness_potion.tres
-res://Weapons/Mechanic's Wrench/mechanics_wrench_turret.gdshader
-res://Enemies/Static Enemy/static_enemy.gd
-res://main.tscn
-res://Enemies/Swordsman/swordsman_move_in.gd
-res://Enemies/Creeper/creeper_charge.gd
-res://Enemies/Swordsman/swordsman_enemy.tscn
-res://Enemies/Static Enemy/static_enemy.tscn
-res://Enemies/Creeper/creeper_explode_part.tscn
-res://Enemies/Creeper/creeper_explode.gd
-res://Enemies/Static Enemy/enemy_enrage_part.tscn
-res://Enemies/Static Enemy/enemy.gdshader
-res://Enemies/Creeper/creeper_enemy.tscn
-res://Enemies/State Machine/state_machine_enemy.gd
-res://Weapons/Rusty Sword/sword_slash.tres
-res://Enemies/Sniper/sniper_enemy.tscn
-res://Enemies/Sniper/sniper_follow.gd
-res://Enemies/Sniper/sniper_aim.gd
-res://Enemies/Sniper/sniper_run_away.gd
-res://Enemies/Sniper/sniper_reload.gd
-res://Biomes/Crystal Hollow/crystal_hollow.tres
-res://Enemies/Fast/fast_enemy.tscn
-res://Enemies/Fast/fast_sneak_up.gd
-res://Enemies/Fast/fast_attack.gd
 res://qol.gd
-res://Enemies/Melee/melee_enemy.tscn
-res://Enemies/Melee/melee_approach.gd
-res://Enemies/Healer/healer_enemy.tscn
-res://Enemies/Healer/healer_enemy.gd
-res://Enemies/Healer/healer_heal.gd
+res://NPCs/base_npc.gd
+res://Dialogs/Dialog Manager/dialog_mngr.tscn
+res://Dialogs/Dialog Manager/dialog_mngr.gd
+res://Lobby/lobby.gd
+res://Title Card/title_card.tscn
+res://Title Card/title_card.gd
+res://Biomes/base_biome.gd
+res://Dungeon Manager/dungeon_manager.gd
+res://Biomes/Crystal Hollow/crystal_hollow.tres
+res://Wave Manager/wave_manager.gd
+res://Gacha Ball/gacha_ball.tscn
+res://Gacha Ball/gacha_ball.gdshader
+res://Components/Interaction Component/interaction.tscn
+res://Dungeon Rooms/dungeon_room.gd
+res://Biomes/Crystal Hollow/dungeon_tileset.tres

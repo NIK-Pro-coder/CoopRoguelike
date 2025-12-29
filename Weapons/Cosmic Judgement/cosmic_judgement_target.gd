@@ -36,7 +36,7 @@ func _process(_delta: float) -> void:
     for i in get_tree().get_nodes_in_group("enemy") :
       if (i as Node2D).global_position.distance_to(global_position) <= 440 :
         if i is Enemy :
-          i.healthcomponent.dealDmg(500)
+          i.hpComp.dealDmg(500)
           player.potion_charge_progress += 500
           player.damageDone += 500
         elif i is Boss :

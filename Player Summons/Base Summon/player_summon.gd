@@ -77,6 +77,10 @@ func handle_movement() :
   move_and_slide()
 
 func _physics_process(_delta: float) -> void:
+  if !is_instance_valid(master) :
+    queue_free()
+    return
+  
   if master.healtcomponent.health <= 0 :
     remove_from_group("ally")
     return

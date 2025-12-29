@@ -41,30 +41,33 @@ func display_string(pos: Vector2, text: String, time: float = 1.0) -> void :
   get_tree().get_root().add_child.call_deferred(disp)
   
   disp.global_position = pos
+
+func findNodeWithCriteria(search_start: Node, criteria: Callable) -> Node :
+  if criteria.call(search_start) :
+    return search_start
   
-func findHpComp(from: Node) -> HealthComponent :
-  if from is HealthComponent :
-    return from
-  
-  for i in from.get_children() :
-    var r = findHpComp(i)
+  for i in search_start.get_children():
+    var r = findNodeWithCriteria(i, criteria)
     
-    if r is HealthComponent :
+    if criteria.call(r) :
       return r
   
   return null
+
+func findNodeWithCriteriaFromRoot(criteria: Callable) -> Node :
+  return findNodeWithCriteria(get_tree().get_root(), criteria)
+
+func findHpComp(from: Node) -> HealthComponent :
+  return findNodeWithCriteria(
+    from,
+    func(x: Node): return x is HealthComponent
+  )
   
 func findEffectComp(from: Node) -> EffectComponent :
-  if from is EffectComponent :
-    return from
-  
-  for i in from.get_children() :
-    var r = findEffectComp(i)
-    
-    if r is EffectComponent :
-      return r
-  
-  return null
+  return findNodeWithCriteria(
+    from,
+    func(x: Node): return x is EffectComponent
+  )
 
 var teleScene = preload("res://Telegraphs/generic_telegraph.tscn")
 
@@ -76,3 +79,60 @@ func create_telegraph(size: Vector2, time: float = 1) -> GenericTelegraph :
   get_tree().get_root().add_child.call_deferred(t)
   
   return t
+
+var BIOME_LIST: Array[Biome] = [
+  preload("res://Biomes/Crystal Hollow/crystal_hollow.tres")
+]
+var biome_idx: int = 0
+
+func get_current_biome() -> Biome :
+  return BIOME_LIST[biome_idx]
+  
+var lobbyMngr: LobbyManager
+var waveMngr: WaveManager
+var xpMngr: XpManager
+var inventory: Inventory
+
+var dialogMngr: DialogMngr
+
+func showDialog(dialog: Dialog, player: Player) :
+  dialogMngr.device_id = player.DEVICE_ID
+  dialogMngr.hue_shift = player.MAIN_COLOR
+  dialogMngr.show_dialog(dialog)
+
+var dungeonMngr: DungeonMngr
+
+var titleCard: TitleCard
+
+func showTitleCardForCurrentBiome() :
+  _process(0)
+  
+  titleCard._ready()
+  
+  var b := get_current_biome()
+  titleCard.showTitleCard(biome_idx, b.BIOME_NAME)
+
+func _process(_delta: float) -> void:
+  if not lobbyMngr :
+    lobbyMngr = findNodeWithCriteriaFromRoot(func(x: Node): return x is LobbyManager)
+
+  if not waveMngr :
+    waveMngr = findNodeWithCriteriaFromRoot(func(x: Node): return x is WaveManager)
+
+  if not xpMngr :
+    xpMngr = findNodeWithCriteriaFromRoot(func(x: Node): return x is XpManager)
+
+  if not inventory :
+    inventory = findNodeWithCriteriaFromRoot(func(x: Node): return x is Inventory)
+
+  if not dialogMngr :
+    dialogMngr = findNodeWithCriteriaFromRoot(func(x: Node): return x is DialogMngr)
+
+  if not dungeonMngr :
+    dungeonMngr = findNodeWithCriteriaFromRoot(func(x: Node): return x is DungeonMngr)
+
+  if not titleCard :
+    titleCard = findNodeWithCriteriaFromRoot(func(x: Node): return x is TitleCard)
+
+func _ready() -> void:
+  process_mode = Node.PROCESS_MODE_ALWAYS

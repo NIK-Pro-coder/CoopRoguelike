@@ -52,7 +52,7 @@ func place_features(dungeon: DungeonMngr) -> void :
   var navigation := NavigationRegion2D.new()
   
   var tilemap := TileMapLayer.new()
-  tilemap.tile_set = load("res://Dungeon Rooms/dungeon_tileset.tres")
+  tilemap.tile_set = Qol.get_current_biome().BIOME_TILESET
   tilemap.z_index = -100
   
   for y in range(-room_size, room_size, decor_precision) :

@@ -347,9 +347,9 @@ func _process(_delta: float) -> void:
             if equip_slot >= 0 :
               var a: Accessory = posToItem[selectedPos].ACCESSORY.duplicate()
               a.NAME = posToItem[selectedPos].NAME
-              a.DESCRIPTION = posToItem[selectedPos].DESCRIPTION
+              a.DESC = posToItem[selectedPos].DESCRIPTION
               a.QUOTE = posToItem[selectedPos].QUOTE
-              a.TEXTURE = posToItem[selectedPos].TEXTURE
+              a.ICON = posToItem[selectedPos].TEXTURE
               DISPLAY_PLAYER.accessories[equip_slot] = a
               posToItem[Vector2(equip_slot-3, 0)] = posToItem[selectedPos].duplicate()
               posToSlot[Vector2(equip_slot-3, 0)].TEXTURE.texture = posToItem[selectedPos].TEXTURE

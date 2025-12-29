@@ -11,9 +11,6 @@ class_name DungeonMngr
 @export var ROOM_SIZE = 2500
 @export var CALM_ROOM_SIZE = 1500
 
-@export_category("Dungeon Rooms")
-@export var DUNGEON_ROOMS: Array[DungeonRoom]
-
 enum DIRECTION {
   UP = 1,
   LEFT = 2,
@@ -45,7 +42,10 @@ var MINIMAP_CELL_SIZE: int = 16
 @export var DISCOVERED: Color
 @export var ACTIVE: Color
 
+var DUNGEON_ROOMS: Array[DungeonRoom]
+
 func _ready() -> void:
+  DUNGEON_ROOMS = Qol.get_current_biome().ROOM_POOL
   generateGrid()
 
 func getRandomRoom(x: float, y: float) :
@@ -64,7 +64,11 @@ func getRandomRoom(x: float, y: float) :
   
   return DUNGEON_ROOMS[0].duplicate()
 
+var title_shown: bool = false
+
 func generateGrid() -> void:
+  title_shown = false
+  
   currentRoom = Vector2(int(GRID_SIZE_X/2.0), int(GRID_SIZE_Y/2.0))
   
   for i in get_tree().get_nodes_in_group("player") :
@@ -232,6 +236,10 @@ func getRoomSize(room: Vector2) :
   return room_size
 
 func changeRoom(_body: Node2D, dir: Vector2) :
+  if !title_shown :
+    title_shown = true
+    Qol.showTitleCardForCurrentBiome()
+  
   if !room_cleared :
     return
   

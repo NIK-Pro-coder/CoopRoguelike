@@ -1,6 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ruwi6r0vlvwo"]
+[gd_scene load_steps=5 format=3 uid="uid://ruwi6r0vlvwo"]
 
 [ext_resource type="Script" uid="uid://c3elub4xc6ig0" path="res://Dialogs/Dialog Manager/dialog_mngr.gd" id="1_t1mrk"]
+[ext_resource type="Shader" uid="uid://2wa4lpmnwvn0" path="res://Player/player.gdshader" id="2_nidgv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jxj8q"]
+shader = ExtResource("2_nidgv")
+shader_parameter/hue_shift = 0.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nb712"]
 bg_color = Color(0, 0, 0, 1)
@@ -57,6 +62,7 @@ expand_mode = 2
 
 [node name="player_icon" type="TextureRect" parent="MarginContainer/VBoxContainer/Control2"]
 unique_name_in_owner = true
+material = SubResource("ShaderMaterial_jxj8q")
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
