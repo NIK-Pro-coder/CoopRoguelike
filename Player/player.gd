@@ -29,6 +29,7 @@ var stat_changes: StatTracker = StatTracker.new()
 @export_category("Heal Potion")
 @export var POTION_CHARGE = 100
 @export var POTION_HEALING = 20
+var MAX_POTIONS: int = 4
 
 @export_category("Dash")
 @export var DASH_DURATION: float = .3
@@ -269,9 +270,12 @@ func _process(_delta: float) -> void:
   %weapons_spr.position.x = 32 * (-1 if sprite.flip_h else 1)
   %weapons_spr.flip_h = sprite.flip_h
   
-  if potion_charge_progress >= get_actual_stat("potion_charge") :
-    potion_charge_progress -= get_actual_stat("potion_charge")
-    potions += 1
+  if potions < MAX_POTIONS :
+    if potion_charge_progress >= get_actual_stat("potion_charge") :
+      potion_charge_progress -= get_actual_stat("potion_charge")
+      potions += 1
+  else :
+    potion_charge_progress = 0
   
   sprite.material.set_shader_parameter("hue_shift", MAIN_COLOR)
   
@@ -288,6 +292,7 @@ func _process(_delta: float) -> void:
   HUD.potion_max_charge = get_actual_stat("potion_charge")
   HUD.potion_charge = potion_charge_progress
   HUD.potion_num = potions
+  HUD.max_potions = MAX_POTIONS
   
   #HUD.dash_cooldown = int(100.0 - (dashCooldown.time_left / get_actual_stat("dash_cooldown")) * 100.0)
   
@@ -300,8 +305,8 @@ func _process(_delta: float) -> void:
   HUD.health = healtcomponent.health
   HUD.max_hp = healtcomponent.max_health
   
-  # HUD.mana = mana
-  # HUD.max_mana = get_actual_stat("max_mana")
+  HUD.mana = mana
+  HUD.max_mana = get_actual_stat("max_mana")
   
   # var has_matrix: bool = false
   # for i in accessories :
@@ -407,19 +412,19 @@ func _physics_process(_delta: float) -> void:
     potions -= 1
     potionsDrank += 1
   
-  var enemyPos := Vector2.ZERO
-  var enemyDist := -1
-  for i in get_tree().get_nodes_in_group("enemy") :
-    var pos = (i as Node2D).global_position
-    if (pos - global_position).normalized().dot(lastMoveDir) >= .8 and (enemyDist < 0 or pos.distance_squared_to(global_position) < enemyDist) :
-      enemyDist = int(pos.distance_squared_to(global_position))
-      enemyPos = pos
-  
-  
   var atkPos := lastMoveDir
-  if enemyDist >= 0 :
-    atkPos = (enemyPos - global_position).normalized()
     
+  if weapon.has_autoaim :
+    var enemyPos := Vector2.ZERO
+    var enemyDist := -1
+    for i in get_tree().get_nodes_in_group("enemy") :
+      var pos = (i as Node2D).global_position
+      if (pos - global_position).normalized().dot(lastMoveDir) >= .8 and (enemyDist < 0 or pos.distance_squared_to(global_position) < enemyDist) :
+        enemyDist = int(pos.distance_squared_to(global_position))
+        enemyPos = pos
+  
+    if enemyDist >= 0 :
+      atkPos = (enemyPos - global_position).normalized()
     
   if is_action_pressed("attack") :
     weapon.attack(self, atkPos)

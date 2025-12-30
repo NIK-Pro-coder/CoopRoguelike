@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LootTable" load_steps=26 format=3 uid="uid://s8rnc8k5liy3"]
+[gd_resource type="Resource" script_class="LootTable" load_steps=27 format=3 uid="uid://s8rnc8k5liy3"]
 
 [ext_resource type="Script" uid="uid://b0awyqeutl36c" path="res://Items/Base Item/base_item.gd" id="1_bjbew"]
 [ext_resource type="Resource" uid="uid://dufnv5f7ke435" path="res://Weapons/Recurve Bow/recurve_bow.tres" id="2_4jaol"]
@@ -25,8 +25,9 @@
 [ext_resource type="Resource" uid="uid://b6gqf6mdv3sfa" path="res://Weapons/Mechanic's Wrench/mechanics_wrench.tres" id="20_dccya"]
 [ext_resource type="Resource" uid="uid://diutlo48tjrh0" path="res://Weapons/Blowpipe/blowpipe.tres" id="23_6yk72"]
 [ext_resource type="Resource" uid="uid://bjmrw54wdbi2w" path="res://Weapons/Crossbow/crossbow.tres" id="24_4tti4"]
+[ext_resource type="Resource" uid="uid://m6xi671swdph" path="res://Weapons/Baseball Bat/baseball_bat.tres" id="25_0yqlm"]
 
 [resource]
 script = ExtResource("2_urorh")
-ITEM_POOL = Array[ExtResource("1_bjbew")]([ExtResource("18_kxj2f"), ExtResource("10_aff3c"), ExtResource("17_sp4pk"), ExtResource("5_375cc"), ExtResource("11_63cfc"), ExtResource("13_rwcgu"), ExtResource("16_a1mbm"), ExtResource("15_6be10"), ExtResource("8_s5m8l"), ExtResource("11_6yk72"), ExtResource("7_4ltyx"), ExtResource("20_dccya"), ExtResource("9_63cfc"), ExtResource("2_4jaol"), ExtResource("3_4ltyx"), ExtResource("4_e218s"), ExtResource("5_we3rw"), ExtResource("6_s5m8l"), ExtResource("19_1v2tr"), ExtResource("12_aff3c"), ExtResource("14_sdots"), ExtResource("23_6yk72"), ExtResource("24_4tti4")])
+ITEM_POOL = Array[ExtResource("1_bjbew")]([ExtResource("18_kxj2f"), ExtResource("10_aff3c"), ExtResource("17_sp4pk"), ExtResource("5_375cc"), ExtResource("11_63cfc"), ExtResource("13_rwcgu"), ExtResource("16_a1mbm"), ExtResource("15_6be10"), ExtResource("8_s5m8l"), ExtResource("11_6yk72"), ExtResource("7_4ltyx"), ExtResource("20_dccya"), ExtResource("9_63cfc"), ExtResource("2_4jaol"), ExtResource("3_4ltyx"), ExtResource("4_e218s"), ExtResource("5_we3rw"), ExtResource("6_s5m8l"), ExtResource("19_1v2tr"), ExtResource("12_aff3c"), ExtResource("14_sdots"), ExtResource("23_6yk72"), ExtResource("24_4tti4"), ExtResource("25_0yqlm")])
 metadata/_custom_type_script = "uid://by4ji3sx1olru"

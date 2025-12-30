@@ -31,6 +31,14 @@ func create_timer(timeout: Callable, time: float = 1) -> Timer :
   
   return t
 
+func addHitstop(time: float) :
+  var t := create_timer(func() :
+    get_tree().paused = false
+  , time)
+  t.process_mode = Node.PROCESS_MODE_ALWAYS
+  
+  get_tree().paused = true
+
 var strDisplayScene = preload("res://String Display/stringdisplay.tscn")
 
 func display_string(pos: Vector2, text: String, time: float = 1.0) -> void :
@@ -112,6 +120,11 @@ func showTitleCardForCurrentBiome() :
   var b := get_current_biome()
   titleCard.showTitleCard(biome_idx, b.BIOME_NAME)
 
+var mainCamera: MainCamera
+
+func addScreenshake(amt: float) :
+  mainCamera.addScreenshake(amt)
+
 func _process(_delta: float) -> void:
   if not lobbyMngr :
     lobbyMngr = findNodeWithCriteriaFromRoot(func(x: Node): return x is LobbyManager)
@@ -133,6 +146,9 @@ func _process(_delta: float) -> void:
 
   if not titleCard :
     titleCard = findNodeWithCriteriaFromRoot(func(x: Node): return x is TitleCard)
+
+  if not mainCamera :
+    mainCamera = findNodeWithCriteriaFromRoot(func(x: Node): return x is MainCamera)
 
 func _ready() -> void:
   process_mode = Node.PROCESS_MODE_ALWAYS

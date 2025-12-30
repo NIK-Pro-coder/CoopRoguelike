@@ -55,11 +55,6 @@ signal knocked_back(amt: Vector2)
 
 var damageNumScene = preload("res://Damage Num/damage_num.tscn")
 
-func addScreenshake(amt) :
-  var camera = get_tree().get_root().get_node("main/maincamera")
-  
-  (camera as MainCamera).addScreenshake(amt)
-
 func spawnDamageNum(amt: int) :
   var dmgNum: DamageNum = damageNumScene.instantiate()
   dmgNum.DAMAGE = amt
@@ -67,7 +62,7 @@ func spawnDamageNum(amt: int) :
   get_tree().get_root().add_child.call_deferred(dmgNum)
   
   if amt > 0 :
-    addScreenshake(amt)
+    Qol.addScreenshake(amt)
 
 func healDmg(amt: int) :
   if amt < 0 :

@@ -1,62 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://bipp5g5ng2s7l"]
+[gd_scene load_steps=10 format=3 uid="uid://bipp5g5ng2s7l"]
 
 [ext_resource type="Script" uid="uid://cw1vtndu4egvn" path="res://HUD/hud_template.gd" id="1_8vw5v"]
-[ext_resource type="Texture2D" uid="uid://bqym4t22mfcmu" path="res://HUD/HUDDash.png" id="5_hrnhk"]
-[ext_resource type="Texture2D" uid="uid://bu566psf5me8b" path="res://HUD/HUDPotion.png" id="6_lwsra"]
+[ext_resource type="Texture2D" uid="uid://bkod3a2pmb2f7" path="res://HUD/potion_charge_empty.png" id="2_5kmti"]
+[ext_resource type="Texture2D" uid="uid://cd5oou4m3wikw" path="res://HUD/healthbar_empty.png" id="4_0srh5"]
+[ext_resource type="Texture2D" uid="uid://b8q7ltjfc505" path="res://HUD/healthbar_full.png" id="5_0srh5"]
+[ext_resource type="Shader" uid="uid://p3oxlgry2jxm" path="res://HUD/hp_fill.gdshader" id="5_ajpyf"]
+[ext_resource type="Texture2D" uid="uid://b3eiva3mibn2p" path="res://HUD/potion_charge_sprite.png" id="6_ajpyf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hrnhk"]
+shader = ExtResource("5_ajpyf")
+shader_parameter/fill = 0.5
+shader_parameter/hue_shift = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ajpyf"]
+bg_color = Color(0, 0, 0, 0.5)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrnhk"]
+bg_color = Color(0.33682394, 0.5928508, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="hud_template" type="MarginContainer"]
-offset_right = 64.0
+offset_right = 110.0
 offset_bottom = 296.0
 script = ExtResource("1_8vw5v")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
-
-[node name="potion_progress" type="TextureProgressBar" parent="VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-value = 67.0
-fill_mode = 4
-radial_initial_angle = 180.0
-nine_patch_stretch = true
-texture_progress = ExtResource("6_lwsra")
-
-[node name="health_bar" type="TextureProgressBar" parent="VBoxContainer/potion_progress"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -28.0
-offset_top = -28.0
-offset_right = 28.0
-offset_bottom = 28.0
-grow_horizontal = 2
-grow_vertical = 2
-value = 50.0
-fill_mode = 3
-nine_patch_stretch = true
-texture_progress = ExtResource("5_hrnhk")
-
-[node name="potion_num" type="RichTextLabel" parent="VBoxContainer/potion_progress"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -40.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_constants/outline_size = 5
-text = "1"
-horizontal_alignment = 2
-vertical_alignment = 2
 
 [node name="player_name" type="RichTextLabel" parent="VBoxContainer"]
 unique_name_in_owner = true
@@ -64,4 +40,121 @@ layout_mode = 2
 theme_override_constants/outline_size = 5
 text = "Player 1"
 fit_content = true
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="hp_under" type="TextureRect" parent="VBoxContainer/HBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_0srh5")
+
+[node name="hp_fill" type="TextureRect" parent="VBoxContainer/HBoxContainer/Control"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_hrnhk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_0srh5")
+
+[node name="hptext" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 24
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="maxhptext" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -53.0
+offset_top = -49.0
+offset_right = -13.0
+offset_bottom = -9.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 10
+text = "/100"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5kmti")
+
+[node name="potion_progress" type="TextureProgressBar" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 64)
+layout_mode = 2
+value = 67.0
+fill_mode = 3
+radial_initial_angle = 180.0
+nine_patch_stretch = true
+texture_under = ExtResource("6_ajpyf")
+texture_progress = ExtResource("6_ajpyf")
+tint_under = Color(0.3491902, 0.3491902, 0.3491902, 1)
+tint_progress = Color(0.48452926, 0.5370987, 0.5370987, 1)
+
+[node name="potion_progress_int" type="TextureProgressBar" parent="VBoxContainer/HBoxContainer/potion_progress"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 50.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_progress = ExtResource("6_ajpyf")
+
+[node name="manabar" type="ProgressBar" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 17)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ajpyf")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hrnhk")
+value = 50.0
+show_percentage = false
+
+[node name="manatext" type="RichTextLabel" parent="VBoxContainer/manabar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 12
+text = "100 / 100"
 horizontal_alignment = 1

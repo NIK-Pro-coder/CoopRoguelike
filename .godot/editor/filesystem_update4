@@ -1,7 +1,8 @@
-res://HUD/hud_template.tscn
+res://main.tscn
 res://Biomes/Crystal Hollow/dungeon_tileset.tres
 res://Spells/Zap Spell/zap_spell.tres
-res://Enemies/Static Enemy/enemy.gdshader
+res://Player/player.gdshader
+res://HUD/hp_fill.gdshader
 res://Accessories/Alchemy Kit/alchemy_kit.tres
 res://Accessories/Bottomless Mana Pouch/bottomless_mana_pouch.tres
 res://Accessories/Metal Scarf/metal_scarf.tres
@@ -15,13 +16,13 @@ res://Weapons/Fighter Staff/fighter_staff.tres
 res://Potions/fragile_potion.tres
 res://Potions/weakness_potion.tres
 res://Potions/slowness_potion.tres
-res://Gacha Ball/gacha_ball.gdshader
-res://HUD/hud_template_old.tscn
-res://HUD/hud_template.gd
-res://HUD/hud_template_old.gd
-res://Player/player.gd
-res://Accessories/Defensive Matrix/defensive_matrix.gd
-res://Accessories/Honey Drop/honey_drop.gd
-res://Accessories/Rage Brew/rage_brew.gd
-res://main.tscn
+res://qol.gd
 res://Components/Health Component/health_coponent.gd
+res://Weapons/Baseball Bat/baseball_bat.tres
+res://Weapons/Baseball Bat/baseball.tscn
+res://Loot Table/weapon_loot_table.tres
+res://Weapons/Baseball Bat/baseball_bat.gd
+res://Inventory/inventory.gd
+res://Weapons/Baseball Bat/baseball.gd
+res://Weapons/Base Weapon/base_weapon.gd
+res://Player/player.gd

@@ -23,6 +23,8 @@ var chargeTimer: Timer
 @export var can_charge: bool = false
 @export var charge_time: float = 1.0
 
+@export var has_autoaim: bool = true
+
 @warning_ignore("unused_parameter")
 func change_stats(player: Player, stats: StatTracker) :
   pass

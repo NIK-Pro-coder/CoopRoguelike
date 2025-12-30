@@ -123,6 +123,7 @@ func _ready() -> void:
     # addItem(load("res://Weapons/Cosmic Judgement/cosmic_judgement.tres"))
     # addItem(load("res://Weapons/Blowpipe/blowpipe.tres"))
     # addItem(load("res://Weapons/Crossbow/crossbow.tres"))
+    addItem(load("res://Weapons/Baseball Bat/baseball_bat.tres"))
     #endregion
     
     #region SUMMON WEAPONS

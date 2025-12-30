@@ -1,6 +1,6 @@
+Weapon
 EnemyState
 Resource
-Weapon
 SpriteFrames
 Potion
 TileSet
