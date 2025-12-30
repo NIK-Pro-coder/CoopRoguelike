@@ -17,8 +17,6 @@ func update_passive(player: Player):
     rage += 0.01
   else :
     rage -= 0.02
-    
-  player.HUD.rage = rage
   
   rage = clamp(rage, 0, 1)
   
