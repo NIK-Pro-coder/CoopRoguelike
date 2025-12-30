@@ -8,32 +8,23 @@ class_name HealthComponent
 
 @export var max_health: int = 100
 var health = 0
+var last_health: float = 0
 var shield = 0
+var last_shield: float = 0
 
 func _process(delta: float) -> void:
-  if DISPLAY_BAR :
-    DISPLAY_BAR.max_value = max_health
+  last_health = last_health * .9 + health * .1
+  last_shield = last_shield * .9 + shield * .1
   
   for i in iframes.keys() :
     iframes[i] -= delta
     if iframes[i] <= 0 :
       iframes.erase(i)
 
-func revive(w: float) :
-  health = int(max_health * w)
-  updateBar()
-
-var invincible = false
-
-var stylebox_bg: StyleBoxFlat = preload("res://Components/Health Component/stylebox_bg.tres")
-var stylebox_hp: StyleBoxFlat = preload("res://Components/Health Component/stylebox_hp.tres")
-var stylebox_shield: StyleBoxFlat = preload("res://Components/Health Component/stylebox_shield.tres")
-
-func updateBar() :
   if not DISPLAY_BAR :
     return
   
-  DISPLAY_BAR.value = health if shield == 0 else shield
+  DISPLAY_BAR.value = last_health if shield == 0 else last_shield
   DISPLAY_BAR.max_value = max_health
   DISPLAY_BAR.visible = health < max_health or shield > 0
   if shield > 0 :
@@ -43,10 +34,17 @@ func updateBar() :
     DISPLAY_BAR.add_theme_stylebox_override("background", stylebox_bg.duplicate())
     DISPLAY_BAR.add_theme_stylebox_override("fill", stylebox_hp.duplicate())
 
+func revive(w: float) :
+  health = int(max_health * w)
+
+var invincible = false
+
+var stylebox_bg: StyleBoxFlat = preload("res://Components/Health Component/stylebox_bg.tres")
+var stylebox_hp: StyleBoxFlat = preload("res://Components/Health Component/stylebox_hp.tres")
+var stylebox_shield: StyleBoxFlat = preload("res://Components/Health Component/stylebox_shield.tres")
+
 func _ready() -> void:
   health = max_health
-  
-  updateBar()
 
 signal death
 signal damaged(amt: int)
@@ -84,7 +82,6 @@ func healDmg(amt: int) :
   health += amt
   health = min(health, max_health)
   
-  updateBar()
   spawnDamageNum(-amt)
   
   emit_signal("healed", amt)
@@ -105,7 +102,6 @@ var damage_mult: float = 1
 
 func add_shield(amt: int) :
   shield = min(max_health, shield+amt)
-  updateBar()
 
 func dealDmg(amt: int) :
   if amt < 0 :
@@ -144,7 +140,6 @@ func dealDmg(amt: int) :
   health -= round(dmg_taken)
   health = max(health, 0)
   
-  updateBar()
   spawnDamageNum(round(amt * damage_mult))
 
 func _on_audio_stream_player_2d_finished() -> void:

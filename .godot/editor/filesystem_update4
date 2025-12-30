@@ -24,3 +24,4 @@ res://Accessories/Defensive Matrix/defensive_matrix.gd
 res://Accessories/Honey Drop/honey_drop.gd
 res://Accessories/Rage Brew/rage_brew.gd
 res://main.tscn
+res://Components/Health Component/health_coponent.gd
