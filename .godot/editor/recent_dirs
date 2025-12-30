@@ -1,3 +1,4 @@
+res://HUD
 res://Title Card
 res://Player
 res://Enemies/State Machine
@@ -19,6 +20,5 @@ res://Gacha Ball
 res://Weapons/Syringes/
 res://Weapons/Cosmic Judgement/
 res://Weapons/Mechanic's Wrench/
-res://Weapons/Spore Sac/
 /home/nikolai/coop-roguelike/Exports/Web
 /home/nikolai/coop-roguelike/Exports

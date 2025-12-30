@@ -285,36 +285,37 @@ func _process(_delta: float) -> void:
   HUD.player_name = nametag.text
   HUD.player_color = MAIN_COLOR
   
-  HUD.potion_cooldown = potion_charge_progress * (100 / get_actual_stat("potion_charge"))
-  HUD.potion_amt = potions
+  HUD.potion_max_charge = get_actual_stat("potion_charge")
+  HUD.potion_charge = potion_charge_progress
+  HUD.potion_num = potions
   
-  HUD.dash_cooldown = int(100.0 - (dashCooldown.time_left / get_actual_stat("dash_cooldown")) * 100.0)
+  #HUD.dash_cooldown = int(100.0 - (dashCooldown.time_left / get_actual_stat("dash_cooldown")) * 100.0)
   
-  if spell.cooldownTimer and is_instance_valid(spell.cooldownTimer) :
-    HUD.spell_cooldown = 100 - int((spell.cooldownTimer.time_left / spell.cooldownTimer.wait_time) * 100)
-  else :
-    HUD.spell_cooldown = 100
-  HUD.spell_cost = spell.MANA_COST
+  # if spell.cooldownTimer and is_instance_valid(spell.cooldownTimer) :
+  #   HUD.spell_cooldown = 100 - int((spell.cooldownTimer.time_left / spell.cooldownTimer.wait_time) * 100)
+  # else :
+  #   HUD.spell_cooldown = 100
+  # HUD.spell_cost = spell.MANA_COST
   
   HUD.health = healtcomponent.health
-  HUD.max_health = healtcomponent.max_health
+  HUD.max_hp = healtcomponent.max_health
   
-  HUD.mana = mana
-  HUD.max_mana = get_actual_stat("max_mana")
+  # HUD.mana = mana
+  # HUD.max_mana = get_actual_stat("max_mana")
   
-  var has_matrix: bool = false
-  for i in accessories :
-    if i and i.get_script() == load("res://Accessories/Defensive Matrix/defensive_matrix.gd") :
-      has_matrix = true
-      break
-  
-  if !has_matrix :
-    HUD.matrix = 0
-    HUD.matrixready = false
-  
-  %matrix_display.visible = HUD.matrix > 0
-  (%matrix_display.material as ShaderMaterial).set_shader_parameter("shield_hp", HUD.matrix)
-  (%matrix_display.material as ShaderMaterial).set_shader_parameter("shield_ready", HUD.matrixready)
+  # var has_matrix: bool = false
+  # for i in accessories :
+  #   if i and i.get_script() == load("res://Accessories/Defensive Matrix/defensive_matrix.gd") :
+  #     has_matrix = true
+  #     break
+  # 
+  # if !has_matrix :
+  #   HUD.matrix = 0
+  #   HUD.matrixready = false
+  # 
+  # %matrix_display.visible = HUD.matrix > 0
+  # (%matrix_display.material as ShaderMaterial).set_shader_parameter("shield_hp", HUD.matrix)
+  # (%matrix_display.material as ShaderMaterial).set_shader_parameter("shield_ready", HUD.matrixready)
 
 @onready var inventoryMngr: Inventory = get_tree().get_root().get_node("/root/main/CanvasLayer/inventory")
 

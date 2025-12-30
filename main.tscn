@@ -60,6 +60,7 @@ LOBBY = NodePath("../../CanvasLayer/lobby")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="titleCard" parent="CanvasLayer" instance=ExtResource("17_yaehf")]
+visible = false
 
 [node name="lobby" parent="CanvasLayer" node_paths=PackedStringArray("WAVE_MNGR") instance=ExtResource("1_ig7tw")]
 unique_name_in_owner = true

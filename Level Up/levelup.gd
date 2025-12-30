@@ -18,6 +18,7 @@ var pressed = false
 var selectedPowers: Array[Power] = []
 
 @onready var confirmText: RichTextLabel = %confirmText
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _process(_delta: float) -> void:
   var view_size := get_viewport_rect()
@@ -31,7 +32,7 @@ func _process(_delta: float) -> void:
   if len(selectedPowers) < 1 :
     return
   
-  var upgrades = $MarginContainer/VBoxContainer/powers.get_children()
+  var upgrades = %powers.get_children()
   
   for i in range(len(upgrades)) :
     (((upgrades[i] as Control).get_child(0) as Panel).get_theme_stylebox("panel") as StyleBoxFlat).bg_color.a = 1.0 if i == selected else .5
@@ -41,7 +42,6 @@ func _process(_delta: float) -> void:
 
   var p_device = players[player_turn]
   
-  $MarginContainer/VBoxContainer/VBoxContainer/playerName.text = "Player %s: %s upgrade%s left" % [p_device+1, max_levelups-levelup_num, "" if max_levelups-levelup_num==1 else "s"]
   confirmText.visible = askConfirm
   confirmText.text = "(A) Confirm" if p_device >= 0 else "(X) Confirm"
   
@@ -126,8 +126,8 @@ func loadPowers() :
     player_turn += 1
   
   if player_turn >= len(players) :
-    visible = false
     get_tree().paused = false
+    visible = false
     
     return
   
@@ -135,8 +135,8 @@ func loadPowers() :
   
   var got = getPowers()
   
-  for i in $MarginContainer/VBoxContainer/powers.get_children() :
-    $MarginContainer/VBoxContainer/powers.remove_child(i)
+  for i in %powers.get_children() :
+    %powers.remove_child(i)
   
   var player: Player = lobbymngr.deviceToPlayer[players[player_turn]]
   
@@ -150,13 +150,14 @@ func loadPowers() :
       if p.NAME == i.NAME :
         temp.stacks = p.stack_level
     
-    $MarginContainer/VBoxContainer/powers.add_child(temp)
+    %powers.add_child(temp)
 
     selectedPowers.append(i)
 
 var max_levelups = 0
 
 func showLevelup(times: int) :
+  animation_player.play("show_upgrades")
   get_tree().paused = true
   visible = true
   

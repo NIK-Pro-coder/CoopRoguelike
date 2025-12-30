@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bn62ramudpvvn"]
+[gd_scene load_steps=21 format=3 uid="uid://bn62ramudpvvn"]
 
 [ext_resource type="Theme" uid="uid://ltg03tu30kkp" path="res://UI.tres" id="1_8jhx0"]
 [ext_resource type="Script" uid="uid://csjxgovmkmjos" path="res://Level Up/levelup.gd" id="2_chbm7"]
@@ -40,6 +40,90 @@ color = Color(1, 0.4666667, 0, 1)
 hue_variation_min = -1.0
 hue_variation_max = 1.0
 
+[sub_resource type="Animation" id="Animation_yk5vi"]
+resource_name = "show_upgrades"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("confetti:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 10000), Vector2(0, 10000), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_e5yth"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("confetti:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d7jyo"]
+_data = {
+&"RESET": SubResource("Animation_e5yth"),
+&"show_upgrades": SubResource("Animation_yk5vi")
+}
+
 [node name="levelup" type="Control"]
 process_mode = 3
 z_index = 501
@@ -69,6 +153,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 0.001953125
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_8jhx0")
@@ -76,28 +161,11 @@ theme = ExtResource("1_8jhx0")
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 theme = ExtResource("1_8jhx0")
-theme_override_constants/separation = 215
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_8jhx0")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_8jhx0")
-theme_override_font_sizes/normal_font_size = 32
-text = "Upgrade time!"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="playerName" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_8jhx0")
-theme_override_font_sizes/normal_font_size = 24
-text = "Player -1's choice"
-fit_content = true
+alignment = 1
 
 [node name="powers" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 392)
 layout_mode = 2
 size_flags_vertical = 4
 theme = ExtResource("1_8jhx0")
@@ -122,5 +190,11 @@ position = Vector2(576, 704)
 amount = 500
 lifetime = 10.0
 fixed_fps = 0
+visibility_rect = Rect2(-576, -352, 1152, 704)
 draw_order = 0
 process_material = SubResource("ParticleProcessMaterial_d7jyo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_d7jyo")
+}
