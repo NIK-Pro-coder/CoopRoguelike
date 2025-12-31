@@ -35,7 +35,7 @@ func pick_random_item(temp: float = 0) :
   return actual_pool.pick_random().duplicate()
 
 func lock_rarity(wave_num: int) :
-  var w = wave_num / 5.0
+  var w = wave_num / 3.0
   
   if w < 1 :
     MAX_RARITY = Item.Rarity.COMMON

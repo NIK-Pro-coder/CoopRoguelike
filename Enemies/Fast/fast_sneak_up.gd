@@ -23,10 +23,10 @@ func process_state(enemy: StateMachineEnemy, aggro: Node2D) -> void:
   if d > 0 :
     enemy.set_pathing_position(
       aggro.global_position + Vector2.from_angle(aggro.global_position.angle_to_point(enemy.global_position) + .1) * 600
-    )
+    , true)
   else :
     enemy.set_pathing_position(
       aggro.global_position + Vector2.from_angle(aggro.global_position.angle_to_point(enemy.global_position) - .1) * 600
-    )
+    , true)
 
 func get_state_name() -> String: return "sneak_up"

@@ -62,6 +62,9 @@ func _process(_delta: float) -> void:
   if enraged :
     stat_tracker.DAMAGE_PERCENT += .25
     stat_tracker.SPEED_PERCENT += .25
+    knockback_mult = 0
+  else :
+    knockback_mult = 1
   
   if CAN_ENRAGE and !enraged and knockback_taken >= max_knockback :
     knockback_taken = max_knockback
@@ -81,9 +84,6 @@ func _process(_delta: float) -> void:
   %knockbackBar.value = knockback_taken
   
   navAgent.debug_enabled = DEBUGGING
-  
-  if enraged :
-    knockback = Vector2.ZERO
   
   if knockback :
     velocity = knockback

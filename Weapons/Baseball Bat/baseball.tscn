@@ -1,11 +1,55 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcx6mgf5e1ess"]
+[gd_scene load_steps=13 format=3 uid="uid://bcx6mgf5e1ess"]
 
 [ext_resource type="Script" uid="uid://doh26bc72cp66" path="res://Weapons/Baseball Bat/baseball.gd" id="1_b32i7"]
-[ext_resource type="Texture2D" uid="uid://cjraxmvgw4mpd" path="res://icon.svg" id="1_ndxth"]
 [ext_resource type="PackedScene" uid="uid://ntpu8pjibyrw" path="res://Components/Health Component/health_coponent.tscn" id="3_je4wp"]
+[ext_resource type="PackedScene" uid="uid://dh5o4jioayoff" path="res://DamageAreas/player_damage_area.tscn" id="4_ic3x1"]
+[ext_resource type="Texture2D" uid="uid://2ku0bsqbrxxk" path="res://Weapons/Baseball Bat/baseball-fly.png" id="4_w65m2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b32i7"]
-size = Vector2(64, 64)
+[sub_resource type="CircleShape2D" id="CircleShape2D_i0i6h"]
+radius = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_maakc"]
+radius = 32.0
+
+[sub_resource type="Curve" id="Curve_ic3x1"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.49541286, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0i6h"]
+atlas = ExtResource("4_w65m2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_maakc"]
+atlas = ExtResource("4_w65m2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdyf1"]
+atlas = ExtResource("4_w65m2")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfrt5"]
+atlas = ExtResource("4_w65m2")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0f1po"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0i6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_maakc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdyf1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfrt5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [node name="baseball" type="CharacterBody2D"]
 collision_layer = 4
@@ -13,13 +57,31 @@ motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_b32i7")
 
-[node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_ndxth")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_b32i7")
+shape = SubResource("CircleShape2D_i0i6h")
 
 [node name="healthCoponent" parent="." instance=ExtResource("3_je4wp")]
 
+[node name="dmg" parent="." instance=ExtResource("4_ic3x1")]
+unique_name_in_owner = true
+lifetime = -1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dmg"]
+shape = SubResource("CircleShape2D_maakc")
+
+[node name="trail" type="Line2D" parent="."]
+unique_name_in_owner = true
+width_curve = SubResource("Curve_ic3x1")
+default_color = Color(1, 1, 1, 0.5)
+joint_mode = 2
+
+[node name="Icon" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_0f1po")
+autoplay = "default"
+frame_progress = 0.86368304
+
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="knocked_back" from="healthCoponent" to="." method="_on_health_coponent_knocked_back"]
+[connection signal="on_hit" from="dmg" to="." method="_on_dmg_on_hit"]

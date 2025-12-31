@@ -12,6 +12,8 @@ var last_health: float = 0
 var shield = 0
 var last_shield: float = 0
 
+var force_visible: bool = false
+
 func _process(delta: float) -> void:
   last_health = last_health * .9 + health * .1
   last_shield = last_shield * .9 + shield * .1
@@ -26,7 +28,7 @@ func _process(delta: float) -> void:
   
   DISPLAY_BAR.value = last_health if shield == 0 else last_shield
   DISPLAY_BAR.max_value = max_health
-  DISPLAY_BAR.visible = health < max_health or shield > 0
+  DISPLAY_BAR.visible = health < max_health or shield > 0 or force_visible
   if shield > 0 :
     DISPLAY_BAR.add_theme_stylebox_override("background", stylebox_hp.duplicate())
     DISPLAY_BAR.add_theme_stylebox_override("fill", stylebox_shield.duplicate())

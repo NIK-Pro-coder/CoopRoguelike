@@ -9,6 +9,7 @@ func on_equip(player: Player):
     ball = null
   
   ball = ballScene.instantiate()
+  ball.player = player
   ball.global_position = player.global_position
   
   player.get_tree().get_root().add_child.call_deferred(ball)

@@ -24,6 +24,9 @@ func process_state(enemy: StateMachineEnemy, aggro: Node2D) -> void:
   t.telegraph_finished.connect(func():
     t.queue_free()
     
+    if !is_instance_valid(enemy) :
+      return
+    
     var a := enemy.create_atk(t.SHAPE_SIZE, 20)
     a.global_position = t.global_position
     a.rotation = t.rotation

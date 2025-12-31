@@ -1,9 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://m6xi671swdph"]
 
 [ext_resource type="Script" uid="uid://dlqvhs6xvhdb6" path="res://Weapons/Baseball Bat/baseball_bat.gd" id="1_6pc1a"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6pc1a"]
-size = Vector2(32, 32)
+[ext_resource type="Texture2D" uid="uid://c513ibkcc8fap" path="res://Weapons/Baseball Bat/baseball_bat.png" id="1_v3xpi"]
 
 [resource]
 script = ExtResource("1_6pc1a")
@@ -11,5 +9,7 @@ damage = 5
 weapon_class = 1
 has_autoaim = false
 NAME = "Baseball Bat"
-TEXTURE = SubResource("PlaceholderTexture2D_6pc1a")
+DESCRIPTION = "Swing the bat dealing small damage, hitting your ball will launch it, dealing more damage the faster it goes"
+QUOTE = "*Swing* *Crash* Oh, oh my"
+TEXTURE = ExtResource("1_v3xpi")
 metadata/_custom_type_script = "uid://ctobrtqlco6o4"

@@ -10,7 +10,7 @@ func process_state(enemy: StateMachineEnemy, aggro: Node2D) -> void:
     aggro.global_position + Vector2.from_angle(
       aggro.global_position.angle_to_point(enemy.global_position) + .1
     ) * (aggro.global_position.distance_to(enemy.global_position) * .85)
-  )
+  , true)
   
   if enemy.global_position.distance_squared_to(aggro.global_position) <= 250 * 250 :
     attacking = true

@@ -9,7 +9,6 @@ func _process(_delta: float) -> void:
     return
 
   boss.HpComp.DISPLAY_BAR = self
-  boss.HpComp.updateBar()
-  visible = true
+  boss.HpComp.force_visible = true
 
   Bossname.text = "%s, %s (%s / %s)" % [boss.NAME, boss.TITLE, int(round(boss.HpComp.health)), boss.HpComp.max_health]
