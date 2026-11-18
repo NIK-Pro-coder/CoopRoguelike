@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var dmg: DamageArea = %dmg
 @onready var trail: Line2D = %trail
 
+@onready var aimTimer: Timer = %aim_timer
+
 var player: Player
 
 var speed_cap: float = 0
@@ -41,6 +43,7 @@ func _physics_process(delta: float) -> void:
     velocity = velocity.rotated(-2.0 * perp_normal.angle_to(velocity)) * .75
     move_and_slide()
     acceleration = Vector2.ZERO
+    aimTimer.stop()
 
 var accel: float = 5
 
@@ -48,6 +51,7 @@ func _on_health_coponent_knocked_back(amt: Vector2) -> void:
   Qol.addHitstop(.1)
   velocity = amt * 7.0 + player.velocity
   speed_cap = velocity.length()
+  aimTimer.start()
   
   var enemies = get_tree().get_nodes_in_group("enemy")
   enemies = enemies.filter(func(x) :
@@ -86,3 +90,6 @@ func _on_health_coponent_knocked_back(amt: Vector2) -> void:
 
 func _on_dmg_on_hit(_body: Node2D) -> void:
   player.potion_charge_progress += dmg.damage / 2.0
+
+func _on_aim_timer_timeout() -> void:
+  acceleration = Vector2.ZERO

@@ -485,5 +485,5 @@ func _on_dash_duration_timeout() -> void:
   healtcomponent.invincible = false
 
 func _on_effect_component_effects_changed() -> void:
-  HUD.effects = effectcomponent.stat_icons.values()
-  HUD.update_effects()
+  pass#HUD.effects = effectcomponent.stat_icons.values()
+  #HUD.update_effects()

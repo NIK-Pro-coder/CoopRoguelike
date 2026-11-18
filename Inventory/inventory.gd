@@ -104,7 +104,7 @@ func _ready() -> void:
     # addItem(load("res://Potions/weakness_potion.tres"))
     #endregion
     
-    #region MELLEE WEAPONS
+    #region MELEE WEAPONS
     # addItem(load("res://Weapons/Rusty Sword/worn_down_sword.tres"))
     # addItem(load("res://Weapons/Rusty Mace/worn_down_mace.tres"))
     # addItem(load("res://Weapons/Rusty Dagger/worn_down_dagger.tres"))
@@ -123,7 +123,7 @@ func _ready() -> void:
     # addItem(load("res://Weapons/Cosmic Judgement/cosmic_judgement.tres"))
     # addItem(load("res://Weapons/Blowpipe/blowpipe.tres"))
     # addItem(load("res://Weapons/Crossbow/crossbow.tres"))
-    addItem(load("res://Weapons/Baseball Bat/baseball_bat.tres"))
+    # addItem(load("res://Weapons/Baseball Bat/baseball_bat.tres"))
     #endregion
     
     #region SUMMON WEAPONS

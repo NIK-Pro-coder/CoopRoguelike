@@ -81,7 +81,10 @@ sprite_frames = SubResource("SpriteFrames_0f1po")
 autoplay = "default"
 frame_progress = 0.86368304
 
-[node name="Timer" type="Timer" parent="."]
+[node name="aim_timer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
 
 [connection signal="knocked_back" from="healthCoponent" to="." method="_on_health_coponent_knocked_back"]
 [connection signal="on_hit" from="dmg" to="." method="_on_dmg_on_hit"]
+[connection signal="timeout" from="aim_timer" to="." method="_on_aim_timer_timeout"]
